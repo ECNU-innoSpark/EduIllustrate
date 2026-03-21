@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="EduIllustrate: An automated four-stage agentic pipeline that generates diagram-rich explanations for K-12 STEM problems with programmatically rendered static diagrams via Manim.">
+    <meta property="og:title" content="EduIllustrate: Diagram-Rich K-12 STEM Explanations" />
+    <meta property="og:description" content="An automated four-stage agentic pipeline for generating diagram-rich K-12 STEM explanations with explicit geometric accuracy and visual consistency constraints." />
+    <meta property="og:url" content="https://bisz9918-maker.github.io/EduIllustrate/" />
+    <meta property="og:image" content="paper/fig/teaser.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:title" content="EduIllustrate: Diagram-Rich K-12 STEM Explanations">
+    <meta name="twitter:description" content="An automated four-stage agentic pipeline for generating diagram-rich K-12 STEM explanations with explicit geometric accuracy and visual consistency constraints.">
+    <meta name="twitter:image" content="paper/fig/teaser.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="EduIllustrate, K-12 STEM, Educational AI, Diagram Generation, Manim">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EduIllustrate</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon_io/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+
+    <style>
+        .example-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .example-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .contribution-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .contribution-item::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .table th {
+            background-color: #f5f5f5;
+        }
+        .table td, .table th {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">EduIllustrate: An Agentic Pipeline for Generating Diagram-Rich Explanations of K-12 STEM Problems</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#" target="_blank">First Author*</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Second Author*</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Third Author</a>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Your Institution</span>
+                            <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Paper PDF -->
+                                <span class="link-block">
+                                    <a href="paper/EduIllustrate.pdf" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </span>
+                                    <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                    <a href="https://github.com/bisz9918-maker/EduIllustrate" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaser Image -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <img src="paper/fig/teaser.png" alt="EduIllustrate Teaser" width="100%"/>
+                        <h2 class="subtitle has-text-centered">
+                            Figure 1: EduIllustrate takes a K-12 STEM problem as input and produces a structured explanation interleaved with geometrically accurate diagrams rendered via Manim. <i>Left</i>: the input problem (Grade 9 Mathematics). <i>Right</i>: two generated scenes illustrating the inscribed angle theorem and the resulting right triangle used to compute AB = 3.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paper abstract -->
+    <section class="hero is-light">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h2 class="title is-3">Abstract</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                Generating high-quality illustrated explanations for K-12 STEM problems requires both geometrically accurate diagrams and coherent step-by-step reasoning—a combination that existing LLM-based educational content systems have not addressed. We present <strong>EduIllustrate</strong>, an automated four-stage agentic pipeline that takes a K-12 STEM problem as input and produces a structured, diagram-rich explanation with programmatically rendered static diagrams via Manim. Our pipeline introduces a sequential anchoring strategy: Scene 1 undergoes full implementation planning to establish visual conventions (color scheme, label formatting, spatial layout), while subsequent scenes generate in parallel conditioned on Scene 1's code, enforcing cross-diagram consistency without global optimization.
+                            </p>
+                            <p>
+                                To enable systematic evaluation, we construct a benchmark of <strong>118 problems</strong> spanning three grade levels (elementary, middle, high school) and five subjects (mathematics, physics, chemistry, biology, geography), and propose an <strong>8-dimension evaluation rubric</strong> grounded in multimedia learning theory covering both text quality and visual quality. Evaluation of five frontier LLMs shows Gemini 3.0 Pro Preview achieves the highest overall score (4.40/5.0), while Kimi-K2.5 offers the best cost-efficiency (4.07 at $0.15/problem). Workflow ablation confirms our sequential anchoring improves Visual Consistency by 12% over a fully parallel baseline at 17.5% lower cost. Human evaluation with 20 expert raters validates LLM-as-judge reliability for objective dimensions (ρ=0.89 for logical coherence, ρ=0.83 for diagram-problem alignment), while revealing limitations on subjective visual assessment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How EduIllustrate Works -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h2 class="title is-3">How EduIllustrate Works?</h2>
+                        <p>We introduce <strong>EduIllustrate</strong>: a four-stage agentic pipeline that decomposes illustrated explanation generation into sequential stages addressing specific multimodal content creation challenges. The pipeline introduces a sequential anchoring strategy where Scene 1 undergoes full implementation planning to establish visual conventions, while subsequent scenes generate in parallel conditioned on Scene 1's code, enforcing cross-diagram consistency.</p>
+                        <br>
+                        <img src="paper/fig/fig1.png" alt="Pipeline Overview" width="90%"/>
+                        <h2 class="subtitle has-text-centered">
+                            Figure 2: EduIllustrate pipeline overview. Scene 1 undergoes full sequential processing (outline → implementation planning → code generation); Scenes 2–N skip implementation planning and generate in parallel, each conditioned on Scene 1's code as a visual anchor.
+                        </h2>
+                        <br>
+                        <div class="content has-text-left">
+                            <p><strong>Stage 1: Structured Outline Generation.</strong> Transforms raw K-12 STEM problems into structured outlines interleaving textual explanation blocks with visual scene specifications.</p>
+
+                            <p><strong>Stage 2: Scene Implementation Planning.</strong> Applies exclusively to Scene 1; Scenes 2–N skip this stage. Converts high-level Scene 1 specifications into detailed implementation plans, establishing visual conventions that all subsequent scenes inherit.</p>
+
+                            <p><strong>Stage 3: Manim Code Generation and Rendering.</strong> Scene 1 generates code conditioned on its implementation plan. Scenes 2–N generate in parallel, each receiving Scene 1's code as context to maintain visual consistency.</p>
+
+                            <p><strong>Stage 4: Markdown Assembly.</strong> Integrates rendered PNG diagrams with textual explanations into a structured Markdown document, with optional translation to Chinese.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benchmark Statistics -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">Benchmark Statistics</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-3">
+                        <div class="stat-box">
+                            <div class="stat-number">118</div>
+                            <div class="stat-label">Problems</div>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="stat-box">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Grade Levels</div>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="stat-box">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Subjects</div>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="stat-box">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Dimensions</div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <div class="columns is-centered">
+                    <div class="column is-two-thirds has-text-centered">
+                        <img src="paper/fig/knowledge_categories.png" alt="Knowledge Categories" width="100%"/>
+                        <h2 class="subtitle">
+                            Figure 4: Knowledge point categories by subject. Values in parentheses indicate the number of unique knowledge points mapped in each category.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experimental Results -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h2 class="title is-3">Experimental Results</h2>
+                        <p>We evaluate five frontier LLMs on the EduIllustrate benchmark, analyzing performance across eight evaluation dimensions, five subjects, and three grade levels.</p>
+                        <br><br>
+
+                        <!-- Main Results Table -->
+                        <h3 class="title is-4">Overall Performance</h3>
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>CC</th>
+                                    <th>LC</th>
+                                    <th>PE</th>
+                                    <th>TC</th>
+                                    <th>DPA</th>
+                                    <th>TDC</th>
+                                    <th>ELQ</th>
+                                    <th>VC</th>
+                                    <th>Overall</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Claude Sonnet 4.5</td>
+                                    <td>4.63</td>
+                                    <td>4.59</td>
+                                    <td>3.51</td>
+                                    <td>4.61</td>
+                                    <td>4.58</td>
+                                    <td>4.61</td>
+                                    <td>4.35</td>
+                                    <td>4.45</td>
+                                    <td>4.29</td>
+                                </tr>
+                                <tr style="background-color: #e8f4f8;">
+                                    <td><strong>Gemini 3.0 Pro Preview</strong></td>
+                                    <td><strong>4.68</strong></td>
+                                    <td><strong>4.72</strong></td>
+                                    <td><strong>3.91</strong></td>
+                                    <td><strong>4.73</strong></td>
+                                    <td><strong>4.69</strong></td>
+                                    <td><strong>4.69</strong></td>
+                                    <td><strong>4.47</strong></td>
+                                    <td><strong>4.42</strong></td>
+                                    <td><strong style="color: blue;">4.40</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-5</td>
+                                    <td>4.44</td>
+                                    <td>4.59</td>
+                                    <td>3.33</td>
+                                    <td>4.56</td>
+                                    <td>4.51</td>
+                                    <td>4.59</td>
+                                    <td>4.13</td>
+                                    <td>4.29</td>
+                                    <td>4.03</td>
+                                </tr>
+                                <tr>
+                                    <td>Kimi-K2.5</td>
+                                    <td>4.64</td>
+                                    <td>4.59</td>
+                                    <td>3.32</td>
+                                    <td>4.54</td>
+                                    <td>4.58</td>
+                                    <td>4.59</td>
+                                    <td>4.26</td>
+                                    <td>4.31</td>
+                                    <td>4.07</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen 3.5-35B</td>
+                                    <td>4.29</td>
+                                    <td>4.09</td>
+                                    <td>2.54</td>
+                                    <td>4.06</td>
+                                    <td>4.20</td>
+                                    <td>4.14</td>
+                                    <td>3.63</td>
+                                    <td>3.79</td>
+                                    <td>3.38</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="subtitle has-text-centered">
+                            Table 1: Model performance across eight dimensions. CC: Correctness & Completeness, LC: Logical Coherence, PE: Pedagogical Effectiveness, TC: Typographic Clarity, DPA: Diagram-Problem Alignment, TDC: Text-Diagram Coordination, ELQ: Element Layout Quality, VC: Visual Consistency. Gemini 3.0 Pro Preview achieves the highest overall score (4.40/5.0).
+                        </h2>
+
+                        <br><br>
+
+                        <!-- Workflow Ablation Table -->
+                        <h3 class="title is-4">Workflow Ablation Study</h3>
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th>Workflow</th>
+                                    <th>Tokens (In/Out)</th>
+                                    <th>Cost ($)</th>
+                                    <th>Latency (min)</th>
+                                    <th>VC</th>
+                                    <th>Overall</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #e8f4f8;">
+                                    <td><strong>Ours (Sequential Anchoring)</strong></td>
+                                    <td>75.8K / 68.1K</td>
+                                    <td>0.97</td>
+                                    <td>4.94</td>
+                                    <td><strong>4.42</strong></td>
+                                    <td><strong style="color: blue;">4.40</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>All-Parallel Baseline</td>
+                                    <td>100.3K / 78.5K</td>
+                                    <td>1.14 (+17.5%)</td>
+                                    <td>7.32 (+48%)</td>
+                                    <td>3.89 (-12%)</td>
+                                    <td>4.29</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="subtitle has-text-centered">
+                            Table 2: Workflow comparison using Gemini 3.0 Pro Preview on 118 problems. Our sequential anchoring workflow achieves superior visual consistency at 17.5% lower cost and 48% lower latency.
+                        </h2>
+
+                        <br><br>
+
+                        <!-- Visual Consistency Comparison -->
+                        <div class="box" style="background-color: #f8f9fa;">
+                            <h4 class="title is-5 has-text-centered" style="margin-bottom: 1rem;">Visual Consistency Comparison</h4>
+
+                            <div style="margin-bottom: 2rem;">
+                                <p class="has-text-centered has-text-weight-bold" style="color: #28a745; margin-bottom: 0.5rem;">Ours (Sequential Anchoring) — Visual Consistency = 4.42</p>
+                                <div class="columns is-mobile">
+                                    <div class="column is-one-third">
+                                        <figure class="image">
+                                            <img src="paper/fig/doc1_scene1.png" alt="Sequential Scene 1">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-one-third">
+                                        <figure class="image">
+                                            <img src="paper/fig/doc1_scene2.png" alt="Sequential Scene 2">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-one-third">
+                                        <figure class="image">
+                                            <img src="paper/fig/doc1_scene3.png" alt="Sequential Scene 3">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 1rem;">
+                                <p class="has-text-centered has-text-weight-bold" style="color: #dc3545; margin-bottom: 0.5rem;">All-Parallel Baseline — Visual Consistency = 3.89</p>
+                                <div class="columns is-mobile">
+                                    <div class="column is-one-third">
+                                        <figure class="image">
+                                            <img src="paper/fig/doc2_scene1.png" alt="Parallel Scene 1">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-one-third">
+                                        <figure class="image">
+                                            <img src="paper/fig/doc2_scene2.png" alt="Parallel Scene 2">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-one-third">
+                                        <figure class="image">
+                                            <img src="paper/fig/doc2_scene3.png" alt="Parallel Scene 3">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                                Figure 3: Visual consistency comparison between our sequential anchoring workflow (top) and the all-parallel baseline (bottom) on the same problem (four-pyramid P-ABCD). In our workflow, Scene 1 and Scene 2 render the identical pyramid structure—Scene 2 simply highlights the PAC face on top of the same base diagram—maintaining full geometric and stylistic consistency. In the all-parallel baseline, the pyramid in Scene 1 and Scene 2 is drawn differently, breaking visual coherence and forcing the reader to reconcile two inconsistent representations of the same object.
+                            </h2>
+                        </div>
+
+                        <br><br>
+
+                        <!-- Cost Analysis Table -->
+                        <h3 class="title is-4">Cost and Efficiency Analysis</h3>
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Avg Input Tokens</th>
+                                    <th>Avg Output Tokens</th>
+                                    <th>Input ($/M)</th>
+                                    <th>Output ($/M)</th>
+                                    <th>Avg Cost ($)</th>
+                                    <th>Latency (min)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Claude Sonnet 4.5</td>
+                                    <td>90,439</td>
+                                    <td>79,035</td>
+                                    <td>3.00</td>
+                                    <td>15.00</td>
+                                    <td>1.46</td>
+                                    <td>6.92</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini 3.0 Pro Preview</td>
+                                    <td>75,802</td>
+                                    <td>68,093</td>
+                                    <td>2.00</td>
+                                    <td>12.00</td>
+                                    <td>0.97</td>
+                                    <td>4.94</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-5</td>
+                                    <td>66,420</td>
+                                    <td>42,677</td>
+                                    <td>1.25</td>
+                                    <td>10.00</td>
+                                    <td>0.51</td>
+                                    <td>7.67</td>
+                                </tr>
+                                <tr style="background-color: #ffffcc;">
+                                    <td><strong>Kimi-K2.5 (Best Cost-Efficiency)</strong></td>
+                                    <td>58,689</td>
+                                    <td>54,893</td>
+                                    <td>0.45</td>
+                                    <td>2.20</td>
+                                    <td><strong style="color: green;">0.15</strong></td>
+                                    <td>6.34</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen 3.5-35B</td>
+                                    <td>61,883</td>
+                                    <td>37,737</td>
+                                    <td>0.16</td>
+                                    <td>1.30</td>
+                                    <td>0.06</td>
+                                    <td>5.34</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="subtitle has-text-centered">
+                            Table 3: Cost and latency analysis per problem (118 problems, average values). Kimi-K2.5 offers the best cost-efficiency at $0.15/problem.
+                        </h2>
+
+                        <br><br>
+                        <div class="columns is-centered">
+                            <div class="column is-two-thirds has-text-centered">
+                                <img src="paper/fig/fig_cost_quality.png" alt="Cost vs Quality" width="100%"/>
+                                <h2 class="subtitle">
+                                    Figure 5: Cost vs. quality trade-off across five models. Kimi-K2.5 offers the best cost-efficiency, achieving 4.07 at $0.15/problem.
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Contributions -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">Key Contributions</h2>
+                <div class="content has-text-left" style="font-size: 1.1rem;">
+                    <div class="contribution-item">An automated four-stage pipeline for generating diagram-rich K-12 STEM explanations with explicit geometric accuracy and visual consistency constraints</div>
+                    <div class="contribution-item">A curated benchmark of 118 problems across 3 grade levels and 5 subjects for standardized multimodal evaluation</div>
+                    <div class="contribution-item">An 8-dimension evaluation rubric with automated and human protocols grounded in educational psychology</div>
+                    <div class="contribution-item">Comparative study of five frontier LLMs identifying model-specific strengths and failure modes</div>
+                    <div class="contribution-item">Validation of LLM-as-judge reliability for multimodal content through correlation analysis with human expert ratings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Problem Solutions -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3 has-text-centered">Example Problem Solutions</h2>
+                <p class="has-text-centered" style="margin-bottom: 2rem; font-size: 1.1rem;">
+                    Below are examples of diagram-rich explanations generated by our system for various K-12 STEM problems. Click on any example to view the full solution with step-by-step explanations and geometrically accurate diagrams.
+                </p>
+                <div class="columns is-multiline" id="examples-container">
+                    <!-- Examples will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">Citation</h2>
+                <div class="content">
+                    <pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 5px;"><code>@article{eduillustrate2025,
+  title={EduIllustrate: An Agentic Pipeline for Generating Diagram-Rich Explanations of K-12 STEM Problems},
+  author={Author Names},
+  journal={Conference/Journal Name},
+  year={2025}
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    This website is adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Example problems data
+        const examples = [
+            {
+                id: "103",
+                title: "Problem 103: Square and Rhombus Area",
+                description: "Geometry - Grade 9",
+                folder: "doc_problem_103_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "46",
+                title: "Problem 46: Geometric Analysis",
+                description: "Middle School Mathematics",
+                folder: "doc_problem_46_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "4",
+                title: "Problem 4: Fundamental Concepts",
+                description: "Elementary Mathematics",
+                folder: "doc_problem_4_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "56",
+                title: "Problem 56: Algebraic Reasoning",
+                description: "Middle School Mathematics",
+                folder: "doc_problem_56_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "70",
+                title: "Problem 70: Advanced Geometry",
+                description: "High School Mathematics",
+                folder: "doc_problem_70_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "8",
+                title: "Problem 8: Basic Arithmetic",
+                description: "Elementary Mathematics",
+                folder: "doc_problem_8_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "91",
+                title: "Problem 91: Trigonometry",
+                description: "High School Mathematics",
+                folder: "doc_problem_91_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "97",
+                title: "Problem 97: Calculus Concepts",
+                description: "High School Mathematics",
+                folder: "doc_problem_97_gemini-3-pro-preview",
+                badge: "Mathematics"
+            },
+            {
+                id: "98",
+                title: "Problem 98: Advanced Analysis",
+                description: "High School Mathematics",
+                folder: "doc_problem_98_gemini-3-pro-preview",
+                badge: "Mathematics"
+            }
+        ];
+
+        // Render example cards
+        const container = document.getElementById('examples-container');
+        examples.forEach(example => {
+            const cardHTML = `
+                <div class="column is-one-third">
+                    <div class="card example-card" onclick="window.location.href='examples/${example.folder}/solution.html'">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img class="example-image" src="examples/${example.folder}/scene1.png"
+                                     alt="${example.title}"
+                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect fill=%22%23eee%22 width=%22400%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23999%22 font-size=%2220%22%3ENo Preview%3C/text%3E%3C/svg%3E'">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="title is-5">${example.title}</h4>
+                                <p class="subtitle is-6">${example.description}</p>
+                                <span class="tag is-info">${example.badge}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += cardHTML;
+        });
+    </script>
+</body>
+</html>

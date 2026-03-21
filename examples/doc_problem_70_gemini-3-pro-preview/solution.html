@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem_70_math_g12</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #444;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mjx-math {
+            font-size: 1.1em;
+        }
+
+        .problem-statement {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+        }
+
+        .options {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .conclusion {
+            background: #d4edda;
+            padding: 1.5rem;
+            border-left: 4px solid #28a745;
+            margin: 1.5rem 0;
+        }
+
+        .verification {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Back to Examples</a>
+        <h1>problem_70_math_g12</h1>
+
+<h2>Problem Statement</h2><div class="problem-statement">
+<p>
+As shown in the figure, in the quadrangular pyramid \(P-ABCD\), \(PA \perp\) base \(ABCD\), and all edges of the base are equal (implying \(ABCD\) is a rhombus). \(M\) is a moving point on \(PC\). When point \(M\) satisfies ________, plane \(MBD \perp\) plane \(PCD\). (Just fill in one condition that you consider correct.)
+</p>
+
+</div><h2>Solution Approach</h2>
+<p>
+To solve this problem, we need to use the theorems regarding perpendicular planes. Specifically, if a line in one plane is perpendicular to the other plane, then the two planes are perpendicular. We will analyze the geometric properties of the pyramid, specifically the relationship between the diagonal \(BD\) and the edge \(PC\), to derive the necessary condition.
+</p>
+
+<img src="scene1.png" alt="Diagram">
+
+<strong>Step 1: Analyze the Geometry of the Base and Vertical Edge</strong>
+
+<p>
+First, let's look at the given properties:
+1.  The base edges are all equal (\(AB=BC=CD=DA\)). This means the base \(ABCD\) is a <strong>rhombus</strong>.
+2.  \(PA \perp\) Base \(ABCD\).
+</p>
+
+<p>
+Because \(ABCD\) is a rhombus, its diagonals are perpendicular. Let's denote the intersection of diagonals \(AC\) and \(BD\) as point \(O\) (though we don't strictly need to label it to see the relationship).
+\[AC \perp BD\]
+</p>
+
+<p>
+Because \(PA\) is perpendicular to the entire base plane \(ABCD\), it is perpendicular to every line in that base. Therefore:
+\[PA \perp BD\]
+</p>
+
+<img src="scene2.png" alt="Diagram">
+
+<strong>Step 2: Establish the Relationship between Line BD and Line PC</strong>
+
+<p>
+We have established two perpendicularities involving line \(BD\):
+1.  \(BD \perp AC\)
+2.  \(BD \perp PA\)
+</p>
+
+<p>
+Since \(PA\) and \(AC\) are two intersecting lines that define the plane \(PAC\), line \(BD\) must be perpendicular to the entire plane \(PAC\).
+\[BD \perp \text{Plane } PAC\]
+</p>
+
+<p>
+Since the edge \(PC\) lies within the plane \(PAC\), line \(BD\) must be perpendicular to line \(PC\).
+\[BD \perp PC\]
+</p>
+
+<p>
+This is a crucial finding. We now know that regardless of where \(M\) is, the line \(BD\) (which is part of plane \(MBD\)) is perpendicular to \(PC\) (which is part of plane \(PCD\)).
+</p>
+
+<img src="scene3.png" alt="Diagram">
+
+<strong>Step 3: Determine the Condition for Plane Perpendicularity</strong>
+
+<p>
+We want to prove: <strong>Plane \(MBD \perp\) Plane \(PCD\)</strong>.
+</p>
+
+<p>
+According to the determination theorem for perpendicular planes: *If a plane contains a line that is perpendicular to another plane, then the two planes are perpendicular.*
+</p>
+
+<p>
+We already know that \(BD \perp PC\).
+</p>
+<ul><li>\(BD\) is in Plane \(MBD\).</li><li>\(PC\) is in Plane \(PCD\).</li></ul>
+
+<p>
+To make Plane \(MBD \perp\) Plane \(PCD\), it would be sufficient to make the line \(PC\) perpendicular to the *entire* Plane \(MBD\).
+</p>
+
+<p>
+For line \(PC\) to be perpendicular to Plane \(MBD\), it must be perpendicular to two intersecting lines in Plane \(MBD\).
+We already have \(PC \perp BD\). We just need \(PC\) to be perpendicular to one other line in Plane \(MBD\) passing through the intersection point. The most obvious candidates are \(DM\) or \(BM\).
+</p>
+
+<p>
+If we set the condition <strong>\(DM \perp PC\)</strong>, then:
+1.  \(PC \perp BD\) (Proven in Step 2)
+2.  \(PC \perp DM\) (Proposed Condition)
+3.  \(BD \cap DM = D\)
+</p>
+
+<p>
+Therefore, \(PC \perp\) Plane \(MBD\).
+Since \(PC \subset\) Plane \(PCD\), this implies Plane \(PCD \perp\) Plane \(MBD\).
+</p>
+
+<img src="scene4.png" alt="Diagram">
+
+<strong>Conclusion and Verification</strong>
+
+<p>
+The condition \(DM \perp PC\) implies that \(\angle PMC = 90^\circ\).
+</p>
+
+<p>
+Alternatively, due to the symmetry of the rhombus base (symmetric about \(AC\)), the condition \(BM \perp PC\) is equivalent. Another valid geometric description is that \(M\) is the orthocenter of \(\triangle PCD\) (though that is overly specific), or simply that \(M\) is the projection of \(D\) onto \(PC\).
+</p>
+
+<p>
+The most direct and standard answer is the geometric perpendicularity.
+</p>
+
+<h2>Final Answer</h2>
+<p>
+\(DM \perp PC\) (or \(BM \perp PC\))
+</p>
+
+
+    </div>
+</body>
+</html>

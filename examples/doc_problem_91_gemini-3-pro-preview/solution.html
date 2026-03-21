@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem_91_physics_g12</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #444;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mjx-math {
+            font-size: 1.1em;
+        }
+
+        .problem-statement {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+        }
+
+        .options {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .conclusion {
+            background: #d4edda;
+            padding: 1.5rem;
+            border-left: 4px solid #28a745;
+            margin: 1.5rem 0;
+        }
+
+        .verification {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Back to Examples</a>
+        <h1>problem_91_physics_g12</h1>
+
+<h2>Problem Statement</h2><div class="problem-statement">
+<p>
+As shown in the figure, three charged small spheres A, B, and C are fixed on a smooth, insulated horizontal surface. Their masses are all \(m\), and the distance between any two spheres is \(r\). Spheres A and B carry positive charges, both with magnitude \(q\). A horizontal force \(F\) is applied to sphere C, and simultaneously, the three spheres are released. To ensure that the distance \(r\) between the three spheres remains unchanged during the motion, calculate:
+(1) The polarity and magnitude of the charge on sphere C.
+(2) The magnitude of the horizontal force \(F\).
+</p>
+
+</div><h2>Solution Approach</h2>
+<p>
+Since the distances between the spheres remain constant, the system maintains its equilateral triangle shape and moves as a rigid body. This implies that all three spheres share the same acceleration vector \(a\). We will analyze the forces acting on one of the spheres (Sphere A) to determine the unknown charge of C using component analysis. Then, we will apply Newton's Second Law to the entire system to find the external force \(F\).
+</p>
+
+<img src="scene1.png" alt="Diagram">
+
+<strong>Step 1: Determine the Polarity of Sphere C</strong>
+
+<p>
+Let's analyze the forces acting on sphere A. 
+</p>
+
+<p>
+1.  <strong>Interaction with B:</strong> Since A and B are both positively charged, B exerts a repulsive electrostatic force (\(F_{BA}\)) on A. Given the geometry (A is directly above B in the vertical base of the triangle), this force pushes A vertically upward.
+2.  <strong>Constraint:</strong> For the triangle to maintain its shape while accelerating horizontally to the right, sphere A must not move vertically relative to B. This means the net vertical force on A must be zero.
+3.  <strong>Conclusion:</strong> To cancel the upward repulsive force from B, the force from C (\(F_{CA}\)) must have a downward component. Therefore, C must attract A. Since A is positive, <strong>Sphere C must be negatively charged.</strong>
+</p>
+
+<img src="scene2.png" alt="Diagram">
+
+<strong>Step 2: Calculate the Magnitude of Charge C (\(q_C\))</strong>
+
+<p>
+We apply Coulomb's Law, where \(k\) is the electrostatic constant. The magnitude of the force between any two charges \(q_1, q_2\) separated by distance \(r\) is \(F = k \frac{|q_1 q_2|}{r^2}\).
+</p>
+
+<h2>Vertical Force Balance on A</h2>
+<p>
+The upward repulsive force from B must equal the downward vertical component of the attractive force from C.
+</p>
+
+<p>
+*   Force from B: \(F_{BA} = k \frac{q^2}{r^2}\) (Points Up)
+*   Force from C: \(F_{CA} = k \frac{q \cdot q_C}{r^2}\) (Points 30° below horizontal)
+</p>
+
+<p>
+Balancing the vertical components (\(\sum F_y = 0\)):
+\[F_{BA} = F_{CA} \sin(30^\circ)\]
+</p>
+
+<p>
+Substituting the Coulomb expressions:
+\[k \frac{q^2}{r^2} = \left( k \frac{q \cdot q_C}{r^2} \right) \cdot \frac{1}{2}\]
+</p>
+
+<p>
+Solving for \(q_C\):
+\[q = \frac{q_C}{2} \implies q_C = 2q\]
+</p>
+
+<strong>Answer (1):</strong> Sphere C carries a negative charge with magnitude <strong>\(2q\)</strong>.
+
+<img src="scene3.png" alt="Diagram">
+
+<strong>Step 3: Determine the Acceleration (\(a\))</strong>
+
+<p>
+Now we look at the horizontal forces on Sphere A to find the system's acceleration. The only horizontal force acting on A is the horizontal component of the attraction from C.
+</p>
+
+<p>
+\[F_{Ax} = F_{CA} \cos(30^\circ)\]
+</p>
+
+<p>
+Substitute \(F_{CA} = k \frac{q(2q)}{r^2} = \frac{2kq^2}{r^2}\):
+\[F_{Ax} = \left( \frac{2kq^2}{r^2} \right) \cdot \frac{\sqrt{3}}{2} = \frac{\sqrt{3}kq^2}{r^2}\]
+</p>
+
+<p>
+According to Newton's Second Law for Sphere A (\(F_{net} = ma\)):
+\[ma = \frac{\sqrt{3}kq^2}{r^2} \implies a = \frac{\sqrt{3}kq^2}{mr^2}\]
+</p>
+
+<img src="scene4.png" alt="Diagram">
+
+<strong>Step 4: Calculate the External Force \(F\)</strong>
+
+<p>
+We can now treat the three spheres (A, B, and C) as a single system with total mass \(M_{total} = m + m + m = 3m\). 
+</p>
+
+<p>
+The internal electrostatic forces between A, B, and C cancel out for the system as a whole. The only external horizontal force is the applied force \(F\).
+</p>
+
+<p>
+Using Newton's Second Law for the whole system:
+\[F = M_{total} \cdot a\]
+</p>
+
+<p>
+Substitute the acceleration we found in Step 3:
+\[F = 3m \cdot \left( \frac{\sqrt{3}kq^2}{mr^2} \right)\]
+</p>
+
+<p>
+\[F = \frac{3\sqrt{3}kq^2}{r^2}\]
+</p>
+
+<h2>Final Answer</h2>
+<p>
+(1) Sphere C is <strong>negatively charged</strong> with a charge quantity of <strong>\(2q\)</strong>.
+(2) The magnitude of the horizontal force is <strong>\(F = \frac{3\sqrt{3}kq^2}{r^2}\)</strong>.
+</p>
+
+
+    </div>
+</body>
+</html>

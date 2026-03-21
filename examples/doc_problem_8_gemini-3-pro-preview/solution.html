@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem_8_physics_g9</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #444;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mjx-math {
+            font-size: 1.1em;
+        }
+
+        .problem-statement {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+        }
+
+        .options {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .conclusion {
+            background: #d4edda;
+            padding: 1.5rem;
+            border-left: 4px solid #28a745;
+            margin: 1.5rem 0;
+        }
+
+        .verification {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Back to Examples</a>
+        <h1>problem_8_physics_g9</h1>
+
+<h2>Problem Statement</h2><div class="problem-statement">
+
+<p>
+Student Xiao Ming conducts an experimental investigation using the circuit shown in the diagram. Lamps \(L_1\) and \(L_2\) have the same specifications. When the switch is closed, one lamp lights up while the other does not, and the voltmeter shows a reading. The possible cause of the fault is:
+</p>
+
+<ul><li><strong>A.</strong> \(L_1\) is short-circuited</li><li><strong>B.</strong> \(L_1\) is open-circuited</li>
+<li><strong>C.</strong> \(L_2\) is short-circuited</li><li><strong>D.</strong> \(L_2\) is open-circuited</li></ul>
+
+</div><h2>Solution Approach</h2>
+
+<p>
+1.  <strong>Analyze the Circuit Structure:</strong> Determine if the lamps are in series or parallel and identify which component the voltmeter is measuring.
+2.  <strong>Analyze the Symptoms:</strong> Use the conditions "one lamp on, one off" and "voltmeter has a reading" to deduce the nature of the fault (Short Circuit vs. Open Circuit).
+3.  <strong>Evaluate Options:</strong> Test each fault scenario to see if it matches the observed symptoms.
+</p>
+
+<img src="scene1.png" alt="Diagram">
+
+<strong>Step 1: Circuit Analysis</strong>
+
+<p>
+First, let's translate the physical connections into a schematic diagram (as shown above).
+</p>
+
+<p>
+*   <strong>Current Path:</strong> Starting from the positive terminal of the power source, the current flows through the <strong>Switch</strong>, then through <strong>Lamp \(L_1\)</strong>, then through <strong>Lamp \(L_2\)</strong>, and finally returns to the negative terminal. Since the current flows through the lamps sequentially, \(L_1\) and \(L_2\) are connected in <strong>series</strong>.
+*   <strong>Voltmeter Connection:</strong> The voltmeter terminals are connected to the two ends of <strong>Lamp \(L_2\)</strong>. Therefore, the voltmeter measures the voltage across \(L_2\).
+</p>
+
+<strong>Step 2: Analyzing the Fault Symptoms</strong>
+
+<p>
+*   <strong>Symptom 1: "One lamp lights up, one does not."</strong>
+In a series circuit, if there is an <strong>open circuit</strong> (a break in the wire or filament) anywhere in the main loop, current cannot flow, and <strong>neither</strong> lamp would light up. Since one lamp is on, the circuit must be continuous (conducting current). This eliminates the possibility of an open circuit in the main loop. The fault must be a <strong>short circuit</strong> in one of the lamps.
+</p>
+
+<p>
+*   <strong>Symptom 2: "Voltmeter has a reading."</strong>
+This means there is a potential difference across the component the voltmeter is measuring (\(L_2\)).
+</p>
+
+<p>
+Let's test the specific options based on this logic.
+</p>
+
+<img src="scene2.png" alt="Diagram">
+
+<strong>Step 3: Evaluating the Options</strong>
+
+<strong>Option A: \(L_1\) is short-circuited</strong> (Visualized above)
+<p>
+*   <strong>Analysis:</strong> If \(L_1\) is short-circuited, it acts like a plain wire. Current bypasses the filament of \(L_1\), so \(L_1\) does <strong>not</strong> light up.
+*   <strong>Circuit State:</strong> The circuit effectively becomes a simple circuit with just \(L_2\). The resistance of the circuit decreases, and current flows through \(L_2\).
+*   <strong>Result:</strong> \(L_2\) <strong>lights up</strong>.
+*   <strong>Voltmeter:</strong> Since the voltmeter is connected across \(L_2\) (which is lit and has current flowing through it), it measures the voltage across \(L_2\) (which is approximately the source voltage). The voltmeter <strong>has a reading</strong>.
+*   <strong>Conclusion:</strong> This matches all conditions: One off (\(L_1\)), One on (\(L_2\)), Voltmeter has reading. <strong>(This is the correct answer)</strong>
+</p>
+
+<strong>Option B: \(L_1\) is open-circuited</strong>
+<p>
+*   <strong>Analysis:</strong> If \(L_1\) is broken, the series circuit is interrupted.
+*   <strong>Result:</strong> No current flows. Both \(L_1\) and \(L_2\) are <strong>OFF</strong>.
+*   <strong>Conclusion:</strong> Contradicts "one lamp lights up".
+</p>
+
+<img src="scene3.png" alt="Diagram">
+
+<strong>Option C: \(L_2\) is short-circuited</strong> (Visualized above)
+<p>
+*   <strong>Analysis:</strong> If \(L_2\) is short-circuited, current bypasses it. \(L_2\) does <strong>not</strong> light up.
+*   <strong>Circuit State:</strong> The circuit effectively acts as if only \(L_1\) is present.
+*   <strong>Result:</strong> \(L_1\) <strong>lights up</strong>. (This fits the "one on, one off" condition).
+*   <strong>Voltmeter:</strong> The voltmeter is connected in parallel with \(L_2\). Since \(L_2\) is shorted (resistance \(\approx 0\)), the potential difference across it is \(V = I \times 0 = 0\text{V}\).
+*   <strong>Conclusion:</strong> The voltmeter would show <strong>no reading</strong> (0V). This contradicts the problem statement "voltage meter has a reading". Thus, this option is incorrect.
+</p>
+
+<strong>Option D: \(L_2\) is open-circuited</strong>
+<p>
+*   <strong>Analysis:</strong> If \(L_2\) is broken, the main circuit path is broken.
+*   <strong>Result:</strong> Although the voltmeter bridges the break, voltmeters have extremely high internal resistance. The current in the circuit would be tiny (\(I \approx 0\)). Neither lamp would light up visibly.
+*   <strong>Conclusion:</strong> Contradicts "one lamp lights up".
+</p>
+
+<h2>Final Conclusion</h2>
+<p>
+The only scenario that satisfies "One lamp on, one lamp off" and "Voltmeter has a reading" (where the voltmeter is across the lit lamp) is when the <strong>other</strong> lamp is short-circuited. Since the voltmeter is across \(L_2\), and it has a reading, \(L_2\) must be the working (lit) lamp. Therefore, \(L_1\) must be the faulty (short-circuited) lamp.
+</p>
+
+<strong>Answer:</strong> A
+
+
+    </div>
+</body>
+</html>

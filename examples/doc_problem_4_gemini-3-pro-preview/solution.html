@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem_4_physics_g9</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #444;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mjx-math {
+            font-size: 1.1em;
+        }
+
+        .problem-statement {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+        }
+
+        .options {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .conclusion {
+            background: #d4edda;
+            padding: 1.5rem;
+            border-left: 4px solid #28a745;
+            margin: 1.5rem 0;
+        }
+
+        .verification {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Back to Examples</a>
+        <h1>problem_4_physics_g9</h1>
+
+<h2>Problem Statement</h2><div class="problem-statement">
+<p>
+The circuit is shown in the figure. Which of the following analyses is incorrect?
+</p>
+<ul><li><strong>A.</strong> After S is closed, the circuit will short-circuit.</li><li><strong>B.</strong> After S is closed, L₁ and L₂ are connected in parallel and both can light up.</li>
+<li><strong>C.</strong> To make L₁ and L₂ connected in series, wire *b* can be removed.</li><li><strong>D.</strong> If wire *M* is moved from terminal B to terminal A, then lamps L₁ and L₂ are connected in parallel.</li></ul>
+
+</div><h2>Solution Approach</h2>
+<p>
+To solve this problem, we need to translate the physical wiring diagram into a circuit schematic to analyze the current paths. We will:
+1. Trace the current flow from the positive terminal of the power source.
+2. Identify nodes and connections to determine if the bulbs are in series, parallel, or if a short circuit exists.
+3. Evaluate each option (A, B, C, D) by conceptually modifying the circuit as described.
+4. Identify the false statement among the options.
+</p>
+
+<img src="scene1.png" alt="Diagram">
+
+<strong>Step 1: Analyzing the Original Circuit (Options A and B)</strong>
+
+<p>
+Let's trace the circuit connections based on the diagram:
+</p>
+<ul><li>The positive terminal (+) of the battery connects to terminal <strong>D</strong> of lamp \(L_2\).</li><li>A wire (labeled <strong>b</strong>) directly connects terminal <strong>D</strong> to terminal <strong>B</strong> of lamp \(L_1\).</li>
+<li>A wire (labeled <strong>M</strong>) connects terminal <strong>B</strong> to the switch <strong>S</strong>.</li><li>The switch <strong>S</strong> connects to the negative terminal (-) of the battery.</li></ul>
+
+<h2>Analysis of Current Flow</h2>
+<p>
+When switch <strong>S</strong> is closed, current flows from the positive terminal to <strong>D</strong>. At <strong>D</strong>, the current has two choices: go through lamp \(L_2\) or go through the conductive wire <strong>b</strong>. Since wire <strong>b</strong> has negligible resistance, the current flows directly to <strong>B</strong>. From <strong>B</strong>, it flows through wire <strong>M</strong> and the switch back to the negative terminal.
+</p>
+
+<h2>Conclusion for A and B</h2>
+<ul><li>The path <strong>Battery(+) → D → B → S → Battery(-)</strong> contains no electrical load (bulbs), only wires and a switch. This creates a <strong>short circuit</strong>.</li><li>Because the current bypasses the bulbs through this low-resistance path, the bulbs will not light up, and the battery or wires could be damaged.</li>
+<li>Therefore, <strong>Option A is correct</strong> (a short circuit occurs).</li><li><strong>Option B is incorrect</strong> (the bulbs do not light up; they are shorted out). Since the question asks for the *error*, B is our target answer.</li></ul>
+
+<img src="scene2.png" alt="Diagram">
+
+<strong>Step 2: Analyzing Option C (Series Connection)</strong>
+
+<p>
+Option C suggests removing wire <strong>b</strong>. Let's see what happens to the path of the current:
+1. Current leaves the positive terminal to <strong>D</strong>.
+2. Without wire <strong>b</strong>, current *must* go through lamp \(L_2\) to reach terminal <strong>C</strong>.
+3. From <strong>C</strong>, it travels through wire <strong>a</strong> to terminal <strong>A</strong>.
+4. From <strong>A</strong>, it flows through lamp \(L_1\) to terminal <strong>B</strong>.
+5. From <strong>B</strong>, it goes through wire <strong>M</strong> and the switch to the negative terminal.
+</p>
+
+<h2>Conclusion for C</h2>
+<p>
+The current flows sequentially through \(L_2\) and then \(L_1\) (\(L_2 \rightarrow L_1\)). There is only one path for the current, which is the definition of a <strong>series circuit</strong>.
+</p>
+<ul><li>Therefore, <strong>Option C is correct</strong>.</li></ul>
+
+<img src="scene3.png" alt="Diagram">
+
+<strong>Step 3: Analyzing Option D (Parallel Connection)</strong>
+
+<p>
+Option D suggests moving wire <strong>M</strong> from terminal <strong>B</strong> to terminal <strong>A</strong>. Let's analyze the nodes (junction points):
+</p>
+<ul><li><strong>High Potential Node:</strong> The positive terminal connects to <strong>D</strong>. Wire <strong>b</strong> connects <strong>D</strong> to <strong>B</strong>. So, points <strong>D</strong> and <strong>B</strong> are at the same high potential.</li><li><strong>Low Potential Node:</strong> The switch (connected to negative) now connects to <strong>A</strong>. Wire <strong>a</strong> connects <strong>A</strong> to <strong>C</strong>. So, points <strong>A</strong> and <strong>C</strong> are at the same low potential.</li></ul>
+
+<h2>Connections</h2>
+<ul><li>Lamp \(L_1\) is connected between <strong>A</strong> (Low) and <strong>B</strong> (High).</li><li>Lamp \(L_2\) is connected between <strong>C</strong> (Low) and <strong>D</strong> (High).</li></ul>
+
+<h2>Conclusion for D</h2>
+<p>
+Since both lamps are connected independently across the same high and low potential points, the current splits to go through both simultaneously. This is a <strong>parallel circuit</strong>.
+</p>
+<ul><li>Therefore, <strong>Option D is correct</strong>.</li></ul>
+
+<h2>Final Answer</h2>
+<p>
+The analysis shows that statements A, C, and D are physically correct descriptions of the circuit behavior. Statement B claims the bulbs will light up in parallel in the original configuration, but we proved the original configuration is a short circuit where bulbs do not light.
+</p>
+
+<p>
+The error is in option <strong>B</strong>.
+</p>
+
+
+    </div>
+</body>
+</html>

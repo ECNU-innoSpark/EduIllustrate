@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem_97_math_g9</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #444;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mjx-math {
+            font-size: 1.1em;
+        }
+
+        .problem-statement {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+        }
+
+        .options {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .conclusion {
+            background: #d4edda;
+            padding: 1.5rem;
+            border-left: 4px solid #28a745;
+            margin: 1.5rem 0;
+        }
+
+        .verification {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Back to Examples</a>
+        <h1>problem_97_math_g9</h1>
+
+<h2>Problem Statement</h2><div class="problem-statement">
+<p>
+Given that the approximate graph of the quadratic function \(y=ax^{2}+bx+1\) is as shown in the figure, which quadrant does the graph of the linear function \(y=ax+b\) <strong>not</strong> pass through?
+</p>
+
+<ul><li><strong>A.</strong> First quadrant</li><li><strong>B.</strong> Second quadrant</li>
+<li><strong>C.</strong> Third quadrant</li><li><strong>D.</strong> Fourth quadrant</li></ul>
+
+</div><h2>Solution Approach</h2>
+<p>
+To solve this problem, we will first analyze the provided graph of the quadratic function to determine the signs (positive or negative) of the coefficients \(a\) and \(b\). Once we know the signs of \(a\) and \(b\), we will sketch the graph of the linear function \(y=ax+b\) to see which quadrants it traverses.
+</p>
+
+<img src="scene1.png" alt="Diagram">
+
+<strong>Step 1: Determine the signs of \(a\) and \(b\).</strong>
+
+<p>
+By observing the graph of the quadratic function \(y=ax^{2}+bx+1\):
+</p>
+
+<p>
+1.  <strong>Sign of \(a\)</strong>: The parabola opens <strong>downwards</strong>, which indicates that the coefficient of the squared term is negative.
+\[a < 0\]
+</p>
+
+<p>
+2.  <strong>Sign of \(b\)</strong>: The axis of symmetry for a quadratic function is given by the line \(x = -\frac{b}{2a}\).
+</p>
+<ul><li>From the graph, the vertex is to the left of the y-axis, meaning the axis of symmetry is negative (\(x < 0\)).</li><li>We have the inequality: \(-\frac{b}{2a} < 0\).</li>
+<li>Since we already determined that \(a < 0\), the denominator \(2a\) is negative.</li><li>For the entire fraction \(-\frac{b}{\text{negative}}\) to be negative, the term \(-b\) must be positive (since a positive divided by a negative is negative). Or more simply:</li></ul>
+<p>
+\[-\frac{b}{2a} < 0 \implies \frac{b}{2a} > 0\]
+Since \(2a < 0\), \(b\) must also be negative for the ratio to be positive.
+</p>
+<ul><li>Therefore:</li></ul>
+<p>
+\[b < 0\]
+</p>
+
+<p>
+So, we have established that <strong>\(a\) is negative</strong> and <strong>\(b\) is negative</strong>.
+</p>
+
+<img src="scene2.png" alt="Diagram">
+
+<strong>Step 2: Analyze the path of the linear function \(y=ax+b\).</strong>
+
+<p>
+Now we analyze the linear equation using the signs we found (\(a < 0\) and \(b < 0\)):
+</p>
+
+<p>
+1.  <strong>Slope (\(a\))</strong>: The slope is \(a\), which is negative. This means the line goes <strong>downhill</strong> from left to right.
+2.  <strong>Y-intercept (\(b\))</strong>: The y-intercept is \(b\), which is negative. This means the line crosses the y-axis <strong>below</strong> the origin (on the negative y-axis).
+</p>
+
+<p>
+Let's trace the line:
+</p>
+<ul><li>It crosses the y-axis at \((0, b)\) where \(b < 0\). This point is on the boundary between the Third and Fourth quadrants.</li><li>To find the x-intercept, we set \(y=0\):</li></ul>
+<p>
+\[0 = ax + b \implies ax = -b \implies x = -\frac{b}{a}\]
+</p>
+<ul><li>Since \(b\) is negative, \(-b\) is positive.</li><li>Since \(a\) is negative, a positive number divided by a negative number results in a negative value.</li>
+<li>Therefore, the x-intercept is <strong>negative</strong>. The line crosses the x-axis to the left of the origin.</li></ul>
+
+<h2>Conclusion on Quadrants</h2>
+<ul><li>The line passes through the <strong>Second Quadrant</strong> (where \(x\) is very negative and \(y\) is positive).</li><li>It crosses into the <strong>Third Quadrant</strong> (between the negative x-intercept and negative y-intercept).</li>
+<li>It continues into the <strong>Fourth Quadrant</strong> (where \(x\) is positive and \(y\) becomes more negative).</li></ul>
+
+<p>
+The only quadrant the line does not enter is the <strong>First Quadrant</strong> (where \(x>0\) and \(y>0\)).
+</p>
+
+<h2>Final Answer</h2>
+
+<p>
+The graph of the linear function \(y=ax+b\) passes through the Second, Third, and Fourth quadrants. It does <strong>not</strong> pass through the <strong>First quadrant</strong>.
+</p>
+
+<p>
+Therefore, the correct option is <strong>A</strong>.
+</p>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# Source code directories (not part of gh-pages)
+src/
+eval_suite/
+mllm_tools/
+task_generator/
+annotation_app/
+output/
+
+# Python scripts (keep only generate_html.py)
+anthropic_proxy.py
+
+# Logs
+*.log

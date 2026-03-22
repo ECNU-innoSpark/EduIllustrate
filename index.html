@@ -368,6 +368,153 @@
 
                         <br><br>
 
+                        <!-- Subject and Grade Level Performance -->
+                        <h3 class="title is-4">Performance by Subject and Grade Level</h3>
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Math</th>
+                                    <th>Physics</th>
+                                    <th>Chemistry</th>
+                                    <th>Biology</th>
+                                    <th>Geography</th>
+                                    <th style="border-left: 2px solid #ddd;">Elementary</th>
+                                    <th>Middle</th>
+                                    <th>High School</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #e8f4f8;">
+                                    <td><strong>Gemini 3.0 Pro Preview</strong></td>
+                                    <td>4.42</td>
+                                    <td>4.44</td>
+                                    <td>4.48</td>
+                                    <td>4.43</td>
+                                    <td>4.07</td>
+                                    <td style="border-left: 2px solid #ddd;">4.27</td>
+                                    <td>4.41</td>
+                                    <td><strong>4.42</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Kimi-K2.5</td>
+                                    <td>4.17</td>
+                                    <td>4.02</td>
+                                    <td>4.13</td>
+                                    <td>4.17</td>
+                                    <td>3.71</td>
+                                    <td style="border-left: 2px solid #ddd;">3.97</td>
+                                    <td>4.03</td>
+                                    <td>4.13</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude Sonnet 4.5</td>
+                                    <td>3.17</td>
+                                    <td>3.15</td>
+                                    <td>3.37</td>
+                                    <td>3.06</td>
+                                    <td>2.65</td>
+                                    <td style="border-left: 2px solid #ddd;">3.32</td>
+                                    <td>3.04</td>
+                                    <td>3.17</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-5</td>
+                                    <td>3.16</td>
+                                    <td>3.05</td>
+                                    <td>3.81</td>
+                                    <td>3.03</td>
+                                    <td>2.55</td>
+                                    <td style="border-left: 2px solid #ddd;">3.85</td>
+                                    <td>3.09</td>
+                                    <td>3.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen 3.5-35B</td>
+                                    <td>3.19</td>
+                                    <td>2.83</td>
+                                    <td>3.18</td>
+                                    <td>3.05</td>
+                                    <td>2.25</td>
+                                    <td style="border-left: 2px solid #ddd;">3.64</td>
+                                    <td>2.93</td>
+                                    <td>2.90</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="subtitle has-text-centered">
+                            Table 2: Model performance by subject (left columns) and grade level (right columns). Mathematics and physics consistently achieve highest scores. Gemini and Kimi maintain consistency across grade levels, while other models degrade substantially on high school problems.
+                        </h2>
+
+                        <br><br>
+
+                        <!-- Human-AI Agreement Analysis -->
+                        <h3 class="title is-4">Human-AI Agreement Analysis</h3>
+                        <p style="margin-bottom: 1rem;">We evaluated 30 explanations with 20 expert raters to validate LLM-as-judge reliability. The table shows inter-rater reliability (Krippendorff's α) and human-AI agreement (Spearman's ρ).</p>
+                        <div class="columns">
+                            <div class="column is-two-thirds is-offset-2">
+                                <table class="table is-fullwidth is-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Dimension</th>
+                                            <th>Spearman ρ</th>
+                                            <th>Krippendorff α</th>
+                                            <th>Reliability</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="background-color: #d4edda;">
+                                            <td><strong>LC</strong> (Logical Coherence)</td>
+                                            <td><strong>0.89</strong></td>
+                                            <td>0.84</td>
+                                            <td><strong>Strong</strong></td>
+                                        </tr>
+                                        <tr style="background-color: #d4edda;">
+                                            <td><strong>DPA</strong> (Diagram-Problem Alignment)</td>
+                                            <td><strong>0.83</strong></td>
+                                            <td>0.80</td>
+                                            <td><strong>Strong</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>TC</strong> (Typographic Clarity)</td>
+                                            <td>0.77</td>
+                                            <td>0.67</td>
+                                            <td>Strong-Moderate</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>PE</strong> (Pedagogical Effectiveness)</td>
+                                            <td>0.70</td>
+                                            <td>0.68</td>
+                                            <td>Moderate</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>TDC</strong> (Text-Diagram Coordination)</td>
+                                            <td>0.66</td>
+                                            <td>0.64</td>
+                                            <td>Moderate</td>
+                                        </tr>
+                                        <tr style="background-color: #f8d7da;">
+                                            <td><strong>VC</strong> (Visual Consistency)</td>
+                                            <td>0.47</td>
+                                            <td>0.30</td>
+                                            <td>Weak</td>
+                                        </tr>
+                                        <tr style="background-color: #f8d7da;">
+                                            <td><strong>ELQ</strong> (Element Layout Quality)</td>
+                                            <td>0.39</td>
+                                            <td>0.32</td>
+                                            <td>Weak</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <h2 class="subtitle has-text-centered">
+                            Table 3: Human-AI agreement and inter-rater reliability (30 explanations, 20 raters). Logical Coherence and Diagram-Problem Alignment achieve strong agreement (ρ ≥ 0.80), validating LLM-as-judge for objective dimensions. Visual dimensions show weak reliability, indicating LLMs struggle with low-level visual artifacts.
+                        </h2>
+
+                        <br><br>
+
                         <!-- Workflow Ablation Table -->
                         <h3 class="title is-4">Workflow Ablation Study</h3>
                         <table class="table is-fullwidth is-striped">
@@ -401,7 +548,7 @@
                             </tbody>
                         </table>
                         <h2 class="subtitle has-text-centered">
-                            Table 2: Workflow comparison using Gemini 3.0 Pro Preview on 118 problems. Our sequential anchoring workflow achieves superior visual consistency at 17.5% lower cost and 48% lower latency.
+                            Table 4: Workflow comparison using Gemini 3.0 Pro Preview on 118 problems. Our sequential anchoring workflow achieves superior visual consistency at 17.5% lower cost and 48% lower latency.
                         </h2>
 
                         <br><br>
@@ -522,7 +669,7 @@
                             </tbody>
                         </table>
                         <h2 class="subtitle has-text-centered">
-                            Table 3: Cost and latency analysis per problem (118 problems, average values). Kimi-K2.5 offers the best cost-efficiency at $0.15/problem.
+                            Table 5: Cost and latency analysis per problem (118 problems, average values). Kimi-K2.5 offers the best cost-efficiency at $0.15/problem.
                         </h2>
 
                         <br><br>
@@ -530,7 +677,7 @@
                             <div class="column is-two-thirds has-text-centered">
                                 <img src="paper/fig/fig_cost_quality.png" alt="Cost vs Quality" width="100%"/>
                                 <h2 class="subtitle">
-                                    Figure 5: Cost vs. quality trade-off across five models. Kimi-K2.5 offers the best cost-efficiency, achieving 4.07 at $0.15/problem.
+                                    Figure 6: Cost vs. quality trade-off across five models. Kimi-K2.5 offers the best cost-efficiency, achieving 4.07 at $0.15/problem.
                                 </h2>
                             </div>
                         </div>

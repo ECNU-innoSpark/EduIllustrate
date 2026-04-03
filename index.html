@@ -37,23 +37,98 @@
     <script src="static/js/index.js"></script>
 
     <style>
-        .example-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: white;
-            border-radius: 8px;
+        /* ── Gallery multi-row marquee ── */
+        .gallery-section {
+            background: #4169E1;
+            border-top: 1px solid #2d4fbb;
+            border-bottom: 1px solid #2d4fbb;
+            padding: 2.5rem 0 2.5rem;
+            overflow: hidden;
         }
-        .example-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        .gallery-section h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1.8rem;
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
-        .example-image {
+        .g-row-wrap {
+            overflow: hidden;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .g-row-wrap:last-child { margin-bottom: 0; }
+        .g-row-wrap::before,
+        .g-row-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .g-row-wrap::before { left: 0;  background: linear-gradient(to right, #4169E1, transparent); }
+        .g-row-wrap::after  { right: 0; background: linear-gradient(to left,  #4169E1, transparent); }
+        .g-track {
+            display: flex;
+            gap: 10px;
+            width: max-content;
+            animation: g-scroll linear infinite;
+            padding: 4px 0;
+        }
+        .g-track:hover { animation-play-state: paused; }
+        @keyframes g-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+        .g-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+        }
+        .g-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+        .g-card-top-bar {
+            height: 3px;
+            width: 100%;
+        }
+        .g-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 9px 6px;
+            background: #fff;
+        }
+        .g-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .g-subject {
+            color: #222;
+            font-size: 0.73rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .g-grade {
+            color: #888;
+            font-size: 0.70rem;
+            white-space: nowrap;
+        }
+        .g-num {
+            color: #bbb;
+            font-size: 0.66rem;
+            margin-left: auto;
+            white-space: nowrap;
         }
         .stat-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -94,18 +169,11 @@
 
 <body>
     <!-- Example Problem Solutions Gallery -->
-    <section class="hero is-medium is-bold" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title is-1 has-text-centered has-text-white" style="margin-bottom: 1.5rem;">AI-Generated Educational Explanations with Diagrams</h1>
-                <p class="subtitle is-4 has-text-centered has-text-white" style="margin-bottom: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto; opacity: 0.95;">
-                    <strong>EduIllustrate</strong> automatically generates step-by-step solutions for K-12 STEM problems with geometrically accurate diagrams. Powered by large language models and Manim, our system produces illustrated explanations that combine textual reasoning with programmatically rendered visualizations. Explore real examples below.
-                </p>
-                <div class="columns is-multiline" id="examples-container">
-                    <!-- Examples will be inserted here by JavaScript -->
-                </div>
-            </div>
-        </div>
+    <section class="gallery-section">
+        <h2>AI-Generated K-12 STEM Illustrated Explanations</h2>
+        <div class="g-row-wrap"><div class="g-track" id="g-track-0"></div></div>
+        <div class="g-row-wrap"><div class="g-track" id="g-track-1"></div></div>
+        <div class="g-row-wrap"><div class="g-track" id="g-track-2"></div></div>
     </section>
 
     <section class="hero">
@@ -731,97 +799,42 @@
     </footer>
 
     <script>
-        // Example problems data
-        const examples = [
-            {
-                id: "103",
-                title: "Problem 103: Square and Rhombus Area",
-                description: "Geometry - Grade 9",
-                folder: "doc_problem_103_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "46",
-                title: "Problem 46: Geometric Analysis",
-                description: "Middle School Mathematics",
-                folder: "doc_problem_46_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "4",
-                title: "Problem 4: Fundamental Concepts",
-                description: "Elementary Mathematics",
-                folder: "doc_problem_4_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "56",
-                title: "Problem 56: Algebraic Reasoning",
-                description: "Middle School Mathematics",
-                folder: "doc_problem_56_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "70",
-                title: "Problem 70: Advanced Geometry",
-                description: "High School Mathematics",
-                folder: "doc_problem_70_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "8",
-                title: "Problem 8: Basic Arithmetic",
-                description: "Elementary Mathematics",
-                folder: "doc_problem_8_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "91",
-                title: "Problem 91: Trigonometry",
-                description: "High School Mathematics",
-                folder: "doc_problem_91_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "97",
-                title: "Problem 97: Calculus Concepts",
-                description: "High School Mathematics",
-                folder: "doc_problem_97_gemini-3-pro-preview",
-                badge: "Mathematics"
-            },
-            {
-                id: "98",
-                title: "Problem 98: Advanced Analysis",
-                description: "High School Mathematics",
-                folder: "doc_problem_98_gemini-3-pro-preview",
-                badge: "Mathematics"
-            }
+        // Gallery data split into 3 rows
+        const galleryRows = [
+            [{"folder": "doc_problem_100_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "100"}, {"folder": "doc_problem_101_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "101"}, {"folder": "doc_problem_102_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "102"}, {"folder": "doc_problem_103_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "103"}, {"folder": "doc_problem_104_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "104"}, {"folder": "doc_problem_105_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "105"}, {"folder": "doc_problem_106_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "106"}, {"folder": "doc_problem_108_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "108"}, {"folder": "doc_problem_114_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "114"}, {"folder": "doc_problem_115_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "115"}, {"folder": "doc_problem_116_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "116"}, {"folder": "doc_problem_120_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "120"}, {"folder": "doc_problem_121_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "121"}, {"folder": "doc_problem_122_physics_g9_gemini3propreview", "images": ["scene1.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "122"}, {"folder": "doc_problem_123_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "123"}, {"folder": "doc_problem_124_physics_g9_gemini3propreview", "images": ["scene1.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "124"}, {"folder": "doc_problem_125_physics_g9_gemini3propreview", "images": ["scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "125"}, {"folder": "doc_problem_126_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "126"}, {"folder": "doc_problem_127_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "127"}, {"folder": "doc_problem_128_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "128"}, {"folder": "doc_problem_129_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "129"}, {"folder": "doc_problem_12_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "12"}, {"folder": "doc_problem_130_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "130"}, {"folder": "doc_problem_131_chemistry_g12_gemini3propreview", "images": ["scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "131"}, {"folder": "doc_problem_132_chemistry_g12_gemini3propreview", "images": ["scene1.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "132"}, {"folder": "doc_problem_134_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "134"}, {"folder": "doc_problem_138_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "138"}, {"folder": "doc_problem_139_biology_g12_gemini3propreview", "images": ["scene1.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "139"}, {"folder": "doc_problem_13_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "13"}, {"folder": "doc_problem_140_biology_g12_gemini3propreview", "images": ["scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "140"}, {"folder": "doc_problem_142_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "142"}, {"folder": "doc_problem_143_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "143"}, {"folder": "doc_problem_144_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "144"}, {"folder": "doc_problem_145_biology_g12_gemini3propreview", "images": ["scene2.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "145"}, {"folder": "doc_problem_147_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "147"}, {"folder": "doc_problem_148_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "148"}, {"folder": "doc_problem_153_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png", "scene5.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "153"}, {"folder": "doc_problem_155_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "155"}, {"folder": "doc_problem_157_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "157"}, {"folder": "doc_problem_158_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "158"}, {"folder": "doc_problem_159_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "159"}, {"folder": "doc_problem_164_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "164"}, {"folder": "doc_problem_166_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "166"}, {"folder": "doc_problem_167_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "167"}],
+            [{"folder": "doc_problem_169_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "169"}, {"folder": "doc_problem_170_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "170"}, {"folder": "doc_problem_171_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "171"}, {"folder": "doc_problem_172_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "172"}, {"folder": "doc_problem_173_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "173"}, {"folder": "doc_problem_174_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "174"}, {"folder": "doc_problem_175_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "175"}, {"folder": "doc_problem_176_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "176"}, {"folder": "doc_problem_177_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "177"}, {"folder": "doc_problem_178_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "178"}, {"folder": "doc_problem_179_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "179"}, {"folder": "doc_problem_17_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "17"}, {"folder": "doc_problem_180_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "180"}, {"folder": "doc_problem_183_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "183"}, {"folder": "doc_problem_185_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "185"}, {"folder": "doc_problem_187_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "187"}, {"folder": "doc_problem_188_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "188"}, {"folder": "doc_problem_18_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "18"}, {"folder": "doc_problem_190_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "190"}, {"folder": "doc_problem_192_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "192"}, {"folder": "doc_problem_194_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "194"}, {"folder": "doc_problem_196_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png", "scene5.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "196"}, {"folder": "doc_problem_197_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "197"}, {"folder": "doc_problem_199_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "199"}, {"folder": "doc_problem_1_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "1"}, {"folder": "doc_problem_200_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "200"}, {"folder": "doc_problem_202_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "202"}, {"folder": "doc_problem_203_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "203"}, {"folder": "doc_problem_205_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "205"}, {"folder": "doc_problem_206_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "206"}, {"folder": "doc_problem_208_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "208"}, {"folder": "doc_problem_209_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "209"}, {"folder": "doc_problem_214_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "214"}, {"folder": "doc_problem_215_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "215"}, {"folder": "doc_problem_216_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "216"}, {"folder": "doc_problem_217_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "217"}, {"folder": "doc_problem_21_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "21"}, {"folder": "doc_problem_221_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "221"}, {"folder": "doc_problem_222_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "222"}, {"folder": "doc_problem_223_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "223"}, {"folder": "doc_problem_224_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "224"}, {"folder": "doc_problem_22_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "22"}, {"folder": "doc_problem_23_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "23"}, {"folder": "doc_problem_24_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "24"}],
+            [{"folder": "doc_problem_25_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "25"}, {"folder": "doc_problem_26_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "26"}, {"folder": "doc_problem_28_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "28"}, {"folder": "doc_problem_29_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "29"}, {"folder": "doc_problem_30_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "30"}, {"folder": "doc_problem_31_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "31"}, {"folder": "doc_problem_32_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "32"}, {"folder": "doc_problem_35_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "35"}, {"folder": "doc_problem_36_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "36"}, {"folder": "doc_problem_39_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "39"}, {"folder": "doc_problem_3_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "3"}, {"folder": "doc_problem_40_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "Primary", "color": "#4A90D9", "num": "40"}, {"folder": "doc_problem_45_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "45"}, {"folder": "doc_problem_46_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "46"}, {"folder": "doc_problem_47_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "47"}, {"folder": "doc_problem_48_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "48"}, {"folder": "doc_problem_49_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "49"}, {"folder": "doc_problem_4_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "4"}, {"folder": "doc_problem_50_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "50"}, {"folder": "doc_problem_55_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "55"}, {"folder": "doc_problem_56_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "56"}, {"folder": "doc_problem_58_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "58"}, {"folder": "doc_problem_61_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "61"}, {"folder": "doc_problem_63_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "63"}, {"folder": "doc_problem_64_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "64"}, {"folder": "doc_problem_66_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "66"}, {"folder": "doc_problem_67_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png", "scene5.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "67"}, {"folder": "doc_problem_70_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "70"}, {"folder": "doc_problem_71_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "71"}, {"folder": "doc_problem_72_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#4A90D9", "num": "72"}, {"folder": "doc_problem_73_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "73"}, {"folder": "doc_problem_74_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "74"}, {"folder": "doc_problem_81_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "81"}, {"folder": "doc_problem_84_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "84"}, {"folder": "doc_problem_86_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "86"}, {"folder": "doc_problem_89_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "89"}, {"folder": "doc_problem_8_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "8"}, {"folder": "doc_problem_91_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "91"}, {"folder": "doc_problem_93_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "93"}, {"folder": "doc_problem_94_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "94"}, {"folder": "doc_problem_95_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "95"}, {"folder": "doc_problem_96_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "96"}, {"folder": "doc_problem_97_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "97"}, {"folder": "doc_problem_98_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "98"}, {"folder": "doc_problem_99_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#4A90D9", "num": "99"}]
         ];
 
-        // Render example cards
-        const container = document.getElementById('examples-container');
-        examples.forEach(example => {
-            const cardHTML = `
-                <div class="column is-one-third">
-                    <div class="card example-card" onclick="window.location.href='examples/${example.folder}/solution.html'">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img class="example-image" src="examples/${example.folder}/scene1.png"
-                                     alt="${example.title}"
-                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect fill=%22%23eee%22 width=%22400%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23999%22 font-size=%2220%22%3ENo Preview%3C/text%3E%3C/svg%3E'">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h4 class="title is-5">${example.title}</h4>
-                                <p class="subtitle is-6">${example.description}</p>
-                                <span class="tag is-info">${example.badge}</span>
-                            </div>
-                        </div>
+        // Each image is 16:9. At imgH=170px, imgW = 170*(16/9) ≈ 302px
+        const IMG_H = 170;
+        const IMG_W = Math.round(IMG_H * 16 / 9); // 302
+
+        function buildRow(data) {
+            return data.map(item => {
+                const cardW = item.images.length * IMG_W + (item.images.length - 1) * 3;
+                const imgs = item.images.map(img =>
+                    `<img src="collected_docs/${item.folder}/${img}" alt="" loading="lazy" style="width:${IMG_W}px;height:${IMG_H}px;object-fit:cover;flex-shrink:0;" onerror="this.style.display='none'">`
+                ).join('');
+                return `<div class="g-card" style="width:${cardW}px;">
+                    <div style="height:3px;background:${item.color};width:100%;"></div>
+                    <div style="display:flex;gap:2px;background:#f0f0f0;height:${IMG_H}px;overflow:hidden;">${imgs}</div>
+                    <div class="g-label">
+                        <span class="g-dot" style="background:${item.color}"></span>
+                        <span class="g-subject">${item.subject}</span>
+                        <span class="g-grade">${item.grade}</span>
+                        <span class="g-num">· #${item.num}</span>
                     </div>
-                </div>
-            `;
-            container.innerHTML += cardHTML;
+                </div>`;
+            }).join('');
+        }
+
+        const speeds = [90, 120, 75]; // seconds per loop, different for stagger
+        galleryRows.forEach((rowData, i) => {
+            const track = document.getElementById(`g-track-${i}`);
+            const html = buildRow(rowData);
+            track.innerHTML = html + html; // duplicate for seamless loop
+            track.style.animationDuration = speeds[i] + 's';
         });
     </script>
 </body>

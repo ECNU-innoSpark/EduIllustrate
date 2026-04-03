@@ -1,0 +1,99 @@
+# problem_104_math_g9
+
+**Problem Statement:**
+In the plane rectangular coordinate system, squares $A_{1}B_{1}C_{1}D_{1}$, $D_{1}E_{1}E_{2}B_{2}$, $A_{2}B_{2}C_{2}D_{2}$, $D_{2}E_{3}E_{4}B_{3}$, $A_{3}B_{3}C_{3}D_{3}$... are placed as shown in the diagram. Point $B_{1}$ is on the y-axis, and points $C_{1}, E_{1}, E_{2}, C_{2}, E_{3}, E_{4}, C_{3}$... are on the x-axis. It is known that the side length of square $A_{1}B_{1}C_{1}D_{1}$ is 1, $\angle C_{1}B_{1}O=30^{\circ}$, and $B_{1}C_{1} \parallel B_{2}C_{2} \parallel B_{3}C_{3}$... 
+
+Find the side length of square $A_{2016}B_{2016}C_{2016}D_{2016}$.
+
+**Options:**
+A. $(\frac{1}{2})^{2015}$
+B. $(\frac{1}{2})^{2016}$
+C. $(\frac{\sqrt{3}}{3})^{2015}$
+D. $(\frac{\sqrt{3}}{3})^{2016}$
+
+**Solution Approach:**
+We will analyze the geometric relationships between the consecutive squares to find the common ratio of their side lengths. This is a geometric sequence problem. By calculating the side length of the second square relative to the first, we can establish a general formula for the $n$-th square.
+
+![](scene1.png)
+
+**Step 1: Analyze the First Square ($A_1B_1C_1D_1$)**
+
+Let's determine the angles and coordinates associated with the first square.
+
+*   We are given that $\angle C_1B_1O = 30^{\circ}$ in the right-angled triangle $\triangle B_1OC_1$.
+*   Since the sum of angles in a triangle is $180^{\circ}$ and $\angle B_1OC_1 = 90^{\circ}$, the angle at $C_1$ is:
+$\angle B_1C_1O = 90^{\circ} - 30^{\circ} = 60^{\circ}$.
+
+**Step 2: Analyze the Connecting Square ($D_1E_1E_2B_2$)**
+
+Next, we look at the transition to the small square $D_1E_1E_2B_2$.
+
+*   Points $C_1, E_1$ are on the x-axis. Since $A_1B_1C_1D_1$ is a square, $\angle B_1C_1D_1 = 90^{\circ}$.
+*   The angle $\angle D_1C_1E_1$ forms a linear pair with $\angle B_1C_1O$ and the right angle of the square. However, looking at the geometry, $D_1$ projects down to $E_1$.
+*   Let's calculate the angle $\angle D_1C_1E_1$. The total angle on the line at $C_1$ is $180^{\circ}$.
+$\angle D_1C_1E_1 = 180^{\circ} - \angle B_1C_1O - \angle B_1C_1D_1$
+$\angle D_1C_1E_1 = 180^{\circ} - 60^{\circ} - 90^{\circ} = 30^{\circ}$.
+
+Now, consider the right-angled triangle $\triangle D_1E_1C_1$ (where $D_1E_1$ is perpendicular to the x-axis).
+*   Hypotenuse $D_1C_1 = 1$ (side of the first square).
+*   The vertical side $D_1E_1$ represents the side length of the connecting square.
+*   $D_1E_1 = D_1C_1 \cdot \sin(30^{\circ}) = 1 \cdot \frac{1}{2} = \frac{1}{2}$.
+
+So, the side length of the connecting square $D_1E_1E_2B_2$ is $\frac{1}{2}$. Consequently, the vertical segment $B_2E_2$ also has length $\frac{1}{2}$.
+
+![](scene2.png)
+
+**Step 3: Analyze the Second Tilted Square ($A_2B_2C_2D_2$)**
+
+Now we find the side length of the second large square. Let the side length of square $A_nB_nC_nD_n$ be denoted by $a_n$.
+
+*   We know $B_1C_1 \parallel B_2C_2$. This implies that the inclination of the squares relative to the x-axis is identical.
+*   Therefore, in the right-angled triangle $\triangle B_2E_2C_2$, the angle $\angle B_2C_2E_2$ corresponds to $\angle B_1C_1O$.
+*   $\angle B_2C_2E_2 = 60^{\circ}$.
+
+We know the vertical leg $B_2E_2$ is the side of the connecting square we just calculated:
+$B_2E_2 = \frac{1}{2}$.
+
+In $\triangle B_2E_2C_2$:
+*   $\sin(\angle B_2C_2E_2) = \frac{\text{Opposite}}{\text{Hypotenuse}} = \frac{B_2E_2}{B_2C_2}$
+*   $\sin(60^{\circ}) = \frac{1/2}{a_2}$
+*   $\frac{\sqrt{3}}{2} = \frac{1/2}{a_2}$
+
+Solving for $a_2$:
+$a_2 = \frac{1/2}{\sqrt{3}/2} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$.
+
+**Step 4: Establish the Pattern**
+
+The ratio of the side length of the second square to the first square is:
+$q = \frac{a_2}{a_1} = \frac{\sqrt{3}/3}{1} = \frac{\sqrt{3}}{3}$.
+
+Because the geometric construction repeats (self-similar triangles and squares), this ratio $q$ will remain constant for all subsequent squares.
+
+![](scene3.png)
+
+**Step 5: General Formula and Final Calculation**
+
+The side lengths of the squares form a geometric sequence:
+*   $a_1 = 1$
+*   $a_2 = \frac{\sqrt{3}}{3}$
+*   $a_3 = (\frac{\sqrt{3}}{3})^2$
+*   ...
+*   $a_n = a_1 \cdot q^{n-1} = 1 \cdot (\frac{\sqrt{3}}{3})^{n-1}$
+
+We need to find the side length of the 2016th square, $a_{2016}$.
+
+Substituting $n = 2016$:
+$a_{2016} = (\frac{\sqrt{3}}{3})^{2016-1}$
+$a_{2016} = (\frac{\sqrt{3}}{3})^{2015}$
+
+**Conclusion:**
+The side length of square $A_{2016}B_{2016}C_{2016}D_{2016}$ is $(\frac{\sqrt{3}}{3})^{2015}$.
+
+Comparing this result with the given options:
+A. $(\frac{1}{2})^{2015}$
+B. $(\frac{1}{2})^{2016}$
+C. $(\frac{\sqrt{3}}{3})^{2015}$
+D. $(\frac{\sqrt{3}}{3})^{2016}$
+
+The correct option is **C**.
+

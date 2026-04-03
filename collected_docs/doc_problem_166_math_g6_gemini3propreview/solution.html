@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_166_math_g6_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_166_math_g6</h1>
+<p><strong>Problem Statement:</strong>
+下面的图形中，图（  ）的面积最小．
+A．1
+B．2
+C．3</p>
+<p><strong>Translation:</strong>
+In the figure below, which figure ( ) has the smallest area?
+A. 1
+B. 2
+C. 3</p>
+<p><strong>Solution Approach:</strong>
+To determine which figure has the smallest area, we will calculate the area of each shape (1, 2, and 3) in terms of the height between the parallel lines. Since all shapes share the same height, we can compare their areas by analyzing their base lengths.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the Geometry</strong></p>
+<p>All three figures are located between two parallel horizontal lines. Let's define the vertical distance (height) between these lines as $h$. Because the height is constant for all figures, the area of each figure depends entirely on its width or base lengths.</p>
+<p>Let's examine <strong>Figure 1</strong>:
+- It is a <strong>triangle</strong>.
+- Its base lies on the bottom line, extending from tick 0 to tick 2.
+- Base length = $2 - 0 = 2$ units.
+- The top vertex is on the top line at tick 1.</p>
+<p>The area of a triangle is given by:
+$$ \text{Area} = \frac{1}{2} \times \text{base} \times \text{height} $$
+$$ \text{Area}_1 = \frac{1}{2} \times 2 \times h = 1h $$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyze Figure 2</strong></p>
+<p>Now let's look at <strong>Figure 2</strong>.
+- It is a <strong>trapezoid</strong> (a quadrilateral with at least one pair of parallel sides—the top and bottom bases).
+- <strong>Top Base:</strong> Extends from tick 3 to tick 4 on the top line. Length = $4 - 3 = 1$ unit.
+- <strong>Bottom Base:</strong> Starts at tick 2. The right boundary is the line separating Figure 2 and Figure 3. This line connects the top tick 4 to a point on the bottom line. Visually, this line is slanted to the right, landing halfway between 4 and 5 (at 4.5).
+- Bottom Base length = $4.5 - 2 = 2.5$ units.</p>
+<p>The area of a trapezoid is the average of the bases times the height:
+$$ \text{Area} = \frac{\text{top} + \text{bottom}}{2} \times h $$
+$$ \text{Area}_2 = \frac{1 + 2.5}{2} \times h = 1.75h $$</p>
+<p><em>Even without the precise value of 4.5, we can see the bottom base (from 2 to past 4) is clearly longer than 2 units, making the average width greater than 1.5.</em></p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Analyze Figure 3</strong></p>
+<p>Finally, let's examine <strong>Figure 3</strong>.
+- It is also a <strong>trapezoid</strong>.
+- <strong>Top Base:</strong> Extends from tick 4 to tick 5. Length = $5 - 4 = 1$ unit.
+- <strong>Bottom Base:</strong> Extends from the slanted boundary line (at roughly 4.5) to the vertical line at tick 5.
+- Bottom Base length = $5 - 4.5 = 0.5$ units.</p>
+<p>Notice that the left boundary line slants to the right (from top 4 to bottom 4.5), which "cuts into" the rectangular area between 4 and 5. This makes the bottom base significantly smaller than the top base.</p>
+<p>$$ \text{Area}_3 = \frac{1 + 0.5}{2} \times h = 0.75h $$</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Conclusion</strong></p>
+<p>Let's compare the calculated areas in terms of $h$:</p>
+<ul>
+<li><strong>Figure 1:</strong> $1h$</li>
+<li><strong>Figure 2:</strong> $1.75h$</li>
+<li><strong>Figure 3:</strong> $0.75h$</li>
+</ul>
+<p>Comparing the values:
+$$ 0.75h &lt; 1h &lt; 1.75h $$</p>
+<p>Figure 3 has the smallest area.</p>
+<p><strong>Verification:</strong>
+Visually, Figure 1 occupies half of a 2-unit wide rectangle (average width 1). Figure 3 occupies a 1-unit wide strip but is "cut" by the slanted line, making its average width less than 1 (specifically 0.75). Figure 2 is the widest, spanning more than 2 units on the bottom. Therefore, Figure 3 is the smallest.</p>
+<p><strong>Final Answer:</strong>
+The figure with the smallest area is <strong>3</strong>. (Option C)</p>
+</body>
+</html>

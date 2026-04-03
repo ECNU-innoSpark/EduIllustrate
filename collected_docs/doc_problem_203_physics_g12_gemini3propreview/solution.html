@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_203_physics_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_203_physics_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, two parallel metal plates A and B have a length $L = 8\text{ cm}$ and are separated by a distance $d = 8\text{ cm}$. Plate A has a potential 300 V higher than Plate B. A positively charged particle with charge $q = 10^{-10}\text{ C}$ and mass $m = 10^{-20}\text{ kg}$ flies into the electric field along the centerline RD, perpendicular to the electric field lines, with an initial velocity $v_0 = 2 \times 10^6\text{ m/s}$. After flying out of the parallel plate electric field, the particle passes through a field-free region between interfaces MN and PS.</p>
+<p><strong>Find:</strong>
+1. How far does the particle deviate from the centerline RD when passing through interface MN?
+2. How far is the particle from point D when it reaches the PS interface?
+<em>(Given: The distance between interfaces MN and PS is 12 cm. The electrostatic constant $k$ is provided but not required for this parallel plate setup).</em></p>
+<p><strong>Solution Approach:</strong>
+We will solve this by analyzing the particle's motion in two distinct stages:
+1. <strong>Inside the Electric Field (Region A-B):</strong> The particle experiences a constant vertical force, resulting in parabolic motion (similar to a projectile). We will calculate the vertical displacement $y_1$ and the vertical velocity $v_y$ at the exit.
+2. <strong>Outside the Electric Field (Region MN-PS):</strong> The particle moves in a field-free region, meaning it travels in a straight line with the velocity it had upon exiting the plates. We will calculate the further vertical displacement $y_2$ and add it to $y_1$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Motion Inside the Electric Field</strong></p>
+<p>First, we determine the forces acting on the particle. Since Plate A is at a higher potential than Plate B, the electric field points downward. A positive charge experiences a downward force.</p>
+<p><strong>Calculations:</strong>
+1. <strong>Electric Field Intensity ($E$):</strong>
+$$E = \frac{U}{d} = \frac{300\text{ V}}{0.08\text{ m}} = 3750\text{ V/m}$$</p>
+<ol>
+<li>
+<p><strong>Acceleration ($a$):</strong>
+Using Newton's Second Law ($F = ma$) and the electric force formula ($F = qE$):
+$$a = \frac{qE}{m} = \frac{(10^{-10}\text{ C})(3750\text{ V/m})}{10^{-20}\text{ kg}} = 3.75 \times 10^{13}\text{ m/s}^2$$</p>
+</li>
+<li>
+<p><strong>Time in Field ($t_1$):</strong>
+The horizontal motion is uniform at velocity $v_0$.
+$$t_1 = \frac{L}{v_0} = \frac{0.08\text{ m}}{2 \times 10^6\text{ m/s}} = 4.0 \times 10^{-8}\text{ s}$$</p>
+</li>
+</ol>
+<p>Now we can find the vertical displacement at the exit (interface MN), which we call $y_1$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Calculating Displacement and Velocity at MN:</strong></p>
+<p><strong>Vertical Displacement ($y_1$):</strong>
+Using the kinematic equation for displacement with zero initial vertical velocity:
+$$y_1 = \frac{1}{2}at_1^2$$
+$$y_1 = \frac{1}{2}(3.75 \times 10^{13})(4.0 \times 10^{-8})^2$$
+$$y_1 = 0.5 \times (3.75 \times 10^{13}) \times (16 \times 10^{-16})$$
+$$y_1 = 30 \times 10^{-3}\text{ m} = 3\text{ cm}$$</p>
+<p><strong>Vertical Velocity at Exit ($v_y$):</strong>
+$$v_y = at_1 = (3.75 \times 10^{13})(4.0 \times 10^{-8}) = 1.5 \times 10^6\text{ m/s}$$</p>
+<p>So, when the particle crosses interface MN, it is <strong>3 cm</strong> below the centerline.</p>
+<p><strong>Step 2: Motion Outside the Field (MN to PS)</strong></p>
+<p>After crossing MN, the electric field is zero. The particle continues in a straight line with the velocity it had at MN.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Calculating Final Deviation:</strong></p>
+<ol>
+<li>
+<p><strong>Time in Field-Free Region ($t_2$):</strong>
+The horizontal velocity remains $v_0$. The horizontal distance is $L_2 = 12\text{ cm}$.
+$$t_2 = \frac{L_2}{v_0} = \frac{0.12\text{ m}}{2 \times 10^6\text{ m/s}} = 6.0 \times 10^{-8}\text{ s}$$</p>
+</li>
+<li>
+<p><strong>Additional Vertical Displacement ($\Delta y$):</strong>
+The particle travels vertically with the constant vertical velocity $v_y$ it acquired in the field.
+$$\Delta y = v_y \times t_2$$
+$$\Delta y = (1.5 \times 10^6\text{ m/s})(6.0 \times 10^{-8}\text{ s}) = 9.0 \times 10^{-2}\text{ m} = 9\text{ cm}$$</p>
+</li>
+<li>
+<p><strong>Total Distance from Point D ($Y$):</strong>
+The total distance is the sum of the displacement inside the field ($y_1$) and the displacement outside the field ($\Delta y$).
+$$Y = y_1 + \Delta y = 3\text{ cm} + 9\text{ cm} = 12\text{ cm}$$</p>
+</li>
+</ol>
+<p><strong>Final Answer:</strong>
+- The particle deviates <strong>3 cm</strong> from the centerline when crossing interface MN.
+- The particle is <strong>12 cm</strong> away from point D when it reaches the PS interface.</p>
+<p><em>Verification (Midpoint Rule):</em>
+In physics, the tangent to the trajectory at the exit of a uniform field traces back to the midpoint of the field region ($L/2$).
+Total horizontal distance from midpoint = $\frac{L}{2} + L_2 = 4 + 12 = 16\text{ cm}$.
+Deflection angle $\tan \theta = \frac{v_y}{v_x} = \frac{1.5}{2.0} = 0.75$.
+Total $Y = 16\text{ cm} \times 0.75 = 12\text{ cm}$. The result matches.</p>
+</body>
+</html>

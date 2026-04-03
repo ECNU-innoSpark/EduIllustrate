@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_50_geography_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_50_geography_g12</h1>
+<p><strong>Problem Statement:</strong>
+The area shown in the figure below is the daylight hemisphere (day hemisphere). A is the center of the circle. The latitude of point B is 75°. The west side of point A is the Eastern Hemisphere, and the east side is the Western Hemisphere. Based on this, answer the following questions:</p>
+<p>(1) At this time, the geographic coordinates of the subsolar point (solar direct point) are <strong><em>_</em></strong><strong>, and the geographic coordinates of point C are <strong><em>_</em></strong></strong>. At this time, Beijing time is <strong><em>_</em></strong><strong>.
+(2) The order of the linear velocities of points A, B, and C in the figure is <strong><em>_</em></strong></strong> (use "&gt;", "&lt;", "=" symbols); the order of the noon sun altitude angles of the three points is <strong><em>_</em></strong>__ (use "&gt;", "&lt;", "=" symbols).</p>
+<p><strong>Solution Approach:</strong>
+1.  <strong>Analyze the Geometry:</strong> Identify that the circle represents the terminator (boundary between day and night) and point A is the subsolar point because it is the center of the day hemisphere.
+2.  <strong>Determine Coordinates:</strong> Use the hemisphere definition to find the longitude of A. Use the latitude of B and the position of the equator to find the latitude of A (solar declination) and C.
+3.  <strong>Calculate Time:</strong> Use the longitude difference between the subsolar point and Beijing to calculate the local time.
+4.  <strong>Compare Physical Quantities:</strong> Compare the linear velocity based on latitude ($\cos \phi$) and calculate the noon sun altitude using the formula $H = 90^\circ - |\phi - \delta|$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Coordinates of the Subsolar Point (A)</strong></p>
+<ul>
+<li>
+<p><strong>Longitude:</strong> The problem states that "West of A is the Eastern Hemisphere, and East of A is the Western Hemisphere." The boundary between the Eastern and Western Hemispheres is defined by the meridians $20^\circ$W and $160^\circ$E. The specific boundary where the west side is East (E) and the east side is West (W) is the <strong>$160^\circ$E</strong> meridian. Therefore, the longitude of point A is <strong>$160^\circ$E</strong>.</p>
+</li>
+<li>
+<p><strong>Latitude:</strong> Point A is the center of the day hemisphere, making it the subsolar point (where the sun is directly overhead). The distance from the subsolar point to the edge of the day hemisphere (the terminator) is always $90^\circ$ along a great circle.</p>
+</li>
+<li>Point B is at the bottom edge of the circle and has a latitude of $75^\circ$.</li>
+<li>In the diagram, the Equator passes <em>below</em> point A. This implies A is in the Northern Hemisphere and B is in the Southern Hemisphere.</li>
+<li>Therefore, B is at <strong>$75^\circ$S</strong>.</li>
+<li>Since the arc distance $AB$ is $90^\circ$ along the meridian, the latitude of A is $90^\circ - 75^\circ = 15^\circ$.</li>
+<li>So, A is at <strong>$15^\circ$N</strong>.</li>
+</ul>
+<p><strong>Result for A:</strong> $(15^\circ\text{N}, 160^\circ\text{E})$.</p>
+<p><strong>Step 2: Analyzing Coordinates of Point C</strong></p>
+<ul>
+<li>Point C is at the top edge of the day hemisphere, on the same vertical line as A and B.</li>
+<li>The vertical line represents a great circle (meridian pair).</li>
+<li>From A ($15^\circ$N), going North $90^\circ$ reaches the edge at C.</li>
+<li>Traveling $90^\circ$ North from $15^\circ$N: You travel $75^\circ$ to reach the North Pole ($90^\circ$N), and then continue $15^\circ$ "down" the other side of the Earth.</li>
+<li>This places C at latitude <strong>$75^\circ$N</strong> ($90^\circ - 15^\circ$).</li>
+<li>Since C is on the meridian opposite to A (across the pole), its longitude is $180^\circ$ away from $160^\circ$E.</li>
+<li>Longitude of C $= 160^\circ\text{E} + 180^\circ = 340^\circ \rightarrow 20^\circ\text{W}$.</li>
+</ul>
+<p><strong>Result for C:</strong> $(75^\circ\text{N}, 20^\circ\text{W})$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Calculating Beijing Time</strong></p>
+<ul>
+<li>The local time at the subsolar point (Point A, $160^\circ$E) is always <strong>12:00 (noon)</strong>.</li>
+<li>We need to find the time in Beijing, which is located at <strong>$120^\circ$E</strong>.</li>
+<li><strong>Longitude Difference:</strong> $160^\circ\text{E} - 120^\circ\text{E} = 40^\circ$.</li>
+<li><strong>Time Difference:</strong> Earth rotates $15^\circ$ per hour (or $1^\circ$ every 4 minutes).
+$$40^\circ \times 4 \text{ min/}^\circ = 160 \text{ minutes} = 2 \text{ hours } 40 \text{ minutes}$$</li>
+<li><strong>Direction:</strong> Beijing ($120^\circ$E) is west of point A ($160^\circ$E), so Beijing time is <em>earlier</em>.</li>
+<li><strong>Calculation:</strong> $12:00 - 2 \text{ hours } 40 \text{ minutes} = 9:20$.</li>
+</ul>
+<p><strong>Answer for (1):</strong>
+*   Subsolar point: $(15^\circ\text{N}, 160^\circ\text{E})$
+*   Point C: $(75^\circ\text{N}, 20^\circ\text{W})$
+*   Beijing Time: $9:20$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 4: Comparing Linear Velocity and Noon Sun Altitude</strong></p>
+<p><strong>(a) Linear Velocity:</strong>
+*   Earth's rotation linear velocity decreases from the equator to the poles. It is proportional to the cosine of the latitude: $V = V_{\text{equator}} \times \cos(\text{latitude})$.
+*   Latitudes: A ($15^\circ$), B ($75^\circ$), C ($75^\circ$).
+*   Since $15^\circ &lt; 75^\circ$, $\cos(15^\circ) &gt; \cos(75^\circ)$.
+*   Therefore, the velocity at A is the greatest. B and C have the same absolute latitude, so their speeds are equal.
+*   <strong>Result:</strong> $A &gt; B = C$</p>
+<p><strong>(b) Noon Sun Altitude:</strong>
+*   The formula for noon sun altitude ($H$) is $H = 90^\circ - |\phi - \delta|$, where $\phi$ is the local latitude and $\delta$ is the solar declination ($15^\circ$N).
+*   <strong>Point A ($15^\circ$N):</strong> On the latitude of direct sunlight.
+$$H_A = 90^\circ - |15^\circ - 15^\circ| = 90^\circ$$
+*   <strong>Point C ($75^\circ$N):</strong>
+$$H_C = 90^\circ - |75^\circ - 15^\circ| = 90^\circ - 60^\circ = 30^\circ$$
+*   <strong>Point B ($75^\circ$S):</strong>
+$$H_B = 90^\circ - |-75^\circ - 15^\circ| = 90^\circ - |-90^\circ| = 0^\circ$$
+(Note: Point B is exactly at the terminator, experiencing sunset/sunrise at noon, which corresponds to the limit of polar night).
+*   <strong>Result:</strong> $A &gt; C &gt; B$</p>
+<p><strong>Final Answer Recap:</strong>
+(1) Subsolar point: <strong>$(15^\circ\text{N}, 160^\circ\text{E})$</strong>; C coordinates: <strong>$(75^\circ\text{N}, 20^\circ\text{W})$</strong>; Beijing time: <strong>9:20</strong>.
+(2) Linear Velocity: <strong>$A &gt; B = C$</strong>; Noon Sun Altitude: <strong>$A &gt; C &gt; B$</strong>.</p>
+</body>
+</html>

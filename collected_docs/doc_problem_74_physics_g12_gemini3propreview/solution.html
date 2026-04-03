@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_74_physics_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_74_physics_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, a coil $abcd$ has side length $l=0.20\text{ m}$, mass $m_1=0.10\text{ kg}$, resistance $R=0.10\text{ }\Omega$, and a counterweight of mass $m_2=0.14\text{ kg}$. The uniform magnetic field above the coil has a magnetic induction intensity $B=0.5\text{ T}$, with the direction perpendicular to the coil plane pointing inwards. The width (height) of the magnetic field region is $h=l=0.20\text{ m}$. The counterweight descends from a certain position, causing the side $ab$ to enter the magnetic field and start moving at a uniform speed. </p>
+<p>Calculate:
+(1) The speed of the uniform motion of the coil.
+(2) The heat generated during the process from side $ab$ entering the magnetic field until the coil passes completely out of the magnetic field.
+<em>(Assume gravitational acceleration $g=10\text{ m/s}^2$)</em></p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we will first analyze the forces acting on the coil and the counterweight during the uniform motion phase. By applying Newton's laws and the formulas for Ampere's force and induced EMF, we can determine the velocity. For the second part, we will use the principle of conservation of energy (or the work-energy theorem) to calculate the heat generated, considering the work done against the magnetic force as the coil traverses the field.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Part 1: Calculating the Uniform Speed ($v$)</strong></p>
+<p><strong>Step 1: Force Analysis</strong>
+Since the coil moves upward at a <strong>uniform speed</strong> (constant velocity), the system is in equilibrium. The net force on both masses is zero.</p>
+<p>Let's analyze the forces acting on each object:
+*   <strong>Counterweight ($m_2$):</strong> Subject to gravity ($m_2g$) acting downwards and tension ($T$) acting upwards. Since it moves at constant velocity:
+$$T = m_2g$$</p>
+<ul>
+<li><strong>Coil ($m_1$):</strong> Subject to gravity ($m_1g$) acting downwards, tension ($T$) acting upwards, and the magnetic Ampere force ($F_A$) acting downwards.</li>
+</ul>
+<p>Why is the Ampere force downwards?
+As the top edge $ab$ moves upward into the magnetic field, the magnetic flux pointing into the page increases. By Lenz's Law, the induced current will create a magnetic field pointing <em>out</em> of the page to oppose this change, resulting in a counter-clockwise current ($a \rightarrow b \rightarrow c \rightarrow d$).
+Using the Left-Hand Rule on side $ab$ (current flows $a \rightarrow b$, B-field is inwards), the resulting magnetic force points <strong>downwards</strong>, opposing the motion.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Mathematical Derivation</strong></p>
+<p>From the equilibrium condition of the coil ($m_1$):
+$$T = m_1g + F_A$$</p>
+<p>Substituting $T = m_2g$:
+$$m_2g = m_1g + F_A$$
+$$F_A = (m_2 - m_1)g$$</p>
+<p>Now, we express the Ampere force $F_A$ in terms of velocity $v$.
+1.  Induced Electromotive Force (EMF): $E = Blv$
+2.  Induced Current: $I = \frac{E}{R} = \frac{Blv}{R}$
+3.  Ampere Force: $F_A = BIl = B \left( \frac{Blv}{R} \right) l = \frac{B^2 l^2 v}{R}$</p>
+<p><strong>Step 3: Calculation</strong>
+Equating the two expressions for $F_A$:
+$$(m_2 - m_1)g = \frac{B^2 l^2 v}{R}$$</p>
+<p>Solving for $v$:
+$$v = \frac{(m_2 - m_1)g R}{B^2 l^2}$$</p>
+<p>Substitute the given values ($m_1=0.10$, $m_2=0.14$, $g=10$, $R=0.10$, $B=0.5$, $l=0.20$):
+$$v = \frac{(0.14 - 0.10) \times 10 \times 0.10}{(0.5)^2 \times (0.20)^2}$$
+$$v = \frac{0.04 \times 1}{0.25 \times 0.04}$$
+$$v = \frac{0.04}{0.01}$$
+$$v = 4\text{ m/s}$$</p>
+<p>The uniform speed of the coil is <strong>4 m/s</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Part 2: Calculating Generated Heat ($Q$)</strong></p>
+<p><strong>Step 1: Identify the Process</strong>
+The problem asks for the heat generated from the moment $ab$ enters the field until the coil completely leaves the field. Since the height of the magnetic field $h$ is equal to the side length of the coil $l$ ($h=l=0.20\text{ m}$), the motion consists of two continuous phases where induced current flows:</p>
+<ol>
+<li><strong>Entering Phase:</strong> The coil moves distance $l$. Side $ab$ cuts magnetic field lines. Current is induced. Ampere force acts downwards.</li>
+<li><strong>Leaving Phase:</strong> Immediately after $ab$ reaches the top of the field, the bottom side $cd$ enters the field. As the coil continues to move up another distance $l$, side $cd$ cuts field lines. Current is induced (now clockwise), but the Ampere force still acts downwards.</li>
+</ol>
+<p><strong>Step 2: Work-Energy Calculation</strong>
+The heat generated $Q$ is equal to the work done by the system against the resistive Ampere force. Since the velocity is uniform throughout the entire process (both entering and leaving phases generate the same resistive force magnitude), we can calculate the work simply as:
+$$Q = W_{\text{Ampere}} = F_A \times d_{\text{total}}$$</p>
+<p>The total distance $d_{\text{total}}$ where current flows is the length to enter plus the length to leave:
+$$d_{\text{total}} = l + l = 2l = 2 \times 0.20\text{ m} = 0.40\text{ m}$$</p>
+<p>Using the value of $F_A$ we found earlier ($F_A = (m_2 - m_1)g = 0.4\text{ N}$):
+$$Q = 0.4\text{ N} \times 0.40\text{ m}$$
+$$Q = 0.16\text{ J}$$</p>
+<p><strong>Alternative Method (Energy Conservation):</strong>
+The decrease in the system's gravitational potential energy is converted into heat (since kinetic energy is constant).
+$$Q = \Delta PE_{\text{loss}} = m_2 g (2l) - m_1 g (2l)$$
+$$Q = (m_2 - m_1) g (2l)$$
+$$Q = (0.04\text{ kg}) \times 10\text{ m/s}^2 \times 0.40\text{ m}$$
+$$Q = 0.16\text{ J}$$</p>
+<p><strong>Final Answer:</strong>
+(1) The uniform speed of the coil is <strong>4 m/s</strong>.
+(2) The heat generated during the process is <strong>0.16 J</strong>.</p>
+<p><strong>Recap:</strong>
+We determined the speed by balancing the gravitational forces with the magnetic Ampere force. We then calculated the heat generated by finding the total work done against this magnetic force over the total distance the coil moved while interacting with the magnetic field (entering + leaving).</p>
+</body>
+</html>

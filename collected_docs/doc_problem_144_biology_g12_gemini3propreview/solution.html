@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_144_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_144_biology_g12</h1>
+<p><strong>Problem Statement:</strong>
+It is known that round eyes and bar eyes in <em>Drosophila</em> are controlled by a pair of alleles, but the dominant-recessive relationship of these relative traits and the chromosome on which the alleles are located are unknown. There are several purebred male and female <em>Drosophila</em> with round eyes and bar eyes. A research group selected parents from them and conducted a cross-breeding experiment. The results are shown below:</p>
+<p>P: ♀ Bar eye × ♂ Round eye
+↓
+F₁: ____ eye (♀ ♂)
+↓ F₁ males and females interbreed
+F₂: ♀ Round eye : ♀ Bar eye : ♂ Round eye : ♂ Bar eye = 1 : 1 : 1 : 1</p>
+<p>(1) Based solely on the experimental results, can it be deduced whether the gene controlling eye shape is located only on the X chromosome or on an autosome? Explain the reason.
+<strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>.
+(2) Based on the experimental results, deduce whether bar eye is a <strong><em>_</em></strong><strong><em> (fill in "dominant" or "recessive") trait compared to round eye.
+(3) To verify the above deductions, members of the research group selected materials from F₂ <em>Drosophila</em> and designed two different hybridization experiments, both of which can independently prove the above deductions. Please write down the hybridization combinations supporting the above deductions and the corresponding expected experimental results. (Requirement: Only 1 hybridization combination is used for each experiment) </em></strong><strong><em>_</em></strong>.</p>
+<p><strong>Solution Approach:</strong>
+1. Analyze the F₂ phenotypic ratio (1:1:1:1) to determine if the trait is autosomal or X-linked.
+2. Deduce the dominant-recessive relationship based on the parental (P) and F₁ genotypes required to produce the observed F₂ ratio.
+3. Design two specific verification crosses using F₂ individuals (Punnett squares will be used) to independently confirm the inheritance pattern.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p>First, let's analyze whether the gene is on an autosome or the X chromosome. (Note: In the diagrams, green denotes the round eye phenotype and orange denotes the bar eye phenotype).</p>
+<p>If the trait were <strong>autosomal</strong>, crossing purebred parents (homozygous dominant <code>AA</code> and homozygous recessive <code>aa</code>) would yield an F₁ generation that is entirely heterozygous (<code>Aa</code>). When F₁ individuals interbreed (<code>Aa × Aa</code>), the F₂ generation would follow standard Mendelian segregation, resulting in a 3:1 phenotypic ratio. However, the experimental results show an F₂ ratio of 1:1:1:1. This completely contradicts autosomal inheritance.</p>
+<p>For the F₂ generation to have a 1:1:1:1 ratio (Female Round : Female Bar : Male Round : Male Bar) with equal distribution across sexes, the F₁ generation must consist of a heterozygous female and a hemizygous recessive male. Since the P generation consists of purebreds, this scenario perfectly aligns with <strong>X-linked inheritance</strong> where the purebred female parent is homozygous recessive (<code>X^aX^a</code>, Bar eye) and the purebred male parent is hemizygous dominant (<code>X^AY</code>, Round eye). </p>
+<p>Therefore, the gene is located <strong>only on the X chromosome</strong>.</p>
+<p>Furthermore, this cross produces F₁ females that are heterozygous (<code>X^AX^a</code>) and F₁ males that are hemizygous recessive (<code>X^aY</code>). Since the F₁ females inherit the <code>X^A</code> allele from their round-eyed father and the <code>X^a</code> allele from their bar-eyed mother, and we know <code>X^AX^a</code> crossed with <code>X^aY</code> yields the 1:1:1:1 F₂ ratio, the <code>X^A</code> allele must dictate the round eye trait. Thus, <strong>round eye is dominant</strong> and <strong>bar eye is recessive</strong>.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p>To verify these deductions (X-linked inheritance and bar eye being recessive), we must select crosses from the F₂ generation that yield unambiguous, sex-dependent results.</p>
+<p><strong>Verification Experiment 1:</strong>
+Cross F₂ bar-eyed females (<code>X^aX^a</code>) with F₂ round-eyed males (<code>X^AY</code>).</p>
+<p>As shown in the Punnett square above, all female offspring will inherit the dominant <code>X^A</code> allele from the father, resulting in the heterozygous genotype <code>X^AX^a</code> (round eyes). All male offspring will inherit the recessive <code>X^a</code> allele from the mother and the Y chromosome from the father, resulting in the hemizygous genotype <code>X^aY</code> (bar eyes).</p>
+<p><strong>Expected Result:</strong> All female offspring have round eyes, and all male offspring have bar eyes. This "criss-cross" inheritance pattern is a classic hallmark of X-linked traits and independently proves our deductions.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Verification Experiment 2:</strong>
+Cross F₂ round-eyed females (<code>X^AX^a</code>) with F₂ round-eyed males (<code>X^AY</code>).</p>
+<p>In this cross, all female offspring receive the dominant <code>X^A</code> allele from the father, meaning 100% of the females will have round eyes (<code>X^AX^A</code> or <code>X^AX^a</code>). The male offspring, however, receive their Y chromosome from the father and their X chromosome from the heterozygous mother. Thus, half will receive <code>X^A</code> (round eyes) and half will receive <code>X^a</code> (bar eyes).</p>
+<p><strong>Expected Result:</strong> All female offspring have round eyes, while the male offspring segregate into round eyes and bar eyes in a 1:1 ratio. The appearance of the recessive bar eye trait <em>only</em> in males from two dominant-phenotype parents confirms both the dominance of the round eye and its location on the X chromosome.</p>
+<h3>Final Answers</h3>
+<p><strong>(1)</strong> <strong>Yes, it can be deduced that the gene is located only on the X chromosome.</strong> 
+<em>Reason:</em> If the gene were on an autosome, crossing purebred parents would result in an entirely heterozygous F₁ generation, which upon interbreeding would yield a 3:1 phenotypic ratio in F₂. The observed 1:1:1:1 ratio is only mathematically possible if the F₁ generation is a cross between a heterozygote and a hemizygous recessive, which implies X-linked inheritance originating from a homozygous recessive female and a hemizygous dominant male parent.</p>
+<p><strong>(2)</strong> <strong>Recessive</strong></p>
+<p><strong>(3)</strong> 
+<em>Experiment 1:</em> Cross F₂ bar-eyed females with F₂ round-eyed males. <strong>Expected result:</strong> All female offspring are round-eyed; all male offspring are bar-eyed.
+<em>Experiment 2:</em> Cross F₂ round-eyed females with F₂ round-eyed males. <strong>Expected result:</strong> All female offspring are round-eyed; male offspring are half round-eyed and half bar-eyed.
+<em>(Note: Either of these two experiments is a valid answer).</em></p>
+</body>
+</html>

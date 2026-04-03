@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_209_physics_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_209_physics_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in Figure (a), a block slides up a fixed inclined plane at time $t=0$. Its velocity-time ($v-t$) graph is shown in Figure (b). Given the gravitational acceleration $g$, the inclination angle $\theta$ of the slope, and the quantities $v_0$, $v_1$, and $t_1$ shown in the graph, find the coefficient of kinetic friction between the block and the slope.</p>
+<p><strong>Solution Approach:</strong>
+To find the coefficient of kinetic friction ($\mu$), we will analyze the motion in two phases: the upward sliding phase and the downward sliding phase.
+1.  <strong>Kinematics:</strong> Determine the magnitude of acceleration for both phases using the slope of the $v-t$ graph.
+2.  <strong>Dynamics:</strong> Use Newton's Second Law to relate these accelerations to the forces acting on the block (gravity and friction).
+3.  <strong>Calculation:</strong> Solve the resulting system of equations for $\mu$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the Upward Motion ($0 &lt; t &lt; t_1$)</strong></p>
+<p>From the $v-t$ graph in Figure (b), the block starts with velocity $v_0$ and comes to a momentary stop at $t_1$.
+The slope of the velocity-time graph represents acceleration. The magnitude of the acceleration during the ascent, denoted as $a_1$, is:
+$$a_1 = \frac{|\Delta v|}{\Delta t} = \frac{v_0 - 0}{t_1} = \frac{v_0}{t_1}$$</p>
+<p>Now, let's analyze the forces acting on the block as it slides up. Friction opposes the motion, so it points down the slope. The component of gravity along the slope also points down.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Newton's Second Law for Upward Motion</strong></p>
+<p>Applying Newton's Second Law along the slope (where "down the slope" is the direction of the net force causing deceleration):
+$$F_{net} = mg \sin\theta + f = m a_1$$</p>
+<p>We know that kinetic friction is $f = \mu N$. From the forces perpendicular to the slope, $N = mg \cos\theta$.
+Substituting these into the equation:
+$$mg \sin\theta + \mu mg \cos\theta = m a_1$$
+$$g(\sin\theta + \mu \cos\theta) = a_1$$</p>
+<p>Substituting $a_1 = \frac{v_0}{t_1}$:
+<strong>Equation (1):</strong>  $g(\sin\theta + \mu \cos\theta) = \frac{v_0}{t_1}$</p>
+<p><strong>Step 3: Analyze the Downward Motion ($t_1 &lt; t &lt; 3t_1$)</strong></p>
+<p>From the graph, the block accelerates from rest at $t_1$ to velocity $-v_1$ at $3t_1$. The time interval is $\Delta t = 3t_1 - t_1 = 2t_1$.
+The magnitude of the acceleration during descent, $a_2$, is:
+$$a_2 = \frac{|\Delta v|}{\Delta t} = \frac{v_1 - 0}{2t_1} = \frac{v_1}{2t_1}$$</p>
+<p>During descent, the block moves down the slope, so friction acts <strong>up</strong> the slope, opposing the motion.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 4: Newton's Second Law for Downward Motion</strong></p>
+<p>For the downward phase, the component of gravity ($mg \sin\theta$) pulls the block down, while friction ($f$) resists it. Since the block accelerates downwards, gravity wins.
+$$F_{net} = mg \sin\theta - f = m a_2$$</p>
+<p>Substituting $f = \mu mg \cos\theta$:
+$$mg \sin\theta - \mu mg \cos\theta = m a_2$$
+$$g(\sin\theta - \mu \cos\theta) = a_2$$</p>
+<p>Substituting $a_2 = \frac{v_1}{2t_1}$:
+<strong>Equation (2):</strong> $g(\sin\theta - \mu \cos\theta) = \frac{v_1}{2t_1}$</p>
+<p><strong>Step 5: Solve for $\mu$</strong></p>
+<p>We now have a system of two linear equations:
+1) $g \sin\theta + \mu g \cos\theta = \frac{v_0}{t_1}$
+2) $g \sin\theta - \mu g \cos\theta = \frac{v_1}{2t_1}$</p>
+<p>To isolate $\mu$, we can subtract Equation (2) from Equation (1):
+$$(g \sin\theta + \mu g \cos\theta) - (g \sin\theta - \mu g \cos\theta) = \frac{v_0}{t_1} - \frac{v_1}{2t_1}$$
+$$2\mu g \cos\theta = \frac{2v_0}{2t_1} - \frac{v_1}{2t_1}$$
+$$2\mu g \cos\theta = \frac{2v_0 - v_1}{2t_1}$$</p>
+<p><strong>Final Calculation:</strong></p>
+<p>Solving for $\mu$:
+$$\mu = \frac{2v_0 - v_1}{2t_1 \cdot 2g \cos\theta}$$
+$$\mu = \frac{2v_0 - v_1}{4 g t_1 \cos\theta}$$</p>
+<p><strong>Final Answer:</strong>
+The coefficient of kinetic friction between the block and the slope is:
+$$\mu = \frac{2v_0 - v_1}{4 g t_1 \cos\theta}$$</p>
+<p><strong>Verification:</strong>
+- <strong>Units:</strong> The numerator is velocity ($L/T$). The denominator is acceleration ($L/T^2$) $\times$ time ($T$), which results in velocity ($L/T$). The ratio is dimensionless, which is correct for a coefficient of friction.
+- <strong>Sign:</strong> Since the block slides up and then back down, the upward deceleration must be greater than the downward acceleration (friction aids deceleration but hinders acceleration). This implies $a_1 &gt; a_2$, or $\frac{v_0}{t_1} &gt; \frac{v_1}{2t_1}$, so $2v_0 &gt; v_1$. Thus, the numerator is positive, yielding a valid positive physical constant.</p>
+</body>
+</html>

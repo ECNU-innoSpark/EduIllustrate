@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_3_physics_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_3_physics_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, use three methods to pull the same object on the same horizontal ground for uniform linear motion. The pulling forces are $F_1$, $F_2$, and $F_3$ respectively. Then:
+A. $F_1 &gt; F_2 &gt; F_3$
+B. $F_1 &lt; F_2 &lt; F_3$
+C. $F_2 &gt; F_1 &gt; F_3$
+D. $F_2 &lt; F_1 &lt; F_3$</p>
+<p><strong>Solution Approach:</strong>
+Since the object moves in <strong>uniform linear motion</strong> in all three cases, the net force on the object (and the pulley systems) must be zero according to Newton's First Law.</p>
+<p>We assume the friction force $f$ experienced by the block is the same in all cases because the object and the ground remain identical. We will analyze the relationship between the pulling force ($F$) and the friction ($f$) for each scenario using Free Body Diagrams (FBDs).</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Case 1: Fixed Pulley</strong></p>
+<p>In the first setup, the pulley is attached to the wall. This is a <strong>fixed pulley</strong>. A fixed pulley changes the direction of the force but does not change its magnitude.</p>
+<ul>
+<li>The rope tension $T$ is equal to the pulling force $F_1$.</li>
+<li>The block is moving uniformly, so the tension pulling the block balances the sliding friction force $f$.</li>
+</ul>
+<p>Therefore:
+$$T = F_1$$
+$$T = f \implies F_1 = f$$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Case 2: Movable Pulley (Force applied to rope)</strong></p>
+<p>In the second setup, the pulley is attached to the block and moves with it. The rope is anchored to the wall, goes around the pulley, and is pulled by force $F_2$.</p>
+<ul>
+<li>This is a standard movable pulley system where the effort is applied to the rope.</li>
+<li>There are <strong>two segments</strong> of rope pulling the block unit against the friction.</li>
+<li>Each segment carries tension $T = F_2$.</li>
+</ul>
+<p>For the block to move uniformly, the total forward force ($2T$) must balance the friction $f$:
+$$2F_2 = f$$
+$$F_2 = \frac{1}{2}f$$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Case 3: Movable Pulley (Force applied to axle)</strong></p>
+<p>In the third setup, the force $F_3$ is applied directly to the axle of the movable pulley. The rope connects the wall to the block, passing over the pulley.</p>
+<ul>
+<li><strong>Forces on the Pulley:</strong> The force $F_3$ pulls to the right. It is balanced by the tension $T$ in the two rope segments pulling to the left. So, $F_3 = 2T$.</li>
+<li><strong>Forces on the Block:</strong> The block is pulled by the rope tension $T$. Since it moves uniformly, $T = f$.</li>
+</ul>
+<p>Substituting $T = f$ into the pulley equation:
+$$F_3 = 2T$$
+$$F_3 = 2f$$</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Conclusion and Comparison</strong></p>
+<p>We have derived the magnitude of each pulling force in terms of the friction $f$:</p>
+<ol>
+<li>$F_1 = f$</li>
+<li>$F_2 = 0.5f$</li>
+<li>$F_3 = 2f$</li>
+</ol>
+<p>Comparing these values:
+$$0.5f &lt; f &lt; 2f$$
+Therefore:
+$$F_2 &lt; F_1 &lt; F_3$$</p>
+<p><strong>Verification:</strong>
+- $F_2$ uses a movable pulley to gain mechanical advantage (force is halved).
+- $F_3$ applies effort to the axle, which is a mechanical disadvantage (force is doubled to gain speed/distance).
+- $F_1$ is a direct 1:1 transfer.</p>
+<p>The correct option is <strong>D</strong>.</p>
+</body>
+</html>

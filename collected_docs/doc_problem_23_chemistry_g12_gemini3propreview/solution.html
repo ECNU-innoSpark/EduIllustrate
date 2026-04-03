@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_23_chemistry_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_23_chemistry_g12</h1>
+<p><strong>Problem Statement:</strong>
+The molecular structure of H$<em>{2}$O$</em>{2}$ (hydrogen peroxide) and the structural unit of a certain ionic crystal X are shown in the figure. Which of the following statements is incorrect?</p>
+<p>A. The H$<em>{2}$O$</em>{2}$ molecule is a polar molecule.
+B. The forces existing in the H$<em>{2}$O$</em>{2}$ crystal include polar bonds, non-polar bonds, hydrogen bonds, and van der Waals forces.
+C. The chemical formula of crystal X can be represented as AB.
+D. In crystal X, the number of B ions closest to each A ion is 12.</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the properties of the H$<em>{2}$O$</em>{2}$ molecule based on its geometry to evaluate statements A and B. Then, we will interpret the unit cell diagram of crystal X to determine its stoichiometry (chemical formula) and the coordination number of the ions to evaluate statements C and D. The goal is to identify the single incorrect statement.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Analysis of H$<em>{2}$O$</em>{2}$ (Statements A and B):</strong></p>
+<ol>
+<li>
+<p><strong>Molecular Polarity (Statement A):</strong>
+The structure of H$<em>{2}$O$</em>{2}$ is often described as an "open book" shape. The two O-H bonds lie in different planes, creating a dihedral angle. Due to this asymmetry, the dipole moments of the polar O-H bonds do not cancel out. Therefore, the molecule has a net dipole moment.
+<em>Conclusion: H$<em>{2}$O$</em>{2}$ is a polar molecule. Statement A is correct.</em></p>
+</li>
+<li>
+<p><strong>Forces in the Crystal (Statement B):</strong></p>
+</li>
+<li><strong>Intramolecular Forces (within the molecule):</strong></li>
+<li>The O-H bond is formed between atoms with different electronegativities, making it a <strong>polar covalent bond</strong>.</li>
+<li>The O-O bond is formed between identical atoms, making it a <strong>non-polar covalent bond</strong>.</li>
+<li><strong>Intermolecular Forces (between molecules):</strong></li>
+<li>Since H$<em>{2}$O$</em>{2}$ contains hydrogen attached to highly electronegative oxygen, it forms <strong>hydrogen bonds</strong> between molecules in the solid state.</li>
+<li><strong>Van der Waals forces</strong> (dispersion forces) exist between all molecules.
+<em>Conclusion: The crystal contains polar bonds, non-polar bonds, hydrogen bonds, and van der Waals forces. Statement B is correct.</em></li>
+</ol>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Analysis of Crystal X Formula (Statement C):</strong></p>
+<p>To determine the chemical formula, we examine the provided structural unit (the cube).</p>
+<ul>
+<li>The diagram shows a cube with ions located at the corners.</li>
+<li>There are 8 corners in total.</li>
+<li>Counting the ions in the diagram: There are 4 "A" ions (black) and 4 "B" ions (white) occupying alternating corners.</li>
+<li>In an infinite crystal lattice composed of repeating units like this, the ratio of A to B is maintained as 1:1.</li>
+<li>Alternatively, using the unit cell contribution method for this specific cube (assuming it represents the stoichiometry directly):</li>
+<li>Number of A ions = $4 \times \frac{1}{8} = 0.5$</li>
+<li>Number of B ions = $4 \times \frac{1}{8} = 0.5$</li>
+<li>Ratio A : B = $0.5 : 0.5 = 1 : 1$.</li>
+</ul>
+<p><em>Conclusion: The chemical formula is AB. Statement C is correct.</em></p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Analysis of Coordination Number (Statement D):</strong></p>
+<p>We need to determine the number of B ions closest to a single A ion.</p>
+<ol>
+<li><strong>Identify the Geometry:</strong> The structural unit shows A and B ions alternating at the corners of a cube. This arrangement corresponds to the rock salt (NaCl) crystal lattice structure.</li>
+<li><strong>Determine Neighbors:</strong></li>
+<li>Pick any A ion as the reference point.</li>
+<li>The nearest neighbors are the B ions located along the edges connected to that A ion.</li>
+<li>In a 3D cubic lattice, any given corner (vertex) is the meeting point of 6 edges (up, down, left, right, front, back).</li>
+<li>Therefore, each A ion is surrounded by 6 nearest B ions.</li>
+<li><strong>Evaluate Statement D:</strong></li>
+<li>Statement D claims the number of nearest B ions is 12.</li>
+<li>A coordination number of 12 is typical for "closest packing" of identical atoms (like in metallic crystals FCC or HCP), or for second-nearest neighbors in this lattice (A to A), but not for the nearest neighbors of opposite charge in an ionic AB crystal (which is typically 6 or 8).</li>
+</ol>
+<p><em>Conclusion: The coordination number is 6, not 12. Statement D is incorrect.</em></p>
+<p><strong>Final Answer:</strong>
+The incorrect statement is <strong>D</strong>.</p>
+</body>
+</html>

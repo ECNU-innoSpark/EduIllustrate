@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_130_chemistry_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_130_chemistry_g12</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>A haloalkane with the molecular formula C$<em>{5}$H$</em>{11}$Cl contains two —CH$<em>{3}$ groups, two —CH$</em>{2}$— groups, one &gt;CH— group (a methine group bonded to three other atoms), and one —Cl atom in its molecule. The possible number of structures for this compound is (  )
+A. 2
+B. 3
+C. 4
+D. 5</p>
+<p><strong>Solution Approach:</strong></p>
+<p>To find the number of possible structural isomers, we need to assemble these specific molecular fragments like puzzle pieces. The key is the <code>&gt;CH—</code> group. Because it has three open bonds, it must act as a branching point in the carbon skeleton. We have exactly three terminal groups available (two <code>—CH3</code> groups and one <code>—Cl</code> atom) to cap the ends of these three branches. The remaining pieces are two <code>—CH2—</code> groups, which act as "links" in the chain. Our task is to find all the unique ways to distribute these two <code>—CH2—</code> links among the three branches.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p>As visualized, the central <code>&gt;CH—</code> group provides exactly three attachment points ($R_1$, $R_2$, $R_3$). Since a chain cannot end with a <code>—CH2—</code> group (it requires two bonds), the three ends of our branches must be capped by our three terminal pieces: the two <code>—CH3</code> groups and the one <code>—Cl</code> atom. </p>
+<p>Therefore, the base structure of our molecule is a central <code>CH</code> connected to two branches that will eventually end in <code>CH3</code>, and one branch that will eventually end in <code>Cl</code>. </p>
+<p>Now, we simply need to distribute our two remaining <code>—CH2—</code> groups into these three branches. Let's systematically go through the mathematical combinations:</p>
+<p><img alt="" src="scene2.png" /></p>
+<p>Let's break down the four unique structures we just built by placing the two <code>—CH2—</code> groups:</p>
+<p><strong>Case 1: Both <code>—CH2—</code> groups are placed on one of the <code>—CH3</code> branches.</strong>
+This creates a longer propyl chain on one side, a methyl group on the other, and the chlorine attached directly to the central carbon. 
+Structure: $CH_3-CH_2-CH_2-CH(Cl)-CH_3$ (2-chloropentane)</p>
+<p><strong>Case 2: Both <code>—CH2—</code> groups are placed on the <code>—Cl</code> branch.</strong>
+This creates a longer chloroethyl chain, with the two methyl groups attached directly to the central carbon.
+Structure: $CH_3-CH(CH_3)-CH_2-CH_2-Cl$ (1-chloro-3-methylbutane)</p>
+<p><strong>Case 3: One <code>—CH2—</code> group is on a <code>—CH3</code> branch, and the other is on the <code>—Cl</code> branch.</strong>
+This gives us an ethyl group, a methyl group, and a chloromethyl group all attached to the central carbon.
+Structure: $CH_3-CH_2-CH(CH_3)-CH_2-Cl$ (1-chloro-2-methylbutane)</p>
+<p><strong>Case 4: One <code>—CH2—</code> group is placed on each of the two <code>—CH3</code> branches.</strong>
+This creates two symmetrical ethyl branches with the chlorine attached directly to the central carbon.
+Structure: $CH_3-CH_2-CH(Cl)-CH_2-CH_3$ (3-chloropentane)</p>
+<p>Because the two <code>—CH3</code> branches are functionally identical starting points, placing both <code>—CH2—</code> groups on "Branch 1" is the exact same molecule as placing them both on "Branch 2". Therefore, there are only these 4 unique combinations.</p>
+<p><strong>Conclusion:</strong></p>
+<p>By systematically distributing the two <code>—CH2—</code> fragments among the three branches originating from the central <code>&gt;CH—</code> group, we successfully identified exactly 4 unique structural isomers that satisfy all the conditions of the prompt. </p>
+<p>The correct option is <strong>C</strong>.</p>
+<p>Would you like me to walk through how to systematically name these 4 isomers using IUPAC rules?</p>
+</body>
+</html>

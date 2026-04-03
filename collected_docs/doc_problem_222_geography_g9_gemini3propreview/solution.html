@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_222_geography_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_222_geography_g9</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>Read the latitude and longitude grid map and the material to answer the following questions.</p>
+<p><strong>Material:</strong> On the evening of August 26th, Singapore time, the first Youth Olympic Games concluded at the beautiful Marina Bay in Singapore ($1^\circ \text{N}, 104^\circ \text{E}$). The Mayor of Nanjing ($32^\circ \text{N}, 118^\circ \text{E}$), Ji Jianye, received the Olympic flag from IOC President Jacques Rogge, and the Youth Olympics will truly enter "Nanjing Time". (Xinhua Net Singapore August 25th dispatch)</p>
+<p>(1) Point ① in the figure is in the $\underline{\hspace{5em}}$ direction relative to point ③.
+(2) The latitude and longitude location of the host city of the first Youth Olympic Games, Singapore, is relatively close to $\underline{\hspace{5em}}$ (number) in the figure. Write down the latitude and longitude of ① $\underline{\hspace{5em}}$.</p>
+<p><strong>Solution Approach:</strong>
+To solve this, we first need to determine the specific latitude and longitude coordinates for points ①, ②, ③, and ④ by reading the provided grid. Then, we will calculate the relative direction between points and compare coordinates to find the closest match for Singapore.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determine the coordinates of the points.</strong></p>
+<p>First, let's analyze the grid labels to establish the coordinate system:
+*   <strong>Longitude (Horizontal Axis):</strong> The central vertical line is labeled $0^\circ$ (the Prime Meridian). To the left, the numbers increase ($30, 60, \dots, 150$), indicating <strong>West Longitude (W)</strong>. To the right, the numbers increase ($30, 60, \dots, 150$), indicating <strong>East Longitude (E)</strong>.
+*   <strong>Latitude (Vertical Axis):</strong> The line labeled $0^\circ$ is the Equator. The numbers increase upwards ($10, 20, 30, 40$), indicating <strong>North Latitude (N)</strong>. The line below the Equator is labeled $10^\circ$, indicating <strong>South Latitude (S)</strong>.</p>
+<p>Using this system, we can identify the coordinates:
+*   <strong>Point ①:</strong> Located at longitude $120^\circ$ West and latitude $10^\circ$ South. Coordinates: <strong>$(10^\circ \text{S}, 120^\circ \text{W})$</strong>.
+*   <strong>Point ②:</strong> Located at longitude $120^\circ$ East and latitude $0^\circ$. Coordinates: <strong>$(0^\circ, 120^\circ \text{E})$</strong>.
+*   <strong>Point ③:</strong> Located at longitude $120^\circ$ East and latitude $30^\circ$ North. Coordinates: <strong>$(30^\circ \text{N}, 120^\circ \text{E})$</strong>.
+*   <strong>Point ④:</strong> Located at longitude $120^\circ$ West and latitude $30^\circ$ North. Coordinates: <strong>$(30^\circ \text{N}, 120^\circ \text{W})$</strong>.</p>
+<p><strong>Step 2: Determine the direction of Point ① relative to Point ③.</strong></p>
+<p>We need to compare the positions of Point ① $(10^\circ \text{S}, 120^\circ \text{W})$ and Point ③ $(30^\circ \text{N}, 120^\circ \text{E})$.</p>
+<ul>
+<li>
+<p><strong>North-South Direction:</strong> Point ① is at $10^\circ \text{S}$ and Point ③ is at $30^\circ \text{N}$. Since South is "below" North, Point ① is <strong>South</strong> of Point ③.</p>
+</li>
+<li>
+<p><strong>East-West Direction:</strong> This requires checking the shortest path (minor arc) between the two longitudes.</p>
+</li>
+</ul>
+<p><img alt="" src="scene2.png" /></p>
+<p>To determine the East-West relationship, we look for the shortest distance between the two longitudes:
+*   Longitude of ③: $120^\circ \text{E}$
+*   Longitude of ①: $120^\circ \text{W}$</p>
+<p>The distance crossing the Prime Meridian ($0^\circ$) is $120 + 120 = 240^\circ$.
+The distance crossing the International Date Line ($180^\circ$) is $(180 - 120) + (180 - 120) = 60 + 60 = 120^\circ$.</p>
+<p>Since the path crossing the $180^\circ$ line is shorter ($120^\circ &lt; 240^\circ$), we use that direction. From $120^\circ \text{E}$ traveling across $180^\circ$ to $120^\circ \text{W}$ is moving in the <strong>Eastward</strong> direction (following the Earth's rotation).</p>
+<p>Combining these results:
+*   Latitude: South
+*   Longitude: East</p>
+<p>Therefore, Point ① is in the <strong>Southeast</strong> direction relative to Point ③.</p>
+<p><strong>Step 3: Locate Singapore relative to the grid points.</strong></p>
+<p>The problem states Singapore's location is $(1^\circ \text{N}, 104^\circ \text{E})$. We need to find which numbered point is closest to this.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p>Let's compare Singapore $(1^\circ \text{N}, 104^\circ \text{E})$ with the grid points:</p>
+<ul>
+<li><strong>Point ① $(10^\circ \text{S}, 120^\circ \text{W})$:</strong> Very far in both latitude and longitude.</li>
+<li><strong>Point ② $(0^\circ, 120^\circ \text{E})$:</strong> </li>
+<li>Latitude difference: $|1^\circ - 0^\circ| = 1^\circ$ (Very close).</li>
+<li>Longitude difference: $|120^\circ - 104^\circ| = 16^\circ$ (Relatively close).</li>
+<li><strong>Point ③ $(30^\circ \text{N}, 120^\circ \text{E})$:</strong> Latitude difference is $29^\circ$ (Far).</li>
+<li><strong>Point ④ $(30^\circ \text{N}, 120^\circ \text{W})$:</strong> Very far.</li>
+</ul>
+<p>Point ② is geographically the closest to Singapore.</p>
+<p><strong>Final Answer:</strong>
+(1) Point ① is in the <strong>Southeast</strong> direction relative to point ③.
+(2) Singapore's position is closest to <strong>②</strong>. The latitude and longitude of ① is <strong>$10^\circ \text{S}, 120^\circ \text{W}$</strong> (or $120^\circ \text{W}, 10^\circ \text{S}$).</p>
+</body>
+</html>

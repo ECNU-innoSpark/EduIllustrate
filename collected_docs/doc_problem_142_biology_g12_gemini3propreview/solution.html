@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_142_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_142_biology_g12</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>The hair color of Lincoln Longwool pigs is controlled by three pairs of independently inherited and completely dominant genes: A-a, B-b, and C-c. Research shows that when the number of C genes in a somatic cell is less than the number of c genes, the expression of the C gene is weakened, forming a black-blue mutant. The relationship between genes and traits is shown in Figure 1, and the composition of C and c genes on chromosomes in the somatic cells of black-blue mutants is shown in Figure 2. Please answer:</p>
+<p>(1) Based on Figure 1, deduce the genotype of a homozygous brown pig: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__.</p>
+<p>(2) In Figure 1, the cross between certain normal black Lincoln Longwool pigs with the same genotype produced offspring with two phenotypes. The phenotypes and their ratio in the offspring are <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>_ or </strong><strong><em>_</em></strong><strong><em>_</em></strong>______.</p>
+<p>(3) Currently, there are multiple purebred Lincoln Longwool pigs. Please design a simple hybridization experiment to determine which type of mutant in Figure 2 a Lincoln Longwool pig with the genotype aaBbCcc belongs to (assuming no mutations or chromosomal crossovers occur during the experiment, and all types of gametes are equally viable). 
+Experimental steps: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_.
+Results and conclusions:
+I. If in the offspring </em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>, then the mutant is Mutant Alpha (甲).
+II. If in the offspring </strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>, then the mutant is Mutant Beta (乙).
+III. If in the offspring </strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_____, then the mutant is Mutant Gamma (丙).</p>
+<p><strong>Solution Approach:</strong>
+We will first analyze the biochemical pathway to map genotypes to phenotypes (White, Brown, Black). Then, we will use standard Mendelian genetics to solve for the specific crosses requested. Finally, we will analyze the chromosomal mutations to determine the types of gametes produced by each mutant and design a test cross to identify them.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Deducing the Genotype of a Homozygous Brown Pig (Question 1)</strong></p>
+<p>Based on the biochemical pathway (Figure 1):
+* <strong>Gene A</strong> inhibits Gene B. Therefore, for any color other than white to be produced, the pig must have the recessive genotype <strong>aa</strong>. If a pig has the dominant <em>A</em> allele, the pathway is blocked, resulting in a White phenotype.
+* <strong>Gene B</strong> is required to convert the White substance to the Brown substance. A brown pig must have at least one dominant <em>B</em> allele.
+* <strong>Gene C</strong> is required to convert the Brown substance to the Black substance. For the pig to remain brown, this step must be blocked, meaning the pig must have the homozygous recessive genotype <strong>cc</strong>.</p>
+<p>Since the question asks for a <em>homozygous</em> brown pig, all allele pairs must be homozygous. 
+Therefore, the genotype must be <strong>aaBBcc</strong>.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Offspring of Normal Black Pigs (Question 2)</strong></p>
+<p>A normal black pig must have the pathway fully active: no inhibition from A (<strong>aa</strong>), active B (<strong>B_</strong>), and active C (<strong>C_</strong>). The normal black genotype is <strong>aaB_C_</strong> (with $C \ge c$ to avoid the black-blue mutation).</p>
+<p>We are told two pigs with the <em>same genotype</em> are crossed and produce exactly <em>two</em> phenotypes. Let's test the possible heterozygous genotypes for normal black pigs:</p>
+<ol>
+<li><strong>aaBbCC × aaBbCC</strong>: </li>
+<li>Offspring: 3/4 aaB_CC (Black) and 1/4 aabbCC (White). </li>
+<li>
+<p>Phenotypes: <strong>Black : White = 3 : 1</strong>. (This yields exactly two phenotypes).</p>
+</li>
+<li>
+<p><strong>aaBBCc × aaBBCc</strong>: </p>
+</li>
+<li>Offspring: 3/4 aaBBC_ (Black) and 1/4 aaBBcc (Brown). </li>
+<li>
+<p>Phenotypes: <strong>Black : Brown = 3 : 1</strong>. (This also yields exactly two phenotypes).</p>
+</li>
+<li>
+<p><strong>aaBbCc × aaBbCc</strong>: </p>
+</li>
+<li>Offspring will have Black (aaB_C_), Brown (aaB_cc), and White (aabb__) phenotypes. This yields <em>three</em> phenotypes, which contradicts the problem.</li>
+</ol>
+<p>Therefore, the phenotypes and their ratios are <strong>Black : White = 3 : 1</strong> OR <strong>Black : Brown = 3 : 1</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Designing the Test Cross (Question 3)</strong></p>
+<p>We need to determine which mutation a black-blue pig of genotype <strong>aaBbCcc</strong> has. The best way to reveal the gametes produced by the mutant is to perform a test cross with a homozygous recessive tester for the relevant traits. </p>
+<p>Since we want to observe the effects of the C/c alleles, we should cross it with a <strong>purebred brown pig (aaBBcc)</strong>. (Using a purebred white pig would introduce the epistatic <code>bb</code> allele, complicating the phenotypic ratios).</p>
+<p><strong>Experimental Step:</strong> Cross the black-blue mutant pig (aaBbCcc) with a purebred brown pig (aaBBcc), and observe the phenotypes of the offspring.</p>
+<p>Let's analyze the expected gametes for the C locus from each mutant type and the resulting offspring when fertilized by a <em>c</em> gamete from the brown tester:</p>
+<ul>
+<li><strong>Mutant Alpha (甲)</strong>: Chromosomes are (Cc) and (c).</li>
+<li>Gametes: 1/2 (Cc), 1/2 (c)</li>
+<li>Offspring genotypes (adding c): 1/2 Ccc (Black-blue, because $C &lt; c$), 1/2 cc (Brown).</li>
+<li>
+<p><strong>Conclusion I</strong>: Black-blue : Brown = 1 : 1.</p>
+</li>
+<li>
+<p><strong>Mutant Beta (乙)</strong>: Chromosomes are (C), (c), and (c).</p>
+</li>
+<li>Gametes: 1/6 (C), 2/6 (Cc), 2/6 (c), 1/6 (cc)</li>
+<li>Offspring genotypes (adding c): 1/6 Cc (Normal Black, $C = c$), 2/6 Ccc (Black-blue), 2/6 cc (Brown), 1/6 ccc (Brown). </li>
+<li>Note that <code>cc</code> and <code>ccc</code> both result in the brown phenotype.</li>
+<li>
+<p><strong>Conclusion II</strong>: Normal Black : Black-blue : Brown = 1 : 2 : 3.</p>
+</li>
+<li>
+<p><strong>Mutant Gamma (丙)</strong>: Chromosomes are (C) and (cc).</p>
+</li>
+<li>Gametes: 1/2 (C), 1/2 (cc)</li>
+<li>Offspring genotypes (adding c): 1/2 Cc (Normal Black), 1/2 ccc (Brown).</li>
+<li><strong>Conclusion III</strong>: Normal Black : Brown = 1 : 1.</li>
+</ul>
+<p><strong>Final Answer Recap:</strong>
+(1) aaBBcc
+(2) Black : White = 3 : 1  OR  Black : Brown = 3 : 1
+(3) Experimental step: Cross the mutant pig with a purebred brown pig (aaBBcc) and observe the offspring phenotypes.
+I. Black-blue : Brown = 1 : 1
+II. Normal Black : Black-blue : Brown = 1 : 2 : 3
+III. Normal Black : Brown = 1 : 1</p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_167_math_g6_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_167_math_g6</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, the shaded area of A (甲) is (  ) the shaded area of B (乙).
+A. Greater than
+B. Less than
+C. Equal to</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to calculate the area of the two shaded regions, labeled "甲" (A) and "乙" (B), by using the grid squares as units. We will determine the geometric properties (base and height) of each shape relative to the grid and compare their calculated areas.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the Area of Region A (甲)</strong></p>
+<p>Let's examine the shape labeled "甲" on the left side of the grid.</p>
+<ol>
+<li><strong>Identify the Shape:</strong> This region is a <strong>triangle</strong>.</li>
+<li><strong>Determine the Base:</strong> The top edge of the triangle lies along the top grid line. By counting the grid squares, we can see it spans exactly <strong>2 squares</strong>.</li>
+<li>Base = 2 units.</li>
+<li><strong>Determine the Height:</strong> The triangle's lowest point touches the bottom grid line. Since the grid is 2 rows high, the vertical distance from the base (top line) to the vertex (bottom line) is <strong>2 squares</strong>.</li>
+<li>Height = 2 units.</li>
+</ol>
+<p>Now, we calculate the area using the formula for a triangle:
+$$ \text{Area} = \frac{1}{2} \times \text{base} \times \text{height} $$
+$$ \text{Area}_A = \frac{1}{2} \times 2 \times 2 = 2 \text{ square units} $$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyze the Area of Region B (乙)</strong></p>
+<p>Now, let's look at the shape labeled "乙" on the right side.</p>
+<ol>
+<li><strong>Identify the Shape:</strong> This region is a <strong>parallelogram</strong>. It is located entirely within the top row of the grid.</li>
+<li><strong>Determine the Base:</strong> Looking at the horizontal width, the shape spans from one grid intersection to another two units away. Both the top edge and the bottom edge of this parallelogram span <strong>2 squares</strong> horizontally.</li>
+<li>Base = 2 units.</li>
+<li><strong>Determine the Height:</strong> The shape occupies only the top row of the grid, so its vertical height is exactly <strong>1 square</strong>.</li>
+<li>Height = 1 unit.</li>
+</ol>
+<p>We calculate the area using the formula for a parallelogram:
+$$ \text{Area} = \text{base} \times \text{height} $$
+$$ \text{Area}_B = 2 \times 1 = 2 \text{ square units} $$</p>
+<p><em>Alternative Method:</em> You can also count the grid parts. The shape consists of one full square (area 1) in the middle, plus two triangles on the sides that each equal half a square (0.5 + 0.5 = 1). Total Area = 1 + 1 = 2.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Comparison and Conclusion</strong></p>
+<p>We have calculated the areas of both shapes:
+*   <strong>Area of A (甲):</strong> 2 square units.
+*   <strong>Area of B (乙):</strong> 2 square units.</p>
+<p>Since $2 = 2$, the area of the shaded region A is <strong>equal to</strong> the area of the shaded region B.</p>
+<p><strong>Final Answer:</strong>
+The correct option is <strong>C. 等于 (Equal to)</strong>.</p>
+</body>
+</html>

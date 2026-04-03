@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_71_math_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_71_math_g12</h1>
+<p><strong>Problem Statement:</strong>
+Given a regular hexagon $A_1A_2\cdots A_6$ inscribed in a circle $O$, let $P$ be a point on the circle $O$. Let $\theta_i$ be the angle between the vector $\overrightarrow{OP}$ and the vector $\overrightarrow{OA_i}$ for $i=1, 2, \cdots, 6$. If the values $\theta_1, \theta_2, \cdots, \theta_6$, when rearranged from smallest to largest, form an arithmetic progression, find the 3rd term of this arithmetic progression.</p>
+<p><strong>Solution Approach:</strong>
+1.  <strong>Model the Geometry:</strong> We will place the hexagon vertices at fixed angles (multiples of $60^\circ$) on the circle.
+2.  <strong>Define Point P:</strong> Due to the symmetry of the regular hexagon, we can analyze the position of $P$ within a specific sector (e.g., between $0^\circ$ and $30^\circ$) without loss of generality.
+3.  <strong>Express Angles:</strong> We will calculate the six angles ${\theta_i}$ in terms of $P$'s angular position $\alpha$.
+4.  <strong>Sort and Solve:</strong> We will order these expressions by size, set up the condition for an arithmetic progression (equal differences), and solve for $\alpha$.
+5.  <strong>Calculate the Term:</strong> Finally, we will substitute $\alpha$ back into the expressions to find the value of the 3rd term.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Coordinate and Angle Setup</strong></p>
+<p>Let the vertices of the regular hexagon be at the following angular positions relative to the center $O$:
+*   $A_1$: $0^\circ$
+*   $A_2$: $60^\circ$
+*   $A_3$: $120^\circ$
+*   $A_4$: $180^\circ$
+*   $A_5$: $240^\circ$
+*   $A_6$: $300^\circ$ (which corresponds to $-60^\circ$)</p>
+<p>Let the angle of point $P$ be $\alpha$. Due to the 6-fold rotational symmetry and reflection symmetry of the hexagon, the set of angles ${\theta_i}$ is invariant under these symmetries. Therefore, we can assume without loss of generality that $P$ lies in the first half of the first sector:
+$$0^\circ \le \alpha \le 30^\circ$$</p>
+<p><strong>Step 2: Expressing the Vector Angles</strong></p>
+<p>The angle $\theta_i$ between two vectors is the shortest angular distance between them on the circle, falling within the range $[0^\circ, 180^\circ]$.</p>
+<p>Based on our setup ($P$ at $\alpha$, where $0 \le \alpha \le 30$):
+1.  <strong>Angle with $A_1$ ($0^\circ$):</strong> $\theta_1 = \alpha$
+2.  <strong>Angle with $A_2$ ($60^\circ$):</strong> $\theta_2 = 60^\circ - \alpha$
+3.  <strong>Angle with $A_3$ ($120^\circ$):</strong> $\theta_3 = 120^\circ - \alpha$
+4.  <strong>Angle with $A_4$ ($180^\circ$):</strong> $\theta_4 = 180^\circ - \alpha$
+5.  <strong>Angle with $A_5$ ($240^\circ$):</strong> The angular difference is $240^\circ - \alpha$. The vector angle is $360^\circ - (240^\circ - \alpha) = 120^\circ + \alpha$.
+6.  <strong>Angle with $A_6$ ($300^\circ$):</strong> The angular difference is $300^\circ - \alpha$. The vector angle is $360^\circ - (300^\circ - \alpha) = 60^\circ + \alpha$.</p>
+<p>Thus, the set of six angles is:
+$$ { \alpha, 60^\circ - \alpha, 60^\circ + \alpha, 120^\circ - \alpha, 120^\circ + \alpha, 180^\circ - \alpha } $$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Sorting the Angles</strong></p>
+<p>We need to arrange these values from smallest to largest to form the arithmetic progression. Given $0^\circ \le \alpha \le 30^\circ$:</p>
+<ol>
+<li><strong>Smallest:</strong> $\alpha$ (since $\alpha \le 30$ and $60-\alpha \ge 30$)</li>
+<li><strong>Second:</strong> $60^\circ - \alpha$</li>
+<li><strong>Third:</strong> $60^\circ + \alpha$ (Clearly larger than $60-\alpha$)</li>
+<li><strong>Fourth:</strong> $120^\circ - \alpha$ (Note: $(120-\alpha) - (60+\alpha) = 60 - 2\alpha \ge 0$)</li>
+<li><strong>Fifth:</strong> $120^\circ + \alpha$</li>
+<li><strong>Largest:</strong> $180^\circ - \alpha$</li>
+</ol>
+<p>So, the sorted sequence is:
+$$ a_1 = \alpha $$
+$$ a_2 = 60^\circ - \alpha $$
+$$ a_3 = 60^\circ + \alpha $$
+$$ a_4 = 120^\circ - \alpha $$
+$$ a_5 = 120^\circ + \alpha $$
+$$ a_6 = 180^\circ - \alpha $$</p>
+<p><strong>Step 4: Solving for $\alpha$</strong></p>
+<p>For this sequence to be an arithmetic progression, the difference between consecutive terms must be constant. Let's compare the first two differences:</p>
+<p>Difference $d_1 = a_2 - a_1 = (60^\circ - \alpha) - \alpha = 60^\circ - 2\alpha$
+Difference $d_2 = a_3 - a_2 = (60^\circ + \alpha) - (60^\circ - \alpha) = 2\alpha$</p>
+<p>Set $d_1 = d_2$:
+$$ 60^\circ - 2\alpha = 2\alpha $$
+$$ 4\alpha = 60^\circ $$
+$$ \alpha = 15^\circ $$</p>
+<p>We should verify if this $\alpha$ works for the rest of the sequence:
+*   $a_4 - a_3 = (120^\circ - 15^\circ) - (60^\circ + 15^\circ) = 105^\circ - 75^\circ = 30^\circ$
+*   $a_5 - a_4 = (120^\circ + 15^\circ) - (120^\circ - 15^\circ) = 135^\circ - 105^\circ = 30^\circ$
+*   $a_6 - a_5 = (180^\circ - 15^\circ) - (120^\circ + 15^\circ) = 165^\circ - 135^\circ = 30^\circ$</p>
+<p>The common difference is $30^\circ$, so $\alpha = 15^\circ$ is the correct solution.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 5: Finding the 3rd Term</strong></p>
+<p>The question asks for the 3rd term of this arithmetic progression. Based on our sorted list:</p>
+<p>$$ \text{3rd Term } (a_3) = 60^\circ + \alpha $$</p>
+<p>Substituting $\alpha = 15^\circ$:
+$$ a_3 = 60^\circ + 15^\circ = 75^\circ $$</p>
+<p><strong>Final Answer:</strong>
+The arithmetic progression is $15^\circ, 45^\circ, 75^\circ, 105^\circ, 135^\circ, 165^\circ$.
+The 3rd term is <strong>$75^\circ$</strong>.</p>
+</body>
+</html>

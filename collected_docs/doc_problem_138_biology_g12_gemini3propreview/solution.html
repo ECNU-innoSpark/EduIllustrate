@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_138_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_138_biology_g12</h1>
+<p><strong>Problem Statement:</strong>
+In the figure below, Plant A is a purebred pea with yellow pods (aa) and green cotyledons (bb), and Plant B is a purebred pea with green pods (AA) and yellow cotyledons (BB). These two pairs of genes are inherited independently. Plant A and Plant B are subjected to certain treatments, and the results are shown in the figure.</p>
+<p>(1) The method of treatment ① is <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>.
+(2) After treatment ②, Plant A forms pods with seeds. The color of its pod is </strong><strong><em>_</em></strong>_ color, and the color of the cotyledon of the seed is <strong><em>_</em></strong><strong><em> color. The next year, all the seeds formed by treatment ② are sown. Under natural conditions, the proportion of plants grown that produce yellow pods is </em></strong><strong><em>_</em>_; among their seeds, the proportion of embryos with genotype AABb is </strong><strong><em>_</em></strong>.
+(3) The biotechnology applied in treatment ③, its process and life activities can be briefly represented by text and arrows as <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>.
+(4) The principle of treatment ④ is <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>.
+(5) If the green gene (b) of the pea cotyledon is extracted and integrated into the DNA of a cauliflower cell, so that the inflorescence axis, pedicel, and flower of the cauliflower plant are all green to increase its economic value. The most commonly used transport tool (vector) to deliver the green gene (b) of the pea cotyledon into the somatic cell of the cauliflower is </strong><strong><em>_</em></strong>_____.</p>
+<p><strong>Solution Approach:</strong>
+This problem comprehensively covers plant physiology (hormones), genetics (Mendelian inheritance, distinguishing maternal vs. embryonic tissues), plant tissue culture, chromosome variation, and basic genetic engineering. 
+- <strong>Treatment 1</strong> involves producing seedless fruits using plant hormones.
+- <strong>Treatment 2</strong> is a genetic cross where we must carefully separate the traits of the maternal tissue (the pod) from the traits of the offspring embryo (the cotyledon).
+- <strong>Treatments 3 and 4</strong> depict the standard process of haploid breeding.
+- <strong>Treatment 5</strong> tests the basic tools of recombinant DNA technology.
+We will break down each treatment step-by-step.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Treatment ①</strong>
+Treatment ① results in Plant A producing a "seedless pod". In nature, seed development is usually required to provide the auxin necessary for ovary expansion into a fruit (pod). However, we can artificially induce parthenocarpy (fruit development without fertilization). By emasculating the flower (removing male parts to prevent pollination) and applying an appropriate concentration of auxin or an auxin analog to the stigma, the ovary is stimulated to develop into a pod without seeds. </p>
+<p><em>Answer for (1):</em> Applying a certain concentration of auxin (or auxin analog) to the unpollinated stigma.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyzing Treatment ② (First Year)</strong>
+Treatment ② is a cross between Plant A (aabb) and Plant B (AABB). Because Plant A is the one forming the pods, it acts as the maternal parent (♀), while Plant B provides the pollen (♂).</p>
+<ul>
+<li><strong>Pod Color:</strong> The pod (pericarp) develops directly from the ovary wall of the maternal plant. Therefore, its genotype is identical to the maternal Plant A, which is <strong>aa</strong>. Since 'aa' codes for yellow pods, the pod color is <strong>yellow</strong>.</li>
+<li><strong>Cotyledon Color:</strong> The cotyledon is part of the embryo, which is formed by the fertilization of an ovule (ab) from Plant A by pollen (AB) from Plant B. The resulting F1 embryo has the genotype <strong>AaBb</strong>. Because 'B' (yellow cotyledon) is dominant over 'b' (green cotyledon), the cotyledon color is <strong>yellow</strong>.</li>
+</ul>
+<p><em>Answer for (2) Part 1:</em> Yellow; Yellow.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Analyzing Treatment ② (Second Year)</strong>
+The next year, the F1 seeds (AaBb) are planted. These seeds grow into mature F1 plants.</p>
+<ul>
+<li><strong>Proportion of Yellow Pods:</strong> The pods produced by these F1 plants are the maternal tissue of the F1 generation. Thus, the pod genotype is <strong>Aa</strong>. Since 'A' (green pod) is dominant over 'a' (yellow pod), 100% of the pods will be green. The proportion of yellow pods is therefore <strong>0</strong>.</li>
+<li><strong>Genotype of Next-Generation Embryos:</strong> Under natural conditions, peas self-pollinate. The F1 plant (AaBb) undergoes a self-cross (AaBb × AaBb). Because the genes assort independently, we can calculate the probability of the F2 embryo genotype <strong>AABb</strong> by multiplying the probabilities of each gene pair:</li>
+<li>For Gene A: Aa × Aa → 1/4 AA</li>
+<li>For Gene B: Bb × Bb → 2/4 Bb (or 1/2)</li>
+<li>Total Probability = (1/4) × (2/4) = <strong>1/8</strong>.</li>
+</ul>
+<p><em>Answer for (2) Part 2:</em> 0; 1/8.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 4: Analyzing Treatments ③ and ④</strong>
+- <strong>Treatment ③</strong> represents the production of a haploid plant from Plant B. This is achieved through <strong>anther (or pollen) culture</strong>, a type of plant tissue culture. The biological process involves the pollen cells undergoing <strong>dedifferentiation</strong> to form an undifferentiated mass of cells called a <strong>callus</strong>, which then undergoes <strong>redifferentiation</strong> to form a complete haploid plantlet.
+- <strong>Treatment ④</strong> converts the sterile haploid plant into a fertile diploid plant. This is done by treating the seedlings with <strong>colchicine</strong>. The principle of colchicine is that it inhibits the formation of the spindle fibers during cell division (mitosis). Without a spindle, sister chromatids cannot be pulled to opposite poles, resulting in a single cell with double the normal chromosome number.</p>
+<p><em>Answer for (3):</em> Anther (or pollen) $\xrightarrow{\text{dedifferentiation}}$ Callus $\xrightarrow{\text{redifferentiation}}$ Haploid plant.
+<em>Answer for (4):</em> Colchicine inhibits the formation of the spindle during cell division, leading to chromosome doubling.</p>
+<p><strong>Step 5: Analyzing Treatment ⑤</strong>
+This part tests the basic tools of genetic engineering. To transfer a target gene (the green cotyledon gene 'b') from a pea plant into a cauliflower cell, a delivery mechanism is required. In genetic engineering, the "transport tool" used to carry foreign DNA into a host cell is called a <strong>vector</strong>. For introducing genes into plant cells (especially dicots like cauliflower), the most commonly used vector is a <strong>plasmid</strong> (specifically, the Ti plasmid from <em>Agrobacterium tumefaciens</em>).</p>
+<p><em>Answer for (5):</em> Plasmid (or Ti plasmid).</p>
+<p><strong>Final Answer Summary:</strong>
+(1) Applying a certain concentration of auxin (or auxin analog) to the unpollinated stigma.
+(2) Yellow; Yellow; 0; 1/8.
+(3) Anther (or pollen) $\xrightarrow{\text{dedifferentiation}}$ Callus $\xrightarrow{\text{redifferentiation}}$ Haploid plant.
+(4) Colchicine inhibits the formation of the spindle during cell division, leading to chromosome doubling.
+(5) Plasmid (or Ti plasmid).</p>
+</body>
+</html>

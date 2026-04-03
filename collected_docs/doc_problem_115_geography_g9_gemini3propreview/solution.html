@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_115_geography_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_115_geography_g9</h1>
+<p><strong>Problem Statement:</strong>
+Read the diagram and answer questions 1-4.</p>
+<ol>
+<li>Ultraman lives at ($30^\circ N, 120^\circ E$). One day he wants to visit Anpanman, who lives on the other end of the Earth. He decides to "burrow" there, entering the ground from his home and traveling in a straight line through the Earth's center to Anpanman's home. Determine the specific location of Anpanman's home ( ).</li>
+<li>Which statement regarding Ultraman and Anpanman's homes is correct ( )?</li>
+<li>Determine the direction of point E relative to point F in the diagram ( ).</li>
+<li>Which point in the diagram meets the following conditions: Its east side is the Eastern Hemisphere, its west side is the Western Hemisphere, its northern side has distinct seasonal changes, and its southern side experiences direct sunlight phenomena?
+A. Point Jia (甲)
+B. Point Yi (乙)
+C. Point Bing (丙)
+D. Point Ding (丁)</li>
+</ol>
+<p><strong>Solution Approach:</strong>
+We will analyze the geographic coordinate system provided in the image.
+1.  <strong>Antipodal Points:</strong> We will calculate the coordinates opposite to Ultraman's location by inverting the latitude and adjusting the longitude by $180^\circ$.
+2.  <strong>Relative Direction:</strong> We will compare the coordinates of points E and F to determine the cardinal direction.
+3.  <strong>Hemispheres and Zones:</strong> We will identify the specific point based on the definitions of the Eastern/Western hemisphere boundaries ($20^\circ W$ and $160^\circ E$) and the solar thermal zones (Tropics vs. Temperate zones).</p>
+<p>First, let's visualize the grid provided in the problem to establish the coordinates of all marked points.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing the Grid Coordinates</strong></p>
+<p>Based on the diagram and standard map conventions (North is up, East is right):
+*   The central vertical line is the Prime Meridian ($0^\circ$).
+*   Longitude increases to the right, so the lines are: $20^\circ W$, $0^\circ$, $20^\circ E$, $40^\circ E$.
+*   The central horizontal line is the Equator ($0^\circ$).
+*   Latitude increases upwards (North) and downwards (South).</p>
+<p>The coordinates for the points are:
+*   <strong>Yi (乙):</strong> ($23.5^\circ N, 20^\circ W$)
+*   <strong>Jia (甲):</strong> ($66.5^\circ N, 0^\circ$)
+*   <strong>Bing (丙):</strong> ($0^\circ, 0^\circ$)
+*   <strong>E:</strong> ($0^\circ, 20^\circ E$)
+*   <strong>Ding (丁):</strong> ($23.5^\circ S, 20^\circ E$)
+*   <strong>F:</strong> ($66.5^\circ N, 40^\circ E$)</p>
+<p><strong>Step 2: Solving Question 1 (Antipodal Point)</strong></p>
+<p>Ultraman travels from ($30^\circ N, 120^\circ E$) through the center of the Earth. The exit point is the <strong>antipodal point</strong>.
+*   <strong>Latitude:</strong> Changes from North to South (same magnitude). $30^\circ N \rightarrow 30^\circ S$.
+*   <strong>Longitude:</strong> Changes by $180^\circ$ (supplementary angle to 180, opposite East/West).
+*   $180^\circ - 120^\circ = 60^\circ$.
+*   East becomes West.
+*   Result: $60^\circ W$.</p>
+<p><strong>Answer to Q1:</strong> Anpanman lives at ($30^\circ S, 60^\circ W$).</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Solving Question 3 (Direction of E relative to F)</strong></p>
+<p>We need to find the direction <em>from</em> F <em>to</em> E.
+*   <strong>Point F:</strong> ($66.5^\circ N, 40^\circ E$)
+*   <strong>Point E:</strong> ($0^\circ, 20^\circ E$)</p>
+<p><strong>Latitude Comparison:</strong>
+E is at $0^\circ$ and F is at $66.5^\circ N$. Since $0^\circ$ is south of $66.5^\circ N$, E is <strong>South</strong> of F.</p>
+<p><strong>Longitude Comparison:</strong>
+E is at $20^\circ E$ and F is at $40^\circ E$. Since $20^\circ$ is smaller than $40^\circ$ (and both are East), E is to the left of F. Therefore, E is <strong>West</strong> of F.</p>
+<p><strong>Answer to Q3:</strong> E is located to the <strong>Southwest</strong> of F.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 4: Solving Question 4 (Identifying the specific point)</strong></p>
+<p>We need to find a point satisfying four conditions:
+1.  <strong>East side is Eastern Hemisphere:</strong> The boundary between the Western and Eastern Hemispheres is located at <strong>$20^\circ W$</strong> (moving East from here enters the East Hemisphere) and $160^\circ E$.
+2.  <strong>West side is Western Hemisphere:</strong> This confirms the longitude must be exactly <strong>$20^\circ W$</strong>. (Anything West of $20^\circ W$ is the Western Hemisphere).
+3.  <strong>North side has distinct seasons:</strong> Distinct seasons occur in the <strong>Temperate Zones</strong> (between the Tropics and Polar Circles). This implies the area North of the point is Temperate.
+4.  <strong>South side has direct sunlight:</strong> Direct sunlight occurs in the <strong>Tropical Zone</strong> (between the Tropic of Cancer and Tropic of Capricorn). This implies the area South of the point is Tropical.</p>
+<p><strong>Conclusion:</strong>
+The line separating the Temperate Zone (North) and the Tropical Zone (South) in the Northern Hemisphere is the <strong>Tropic of Cancer ($23.5^\circ N$)</strong>.</p>
+<p><strong>Target Coordinates:</strong>
+Longitude: $20^\circ W$
+Latitude: $23.5^\circ N$</p>
+<p>Looking at our grid from Scene 1:
+*   Point <strong>Yi (乙)</strong> is located at intersection of the first vertical line ($20^\circ W$) and the second horizontal line ($23.5^\circ N$).</p>
+<p><strong>Answer to Q4:</strong> The correct point is <strong>B (Point Yi/乙)</strong>.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Final Recap and Answers:</strong></p>
+<ol>
+<li><strong>Anpanman's Location:</strong> ($30^\circ S, 60^\circ W$). This is calculated using the antipodal rule (same latitude opposite hemisphere, supplementary longitude).</li>
+<li><em>(Note: Specific options for Q2 were not provided, but generally, antipodal points share the same rotational angular velocity and experience opposite seasons).</em></li>
+<li><strong>Direction:</strong> E is to the <strong>Southwest</strong> of F.</li>
+<li><strong>Point Identification:</strong> <strong>Option B (Point Yi/乙)</strong>. It sits on the boundary of the hemispheres ($20^\circ W$) and the boundary of the thermal zones ($23.5^\circ N$).</li>
+</ol>
+</body>
+</html>

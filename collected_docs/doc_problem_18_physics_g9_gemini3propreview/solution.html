@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_18_physics_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_18_physics_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, object A immersed in water has a mass of $3\text{ kg}$, and object B has a mass of $2\text{ kg}$. The entire system is in a static (stationary) state. The weight of the spring scale itself is negligible. Which of the following statements is correct? ($g=9.8\text{ N/kg}$)</p>
+<p>A. The reading of the spring scale is $19.6\text{ N}$.
+B. The volume of object A immersed in the water is $500\text{ cm}^3$.
+C. Object A is in a non-equilibrium state.
+D. The gravity acting on object B and the pulling force of B on the rope are a pair of balanced forces.</p>
+<p><strong>Solution Approach:</strong>
+To solve this, we will apply Newton's Laws of Motion and Archimedes' Principle.
+1. Analyze the forces acting on object B to determine the tension in the rope and the reading on the spring scale.
+2. Analyze the forces acting on object A to determine the buoyant force and the submerged volume.
+3. Evaluate each option based on these calculations.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Object B</strong></p>
+<p>Let's look at object B first. Since the problem states the whole system is static, object B is stationary. This means it is in equilibrium.</p>
+<p>We need to calculate the gravity acting on B ($G_B$):
+$$G_B = m_B \times g$$
+$$G_B = 2\text{ kg} \times 9.8\text{ N/kg} = 19.6\text{ N}$$</p>
+<p>Since B is stationary, the tension in the rope ($T$) pulling it upward must equal the force of gravity pulling it downward.
+$$T = G_B = 19.6\text{ N}$$</p>
+<p><strong>Evaluating Option A:</strong>
+The spring scale measures the tension in the rope. Since we found $T = 19.6\text{ N}$, the reading is indeed $19.6\text{ N}$.
+<strong>Therefore, Option A is Correct.</strong></p>
+<p><strong>Evaluating Option D:</strong>
+Option D claims gravity on B and B's pull on the rope are balanced forces.
+- <strong>Balanced forces</strong> must act on the <em>same</em> object.
+- Gravity acts on B.
+- B's pull acts on the <em>rope</em>.
+Since these forces act on different objects, they cannot be balanced forces. (They are actually an interaction pair, but not an equilibrium pair). Thus, Option D is incorrect.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyzing Object A</strong></p>
+<p>Now let's analyze object A.</p>
+<p><strong>Evaluating Option C:</strong>
+The problem states the system is "static." By definition, if an object is static (at rest), it is in equilibrium. Therefore, object A is in an equilibrium state.
+<strong>Option C is incorrect.</strong></p>
+<p>To check Option B, we need to analyze the forces on A.
+Forces acting on A:
+1.  Gravity ($G_A$) acting downward.
+2.  Tension from the spring scale ($F_{\text{pull}}$) acting upward.
+3.  Buoyant force ($F_{\text{buoy}}$) acting upward.</p>
+<p>First, calculate the gravity on A:
+$$G_A = m_A \times g$$
+$$G_A = 3\text{ kg} \times 9.8\text{ N/kg} = 29.4\text{ N}$$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Calculating Buoyancy and Volume</strong></p>
+<p>Since A is in equilibrium, the upward forces equal the downward forces:
+$$F_{\text{pull}} + F_{\text{buoy}} = G_A$$</p>
+<p>We know $F_{\text{pull}}$ is the same as the tension we found earlier ($19.6\text{ N}$).
+$$19.6\text{ N} + F_{\text{buoy}} = 29.4\text{ N}$$
+$$F_{\text{buoy}} = 29.4\text{ N} - 19.6\text{ N} = 9.8\text{ N}$$</p>
+<p><strong>Evaluating Option B:</strong>
+We use Archimedes' principle to find the submerged volume ($V_{\text{sub}}$).
+$$F_{\text{buoy}} = \rho_{\text{water}} \cdot g \cdot V_{\text{sub}}$$</p>
+<p>Where $\rho_{\text{water}} = 1000\text{ kg/m}^3$ (standard density of water).</p>
+<p>$$9.8\text{ N} = 1000\text{ kg/m}^3 \times 9.8\text{ N/kg} \times V_{\text{sub}}$$
+$$V_{\text{sub}} = \frac{9.8}{1000 \times 9.8} = \frac{1}{1000}\text{ m}^3$$</p>
+<p>Now, convert cubic meters to cubic centimeters ($1\text{ m}^3 = 1,000,000\text{ cm}^3$):
+$$V_{\text{sub}} = 0.001\text{ m}^3 \times 1,000,000\text{ cm}^3/\text{m}^3 = 1000\text{ cm}^3$$</p>
+<p>Option B claims the volume is $500\text{ cm}^3$. Since our calculated volume is $1000\text{ cm}^3$, <strong>Option B is incorrect.</strong></p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Final Conclusion:</strong></p>
+<ul>
+<li><strong>A:</strong> The spring scale reading is $19.6\text{ N}$. (Correct)</li>
+<li><strong>B:</strong> The submerged volume is $1000\text{ cm}^3$, not $500\text{ cm}^3$. (Incorrect)</li>
+<li><strong>C:</strong> Object A is stationary, so it is in equilibrium. (Incorrect)</li>
+<li><strong>D:</strong> Gravity on B and B's pull on the rope act on different objects, so they are not balanced forces. (Incorrect)</li>
+</ul>
+<p><strong>Correct Answer:</strong> A</p>
+</body>
+</html>

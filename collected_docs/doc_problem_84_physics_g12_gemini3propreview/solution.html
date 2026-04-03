@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_84_physics_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_84_physics_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, a sufficiently long U-shaped metal frame of width $L=1\text{m}$ is placed horizontally. The right end is connected to a resistor $R=0.8\Omega$. The frame is located in a uniform magnetic field with magnetic induction $B=1\text{T}$ directed vertically upwards. A metal rod $ab$ with mass $m=0.2\text{kg}$ and resistance $r=0.2\Omega$ is placed on the guide rails. The coefficient of kinetic friction between the rod $ab$ and the rails is $\mu=0.5$. A constant force $F=3\text{N}$ is applied to the rod, causing it to move from rest along the rails (the rod remains perpendicular to and in good contact with the rails). After a period of time, the rod reaches a stable velocity. During this process, the electric charge passing through the rod is $q=2.8\text{C}$. (The resistance of the frame is negligible, $g=10\text{m/s}^2$).</p>
+<p><strong>Questions:</strong>
+1. What is the stable velocity reached by the rod $ab$?
+2. From the start until the velocity stabilizes, how much heat is generated in the resistor $R$?</p>
+<p><strong>Solution Approach:</strong>
+To solve this, we will first analyze the forces acting on the rod when it reaches a constant stable velocity. At this point, the net force is zero. We will balance the applied force against friction and the magnetic (Ampere) force to find the velocity. For the second part, we will relate the given charge $q$ to the displacement of the rod, and then use the Work-Energy Theorem to calculate the total heat generated, distributing it between the internal resistance and the external resistor $R$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Part 1: Finding the Stable Velocity</strong></p>
+<p>When the rod moves to the left, it cuts the magnetic field lines, inducing an electromotive force (EMF) and a current. Because the rod carries a current in a magnetic field, it experiences a magnetic force (Ampere force).</p>
+<p>The forces acting on the rod along the direction of motion are:
+1.  The applied constant force $F$ (forward, to the left).
+2.  The sliding friction force $f$ (backward, to the right).
+3.  The Ampere force $F_A$ (backward, to the right, opposing the motion).</p>
+<p>The rod accelerates until the forces balance. When the velocity becomes stable, the acceleration is zero, and the net force is zero.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Calculation of Stable Velocity:</strong></p>
+<p>First, we calculate the friction force $f$:
+$$f = \mu N = \mu mg = 0.5 \times 0.2\,\text{kg} \times 10\,\text{m/s}^2 = 1\,\text{N}$$</p>
+<p>At stable velocity $v$, the equilibrium equation is:
+$$F = f + F_A$$
+$$3\,\text{N} = 1\,\text{N} + F_A \implies F_A = 2\,\text{N}$$</p>
+<p>The formula for the Ampere force is $F_A = B I L$.
+Using Ohm's law, the current $I$ is given by the induced EMF divided by total resistance:
+$$I = \frac{E}{R+r} = \frac{BLv}{R+r}$$</p>
+<p>Substituting this back into the force equation:
+$$F_A = B \left( \frac{BLv}{R+r} \right) L = \frac{B^2 L^2 v}{R+r}$$</p>
+<p>Now we solve for $v$:
+$$2 = \frac{1^2 \times 1^2 \times v}{0.8 + 0.2}$$
+$$2 = \frac{v}{1}$$
+$$v = 2\,\text{m/s}$$</p>
+<p><strong>Answer (1):</strong> The stable velocity of the rod is <strong>2 m/s</strong>.</p>
+<p><strong>Part 2: Calculating Heat Generated in Resistor R</strong></p>
+<p>To find the heat generated, we should use the principle of Conservation of Energy (Work-Energy Theorem). The work done by the applied force $F$ is converted into kinetic energy, work done against friction, and electrical energy (which dissipates as heat).</p>
+<p>$$W_F = \Delta E_k + W_f + Q_{\text{total}}$$</p>
+<p>However, to calculate the work done ($W = F \cdot x$), we first need to determine the displacement $x$ of the rod. We can find $x$ using the given charge $q$.</p>
+<p>The charge $q$ that flows through the circuit is related to the change in magnetic flux $\Delta \Phi$:
+$$q = \bar{I} \Delta t = \frac{\bar{E}}{R+r} \Delta t = \frac{\Delta \Phi / \Delta t}{R+r} \Delta t = \frac{\Delta \Phi}{R+r}$$</p>
+<p>Since $\Delta \Phi = B \cdot \Delta A = B \cdot (L \cdot x)$:
+$$q = \frac{BLx}{R+r}$$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 1: Calculate Displacement ($x$)</strong></p>
+<p>Rearranging the charge formula to solve for $x$:
+$$x = \frac{q(R+r)}{BL}$$</p>
+<p>Substitute the values:
+$$x = \frac{2.8 \times (0.8 + 0.2)}{1 \times 1} = \frac{2.8 \times 1}{1} = 2.8\,\text{m}$$</p>
+<p><strong>Step 2: Apply Work-Energy Theorem</strong></p>
+<p>Now we calculate the individual work terms:
+*   Work done by applied force: $W_F = F \cdot x = 3 \times 2.8 = 8.4\,\text{J}$
+*   Work done against friction: $W_f = f \cdot x = 1 \times 2.8 = 2.8\,\text{J}$
+*   Change in kinetic energy: $\Delta E_k = \frac{1}{2}mv^2 - 0 = \frac{1}{2} \times 0.2 \times (2)^2 = 0.4\,\text{J}$</p>
+<p>Using the energy balance equation:
+$$W_F = \Delta E_k + W_f + Q_{\text{total}}$$
+$$8.4 = 0.4 + 2.8 + Q_{\text{total}}$$
+$$8.4 = 3.2 + Q_{\text{total}}$$
+$$Q_{\text{total}} = 5.2\,\text{J}$$</p>
+<p><strong>Step 3: Calculate Heat in Resistor R</strong></p>
+<p>$Q_{\text{total}}$ is the total heat generated in the entire circuit (both the rod's internal resistance $r$ and the external resistor $R$). Since the resistors are in series, the heat generated is proportional to the resistance values.</p>
+<p>$$Q_R = \frac{R}{R+r} Q_{\text{total}}$$
+$$Q_R = \frac{0.8}{0.8 + 0.2} \times 5.2$$
+$$Q_R = 0.8 \times 5.2 = 4.16\,\text{J}$$</p>
+<p><strong>Final Answer:</strong>
+1. The stable velocity is <strong>2 m/s</strong>.
+2. The heat generated in resistor $R$ is <strong>4.16 J</strong>.</p>
+</body>
+</html>

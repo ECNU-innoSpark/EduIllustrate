@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_128_chemistry_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_128_chemistry_g12</h1>
+<p><strong>Problem Statement:</strong>
+Part of the structure of a certain crystal is a right triangular prism (as shown in the figure). What is the ratio of the number of particles A, B, and C in this crystal?</p>
+<p>A. 3:9:4
+B. 1:4:2
+C. 2:9:4
+D. 3:8:4</p>
+<p><strong>Solution Approach:</strong>
+To solve this, we must determine the number of atoms effectively belonging to this specific unit cell using the "Sharing Method" (or Averaging Method). Atoms at different positions (vertices, edges, faces, interior) are shared by a different number of adjacent unit cells.</p>
+<p>The effective number of atoms ($N$) is calculated as:
+$$N = \text{Count} \times \frac{1}{\text{Sharing Factor}}$$</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Particle A (Vertices)</strong></p>
+<p>Particle A is located at the vertices of the triangular prism. In a crystal lattice composed of stacked triangular prisms:
+1.  Each vertex in a horizontal plane is shared by <strong>6</strong> triangles meeting at that point.
+2.  Since the lattice extends vertically (stacked layers), the vertex is shared between the layer below and the layer above.</p>
+<p>Therefore, each vertex is shared by $6 \times 2 = 12$ unit cells.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Calculation for A:</strong>
+- There are <strong>6</strong> vertices in total.
+- Sharing factor for a vertex in this geometry is $1/12$.</p>
+<p>$$N(A) = 6 \times \frac{1}{12} = 0.5$$</p>
+<p><strong>Step 2: Analyzing Particle B (Edges)</strong></p>
+<p>Particle B is located on the edges. We must distinguish between vertical and horizontal edges:</p>
+<ul>
+<li><strong>Vertical Edges:</strong> A vertical line in this lattice is the intersection of <strong>6</strong> triangular prisms (forming a hexagon around the edge). Sharing factor = $1/6$.</li>
+<li><strong>Horizontal Edges:</strong> An edge on the triangular base is shared by <strong>2</strong> triangles in the same plane. Including the vertical stacking (shared with the prism above or below), it is shared by a total of $2 \times 2 = 4$ unit cells. Sharing factor = $1/4$.</li>
+</ul>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Calculation for B:</strong>
+- Vertical edges: 3 atoms. Contribution: $3 \times \frac{1}{6} = 0.5$
+- Horizontal edges: 6 atoms. Contribution: $6 \times \frac{1}{4} = 1.5$</p>
+<p>$$N(B) = 0.5 + 1.5 = 2.0$$</p>
+<p><strong>Step 3: Analyzing Particle C (Body Center)</strong></p>
+<p>Particle C is located inside the body of the prism. It is not shared with any other unit cell.</p>
+<p>$$N(C) = 1 \times 1 = 1.0$$</p>
+<p><strong>[Scene 4 rendering failed - diagram unavailable]</strong></p>
+<p><strong>Final Calculation and Verification:</strong></p>
+<p>We now have the effective number of particles per unit cell:
+- <strong>A:</strong> 0.5
+- <strong>B:</strong> 2.0
+- <strong>C:</strong> 1.0</p>
+<p>The ratio $A : B : C$ is $0.5 : 2 : 1$.</p>
+<p>To convert this to whole numbers, we multiply the entire ratio by 2:
+$$1 : 4 : 2$$</p>
+<p><strong>Answer:</strong>
+The ratio of particles A, B, and C is <strong>1:4:2</strong>, which corresponds to option <strong>B</strong>.</p>
+</body>
+</html>

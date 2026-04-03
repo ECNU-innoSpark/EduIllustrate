@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_93_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_93_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in Figure 1, given line segment $AB=8$. Point $C$ is a moving point on $AB$ (excluding $A$ and $B$). Two equilateral triangles $\triangle ACD$ and $\triangle BCE$ are constructed on the same side of $AB$. Connect $DE$. Points $P$ and $F$ are the midpoints of $DE$ and $BE$ respectively. Connect $AF$, intersecting $DC$ at $G$ and $CE$ at $H$.</p>
+<p>(1) Write down all similar triangles in the figure (excluding the equilateral triangles $\triangle ACD$ and $\triangle BCE$).
+(2) When point $C$ is the midpoint of $AB$ (as shown in Figure 2), find the length of $CP$ and the ratio $AG:GH:HF$.
+(3) Points $M$ and $N$ are two points on line segment $AB$ such that $AM=BN=2$. When point $C$ moves from point $M$ to point $N$, find the length of the path traveled by point $P$.</p>
+<p><strong>Solution Approach:</strong>
+We will solve this geometry problem step-by-step.
+1.  <strong>Similarity Analysis:</strong> We will identify parallel lines created by the $60^\circ$ angles of the equilateral triangles to find similar triangles.
+2.  <strong>Specific Case ($C$ is midpoint):</strong> We will use the symmetry of the figure and the ratios established in step 1 to calculate the length of $CP$ and the segment ratios along $AF$.
+3.  <strong>Locus of Point $P$:</strong> We will use a coordinate geometry approach to express the coordinates of $P$ in terms of the position of $C$, allowing us to determine the path length as $C$ moves between $M$ and $N$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Part 1: Identifying Similar Triangles</strong></p>
+<p>To find similar triangles, we look for equal angles, particularly those derived from parallel lines.</p>
+<ul>
+<li>Since $\triangle ACD$ and $\triangle BCE$ are equilateral, $\angle ACD = \angle ABC = 60^\circ$.</li>
+<li>This implies that line segment $CD$ is parallel to line segment $BE$ (corresponding angles are equal).</li>
+<li>Consider $\triangle ACG$ and $\triangle ABF$:</li>
+<li>$\angle CAG$ is common to both (same as angle $\angle CAB$).</li>
+<li>Since $CD \parallel BE$, $\angle ACG = \angle ABF = 60^\circ$.</li>
+<li>
+<p>Therefore, <strong>$\triangle ACG \sim \triangle ABF$</strong>.</p>
+</li>
+<li>
+<p>Next, observe that $\angle DAC = \angle ECB = 60^\circ$. This implies $AD \parallel CE$.</p>
+</li>
+<li>Consider the intersection of lines $AF$ and $CD$ (at $G$) relative to the parallel lines $AD$ and $CE$.</li>
+<li>Wait, let's look at the intersection of transversals $AF$ and $CD$ between parallel lines $AD$ and $CE$.</li>
+<li>Actually, a clearer pair arises from the intersection $G$:</li>
+<li>We know $AD \parallel CE$.</li>
+<li>Consider $\triangle GCH$ and $\triangle GDA$.</li>
+<li>$\angle CGH = \angle DGA$ (vertically opposite angles).</li>
+<li>$\angle GCH = \angle GDA$ (alternate interior angles, or simply observing the $60^\circ$ geometry).</li>
+<li>Therefore, <strong>$\triangle GCH \sim \triangle GDA$</strong>.</li>
+</ul>
+<p>So, the similar triangles are $\triangle ACG \sim \triangle ABF$ and $\triangle GCH \sim \triangle GDA$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Part 2: Calculation when C is the Midpoint</strong></p>
+<p>Given $AB = 8$ and $C$ is the midpoint, we have $AC = CB = 4$.
+This makes $\triangle ACD$ and $\triangle BCE$ congruent equilateral triangles with side length 4.</p>
+<p><strong>Finding the length of CP:</strong>
+1.  Because $\triangle ACD \cong \triangle BCE$, we have $CD = CE = 4$.
+2.  Angle $\angle DCE = 180^\circ - \angle ACD - \angle BCE = 180^\circ - 60^\circ - 60^\circ = 60^\circ$.
+3.  Since $CD = CE$ and $\angle DCE = 60^\circ$, $\triangle DCE$ is also an equilateral triangle with side length 4.
+4.  $P$ is the midpoint of $DE$. In equilateral $\triangle DCE$, the median $CP$ is also the altitude.
+5.  Using the altitude formula for an equilateral triangle with side $a=4$:
+$$CP = \frac{\sqrt{3}}{2} \times \text{side} = \frac{\sqrt{3}}{2} \times 4 = 2\sqrt{3}$$</p>
+<p><strong>Finding the ratio AG : GH : HF:</strong>
+1.  <strong>Analyze $\triangle ACG \sim \triangle ABF$:</strong>
+*   Similarity ratio: $\frac{AC}{AB} = \frac{4}{8} = \frac{1}{2}$.
+*   Therefore, $\frac{AG}{AF} = \frac{1}{2}$, which implies $AG = GF$.
+*   Also, $\frac{CG}{BF} = \frac{1}{2}$. Since $F$ is the midpoint of $BE$ (side 4), $BF = 2$.
+*   So, $CG = \frac{1}{2} \times 2 = 1$.</p>
+<ol>
+<li><strong>Analyze $\triangle GCH \sim \triangle GDA$:</strong></li>
+<li>We know $CD = 4$. Since $CG = 1$, then $GD = 3$.</li>
+<li>The similarity ratio is $\frac{GC}{GD} = \frac{1}{3}$.</li>
+<li>
+<p>Therefore, $\frac{GH}{GA} = \frac{1}{3}$, which implies $GA = 3GH$.</p>
+</li>
+<li>
+<p><strong>Combine the ratios:</strong></p>
+</li>
+<li>Let $GH = x$. Then $AG = 3x$.</li>
+<li>Since $AG = GF$, then $GF = 3x$.</li>
+<li>We calculate $HF = GF - GH = 3x - x = 2x$.</li>
+<li>The ratio $AG : GH : HF = 3x : x : 2x$.</li>
+</ol>
+<p><strong>Result:</strong> $AG : GH : HF = 3 : 1 : 2$.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Part 3: The Path of Point P</strong></p>
+<p>We need to find the path length of $P$ as $C$ moves from $M$ to $N$.
+Let's set up a coordinate system with $A$ at the origin $(0,0)$.
+Line segment $AB$ lies on the x-axis, so $B$ is at $(8,0)$.</p>
+<p><strong>Coordinates of Key Points:</strong>
+Let the position of $C$ be $(x, 0)$.
+1.  <strong>Point D:</strong> $D$ is the vertex of equilateral $\triangle ACD$.
+*   Side length $AC = x$.
+*   $D = ( \frac{x}{2}, \frac{\sqrt{3}}{2}x )$.
+2.  <strong>Point E:</strong> $E$ is the vertex of equilateral $\triangle BCE$.
+*   Side length $CB = 8-x$.
+*   The x-coordinate of $E$ is $x + \frac{8-x}{2} = \frac{x+8}{2}$.
+*   The y-coordinate of $E$ is $\frac{\sqrt{3}}{2}(8-x)$.
+*   $E = ( \frac{x+8}{2}, \frac{\sqrt{3}(8-x)}{2} )$.</p>
+<p><strong>Coordinates of P (Midpoint of DE):</strong>
+$$x_P = \frac{x_D + x_E}{2} = \frac{1}{2} \left( \frac{x}{2} + \frac{x+8}{2} \right) = \frac{1}{2} \left( \frac{2x+8}{2} \right) = \frac{x}{2} + 2$$
+$$y_P = \frac{y_D + y_E}{2} = \frac{1}{2} \left( \frac{\sqrt{3}x}{2} + \frac{\sqrt{3}(8-x)}{2} \right) = \frac{1}{2} \left( \frac{\sqrt{3}x + 8\sqrt{3} - \sqrt{3}x}{2} \right) = \frac{1}{2} (4\sqrt{3}) = 2\sqrt{3}$$</p>
+<p><strong>Analysis of the Path:</strong>
+*   The y-coordinate of $P$ is constant ($2\sqrt{3}$). This means the path of $P$ is a horizontal line segment.
+*   The x-coordinate of $P$ depends linearly on $x$: $x_P = \frac{x}{2} + 2$.</p>
+<p><strong>Calculating the Length:</strong>
+*   $C$ moves from $M$ to $N$.
+*   Given $AM = 2$, the starting x-value for $C$ is $x_{start} = 2$.
+*   Given $BN = 2$, the ending x-value for $C$ is $x_{end} = 8 - 2 = 6$.
+*   <strong>Start position of P:</strong> $x_P = \frac{2}{2} + 2 = 3$.
+*   <strong>End position of P:</strong> $x_P = \frac{6}{2} + 2 = 5$.
+*   <strong>Path Length:</strong> $5 - 3 = 2$.</p>
+<p><strong>Final Answers:</strong>
+(1) $\triangle ACG \sim \triangle ABF$ and $\triangle GCH \sim \triangle GDA$.
+(2) $CP = 2\sqrt{3}$; Ratio $AG:GH:HF = 3:1:2$.
+(3) The path length of point $P$ is 2.</p>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_26_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_26_biology_g12</h1>
+<p><strong>Problem Statement:</strong>
+A research group used homozygous <em>Drosophila melanogaster</em> (fruit flies) for the following experiment: Vestigial-wing ♀ × Small-wing ♂. The F₁ generation consisted entirely of Long-wing flies, with a female-to-male ratio of approximately 1:1. The F₁ males and females were interbred to obtain the F₂ generation, with the results shown in the table below:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">F₂ Phenotype</th>
+<th style="text-align: left;">Count</th>
+<th style="text-align: left;">Subtotal</th>
+<th style="text-align: left;">Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Long-wing ♀</td>
+<td style="text-align: left;">548</td>
+<td style="text-align: left;">804</td>
+<td style="text-align: left;">9.43</td>
+</tr>
+<tr>
+<td style="text-align: left;">Long-wing ♂</td>
+<td style="text-align: left;">256</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Small-wing ♀</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">239</td>
+<td style="text-align: left;">2.81</td>
+</tr>
+<tr>
+<td style="text-align: left;">Small-wing ♂</td>
+<td style="text-align: left;">239</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Vestigial-wing ♀</td>
+<td style="text-align: left;">153</td>
+<td style="text-align: left;">321</td>
+<td style="text-align: left;">3.76</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vestigial-wing ♂</td>
+<td style="text-align: left;">168</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Questions:</strong>
+(1) Based on the results, the inheritance of wing type follows the <strong><em>_</em></strong><strong><em>_</em>_ law. The reason is </strong><strong><em>_</em></strong>.
+(2) Write the genotypes of the parents <strong><em>_</em></strong><strong><em>_</em></strong>__ (assign letters yourself).
+(3) To verify certain judgments, design a reciprocal cross experiment, i.e., <strong><em>_</em></strong><strong><em>_</em>. If the resulting F₁ flies have two wing types, the phenotypes are </strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_. Continue to mate these F₁ males and females to get F₂, predict the wing type ratio as Long : Small : Vestigial = </em></strong><strong><em>_</em></strong>_____.</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the phenotypic ratios in the F₂ generation to determine the number of genes involved and their chromosomal locations (autosomal vs. sex-linked). The 9:3:4 ratio suggests two interacting gene pairs (epistasis). The sex-specific distribution of the "Small-wing" trait suggests X-linkage. We will visualize the crosses to confirm genotypes and predict the outcome of the reciprocal cross.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing the F₂ Ratios and Inheritance Pattern</strong></p>
+<p>First, let's look at the total numbers for each wing phenotype in the F₂ generation:
+- <strong>Long-wing:</strong> 804
+- <strong>Small-wing:</strong> 239
+- <strong>Vestigial-wing:</strong> 321</p>
+<p>Dividing these by the smallest group (roughly 85, derived from 1/16 of the total 1364), we get a ratio of approximately <strong>9:3:4</strong>. 
+- The classic Mendelian dihybrid ratio is 9:3:3:1.
+- A 9:3:4 ratio is a modification characteristic of <strong>recessive epistasis</strong>, where the homozygous recessive condition of one gene (e.g., <em>aa</em>) masks the expression of the other gene.</p>
+<p><strong>Step 2: Determining Chromosomal Location</strong>
+Next, we examine the distribution of traits by sex:
+- <strong>Small-wing:</strong> Appears <em>only</em> in males (239 males, 0 females). This strongly indicates that the gene controlling the Small vs. Long trait is <strong>X-linked</strong>.
+- <strong>Vestigial-wing:</strong> Appears in both females (153) and males (168) in a roughly 1:1 ratio. This indicates the epistatic gene causing vestigial wings is <strong>autosomal</strong>.</p>
+<p><strong>Conclusion for Question (1) &amp; (2):</strong>
+- The inheritance follows the <strong>Law of Free Combination (Independent Assortment)</strong> because the two gene pairs (one autosomal, one X-linked) segregate independently.
+- Let's assign letters:
+- <strong>A/a (Autosomal):</strong> <em>A_</em> allows wing development, <em>aa</em> results in Vestigial wings (epistatic).
+- <strong>B/b (X-linked):</strong> <em>Xᴮ</em> results in Long wings (dominant), <em>Xᵇ</em> results in Small wings (recessive).
+- <strong>Parental Genotypes:</strong>
+- The Vestigial female parent must be <em>aa</em> (for vestigial) and <em>XᴮXᴮ</em> (must pass the dominant Long allele to F₁ males, as F₁ males are Long).
+- The Small male parent must be <em>AA</em> (purebred) and <em>XᵇY</em> (for small wings).
+- <strong>Parents:</strong> Vestigial ♀ (<em>aaXᴮXᴮ</em>) × Small ♂ (<em>AAXᵇY</em>).</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Designing the Reciprocal Cross (Question 3)</strong></p>
+<p>To verify our hypothesis that one gene is X-linked, we perform a <strong>reciprocal cross</strong> (swapping the phenotypes of the parents).</p>
+<ul>
+<li><strong>Original:</strong> Vestigial ♀ × Small ♂</li>
+<li><strong>Reciprocal:</strong> Small-wing ♀ × Vestigial-wing ♂</li>
+</ul>
+<p><strong>Genotypes for Reciprocal Parents:</strong>
+- <strong>Small ♀:</strong> Must be <em>AA</em> (to have wings) and <em>XᵇXᵇ</em> (to be small). Genotype: <strong>AAXᵇXᵇ</strong>.
+- <strong>Vestigial ♂:</strong> Must be <em>aa</em> (vestigial). Since the original Vestigial stock carried the dominant <em>B</em> allele (proven by the F₁ males in the first experiment), this male is <strong>aaXᴮY</strong>.</p>
+<p><strong>Predicting Reciprocal F₁:</strong>
+- Cross: <em>AAXᵇXᵇ</em> × <em>aaXᴮY</em>
+- <strong>Offspring:</strong>
+- Females receive <em>Xᵇ</em> from mom and <em>Xᴮ</em> from dad → <em>AaXᴮXᵇ</em> (<strong>Long wings</strong>)
+- Males receive <em>Xᵇ</em> from mom and <em>Y</em> from dad → <em>AaXᵇY</em> (<strong>Small wings</strong>)</p>
+<p>So, the F₁ generation will have two wing types: <strong>Females are Long-winged, Males are Small-winged</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 4: Predicting Reciprocal F₂ Ratios</strong></p>
+<p>We now cross the Reciprocal F₁ individuals:
+- <strong>F₁ Female:</strong> <em>AaXᴮXᵇ</em>
+- <strong>F₁ Male:</strong> <em>AaXᵇY</em></p>
+<p><strong>Independent Assortment Analysis:</strong>
+1. <strong>Autosomal Gene (A/a):</strong> <em>Aa</em> × <em>Aa</em>
+- 3/4 <em>A_</em> (Winged)
+- 1/4 <em>aa</em> (Vestigial)</p>
+<ol>
+<li><strong>Sex-linked Gene (B/b):</strong> <em>XᴮXᵇ</em> × <em>XᵇY</em></li>
+<li>Offspring genotypes: <em>XᴮXᵇ</em>, <em>XᵇXᵇ</em>, <em>XᴮY</em>, <em>XᵇY</em></li>
+<li>Phenotypes (if <em>A_</em> is present):</li>
+<li>Dominant (Long, <em>Xᴮ_</em>): 1/2 (1 female + 1 male)</li>
+<li>Recessive (Small, <em>Xᵇ_</em>): 1/2 (1 female + 1 male)</li>
+</ol>
+<p><strong>Combined Probabilities (F₂):</strong>
+- <strong>Long-wing:</strong> (3/4 <em>A_</em>) × (1/2 <em>B_</em>) = <strong>3/8</strong>
+- <strong>Small-wing:</strong> (3/4 <em>A_</em>) × (1/2 <em>bb</em>) = <strong>3/8</strong>
+- <strong>Vestigial-wing:</strong> (1/4 <em>aa</em>) × (1 <em>any</em>) = <strong>1/4</strong> (or 2/8)</p>
+<p><strong>Final Ratio:</strong>
+Long : Small : Vestigial = 3 : 3 : 2</p>
+<p><strong>Final Answer Recap:</strong>
+(1) <strong>Law of Independent Assortment</strong>; The F₂ generation shows a 9:3:4 ratio (a variant of 9:3:3:1), and the traits are controlled by two pairs of non-allelic genes located on different homologous chromosomes (one pair autosomal, one pair sex-linked).
+(2) Parents: Vestigial ♀ <strong>aaXᴮXᴮ</strong>, Small ♂ <strong>AAXᵇY</strong>.
+(3) Reciprocal experiment: <strong>Small-wing ♀ × Vestigial-wing ♂</strong>; F₁ phenotypes: <strong>Females are Long-wing, Males are Small-wing</strong>; Predicted F₂ ratio: <strong>3:3:2</strong>.</p>
+</body>
+</html>

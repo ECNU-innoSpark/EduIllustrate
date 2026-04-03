@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_196_math_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_196_math_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, $AP$ is a tangent to circle $O$, with $P$ being the point of tangency. $AC$ is a secant line of circle $O$, intersecting the circle at two points $B$ and $C$. The center $O$ lies within the interior of $\angle PAC$. Point $M$ is the midpoint of $BC$. Find the value of $\angle OAM + \angle APM$.</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we will utilize properties of circle tangents and chords to identify right angles. Specifically, we will show that points $A$, $P$, $O$, and $M$ lie on a common circle (are concyclic). This will allow us to use the properties of cyclic quadrilaterals and inscribed angles to relate $\angle OAM$ to $\angle APM$ and find their sum.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Identifying Right Angles</strong></p>
+<p>First, let's analyze the geometric properties given in the problem statement:
+1.  $AP$ is a tangent to circle $O$ at point $P$. A fundamental property of tangents is that the radius drawn to the point of tangency is perpendicular to the tangent line. Therefore, $OP \perp AP$, which means $\angle APO = 90^\circ$.
+2.  $M$ is the midpoint of the chord $BC$. A property of chords states that the line segment connecting the center of the circle to the midpoint of a chord is perpendicular to that chord. Therefore, $OM \perp AC$, which means $\angle AMO = 90^\circ$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Proving Concyclic Points</strong></p>
+<p>Consider the quadrilateral formed by points $A$, $P$, $O$, and $M$.
+From Step 1, we determined that $\angle APO = 90^\circ$ and $\angle AMO = 90^\circ$.</p>
+<p>In quadrilateral $APOM$, the opposite angles are $\angle APO$ and $\angle AMO$.
+The sum of these opposite angles is $90^\circ + 90^\circ = 180^\circ$.</p>
+<p>When the opposite angles of a quadrilateral sum to $180^\circ$, the quadrilateral is <strong>cyclic</strong>. This means that points $A$, $P$, $O$, and $M$ all lie on the same circle. The segment $AO$ acts as the diameter of this imaginary circumcircle.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Using Angles in the Same Segment</strong></p>
+<p>Now that we know $A, P, O, M$ lie on a circle, we can use the property that angles subtended by the same arc (in the same segment) are equal.</p>
+<p>Let's look at the chord $OM$ of this new cyclic quadrilateral.
+- $\angle OPM$ subtends the arc $OM$.
+- $\angle OAM$ also subtends the arc $OM$.</p>
+<p>Therefore, $\angle OAM = \angle OPM$.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 4: Calculation and Conclusion</strong></p>
+<p>The problem asks for the value of $\angle OAM + \angle APM$.</p>
+<p>Using the equality we just found ($\angle OAM = \angle OPM$), we can substitute $\angle OAM$ in the expression:
+$$ \angle OAM + \angle APM = \angle OPM + \angle APM $$</p>
+<p>Looking at the diagram, the angles $\angle OPM$ and $\angle APM$ are adjacent and together form the larger angle $\angle APO$.
+$$ \angle OPM + \angle APM = \angle APO $$</p>
+<p>From Step 1, we know that $\angle APO = 90^\circ$ because $AP$ is tangent to the radius $OP$.</p>
+<p><strong>Final Answer:</strong>
+Therefore, $\angle OAM + \angle APM = 90^\circ$.</p>
+<p><img alt="" src="scene5.png" /></p>
+<p><strong>Recap:</strong>
+1.  We identified that the tangent creates a $90^\circ$ angle at $P$ and the chord midpoint creates a $90^\circ$ angle at $M$.
+2.  This proved that $A, P, O, M$ form a cyclic quadrilateral.
+3.  Using the cyclic property, we shifted $\angle OAM$ to $\angle OPM$.
+4.  The sum then combined perfectly to form the right angle at $P$.</p>
+<p><strong>Answer:</strong> $90^\circ$</p>
+</body>
+</html>

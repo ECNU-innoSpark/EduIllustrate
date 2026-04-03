@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_221_geography_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_221_geography_g9</h1>
+<p><strong>Problem Statement:</strong>
+(2010 Shanghai Geography, 44—48, 8 points) The figure below shows the day and night distribution for a specific day in certain regions. The shaded area represents night, and the unshaded area represents day. Read the figure and answer the questions.</p>
+<p>(1) Dividing by the Eastern and Western Hemispheres, the shaded portion in the figure is mainly located in the $\underline{\hspace{5em}}$ Hemisphere. At this moment, the local time at location 甲 (Jia) is $\underline{\hspace{5em}}$ o'clock.
+(2) Dividing by the Southern and Northern Hemispheres, the subsolar point is currently located in the $\underline{\hspace{5em}}$ Hemisphere. The longitude of the subsolar point is $\underline{\hspace{5em}}$.
+(3) The daylight duration at location 乙 (Yi) on this day is approximately $\underline{\hspace{5em}}$ hours.
+(4) If this day is the 15th of the lunar month (Full Moon), people in the Shanghai area need to wait approximately $\underline{\hspace{5em}}$ hours to see a full moon rise from the eastern horizon.
+(5) If the angle between the terminator line and the meridian at location 甲 is $10^\circ$, then the most suitable angle between the solar panel and the building's outer wall (the wall is perpendicular to the ground) at the Shanghai World Expo venue ($31^\circ$N) at noon on this day is approximately $\underline{\hspace{5em}}$.</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the geometry of the map projection to determine the coordinates of the key points (甲 and 乙) and the position of the subsolar point. By understanding the relationship between the terminator line (sunrise/sunset line), longitude, and time, we can calculate local times, daylight hours, and solar elevation angles.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Coordinates and Hemisphere (Question 1)</strong></p>
+<p>First, let's interpret the longitude labels. The numbers "37.5" and "22.5" decrease towards the right. In standard map conventions, longitude values that decrease towards the right indicate <strong>West Longitude ($^\circ$W)</strong> (since moving right typically implies moving East; if numbers go down, we are moving from a higher West longitude to a lower West longitude).</p>
+<ul>
+<li>Left vertical line: $37.5^\circ$W</li>
+<li>Right vertical line: $22.5^\circ$W</li>
+<li>Grid spacing: $37.5 - 22.5 = 15^\circ$.</li>
+</ul>
+<p><strong>Hemisphere:</strong>
+The Western Hemisphere is defined as the region from $20^\circ$W westward to $160^\circ$E. The shaded night region is to the <em>left</em> (West) of the $37.5^\circ$W line (e.g., $40^\circ$W, $50^\circ$W). Therefore, the shaded portion is located in the <strong>Western</strong> Hemisphere.</p>
+<p><strong>Local Time at 甲 (Jia):</strong>
+Point 甲 is located at the intersection of the Equator ($0^\circ$) and the terminator line. Since the shaded area is on the West (left) and the day area is on the East (right), the Earth rotates from West to East into the sunlight. This boundary represents the <strong>Sunrise</strong> line (Morning Terminator).</p>
+<p>On the Equator, sunrise always occurs at <strong>6:00</strong> local solar time.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Locating the Subsolar Point (Question 2)</strong></p>
+<p><strong>Latitude:</strong>
+Observe the tilt of the terminator. The line runs from Northwest to Southeast. This means the "Day" area expands westward as we go North ($23.5^\circ$N has earlier sunrise than the Equator) and the "Night" area expands eastward as we go South. Consequently, the Northern Hemisphere has longer days (&gt;12 hours) and the Southern Hemisphere has shorter days. This indicates it is Summer in the North; the sun is directly overhead in the <strong>Northern</strong> Hemisphere.</p>
+<p><strong>Longitude:</strong>
+The subsolar point is the location where it is currently 12:00 (Noon).
+1.  We determined 甲 is at sunrise (6:00).
+2.  We need the longitude of 甲. 甲 lies exactly halfway between the vertical lines $37.5^\circ$W and $22.5^\circ$W (based on the grid geometry where the terminator is a straight line passing through intersections).
+*   Longitude of 甲 = $(37.5 + 22.5) / 2 = 30^\circ$W.
+3.  The time difference between Sunrise (6:00) and Noon (12:00) is 6 hours.
+4.  Since the Earth rotates $15^\circ$ per hour, 6 hours corresponds to $90^\circ$ of longitude.
+5.  Noon is to the East of sunrise.
+*   Longitude = $30^\circ$W + $90^\circ$ East = <strong>$60^\circ$E</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Calculating Daylight at 乙 (Question 3)</strong></p>
+<p>Point 乙 is located on the terminator (Sunrise line) at latitude $23.5^\circ$S.</p>
+<ol>
+<li><strong>Find the Longitude of 乙:</strong> The diagram shows 乙 is located exactly on the vertical line labeled <strong>$22.5^\circ$W</strong>.</li>
+<li><strong>Calculate Sunrise Time:</strong></li>
+<li>We know it is 6:00 local time at $30^\circ$W (Point 甲).</li>
+<li>Point 乙 is at $22.5^\circ$W, which is $7.5^\circ$ East of 甲.</li>
+<li>Time difference = $7.5^\circ \times 4$ min/degree = 30 minutes.</li>
+<li>Since East is later, the local time at 乙 is $6:00 + 30$ min = 6:30.</li>
+<li>Since 乙 is on the terminator, the sun is rising at <strong>6:30</strong> local time.</li>
+<li><strong>Calculate Daylight Duration:</strong></li>
+<li>Formula: $\text{Daylight} = (\text{12:00} - \text{Sunrise Time}) \times 2$</li>
+<li>$\text{Daylight} = (12:00 - 6:30) \times 2 = 5.5 \text{ hours} \times 2 = \mathbf{11} \text{ hours}$.</li>
+</ol>
+<p><strong>Step 4: Moonrise in Shanghai (Question 4)</strong></p>
+<ul>
+<li><strong>Context:</strong> It is the 15th of the lunar month (Full Moon). The Full Moon rises roughly at sunset.</li>
+<li><strong>Current Global Time:</strong> The subsolar point is at $60^\circ$E (12:00).</li>
+<li><strong>Shanghai Time:</strong> Shanghai is approx. $120^\circ$E.</li>
+<li>Difference = $60^\circ$ (4 hours).</li>
+<li>Current time in Shanghai = $12:00 + 4\text{h} = 16:00$.</li>
+<li><strong>Shanghai Sunset Time:</strong></li>
+<li>Shanghai ($31^\circ$N) is in the Northern Hemisphere (Summer). Days are long.</li>
+<li>At $23.5^\circ$S, day is 11h (Sunrise 6:30). By symmetry, at $23.5^\circ$N, day is 13h (Sunset 18:30).</li>
+<li>Shanghai ($31^\circ$N) is further north, so the day is slightly longer than at $23.5^\circ$N. Sunset is likely around 18:40–19:00.</li>
+<li><strong>Waiting Time:</strong></li>
+<li>Time until Moonrise $\approx$ Time until Sunset.</li>
+<li>$18:40 (\text{Sunset}) - 16:00 (\text{Current}) \approx 2 \text{ hours } 40 \text{ minutes}$.</li>
+<li>The answer is approximately <strong>2 to 3</strong> hours.</li>
+</ul>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 5: Solar Panel Angle (Question 5)</strong></p>
+<ol>
+<li>
+<p><strong>Determine Solar Declination ($\delta$):</strong>
+The problem states the angle between the terminator and the meridian is $10^\circ$. Geometrically, this angle is equal to the absolute value of the solar declination. Since the Northern Hemisphere is in summer, $\delta = 10^\circ$N.</p>
+</li>
+<li>
+<p><strong>Calculate Noon Sun Altitude ($H$) in Shanghai:</strong></p>
+</li>
+<li>Latitude of Shanghai ($\phi$) = $31^\circ$N.</li>
+<li>Formula: $H = 90^\circ - |\phi - \delta|$</li>
+<li>
+<p>$H = 90^\circ - |31^\circ - 10^\circ| = 90^\circ - 21^\circ = 69^\circ$.
+The sun is $69^\circ$ above the horizon at noon.</p>
+</li>
+<li>
+<p><strong>Determine Panel Angle:</strong></p>
+</li>
+<li>To maximize efficiency, the solar panel should be perpendicular to the sun's rays.</li>
+<li>Let the panel be tilted away from the vertical wall.</li>
+<li>The Sun's rays make an angle of $69^\circ$ with the horizontal ground.</li>
+<li>Therefore, the rays make an angle of $90^\circ - 69^\circ = 21^\circ$ with the vertical.</li>
+<li>For the panel to be perpendicular to the rays, the angle between the panel plane and the vertical wall must be equal to the sun's altitude angle? Let's verify with the diagram logic.</li>
+<li>Imagine the sun is directly overhead ($90^\circ$). The panel should be horizontal ($90^\circ$ from wall).</li>
+<li>Imagine the sun is on the horizon ($0^\circ$). The panel should be vertical ($0^\circ$ from wall).</li>
+<li>The relationship is linear: The best angle between the panel and the vertical wall is equal to the Solar Altitude $H$.</li>
+<li>Angle = <strong>$69^\circ$</strong>.</li>
+</ol>
+<p><strong>Final Answer Recap:</strong>
+(1) <strong>West</strong>; <strong>6</strong>
+(2) <strong>North</strong>; <strong>$60^\circ$E</strong>
+(3) <strong>11</strong>
+(4) <strong>2</strong> (or 3)
+(5) <strong>$69^\circ$</strong></p>
+</body>
+</html>

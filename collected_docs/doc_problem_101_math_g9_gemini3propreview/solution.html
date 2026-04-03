@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_101_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_101_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, a square piece of paper is folded once along the diagonal. Then, a circular hole is cut at each of the three corners of the resulting triangle. Finally, the square paper is unfolded. The resulting pattern is ():</p>
+<p>A) [Pattern with vertical/horizontal pairs]
+B) [Pattern with center holes]
+C) [Pattern with diagonal pairs]
+D) [Pattern with pairs at all corners]</p>
+<p><strong>Solution Approach:</strong>
+To solve this spatial reasoning problem, we will use the principle of <strong>symmetry</strong>. Folding a paper creates an axis of symmetry along the fold line. Any cut made through the folded layers will be reflected across this axis when unfolded. We will track the position of each hole relative to the fold line (the diagonal) to determine the final pattern.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the Fold and Layers</strong></p>
+<p>The square is folded along a diagonal. Let's assume the fold is along the diagonal connecting the top-left and bottom-right corners. This creates a triangle consisting of <strong>two layers</strong> of paper.</p>
+<p>Because the paper is folded, any hole punched through the triangle goes through both layers. When we unfold the paper:
+1. The fold line acts as a <strong>mirror line</strong> (axis of symmetry).
+2. Every hole punched will appear twice: once in its original position and once reflected across the diagonal.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyzing the 90° Corner Hole</strong></p>
+<p>Look at the hole punched near the 90° corner of the triangle (Hole H1).</p>
+<ul>
+<li>In the folded state, this corner is composed of the remaining two corners of the square (top-right and bottom-left) stacked on top of each other.</li>
+<li>The fold line does <em>not</em> pass through this corner.</li>
+<li>When punched, the hole goes through both the top layer and the bottom layer.</li>
+<li><strong>Unfolding Result:</strong> When we open the paper, these two layers separate to opposite corners of the square. We will see one single hole at the top-right and one single hole at the bottom-left.</li>
+</ul>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Analyzing the 45° Corner Holes</strong></p>
+<p>Now look at the holes punched near the acute (45°) angles of the triangle (Holes H2 and H3).</p>
+<ul>
+<li>These corners lie <em>on</em> the fold line (the diagonal).</li>
+<li>The hole is punched slightly inside the triangle, through the double layer.</li>
+<li><strong>Unfolding Result:</strong> Since the hole is near the axis of symmetry but not centered exactly on it, the hole and its reflection will appear side-by-side.</li>
+<li>This creates a <strong>pair of holes</strong> near the top-left corner and a <strong>pair of holes</strong> near the bottom-right corner.</li>
+<li>Crucially, because they are reflections across the diagonal, the line connecting each pair must be <strong>perpendicular</strong> to the diagonal fold line.</li>
+</ul>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Conclusion and Verification</strong></p>
+<p>Let's combine our observations:
+1.  <strong>Top-Right &amp; Bottom-Left:</strong> Single holes (from the 90° corner punch).
+2.  <strong>Top-Left &amp; Bottom-Right:</strong> Pairs of holes (from the 45° corner punches).
+3.  <strong>Orientation:</strong> The pairs must be symmetric across the diagonal.</p>
+<p><strong>Comparing with Options:</strong>
+- <strong>A:</strong> Has pairs at two corners, but they are arranged vertically and horizontally, which is not symmetric across a diagonal fold.
+- <strong>B:</strong> Incorrect hole placement (center).
+- <strong>C:</strong> Shows single holes at two opposite corners and pairs at the other two. The pairs are arranged symmetrically across the diagonal (perpendicular to it). This matches our derivation.
+- <strong>D:</strong> Shows pairs at all four corners, which is incorrect.</p>
+<p><strong>Final Answer:</strong> The correct pattern is <strong>C</strong>.</p>
+</body>
+</html>

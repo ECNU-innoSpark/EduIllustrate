@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_63_math_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_63_math_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, $F$ is the right focus of the hyperbola $\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$ (where $b &gt; a &gt; 0$). A line $l$ is drawn through $F$ tangent to the circle $x^{2} + y^{2} = b^{2}$ at point $M$, and it intersects the hyperbola at point $P$. If $M$ is exactly the midpoint of the line segment $PF$, find the equation of the asymptotes of the hyperbola.</p>
+<p><strong>Solution Approach:</strong>
+1.  Analyze the geometric properties of the tangent line and the focus.
+2.  Use the Pythagorean theorem in the resulting right-angled triangle to establish relationships between the lengths $a$, $b$, and $c$.
+3.  Determine the coordinates of point $P$ or use the definition of the hyperbola to find the relationship between $a$ and $b$.
+4.  Substitute this relationship into the standard asymptote equation $y = \pm \frac{b}{a}x$ to find the final answer.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Geometric Analysis:</strong></p>
+<p>First, let's analyze the triangle formed by the origin $O$, the point of tangency $M$, and the focus $F$.</p>
+<ul>
+<li>The circle has the equation $x^{2} + y^{2} = b^{2}$, so its radius is $r = b$. Thus, the length of segment $OM = b$.</li>
+<li>$F$ is the right focus of the hyperbola, so its coordinates are $(c, 0)$, meaning the length $OF = c$.</li>
+<li>Since the line $PF$ is tangent to the circle at $M$, the radius $OM$ is perpendicular to the tangent line $PF$. Therefore, $\triangle OMF$ is a right-angled triangle with $\angle OMF = 90^{\circ}$.</li>
+</ul>
+<p>Using the Pythagorean theorem in $\triangle OMF$:
+$$MF = \sqrt{OF^{2} - OM^{2}} = \sqrt{c^{2} - b^{2}}$$</p>
+<p>Recall the fundamental hyperbola relationship $c^{2} = a^{2} + b^{2}$, which implies $a^{2} = c^{2} - b^{2}$.
+Substituting this into the equation for $MF$:
+$$MF = \sqrt{a^{2}} = a$$</p>
+<p><strong>Analyzing Segment PF:</strong>
+The problem states that $M$ is the midpoint of segment $PF$.
+*   Since $MF = a$, and $PM = MF$, then $PM = a$.
+*   The total length of the segment $PF = PM + MF = a + a = 2a$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Coordinate Calculation:</strong></p>
+<p>Now we need to relate these lengths to the hyperbola equation to find the ratio $b/a$. Let's find the coordinates of point $P$.</p>
+<p>Consider the angle $\angle MFO$ (let's call it $\theta$) in the right triangle $\triangle OMF$:
+*   $\sin \theta = \frac{\text{Opposite}}{\text{Hypotenuse}} = \frac{OM}{OF} = \frac{b}{c}$
+*   $\cos \theta = \frac{\text{Adjacent}}{\text{Hypotenuse}} = \frac{MF}{OF} = \frac{a}{c}$</p>
+<p>Point $P$ lies on the line passing through $F(c, 0)$ at an angle of $(180^{\circ} - \theta)$ with the positive x-axis (looking at the geometry, the line goes "up and left" from F). The distance from $F$ to $P$ is $2a$.</p>
+<p>Using polar-style definition relative to F:
+*   $x_P = c - PF \cdot \cos \theta = c - 2a \cdot \frac{a}{c} = c - \frac{2a^2}{c} = \frac{c^2 - 2a^2}{c}$
+*   $y_P = PF \cdot \sin \theta = 2a \cdot \frac{b}{c} = \frac{2ab}{c}$</p>
+<p>So, $P = \left( \frac{c^2 - 2a^2}{c}, \frac{2ab}{c} \right)$.</p>
+<p><strong>Solving for the Asymptotes:</strong></p>
+<p>Since point $P$ lies on the hyperbola $\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} = 1$, we substitute the coordinates of $P$:</p>
+<p>$$ \frac{1}{a^2}\left( \frac{c^2 - 2a^2}{c} \right)^2 - \frac{1}{b^2}\left( \frac{2ab}{c} \right)^2 = 1 $$</p>
+<p>Simplify the terms:
+$$ \frac{(c^2 - 2a^2)^2}{a^2 c^2} - \frac{4a^2 b^2}{b^2 c^2} = 1 $$
+$$ \frac{(c^2 - 2a^2)^2}{a^2 c^2} - \frac{4a^2}{c^2} = 1 $$</p>
+<p>Multiply the entire equation by $a^2 c^2$ to clear denominators:
+$$ (c^2 - 2a^2)^2 - 4a^4 = a^2 c^2 $$</p>
+<p>Expand the squared term:
+$$ (c^4 - 4a^2 c^2 + 4a^4) - 4a^4 = a^2 c^2 $$
+$$ c^4 - 4a^2 c^2 = a^2 c^2 $$</p>
+<p>Divide by $c^2$ (since $c \neq 0$):
+$$ c^2 - 4a^2 = a^2 $$
+$$ c^2 = 5a^2 $$</p>
+<p>Recall that for a hyperbola, $c^2 = a^2 + b^2$. Substitute this back:
+$$ a^2 + b^2 = 5a^2 $$
+$$ b^2 = 4a^2 $$
+Taking the square root (since $a, b &gt; 0$):
+$$ b = 2a $$</p>
+<p><strong>Conclusion:</strong>
+The equation for the asymptotes of a hyperbola is $y = \pm \frac{b}{a}x$.
+Substituting $b = 2a$:
+$$ y = \pm \frac{2a}{a}x $$
+$$ y = \pm 2x $$</p>
+<p><strong>Final Answer:</strong>
+The asymptote equations are $y = \pm 2x$ (or written as $2x \pm y = 0$).</p>
+</body>
+</html>

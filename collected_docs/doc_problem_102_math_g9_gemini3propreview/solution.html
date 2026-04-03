@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_102_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_102_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+In the plane Cartesian coordinate system, given points $A(-1, 4)$ and $B(2, 1)$, the line $AB$ intersects the $x$-axis and $y$-axis at points $M$ and $N$, respectively. If the parabola $y = x^2 - bx + 2$ intersects the line $AB$ at two distinct points, such that one intersection point lies on the segment $AN$ (including endpoints $A, N$) and the other intersection point lies on the segment $BM$ (including endpoints $B, M$), determine the range of values for $b$.</p>
+<p><strong>Solution Approach:</strong>
+1.  Determine the equation of the line $AB$ and find the coordinates of points $M$ and $N$.
+2.  Establish the system of equations for the intersection of the parabola and the line.
+3.  Convert the geometric intersection conditions into algebraic constraints on the roots of the resulting quadratic equation.
+4.  Solve the inequalities to find the range of $b$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the Line $AB$</strong></p>
+<p>First, we calculate the slope ($k$) of the line passing through $A(-1, 4)$ and $B(2, 1)$:
+$$k = \frac{1 - 4}{2 - (-1)} = \frac{-3}{3} = -1$$</p>
+<p>Using the point-slope form with point $B(2, 1)$, the equation of line $AB$ is:
+$$y - 1 = -1(x - 2)$$
+$$y = -x + 3$$</p>
+<p><strong>Step 2: Find Coordinates of $M$ and $N$</strong>
+- The line intersects the $y$-axis at $N$. Setting $x=0$, we get $y=3$. So, $N(0, 3)$.
+- The line intersects the $x$-axis at $M$. Setting $y=0$, we get $0 = -x + 3 \Rightarrow x=3$. So, $M(3, 0)$.</p>
+<p><strong>Step 3: Define the Intersection Segments</strong>
+The problem requires intersection points on specific segments defined by their $x$-coordinates:
+- <strong>Segment $AN$:</strong> $x$ ranges from $-1$ (at $A$) to $0$ (at $N$). So, $x \in [-1, 0]$.
+- <strong>Segment $BM$:</strong> $x$ ranges from $2$ (at $B$) to $3$ (at $M$). So, $x \in [2, 3]$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 4: Formulate the Intersection Equation</strong></p>
+<p>To find the intersection points, we equate the expressions for $y$ from the parabola and the line:
+$$x^2 - bx + 2 = -x + 3$$</p>
+<p>Rearranging this into a standard quadratic equation $Ax^2 + Bx + C = 0$:
+$$x^2 + (1 - b)x - 1 = 0$$</p>
+<p>Let $f(x) = x^2 + (1 - b)x - 1$.
+The roots of this equation, $x_1$ and $x_2$, correspond to the $x$-coordinates of the intersection points.</p>
+<p><strong>Step 5: Analyze Root Conditions</strong>
+Based on the problem statement:
+- One root ($x_1$) must be in $[-1, 0]$ (Segment $AN$).
+- The other root ($x_2$) must be in $[2, 3]$ (Segment $BM$).</p>
+<p>Let's analyze the properties of $f(x) = x^2 + (1 - b)x - 1$:
+1.  The parabola opens upwards (coefficient of $x^2$ is positive).
+2.  The $y$-intercept of this function is $f(0) = -1$.</p>
+<p>Since $f(0) = -1$ (which is less than 0), the vertex of the parabola $f(x)$ lies below the x-axis. For the parabola to open upwards and cross the axis, it must have one negative root and one positive root.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 6: Solve for $b$</strong></p>
+<p>Because $f(0) = -1$, the function is negative at $x=0$.</p>
+<p><strong>Condition for the positive root ($x_2 \in [2, 3]$):</strong>
+For the root to exist between 2 and 3, the function must go from negative to positive in that interval.
+- At $x=2$, the value must be $\le 0$:
+$$f(2) = 2^2 + (1 - b)(2) - 1 \le 0$$
+$$4 + 2 - 2b - 1 \le 0$$
+$$5 - 2b \le 0 \Rightarrow 2b \ge 5 \Rightarrow b \ge \frac{5}{2}$$</p>
+<ul>
+<li>At $x=3$, the value must be $\ge 0$:
+$$f(3) = 3^2 + (1 - b)(3) - 1 \ge 0$$
+$$9 + 3 - 3b - 1 \ge 0$$
+$$11 - 3b \ge 0 \Rightarrow 3b \le 11 \Rightarrow b \le \frac{11}{3}$$</li>
+</ul>
+<p><strong>Condition for the negative root ($x_1 \in [-1, 0]$):</strong>
+We can check if the range found above satisfies the condition for the negative root.
+Note that the product of roots $x_1 \cdot x_2 = \frac{c}{a} = -1$.
+If $x_2 \in [2, 3]$, then $x_1 = -1/x_2$.
+Since $2 \le x_2 \le 3$, it follows that $\frac{1}{3} \le \frac{1}{x_2} \le \frac{1}{2}$, so $-\frac{1}{2} \ge -\frac{1}{x_2} \ge -\frac{1}{3}$.
+This means $x_1 \in [-\frac{1}{2}, -\frac{1}{3}]$, which is fully contained within $[-1, 0]$.
+Therefore, satisfying the condition for $x_2$ automatically satisfies the condition for $x_1$.</p>
+<p><strong>Conclusion:</strong>
+The range of $b$ is determined solely by the inequalities for the root on segment $BM$:
+$$\frac{5}{2} \le b \le \frac{11}{3}$$</p>
+<p><strong>Final Answer:</strong>
+The range of values for $b$ is $\frac{5}{2} \le b \le \frac{11}{3}$.
+This corresponds to Option C.</p>
+</body>
+</html>

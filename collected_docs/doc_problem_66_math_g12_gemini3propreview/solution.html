@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_66_math_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_66_math_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, in an equilateral triangle $ABC$ with side length $a$, the median $AF$ and the mid-segment $DE$ intersect at $G$. Triangle $A'ED$ is a figure formed by rotating $\triangle AED$ about the axis $DE$. Given the following propositions, which ones are correct? (Fill in the numbers of all correct propositions)</p>
+<p>(1) The projection of the moving point $A'$ onto the plane $ABC$ lies on the line segment $AF$.
+(2) The volume of the tetrahedron $A'-FED$ has a maximum value.
+(3) The plane $A'GF$ is always perpendicular to the plane $BCED$.
+(4) The skew lines $A'E$ and $BD$ can never be perpendicular.</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the geometric properties of the figure before and after rotation.
+1.  <strong>Analyze the geometry:</strong> Establish the relationships between lines and planes, particularly orthogonality, given that $\triangle ABC$ is equilateral and $DE$ is a mid-segment.
+2.  <strong>Evaluate Proposition (1) &amp; (3):</strong> Use theorems regarding perpendicular planes and lines to determine the locus of the projection of $A'$ and the relationship between plane $A'GF$ and the base plane.
+3.  <strong>Evaluate Proposition (2):</strong> Analyze the volume formula for the tetrahedron $A'-FED$ to see if it is bounded.
+4.  <strong>Evaluate Proposition (4):</strong> Use vector geometry or coordinate geometry to check if the dot product of the direction vectors of lines $A'E$ and $BD$ can be zero.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing the Geometry (Propositions 1 &amp; 3)</strong></p>
+<p>Let's look at the properties of the base figure:
+*   Since $\triangle ABC$ is equilateral and $F$ is the midpoint of $BC$, $AF$ is the altitude. Thus, $AF \perp BC$.
+*   $D$ and $E$ are midpoints of $AB$ and $AC$, so $DE$ is the mid-segment parallel to $BC$.
+*   Because $AF \perp BC$ and $DE \parallel BC$, it follows that $AF \perp DE$.
+*   The intersection $G$ divides $AF$. In the rotation, $\triangle AED$ rotates about $DE$. The point $A$ moves to position $A'$.
+*   Since $AG \perp DE$ in the original triangle, the line segment $A'G$ remains perpendicular to the axis of rotation $DE$ throughout the movement.
+*   Similarly, $FG \perp DE$ in the base plane.</p>
+<p><strong>Proof for Proposition (3):</strong>
+*   We have established that $DE \perp A'G$ and $DE \perp FG$.
+*   Since $A'G$ and $FG$ intersect at $G$ and define the plane $A'GF$, the line $DE$ is perpendicular to the plane $A'GF$.
+*   Since the line $DE$ lies within the plane $BCED$ (the plane of the original triangle base), and $DE$ is perpendicular to plane $A'GF$, the two planes must be perpendicular.
+*   <strong>Conclusion:</strong> Plane $A'GF \perp$ Plane $BCED$ is always true. <strong>(3) is Correct.</strong></p>
+<p><strong>Proof for Proposition (1):</strong>
+*   Since Plane $A'GF \perp$ Plane $BCED$, the projection of any point in Plane $A'GF$ onto Plane $BCED$ must lie on the intersection of these two planes.
+*   The intersection of these planes is the line containing $F$ and $G$ (line $AF$).
+*   Since $A'$ lies in Plane $A'GF$, its projection onto the base plane must lie on the line $AF$.
+*   <strong>Conclusion:</strong> The projection of $A'$ lies on segment $AF$. <strong>(1) is Correct.</strong></p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyzing Volume (Proposition 2)</strong></p>
+<p>We need to determine if the volume of the tetrahedron (triangular pyramid) $A'-FED$ has a maximum value.</p>
+<ul>
+<li>The volume of a tetrahedron is given by $V = \frac{1}{3} \times \text{Base Area} \times \text{Height}$.</li>
+<li>Let's choose $\triangle FED$ as the base. Since $F, E, D$ are fixed points in the plane $ABC$, the area of $\triangle FED$ is constant.</li>
+<li>The height of the tetrahedron is the perpendicular distance from the vertex $A'$ to the plane $BCED$ (the plane containing $\triangle FED$).</li>
+<li>As $\triangle A'ED$ rotates about $DE$, the point $A'$ traces a circle in the plane $A'GF$.</li>
+<li>The distance of $A'$ from the base plane is maximized when the plane of rotation ($\triangle A'ED$) is perpendicular to the base plane $BCED$.</li>
+<li>Since the height varies continuously and reaches a specific peak value (equal to the length $A'G$), the volume also reaches a maximum.</li>
+<li><strong>Conclusion:</strong> The volume has a maximum value. <strong>(2) is Correct.</strong></li>
+</ul>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Analyzing Skew Lines (Proposition 4)</strong></p>
+<p>We need to check if lines $A'E$ and $BD$ can be perpendicular. We will use a coordinate system centered at $G$.</p>
+<ol>
+<li><strong>Setup Coordinates:</strong></li>
+<li>Let $G$ be the origin $(0,0,0)$.</li>
+<li>Line $DE$ is the $x$-axis. Since $\triangle ADE$ is equilateral with side $a/2$, $DE = a/2$. So $D = (-a/4, 0, 0)$ and $E = (a/4, 0, 0)$.</li>
+<li>Line $AF$ is the $y$-axis. $AG = GF = \frac{\sqrt{3}}{2} \cdot \frac{a}{2} = \frac{a\sqrt{3}}{4}$.</li>
+<li>$F$ is at $(0, \frac{a\sqrt{3}}{4}, 0)$.</li>
+<li>
+<p>$B$ can be found relative to $F$. Since $F$ is the midpoint of $BC$ and $BC \parallel DE$ with length $a$:
+$B = (-a/2, \frac{a\sqrt{3}}{4}, 0)$.</p>
+</li>
+<li>
+<p><strong>Define Rotating Point $A'$:</strong></p>
+</li>
+<li>Initially, $A$ is at $(0, -\frac{a\sqrt{3}}{4}, 0)$.</li>
+<li>
+<p>When rotated by angle $\theta$ about the $x$-axis ($DE$), the coordinates of $A'$ become:
+$A' = (0, -\frac{a\sqrt{3}}{4}\cos\theta, \frac{a\sqrt{3}}{4}\sin\theta)$.</p>
+</li>
+<li>
+<p><strong>Calculate Vectors:</strong></p>
+</li>
+<li>$\vec{BD} = D - B = (-a/4 - (-a/2), 0 - \frac{a\sqrt{3}}{4}, 0) = (\frac{a}{4}, -\frac{a\sqrt{3}}{4}, 0)$.</li>
+<li>
+<p>$\vec{A'E} = E - A' = (a/4 - 0, 0 - (-\frac{a\sqrt{3}}{4}\cos\theta), 0 - \frac{a\sqrt{3}}{4}\sin\theta) = (\frac{a}{4}, \frac{a\sqrt{3}}{4}\cos\theta, -\frac{a\sqrt{3}}{4}\sin\theta)$.</p>
+</li>
+<li>
+<p><strong>Check Perpendicularity (Dot Product):</strong></p>
+</li>
+<li>$\vec{BD} \cdot \vec{A'E} = (\frac{a}{4})(\frac{a}{4}) + (-\frac{a\sqrt{3}}{4})(\frac{a\sqrt{3}}{4}\cos\theta) + (0)$</li>
+<li>$= \frac{a^2}{16} - \frac{3a^2}{16}\cos\theta$</li>
+<li>$= \frac{a^2}{16} (1 - 3\cos\theta)$.</li>
+</ol>
+<p>For the lines to be perpendicular, the dot product must be zero:
+$1 - 3\cos\theta = 0 \implies \cos\theta = \frac{1}{3}$.</p>
+<p>Since $\cos\theta = 1/3$ corresponds to a real angle $\theta$ (approximately $70.5^\circ$), it is possible for the lines to be perpendicular.</p>
+<ul>
+<li><strong>Conclusion:</strong> The statement "impossible to be perpendicular" is false. <strong>(4) is Incorrect.</strong></li>
+</ul>
+<p><strong>Final Conclusion</strong></p>
+<p>Based on the step-by-step analysis:
+(1) The projection of $A'$ is on $AF$: <strong>Correct</strong>
+(2) The volume has a maximum: <strong>Correct</strong>
+(3) Plane $A'GF \perp$ Plane $BCED$: <strong>Correct</strong>
+(4) $A'E$ and $BD$ cannot be perpendicular: <strong>Incorrect</strong> (They are perpendicular when $\cos\theta = 1/3$)</p>
+<p><strong>Correct propositions:</strong> (1), (2), (3).</p>
+</body>
+</html>

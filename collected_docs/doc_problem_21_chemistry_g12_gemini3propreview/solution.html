@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_21_chemistry_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_21_chemistry_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, <strong>a</strong> and <strong>b</strong> are two graphite rods. Which of the following statements is correct?</p>
+<p>A. <strong>a</strong> is the anode, where oxidation occurs; Zinc is the negative electrode and is reduced.
+B. The direction of electron flow in the circuit is: Zinc $\rightarrow$ b $\rightarrow$ a $\rightarrow$ Copper.
+C. If 0.2 mol of electrons pass through the circuit, 2.24 L of gas is produced on the copper plate.
+D. If phenolphthalein is dripped onto the filter paper, the area near electrode <strong>b</strong> turns red.</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we must first identify the type of electrochemical cells involved. The setup consists of two parts:
+1.  <strong>Left side:</strong> A beaker with Zinc and Copper electrodes in dilute sulfuric acid. This functions as a <strong>Galvanic Cell (Primary Battery)</strong> because it generates electricity through a spontaneous chemical reaction.
+2.  <strong>Right side:</strong> Graphite rods (<strong>a</strong> and <strong>b</strong>) on filter paper soaked in saturated saline (NaCl solution). This functions as an <strong>Electrolytic Cell</strong> driven by the battery on the left.</p>
+<p>We will determine the polarity of the electrodes, trace the electron flow, and analyze the chemical reactions at each electrode.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing the Galvanic Cell (Left Side)</strong></p>
+<p>In the beaker containing dilute sulfuric acid ($H_2SO_4$):
+*   <strong>Zinc (Zn)</strong> is more reactive than <strong>Copper (Cu)</strong>.
+*   Therefore, <strong>Zn</strong> acts as the <strong>Negative Electrode</strong> (Anode of the battery). It loses electrons and dissolves: 
+$$Zn - 2e^- \rightarrow Zn^{2+}$$
+*   <strong>Cu</strong> acts as the <strong>Positive Electrode</strong> (Cathode of the battery). Hydrogen ions ($H^+$) from the acid gain electrons here to form hydrogen gas:
+$$2H^+ + 2e^- \rightarrow H_2 \uparrow$$</p>
+<p><strong>Step 2: Determining Polarity of the Electrolytic Cell (Right Side)</strong></p>
+<p>We trace the connections to the graphite rods:
+*   The <strong>Zn</strong> electrode (Negative) is connected to rod <strong>b</strong>. Therefore, <strong>b</strong> is the <strong>Cathode</strong> of the electrolytic cell.
+*   The <strong>Cu</strong> electrode (Positive) is connected to rod <strong>a</strong>. Therefore, <strong>a</strong> is the <strong>Anode</strong> of the electrolytic cell.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Analyzing the Reactions in the Electrolytic Cell</strong></p>
+<p>The filter paper contains saturated saline (NaCl solution), which contains $Na^+$, $Cl^-$, $H^+$, and $OH^-$ ions.</p>
+<ul>
+<li>
+<p><strong>At Anode 'a' (connected to positive Cu):</strong> Negative ions move here. $Cl^-$ loses electrons (oxidation) more easily than $OH^-$.
+$$2Cl^- - 2e^- \rightarrow Cl_2 \uparrow$$
+(Chlorine gas is produced).</p>
+</li>
+<li>
+<p><strong>At Cathode 'b' (connected to negative Zn):</strong> Positive ions move here. $H^+$ gains electrons (reduction) more easily than $Na^+$.
+$$2H^+ + 2e^- \rightarrow H_2 \uparrow$$
+(Hydrogen gas is produced).</p>
+</li>
+</ul>
+<p><strong>Crucial Consequence at Cathode 'b':</strong>
+As $H^+$ ions are consumed to form hydrogen gas, the equilibrium of water ($H_2O \rightleftharpoons H^+ + OH^-$) shifts. This leaves an excess of hydroxide ions ($OH^-$) near electrode <strong>b</strong>, making the solution locally <strong>alkaline (basic)</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 4: Evaluating the Options</strong></p>
+<p>Let's check each statement against our analysis:</p>
+<ul>
+<li><strong>A. "a is the anode... Zinc... is reduced"</strong></li>
+<li><strong>a</strong> is indeed the anode.</li>
+<li>However, Zinc is the negative electrode of the battery, meaning it loses electrons (oxidation). The statement says Zinc is <em>reduced</em>.</li>
+<li>
+<p><strong>Incorrect.</strong></p>
+</li>
+<li>
+<p><strong>B. "Electron flow: Zinc $\rightarrow$ b $\rightarrow$ a $\rightarrow$ Copper"</strong></p>
+</li>
+<li>Electrons flow from Zn to <strong>b</strong> through the wire.</li>
+<li>However, electrons <strong>do not</strong> flow through the solution (electrolyte) from <strong>b</strong> to <strong>a</strong>. Inside the solution, charge is carried by the movement of ions ($Na^+$, $Cl^-$), not free electrons.</li>
+<li>
+<p><strong>Incorrect.</strong></p>
+</li>
+<li>
+<p><strong>C. "0.2 mol electrons... 2.24 L gas on Copper plate"</strong></p>
+</li>
+<li>Reaction at Copper plate: $2H^+ + 2e^- \rightarrow H_2$.</li>
+<li>Stoichiometry: 2 mol $e^-$ produces 1 mol $H_2$. So, 0.2 mol $e^-$ produces 0.1 mol $H_2$.</li>
+<li>Volume: At <strong>Standard Temperature and Pressure (STP)</strong>, $V = 0.1 \text{ mol} \times 22.4 \text{ L/mol} = 2.24 \text{ L}$.</li>
+<li><em>Critical check:</em> The problem does not state "Standard Conditions" (STP). Without this condition, the volume cannot be confirmed as exactly 2.24 L.</li>
+<li>
+<p><strong>Likely Incorrect (due to missing conditions).</strong></p>
+</li>
+<li>
+<p><strong>D. "Phenolphthalein... b turns red"</strong></p>
+</li>
+<li>As established in Step 3, the reaction at electrode <strong>b</strong> (Cathode) consumes $H^+$, leaving excess $OH^-$.</li>
+<li>This creates a basic (alkaline) environment.</li>
+<li>Phenolphthalein turns <strong>red</strong> in alkaline solutions.</li>
+<li><strong>Correct.</strong></li>
+</ul>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Conclusion:</strong></p>
+<ul>
+<li><strong>a</strong> is the Anode (connected to positive Cu).</li>
+<li><strong>b</strong> is the Cathode (connected to negative Zn).</li>
+<li>At the cathode <strong>b</strong>, hydrogen ions are discharged ($2H^+ + 2e^- \rightarrow H_2$), leading to an accumulation of hydroxide ions ($OH^-$).</li>
+<li>The presence of $OH^-$ turns phenolphthalein red.</li>
+</ul>
+<p>Therefore, the correct statement is <strong>D</strong>.</p>
+</body>
+</html>

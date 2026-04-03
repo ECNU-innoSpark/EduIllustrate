@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_127_physics_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_127_physics_g9</h1>
+<p><strong>Problem Statement:</strong>
+When a beam of light obliquely enters a glass block, which of the following is the correct path of the light as it enters and exits the glass? (Refer to options A, B, C, and D in the original image).</p>
+<p><strong>Solution Approach:</strong>
+To determine the correct light path, we need to analyze the refraction of light at two distinct interfaces:
+1. The air-to-glass interface (where light enters the block).
+2. The glass-to-air interface (where light exits the block).</p>
+<p>We will use the principles of optical density and Snell's Law to determine whether the light bends towards or away from the normal line at each boundary. Finally, we will use the geometric properties of parallel boundaries to determine the relationship between the initial incident ray and the final emergent ray.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: The First Refraction (Air to Glass)</strong></p>
+<p>When the light ray travels from air into glass, it is moving from an optically less dense medium (lower refractive index) into an optically denser medium (higher refractive index). </p>
+<p>According to the laws of refraction, when light enters a denser medium obliquely, its speed decreases, and the ray bends <strong>towards the normal</strong>. This means the angle of refraction inside the glass ($r_1$) must be smaller than the angle of incidence in the air ($i_1$). </p>
+<p>Looking at the given options, we can immediately eliminate Option A because it shows the light bending <em>away</em> from the normal (the angle gets larger) at the first interface. Option D is also incorrect because it shows the light traveling in a straight line with no refraction at all, which only happens if the light enters perpendicular to the surface (along the normal).</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: The Second Refraction (Glass to Air)</strong></p>
+<p>Now, let's look at what happens when the light reaches the bottom of the glass block and exits back into the air. Here, the light is traveling from an optically denser medium (glass) to an optically less dense medium (air). </p>
+<p>In this case, the light speeds up and bends <strong>away from the normal</strong>. The new angle of refraction ($r_2$) will be greater than the new angle of incidence inside the glass ($i_2$).</p>
+<p>Let's evaluate the remaining options (B and C):
+* In <strong>Option C</strong>, the ray bends <em>towards</em> the normal again at the second interface. This contradicts the principle of moving from a denser to a less dense medium.
+* In <strong>Option B</strong>, the ray correctly bends <em>away</em> from the normal as it exits the glass.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Conclusion and Verification:</strong></p>
+<p>Because the top and bottom surfaces of the glass block are parallel, the two normal lines are also parallel. This geometry means that the angle of refraction at the first boundary is equal to the angle of incidence at the second boundary ($r_1 = i_2$, by alternate interior angles). </p>
+<p>By applying Snell's law at both interfaces, it can be mathematically proven that the final angle of emergence ($r_2$) is exactly equal to the initial angle of incidence ($i_1$). Therefore, the emergent ray traveling through the air must be <strong>strictly parallel</strong> to the original incident ray, only shifted to the side (this shift is called lateral displacement).</p>
+<p>Option B is the only diagram that accurately depicts the ray bending towards the normal upon entering, bending away from the normal upon exiting, and resulting in an emergent ray that is parallel to the incident ray.</p>
+<p><strong>Final Answer:</strong>
+The correct light path is shown in <strong>B</strong>.</p>
+</body>
+</html>

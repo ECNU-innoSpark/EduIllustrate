@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_153_chemistry_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_153_chemistry_g9</h1>
+<p><strong>Problem Statement:</strong>
+There is a mixed gas consisting of hydrogen ($H_2$), nitrogen ($N_2$), hydrogen chloride ($HCl$), water vapor ($H_2O$), carbon monoxide ($CO$), and carbon dioxide ($CO_2$). The mixture passes sequentially through devices A, B, C, and D shown in the diagram (assuming full reaction at each step). What are the gases removed by each device in order, and what is the final gas obtained?</p>
+<p><strong>Options:</strong>
+A. $HCl, CO, H_2, CO_2, H_2O, N_2$
+B. $CO_2, CO, H_2, HCl, H_2O, N_2$
+C. $HCl, CO, H_2, H_2O, CO_2, N_2$
+D. $H_2, CO, CO_2, HCl, N_2, H_2O$</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the chemical properties of the reagents in each device (A, B, C, D) and determine which component of the gas mixture reacts or is absorbed at each stage. We will track the composition of the gas stream as it moves from left to right.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Device A (Sodium Bicarbonate Solution)</strong></p>
+<p>The gas mixture first enters Device A, which contains a saturated solution of sodium bicarbonate ($\text{NaHCO}_3$). </p>
+<p>Among the gases in the mixture ($H_2, N_2, HCl, H_2O, CO, CO_2$), hydrogen chloride ($HCl$) is an acidic gas. It reacts with sodium bicarbonate as follows:
+$$HCl + \text{NaHCO}_3 \rightarrow \text{NaCl} + H_2O + CO_2 \uparrow$$</p>
+<p>This reaction effectively removes <strong>$HCl$</strong> from the mixture. While $CO_2$ is generated, it is already present in the mixture, and $H_2O$ vapor is added as the gas passes through the aqueous solution. The other gases ($H_2, N_2, CO$) do not react with sodium bicarbonate.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Device B (Heated Copper Oxide)</strong></p>
+<p>The remaining gas mixture ($H_2, N_2, CO, CO_2, H_2O$) enters Device B, which contains copper oxide ($\text{CuO}$) and is heated.</p>
+<p>Here, the reducing gases—hydrogen ($H_2$) and carbon monoxide ($CO$)—react with the copper oxide:
+1.  $$H_2 + \text{CuO} \xrightarrow{\Delta} \text{Cu} + H_2O$$
+2.  $$CO + \text{CuO} \xrightarrow{\Delta} \text{Cu} + CO_2$$</p>
+<p>Consequently, <strong>$H_2$ and $CO$</strong> are removed (consumed) in this step. These reactions produce more water vapor ($H_2O$) and carbon dioxide ($CO_2$). Nitrogen ($N_2$) and existing $CO_2/H_2O$ pass through unchanged.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Device C (Clarified Limewater)</strong></p>
+<p>The gas stream now largely consists of $N_2$, a significant amount of $CO_2$ (original + generated in A and B), and water vapor. It enters Device C, containing calcium hydroxide solution ($\text{Ca(OH)}_2$).</p>
+<p>Carbon dioxide reacts with the limewater to form a precipitate:
+$$CO_2 + \text{Ca(OH)}_2 \rightarrow \text{CaCO}_3 \downarrow + H_2O$$</p>
+<p>This step removes <strong>$CO_2$</strong>. The gas leaving Device C is now wet nitrogen ($N_2$ mixed with $H_2O$ vapor picked up from the solutions).</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 4: Device D (Concentrated Sulfuric Acid)</strong></p>
+<p>Finally, the gas passes through Device D, which contains concentrated sulfuric acid ($\text{H}_2\text{SO}_4$). Concentrated sulfuric acid is a strong desiccant (drying agent).</p>
+<p>It absorbs the water vapor (<strong>$H_2O$</strong>) present in the gas stream.</p>
+<p><strong>Final Result:</strong>
+After removing $H_2O$, the only remaining gas is nitrogen (<strong>$N_2$</strong>), which is chemically inert and has passed through all devices without reacting.</p>
+<p><img alt="" src="scene5.png" /></p>
+<p><strong>Conclusion and Verification</strong></p>
+<p>Let's summarize the gases removed at each step:
+1.  <strong>Device A:</strong> Removes <strong>$HCl$</strong>.
+2.  <strong>Device B:</strong> Removes <strong>$H_2$</strong> and <strong>$CO$</strong>.
+3.  <strong>Device C:</strong> Removes <strong>$CO_2$</strong>.
+4.  <strong>Device D:</strong> Removes <strong>$H_2O$</strong>.
+5.  <strong>Final Gas:</strong> <strong>$N_2$</strong>.</p>
+<p>Comparing this sequence to the given options:
+- Option A: $HCl, CO, H_2, CO_2, H_2O, N_2$.</p>
+<p>This matches our analysis perfectly (noting that $CO$ and $H_2$ are both removed in step B).</p>
+<p><strong>Correct Answer:</strong> <strong>A</strong></p>
+</body>
+</html>

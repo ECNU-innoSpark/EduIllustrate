@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_64_math_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_64_math_g12</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>As shown in the figure, in the quadrilateral prism $ABCD-A_{1}B_{1}C_{1}D_{1}$ where the lateral edges are perpendicular to the base, when the base $ABCD$ satisfies the condition $\underline{\hspace{5em}}$, we have $AC \perp B_{1}D_{1}$. (Write down one condition you consider correct.)</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to analyze the geometric relationship between the line segment $AC$ on the bottom base and the line segment $B_{1}D_{1}$ on the top base. We will use the properties of a prism and vector translation to find the equivalent condition on the base $ABCD$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the relationship between the top and bottom faces.</strong></p>
+<p>In a prism, the top base $A_{1}B_{1}C_{1}D_{1}$ is parallel and congruent to the bottom base $ABCD$. Furthermore, the lateral edges ($AA_1, BB_1$, etc.) are parallel to each other.</p>
+<p>This implies that the line segment connecting $B_1$ and $D_1$ on the top face is parallel to the line segment connecting $B$ and $D$ on the bottom face.</p>
+<p>Mathematically, we can express this as:
+$$ B_{1}D_{1} \parallel BD $$</p>
+<p>Because $B_{1}D_{1}$ is parallel to $BD$, the angle between the skew lines $AC$ and $B_{1}D_{1}$ is the same as the angle between the intersecting lines $AC$ and $BD$ on the base plane.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Determine the condition.</strong></p>
+<p>Since $B_{1}D_{1} \parallel BD$, the condition that $AC \perp B_{1}D_{1}$ is equivalent to the condition that $AC$ is perpendicular to $BD$.</p>
+<p>$$ AC \perp B_{1}D_{1} \iff AC \perp BD $$</p>
+<p>Therefore, for the lines $AC$ and $B_{1}D_{1}$ to be perpendicular, the diagonals of the base quadrilateral $ABCD$ must be perpendicular to each other.</p>
+<p><strong>Step 3: Formulate the answer.</strong></p>
+<p>The question asks for <em>one</em> condition. The most direct and general condition is:</p>
+<p><strong>$AC \perp BD$</strong></p>
+<p>Alternatively, if we want to specify a type of quadrilateral that satisfies this, we could say "ABCD is a rhombus" or "ABCD is a square," as both of these shapes have perpendicular diagonals. However, "$AC \perp BD$" is the fundamental geometric requirement.</p>
+<p><strong>Final Answer:</strong>
+The condition is $AC \perp BD$ (or $ABCD$ is a rhombus / square).</p>
+<p><strong>Verification:</strong>
+- If $AC \perp BD$: Since $BD \parallel B_1D_1$, then $AC \perp B_1D_1$. The condition holds.
+- The lateral edges being perpendicular to the base ensures the prism is a "right prism," keeping the top and bottom faces perfectly aligned vertically, which validates the parallel projection used above.</p>
+</body>
+</html>

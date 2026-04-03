@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_157_chemistry_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_157_chemistry_g9</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>The solubility curve of a solid substance is shown in the figure. Based on the figure, answer the following questions:</p>
+<p>(1) The meaning of point B: It represents that at $t_3^\circ$C, an unsaturated solution is formed by dissolving $S_1$g of solute in 100g of solvent. The meaning of point A: $\underline{\hspace{3cm}}$. The expression for the mass fraction of the solute in this solution is $\underline{\hspace{3cm}}$.</p>
+<p>(2) If 20g of water is added to the solutions at points A and B respectively while maintaining the temperature, the solubility at point A will $\underline{\hspace{2cm}}$ (fill in "increase", "decrease", or "remain unchanged"); the solute mass fraction of A compared to B is $\underline{\hspace{2cm}}$ (fill in "former is larger", "latter is larger", or "equal").</p>
+<p>(3) When the temperature is lowered, how does the mass fraction of the solution at point A change compared to the original after the change? $\underline{\hspace{2cm}}$ (fill in "increase", "decrease", or "unchanged").</p>
+<p>(4) Methods to make the $(100+S_1)$g solution at point M saturated: cool down to $\underline{\hspace{1cm}}^\circ$C; add solute $\underline{\hspace{1cm}}$g and $\underline{\hspace{3cm}}$.</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the solubility curve to determine the saturation state of points A, B, and M. We will use the definitions of solubility (g solute / 100g solvent) and mass fraction ($\frac{\text{solute}}{\text{solution}}$) to answer questions about dilution, cooling, and saturation methods.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Part (1): Interpreting Point A</strong></p>
+<p><strong>Meaning of Point A:</strong>
+Point A lies exactly on the solubility curve at temperature $t_2^\circ$C. 
+- Any point <strong>on the curve</strong> represents a <strong>saturated solution</strong>.
+- The y-coordinate corresponds to $S_2$.
+- Therefore, Point A represents a saturated solution at $t_2^\circ$C containing $S_2$g of solute dissolved in 100g of solvent.</p>
+<p><strong>Mass Fraction Expression:</strong>
+The mass fraction of the solute is the ratio of the solute's mass to the total solution mass.
+- Mass of solute = $S_2$ g
+- Mass of solvent = $100$ g
+- Total mass of solution = $100 \text{ g} + S_2 \text{ g}$</p>
+<p>Formula:
+$$ \text{Mass Fraction} = \frac{\text{Mass of Solute}}{\text{Mass of Solution}} \times 100\% = \frac{S_2}{100 + S_2} \times 100\% $$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Part (2): Adding Water (Dilution)</strong></p>
+<p><strong>Solubility Change:</strong>
+- Solubility is an intrinsic property of a substance that depends only on temperature (and pressure for gases), not on the amount of solvent or solution.
+- Since the temperature remains constant at $t_2$ (for A) and $t_3$ (for B), the solubility at Point A <strong>remains unchanged</strong>.</p>
+<p><strong>Comparing Mass Fractions:</strong>
+We add 20g of water to both solutions.
+- <strong>Solution A:</strong> Originally had $S_2$g solute in 100g water. Now has $S_2$g solute in 120g water.
+- <strong>Solution B:</strong> Originally had $S_1$g solute in 100g water. Now has $S_1$g solute in 120g water.</p>
+<p>Comparing the two:
+$$ \text{Mass Fraction A} \approx \frac{S_2}{120 + S_2} $$
+$$ \text{Mass Fraction B} \approx \frac{S_1}{120 + S_1} $$</p>
+<p>From the graph (see Scene 2), $S_2$ is vertically higher than $S_1$, so $S_2 &gt; S_1$. Therefore, the mass fraction of A is larger.</p>
+<p><strong>Answer:</strong> former is larger.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Part (3): Cooling Solution A</strong></p>
+<ul>
+<li>Solution A is saturated at $t_2^\circ$C.</li>
+<li>As the temperature decreases, the solubility of the substance decreases (the curve goes down).</li>
+<li>Because the solution can no longer hold the original amount of solute ($S_2$), the excess solute will crystallize and precipitate out.</li>
+<li>The solution remains saturated at the new, lower temperature, but the amount of dissolved solute has decreased.</li>
+<li>Consequently, the ratio of solute to solution decreases.</li>
+</ul>
+<p><strong>Answer:</strong> The mass fraction will <strong>decrease</strong>.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Part (4): Making Solution M Saturated</strong></p>
+<p>Point M represents a solution at $t_2^\circ$C with $S_1$g of solute in 100g of solvent. It is below the curve, meaning it is unsaturated. To make it saturated (reach the curve), we have two main strategies:</p>
+<p><strong>Method 1: Change Temperature (Horizontal Movement)</strong>
+- Look to the left of M. The horizontal line at solubility $S_1$ intersects the curve at temperature $t_1$.
+- Therefore, cooling the solution from $t_2$ to <strong>$t_1$</strong> will make it saturated.</p>
+<p><strong>Method 2: Add Solute (Vertical Movement)</strong>
+- Look directly above M at temperature $t_2$. The saturation point is A, which corresponds to solubility $S_2$.
+- Current solute mass = $S_1$ g.
+- Required solute mass = $S_2$ g.
+- Amount to add = <strong>$(S_2 - S_1)$</strong> g.</p>
+<p><strong>Method 3: Evaporate Solvent</strong>
+- The question asks for "add solute ... and ...". The third common method to saturate a solution is to <strong>evaporate solvent</strong> at a constant temperature. This removes water, increasing the concentration until it hits the saturation limit.</p>
+<p><strong>Final Answers Recap:</strong>
+(1) Saturated solution containing $S_2$g solute in 100g solvent; $\frac{S_2}{100+S_2} \times 100\%$
+(2) remain unchanged; former is larger
+(3) decrease
+(4) $t_1$; $(S_2 - S_1)$; evaporate solvent</p>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_97_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_97_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+Given that the approximate graph of the quadratic function $y=ax^{2}+bx+1$ is as shown in the figure, which quadrant does the graph of the linear function $y=ax+b$ <strong>not</strong> pass through?</p>
+<p>A. First quadrant
+B. Second quadrant
+C. Third quadrant
+D. Fourth quadrant</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we will first analyze the provided graph of the quadratic function to determine the signs (positive or negative) of the coefficients $a$ and $b$. Once we know the signs of $a$ and $b$, we will sketch the graph of the linear function $y=ax+b$ to see which quadrants it traverses.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determine the signs of $a$ and $b$.</strong></p>
+<p>By observing the graph of the quadratic function $y=ax^{2}+bx+1$:</p>
+<ol>
+<li>
+<p><strong>Sign of $a$</strong>: The parabola opens <strong>downwards</strong>, which indicates that the coefficient of the squared term is negative.
+$$a &lt; 0$$</p>
+</li>
+<li>
+<p><strong>Sign of $b$</strong>: The axis of symmetry for a quadratic function is given by the line $x = -\frac{b}{2a}$.</p>
+</li>
+<li>From the graph, the vertex is to the left of the y-axis, meaning the axis of symmetry is negative ($x &lt; 0$).</li>
+<li>We have the inequality: $-\frac{b}{2a} &lt; 0$.</li>
+<li>Since we already determined that $a &lt; 0$, the denominator $2a$ is negative.</li>
+<li>For the entire fraction $-\frac{b}{\text{negative}}$ to be negative, the term $-b$ must be positive (since a positive divided by a negative is negative). Or more simply:
+$$-\frac{b}{2a} &lt; 0 \implies \frac{b}{2a} &gt; 0$$
+Since $2a &lt; 0$, $b$ must also be negative for the ratio to be positive.</li>
+<li>Therefore:
+$$b &lt; 0$$</li>
+</ol>
+<p>So, we have established that <strong>$a$ is negative</strong> and <strong>$b$ is negative</strong>.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyze the path of the linear function $y=ax+b$.</strong></p>
+<p>Now we analyze the linear equation using the signs we found ($a &lt; 0$ and $b &lt; 0$):</p>
+<ol>
+<li><strong>Slope ($a$)</strong>: The slope is $a$, which is negative. This means the line goes <strong>downhill</strong> from left to right.</li>
+<li><strong>Y-intercept ($b$)</strong>: The y-intercept is $b$, which is negative. This means the line crosses the y-axis <strong>below</strong> the origin (on the negative y-axis).</li>
+</ol>
+<p>Let's trace the line:
+- It crosses the y-axis at $(0, b)$ where $b &lt; 0$. This point is on the boundary between the Third and Fourth quadrants.
+- To find the x-intercept, we set $y=0$:
+$$0 = ax + b \implies ax = -b \implies x = -\frac{b}{a}$$
+- Since $b$ is negative, $-b$ is positive.
+- Since $a$ is negative, a positive number divided by a negative number results in a negative value.
+- Therefore, the x-intercept is <strong>negative</strong>. The line crosses the x-axis to the left of the origin.</p>
+<p><strong>Conclusion on Quadrants:</strong>
+- The line passes through the <strong>Second Quadrant</strong> (where $x$ is very negative and $y$ is positive).
+- It crosses into the <strong>Third Quadrant</strong> (between the negative x-intercept and negative y-intercept).
+- It continues into the <strong>Fourth Quadrant</strong> (where $x$ is positive and $y$ becomes more negative).</p>
+<p>The only quadrant the line does not enter is the <strong>First Quadrant</strong> (where $x&gt;0$ and $y&gt;0$).</p>
+<p><strong>Final Answer:</strong></p>
+<p>The graph of the linear function $y=ax+b$ passes through the Second, Third, and Fourth quadrants. It does <strong>not</strong> pass through the <strong>First quadrant</strong>.</p>
+<p>Therefore, the correct option is <strong>A</strong>.</p>
+</body>
+</html>

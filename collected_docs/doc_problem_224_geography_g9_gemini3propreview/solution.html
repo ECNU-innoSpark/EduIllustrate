@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_224_geography_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_224_geography_g9</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>The figure below is a schematic diagram of solar illumination on a certain day. In the figure, EDF represents the terminator (circle of illumination), and ED is the sunrise line (morning terminator). Read the diagram and answer the questions.</p>
+<p>(1) Identify the night hemisphere on the diagram and indicate its range with diagonal lines.
+(2) The date shown in the diagram is around Month <strong><em>_</em>_ Day </strong><strong><em>_. The geographic coordinates of the subsolar point are: Longitude </em></strong><strong><em>, Latitude </em></strong><strong><em>.
+(3) Among the four points A, B, C, and D in the diagram, those with equal noon solar altitude are </em></strong><strong><em>; those with equal local time are </em></strong><strong><em>; those with equal linear velocity of rotation are </em></strong><strong><em>.
+(4) The Beijing time at this moment is </em></strong><strong><em> hours.
+(5) The solar altitude at point D at this moment is </em></strong><strong><em>; the noon solar altitude at point C is </em></strong>___.</p>
+<p><strong>Solution Approach:</strong></p>
+<p>We will analyze the diagram to determine the position of the sun relative to the Earth. By identifying the terminator (line separating day and night) and the specific coordinates given (latitudes and longitudes), we can deduce the season, the solar point, and calculate local times and solar altitudes.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Part (1): Identifying the Night Hemisphere</strong></p>
+<p>The problem states that <strong>ED is the sunrise line (morning terminator)</strong>. As the Earth rotates from West to East (left to right on the map), locations cross the sunrise line from the night side into the day side. Therefore, the area to the <strong>left (West)</strong> of line ED is currently in darkness (Night), and the area to the <strong>right (East)</strong> is in daylight.</p>
+<p>Similarly, DF is the sunset line. Locations cross it from day into night. Thus, the area to the <strong>right</strong> of DF is in darkness.</p>
+<p>Since D is the northernmost point of this illuminated region, the area North of D (the Arctic region) is in the night hemisphere. Conversely, the triangular region bounded by EDF represents the Day Hemisphere.</p>
+<p>To answer part (1), we shade the area <strong>outside</strong> the triangle EDF.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Part (2): Determining Date and Subsolar Point</strong></p>
+<ol>
+<li><strong>Date:</strong></li>
+<li>Observing the terminator, the entire region North of the Arctic Circle (66.5°N) is in the Night Hemisphere (Polar Night).</li>
+<li>The entire region South of the Antarctic Circle (66.5°S) is in the Day Hemisphere (Polar Day).</li>
+<li>This phenomenon occurs on the <strong>Winter Solstice</strong> in the Northern Hemisphere.</li>
+<li>
+<p><strong>Date:</strong> Approximately <strong>December 22</strong>.</p>
+</li>
+<li>
+<p><strong>Subsolar Point (Solar Direct Point):</strong></p>
+</li>
+<li><strong>Latitude:</strong> On the Winter Solstice, the sun is directly overhead at the Tropic of Capricorn.</li>
+<li><strong>Latitude:</strong> <strong>23.5°S</strong>.</li>
+<li><strong>Longitude:</strong> The subsolar point is located on the meridian where it is currently 12:00 noon.</li>
+<li>The noon meridian is the central longitude of the day hemisphere. In the diagram, this corresponds to the longitude passing through point D, which bisects the day region.</li>
+<li>Looking at the longitude values: The left line is 135° and the middle line is 45°. Since Earth rotates West to East, longitude values decrease towards the East in the Western Hemisphere. The difference between 135° and 45° is 90°.</li>
+<li>If the left is 135°W, the middle is 45°W.</li>
+<li>Checking the pattern: 135°W $\rightarrow$ 45°W (difference 90°) $\rightarrow$ 45°E (difference 90°). This fits the grid.</li>
+<li>Therefore, the central meridian (noon) is <strong>45°W</strong>.</li>
+<li><strong>Longitude:</strong> <strong>45°W</strong>.</li>
+</ol>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Part (3): Comparing Points A, B, C, D</strong></p>
+<ol>
+<li><strong>Equal Noon Solar Altitude:</strong></li>
+<li>Noon solar altitude depends solely on the latitude difference between the location and the subsolar point (23.5°S).</li>
+<li>Locations with the same latitude (or symmetric latitudes relative to the subsolar point) have the same noon solar altitude.</li>
+<li><strong>Point C</strong> is at 66.5°N.</li>
+<li><strong>Point D</strong> is at 66.5°N.</li>
+<li>
+<p>Since C and D share the same latitude, they have the <strong>equal noon solar altitude</strong>.</p>
+</li>
+<li>
+<p><strong>Equal Local Time:</strong></p>
+</li>
+<li>Local time is determined by longitude. Locations on the same meridian have the same local time.</li>
+<li><strong>Point B</strong> is on the 45°W meridian.</li>
+<li><strong>Point D</strong> is on the 45°W meridian.</li>
+<li>
+<p>Therefore, <strong>B and D</strong> have the <strong>equal local time</strong>.</p>
+</li>
+<li>
+<p><strong>Equal Linear Velocity of Rotation:</strong></p>
+</li>
+<li>Linear velocity depends on the absolute latitude ($v = v_{equator} \times \cos(\text{latitude})$). Locations with the same absolute latitude have the same speed.</li>
+<li><strong>Point C</strong> is at 66.5°N.</li>
+<li><strong>Point D</strong> is at 66.5°N.</li>
+<li><strong>Point A</strong> is at 66.5°S.</li>
+<li>All three points are at $66.5^\circ$ latitude (North or South).</li>
+<li>Therefore, <strong>A, C, and D</strong> have <strong>equal linear velocity</strong>.</li>
+</ol>
+<p><strong>Part (4): Calculating Beijing Time</strong></p>
+<ul>
+<li>We established that the local time at <strong>45°W</strong> is <strong>12:00 (Noon)</strong>.</li>
+<li>Beijing Time is based on the <strong>120°E</strong> meridian.</li>
+<li><strong>Step 1: Calculate Longitude Difference.</strong></li>
+<li>From 45°W to 0° (Prime Meridian) is 45°.</li>
+<li>From 0° to 120°E is 120°.</li>
+<li>Total difference = $45^\circ + 120^\circ = 165^\circ$.</li>
+<li><strong>Step 2: Convert to Time Difference.</strong></li>
+<li>Earth rotates 15° per hour.</li>
+<li>Time difference = $165^\circ / 15^\circ/\text{hr} = 11$ hours.</li>
+<li><strong>Step 3: Determine Direction.</strong></li>
+<li>Beijing (East) is ahead of 45°W (West). We add the time difference.</li>
+<li>Beijing Time = $12:00 + 11 \text{ hours} = 23:00$.</li>
+</ul>
+<p><strong>Answer:</strong> 23 (or 23:00).</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Part (5): Solar Altitude at D and C</strong></p>
+<ol>
+<li><strong>Solar Altitude at D:</strong></li>
+<li>Point D is located at 66.5°N and is on the terminator (the boundary between day and night).</li>
+<li>Normally, the solar altitude on the terminator is 0°.</li>
+<li>Additionally, D is at the noon meridian (12:00). On the Winter Solstice, the sun does not rise above the horizon for latitudes North of 66.5°N. At exactly 66.5°N (the Arctic Circle), the sun just touches the horizon at noon.</li>
+<li>
+<p>Therefore, the solar altitude is <strong>0°</strong>.</p>
+</li>
+<li>
+<p><strong>Noon Solar Altitude at C:</strong></p>
+</li>
+<li>The question asks for the "noon solar altitude" (正午太阳高度), which is the maximum solar altitude for that location on that day.</li>
+<li>Point C is also at 66.5°N.</li>
+<li>The formula for noon solar altitude is $H = 90^\circ - |\text{Latitude} - \text{Solar Latitude}|$.</li>
+<li>$H = 90^\circ - |66.5^\circ - (-23.5^\circ)|$ (using negative for South).</li>
+<li>$H = 90^\circ - |66.5^\circ + 23.5^\circ| = 90^\circ - 90^\circ = 0^\circ$.</li>
+<li>Therefore, the noon solar altitude at C is also <strong>0°</strong>.</li>
+</ol>
+<p><strong>Final Answer Recap:</strong>
+(1) [See Diagram] Night is the area outside the triangle EDF.
+(2) 12, 22; 45°W, 23.5°S
+(3) C, D; B, D; A, C, D
+(4) 23
+(5) 0°, 0°</p>
+</body>
+</html>

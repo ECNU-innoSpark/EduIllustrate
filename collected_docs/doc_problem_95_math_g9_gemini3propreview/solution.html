@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_95_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_95_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+There are three ports A, B, and C located sequentially along a straight coastline. 
+- Boat Alpha departs from Port A and travels at a constant speed along the coastline towards Port C.
+- 1 hour later, Boat Beta departs from Port B and travels at a constant speed along the coastline towards Port A.
+- Both boats arrive at their respective destinations at the same time.
+- The speed of Boat Alpha is 1.25 times the speed of Boat Beta.</p>
+<p>The graph shows the function relationship between the distance $y$ (km) of the two boats from Port B and the travel time $x$ (h) of Boat Alpha.</p>
+<p>Determine the number of correct statements among the following:
+1. The distance between ports A and B is 400 km.
+2. The speed of Boat Alpha is 100 km/h.
+3. The distance between ports B and C is 200 km.
+4. At 4 hours after Boat Alpha departs, the distance between the two boats is 220 km.</p>
+<p><strong>Options:</strong>
+A. 4
+B. 3
+C. 2
+D. 1</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the provided distance-time graph to deduce the physical movements of both boats. By matching the graph segments to the specific journeys (A to C via B, and B to A), we can calculate the speeds, total time, and distances between ports to verify each statement.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Boat Alpha's Motion (Statement ① and ②)</strong></p>
+<p>Let's interpret the graph based on the problem description. The y-axis represents the <strong>distance from Port B</strong>.</p>
+<ul>
+<li><strong>Boat Alpha</strong> starts at Port A and moves towards Port C. Since the ports are in the order A-B-C, Alpha must travel from A to B, reach B (where distance from B is 0), and then continue to C.</li>
+<li>Looking at the graph, the blue curve starts at $(0, 400)$ and decreases to $(4, 0)$.</li>
+<li>At $x=0$ (start time), the distance $y=400$. This means the starting point A is 400 km away from B.</li>
+<li><strong>Statement ① is Correct:</strong> The distance between A and B is 400 km.</li>
+<li>The graph reaches $y=0$ at $x=4$. This means Boat Alpha arrives at Port B after 4 hours.</li>
+</ul>
+<p>Now we can calculate Boat Alpha's speed ($v_{\alpha}$):
+$$v_{\alpha} = \frac{\text{Distance } AB}{\text{Time}} = \frac{400 \text{ km}}{4 \text{ h}} = 100 \text{ km/h}$$</p>
+<ul>
+<li><strong>Statement ② is Correct:</strong> The speed of Boat Alpha is 100 km/h.</li>
+</ul>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Analyzing Boat Beta's Motion</strong></p>
+<ul>
+<li><strong>Boat Beta</strong> starts from Port B and heads to Port A. It starts 1 hour after Alpha.</li>
+<li>In the graph, the red line starts at $x=1$ with $y=0$ (distance from B is 0). This matches the description.</li>
+<li>We are given the speed relationship: Boat Alpha's speed is 1.25 times Boat Beta's speed.
+$$v_{\alpha} = 1.25 \times v_{\beta}$$
+$$100 = 1.25 \times v_{\beta} \implies v_{\beta} = \frac{100}{1.25} = 80 \text{ km/h}$$</li>
+</ul>
+<p><strong>Step 3: Calculating Total Time and Distance BC (Statement ③)</strong></p>
+<p>The problem states both boats arrive at their destinations simultaneously.
+*   <strong>Destination for Beta:</strong> Port A (Distance 400 km from B).
+*   Time taken for Beta to travel 400 km:
+$$t_{\beta} = \frac{400 \text{ km}}{80 \text{ km/h}} = 5 \text{ hours}$$
+*   Since Beta starts at $x=1$, the arrival time on the clock (x-axis) is:
+$$x_{\text{arrival}} = 1 + 5 = 6 \text{ hours}$$</p>
+<p>So, the total travel time for the scenario is 6 hours.</p>
+<ul>
+<li><strong>Destination for Alpha:</strong> Port C.</li>
+<li>Alpha travels from $x=0$ to $x=6$.</li>
+<li>We already know Alpha takes 4 hours to get from A to B. So, it travels from B to C between $x=4$ and $x=6$.</li>
+<li>Time from B to C $= 6 - 4 = 2$ hours.</li>
+<li>
+<p>Distance $BC = v_{\alpha} \times \text{time} = 100 \text{ km/h} \times 2 \text{ h} = 200 \text{ km}$.</p>
+</li>
+<li>
+<p><strong>Statement ③ is Correct:</strong> The distance between B and C is 200 km.</p>
+</li>
+</ul>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 4: Checking the Distance Between Boats at x = 4 (Statement ④)</strong></p>
+<p>We need to find the positions of both boats at $x=4$ hours.</p>
+<ul>
+<li>
+<p><strong>Boat Alpha:</strong> At $x=4$, Alpha has traveled 400 km from A. Since $AB=400$ km, Alpha is exactly at <strong>Port B</strong>.</p>
+</li>
+<li>
+<p><strong>Boat Beta:</strong> Beta started at $x=1$. By $x=4$, Beta has been traveling for:
+$$\Delta t = 4 - 1 = 3 \text{ hours}$$</p>
+</li>
+<li>Beta travels from B towards A at 80 km/h.</li>
+<li>
+<p>Distance of Beta from B $= 80 \text{ km/h} \times 3 \text{ h} = 240 \text{ km}$.</p>
+</li>
+<li>
+<p><strong>Distance between boats:</strong></p>
+</li>
+<li>Alpha is at B (0 km from B).</li>
+<li>Beta is 240 km away from B (towards A).</li>
+<li>
+<p>Distance $= 240 - 0 = 240$ km.</p>
+</li>
+<li>
+<p><strong>Statement ④ is Incorrect:</strong> The statement claims the distance is 220 km, but we calculated 240 km.</p>
+</li>
+</ul>
+<p><strong>Conclusion:</strong>
+*   Statement ①: Correct
+*   Statement ②: Correct
+*   Statement ③: Correct
+*   Statement ④: Incorrect</p>
+<p>There are 3 correct statements.</p>
+<p><strong>Final Answer:</strong>
+The correct choice is <strong>B (3个)</strong>.</p>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_116_geography_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_116_geography_g9</h1>
+<p><strong>Problem Statement:</strong>
+Based on the diagrams, determine the direction of point A relative to point B is (  )
+A. Northwest
+B. Southwest
+C. Northeast
+D. Southeast</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to determine the geographical coordinates (Latitude and Longitude) of both point A and point B from the provided grids. Once we have the coordinates:
+1. Compare the latitudes to determine the North-South direction.
+2. Compare the longitudes to determine the East-West direction.
+3. Combine these to find the final relative direction.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determine the coordinates of Point A</strong></p>
+<p>Let's look at the right-hand diagram first, as it uses a standard rectangular grid.</p>
+<ul>
+<li><strong>Latitude:</strong> The horizontal lines are labeled 0, 20, 40, 60. The numbers increase upwards, indicating North Latitude. Point A is located on the bottom line, which is labeled <strong>0°</strong>. This means Point A is on the Equator.</li>
+<li><strong>Longitude:</strong> The vertical lines are labeled 110, 130, 150. The numbers increase to the right. In geography, longitude increasing to the right indicates East Longitude. Point A is on the line labeled <strong>130°</strong>.</li>
+</ul>
+<p>So, the coordinates of Point A are <strong>(0°, 130° E)</strong>.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Determine the coordinates of Point B</strong></p>
+<p>Now, let's analyze the left-hand diagram.</p>
+<ul>
+<li><strong>Latitude:</strong> The vertical axis on the right side is labeled 20, 40, 60, increasing upwards. This indicates North Latitude. Point B aligns with the line labeled <strong>40°</strong>. So, the latitude is 40° N.</li>
+<li><strong>Longitude:</strong> The numbers along the diagonal edge are 140, 160, 180, 160, 140. Point B lies on the line that connects directly to the label <strong>180°</strong>. This represents the 180th meridian (International Date Line).</li>
+</ul>
+<p>So, the coordinates of Point B are <strong>(40° N, 180°)</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Determine the direction of A relative to B</strong></p>
+<p>We need to find the direction <em>from</em> B <em>to</em> A.</p>
+<ul>
+<li><strong>North-South Direction:</strong></li>
+<li>Point B is at 40° N.</li>
+<li>Point A is at 0° (Equator).</li>
+<li>
+<p>Since 0° is south of 40° N, Point A is to the <strong>South</strong> of Point B.</p>
+</li>
+<li>
+<p><strong>East-West Direction:</strong></p>
+</li>
+<li>Point B is at 180° longitude.</li>
+<li>Point A is at 130° E longitude.</li>
+<li>To go from 180° to 130° E, we move westward (180° -&gt; 170° E -&gt; ... -&gt; 130° E). The difference is 50°, which is the shortest path (minor arc).</li>
+<li>Therefore, Point A is to the <strong>West</strong> of Point B.</li>
+</ul>
+<p><strong>Conclusion:</strong>
+Combining the two directions (South and West), Point A is located to the <strong>Southwest</strong> of Point B.</p>
+<p>Comparing this with the given options:
+A. Northwest
+B. Southwest
+C. Northeast
+D. Southeast</p>
+<p>The correct option is <strong>B</strong>.</p>
+</body>
+</html>

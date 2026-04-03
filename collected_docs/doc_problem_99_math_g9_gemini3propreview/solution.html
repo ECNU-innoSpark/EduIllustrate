@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_99_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_99_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, $D$ is a point on side $AB$ of equilateral $\triangle ABC$, such that $AD=1$ and $BD=2$. The triangle $ABC$ is folded such that point $C$ coincides with point $D$. The fold line (crease) is $EF$, where point $E$ is on $AC$ and point $F$ is on $BC$. If $BF=1.25$, what is the length of $CE$?</p>
+<p><strong>Options:</strong>
+A. $\frac{7}{5}$
+B. $\frac{2}{3}$
+C. $\frac{5}{6}$
+D. $\frac{1}{2}$</p>
+<p><strong>Solution Approach:</strong>
+1.  Determine the side length of the equilateral triangle.
+2.  Use the properties of folding (reflection) to identify equal segments ($CE = DE$ and $CF = DF$).
+3.  Define the unknown length $CE$ as a variable $x$.
+4.  Apply the Law of Cosines in $\triangle ADE$ to solve for $x$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determine Side Lengths</strong></p>
+<p>Since $\triangle ABC$ is an equilateral triangle, all sides are equal in length.
+From the problem, point $D$ lies on $AB$ with $AD=1$ and $BD=2$.</p>
+<p>Therefore, the total side length of the triangle is:
+$$AB = AD + BD = 1 + 2 = 3$$</p>
+<p>So, $AC = BC = AB = 3$.</p>
+<p><strong>Step 2: Analyze the Right Side (Segment BC)</strong></p>
+<p>We are given that $BF = 1.25$.
+Since point $F$ is on $BC$, we can find the length of $CF$:
+$$CF = BC - BF$$
+$$CF = 3 - 1.25 = 1.75$$</p>
+<p><strong>Step 3: Folding Properties</strong></p>
+<p>When the triangle is folded along $EF$ so that $C$ touches $D$:
+- The segment $CF$ maps to $DF$. Therefore, $DF = CF = 1.75$.
+- The segment $CE$ maps to $DE$. Therefore, $CE = DE$.
+- $\angle C$ maps to $\angle EDF$. Since $\angle C = 60^\circ$, then $\angle EDF = 60^\circ$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 4: Set up the equation for CE</strong></p>
+<p>Let the length we need to find, $CE$, be $x$.
+$$CE = x$$</p>
+<p>Because of the folding property established in Step 3:
+$$DE = x$$</p>
+<p>Now, look at side $AC$. Point $E$ lies on $AC$.
+Since the total length $AC = 3$, the remaining segment $AE$ is:
+$$AE = AC - CE = 3 - x$$</p>
+<p>Now we focus on $\triangle ADE$. We have expressions for all three sides and we know angle $A$.
+- Side $AD = 1$ (given)
+- Side $AE = 3 - x$
+- Side $DE = x$
+- $\angle A = 60^\circ$ (property of equilateral triangle)</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 5: Apply Law of Cosines</strong></p>
+<p>In $\triangle ADE$, apply the Law of Cosines:
+$$DE^2 = AD^2 + AE^2 - 2(AD)(AE)\cos(A)$$</p>
+<p>Substitute the known values ($AD=1$, $AE=3-x$, $DE=x$, $\cos(60^\circ) = 0.5$):
+$$x^2 = 1^2 + (3 - x)^2 - 2(1)(3 - x)(0.5)$$</p>
+<p>Simplify the equation:
+$$x^2 = 1 + (9 - 6x + x^2) - (3 - x)$$</p>
+<p>Note that $2 \times 0.5 = 1$, so the last term is just $-(3-x)$, which becomes $-3 + x$.</p>
+<p>$$x^2 = 1 + 9 - 6x + x^2 - 3 + x$$</p>
+<p>Combine like terms:
+$$x^2 = x^2 - 5x + 7$$</p>
+<p>Subtract $x^2$ from both sides:
+$$0 = -5x + 7$$</p>
+<p>Solve for $x$:
+$$5x = 7$$
+$$x = \frac{7}{5}$$</p>
+<p><strong>Conclusion:</strong>
+The length of $CE$ is $\frac{7}{5}$.</p>
+<p>This corresponds to Option A.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Final Recap:</strong></p>
+<ol>
+<li>We found the side length of the equilateral triangle was 3.</li>
+<li>We used the folding property to equate $DE$ with $CE$.</li>
+<li>We expressed the sides of $\triangle ADE$ in terms of $x$ (where $x=CE$).</li>
+<li>We solved for $x$ using the Law of Cosines on $\triangle ADE$.</li>
+</ol>
+<p><strong>Answer:</strong> A. $\frac{7}{5}$</p>
+</body>
+</html>

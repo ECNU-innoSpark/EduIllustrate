@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_143_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_143_biology_g12</h1>
+<p><strong>Problem Statement:</strong>
+An African savanna ecosystem has the following food web:
+<em>(See diagram below)</em></p>
+<p>(1) When this savanna ecosystem is in a state of equilibrium, the energy input into the system is <strong><em>_</em></strong><em> the energy output from the system; the form of energy output from the ecosystem is <strong><em>_</em></strong></em>.
+(2) It is known that before human intervention, this savanna ecosystem was in a state of equilibrium. At this time, the solar energy fixed by the producers of this savanna was 3,000,000 kJ (300 ten-thousand kJ). Assuming energy flows at a transfer efficiency of 10%, and that a species is equally consumed by various species in the next trophic level, the energy obtained by the lion population at this time exactly maintains the survival of one population. The energy obtained by the lion population at this time is <strong><em>_</em></strong><em> ten-thousand kJ.
+(3) Later, due to human interference, the mouse population multiplied massively, and its population density greatly increased. At this time, the energy consumed by mice accounts for 2/3 of its trophic level. The energy flow still occurs at 10%, and the remaining biomass is equally consumed by various species in the next trophic level. Calculate the energy the lion population can obtain after human intervention as <strong><em>_</em></strong></em> ten-thousand kJ. If the lion population maintains its original population size to continue surviving, the area of the lion's predation region should be <strong><em>_</em></strong><em> times the original. If the area of the savanna is limited, predict that the density of the lion population will <strong><em>_</em></strong></em>.</p>
+<p><strong>Solution Approach:</strong>
+We will solve this problem in three parts. First, we will analyze the fundamental energy balance of an ecosystem in equilibrium. Second, we will trace the flow of energy step-by-step through the food web before human intervention, applying the 10% transfer efficiency and the equal distribution rules to find the total energy reaching the lions. Finally, we will recalculate the energy flow under the new conditions caused by human interference, which will allow us to determine the required hunting area and the impact on the lion population density.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Part (1): Ecosystem Equilibrium</strong>
+In any ecosystem, energy flows directionally and is gradually lost. When an ecosystem reaches a stable equilibrium, the total energy entering the system must exactly balance the total energy leaving it.
+- <strong>Energy Input:</strong> The primary source of energy is solar energy, which is fixed by producers (like grass) through photosynthesis.
+- <strong>Energy Output:</strong> As energy flows through the trophic levels, organisms use it for cellular respiration, which ultimately dissipates as heat into the environment.</p>
+<p>Therefore, the energy input is <strong>equal to</strong> the energy output, and the output is in the form of <strong>heat energy</strong>.</p>
+<p><strong>Part (2): Energy Flow Before Intervention</strong>
+Let's calculate the energy obtained by the lion population. We will use "units" where 1 unit = 10,000 kJ to match the requested answer format.
+- Initial energy at the 1st trophic level (Grass) = 300 units.
+- Transfer efficiency = 10%.
+- Energy is equally divided among all consumer species in the next trophic level.</p>
+<p><strong>Step-by-step calculation:</strong>
+1. <strong>2nd Trophic Level:</strong> The total energy transferred from Grass is $300 \times 10\% = 30$. Since Grass is eaten by 3 species (Antelope, Zebra, Mouse), each receives an equal share:
+- Antelope: $30 \div 3 = 10$
+- Zebra: $30 \div 3 = 10$
+- Mouse: $30 \div 3 = 10$</p>
+<ol>
+<li><strong>3rd Trophic Level:</strong></li>
+<li><strong>From Antelope (10):</strong> Total transferred is $10 \times 10\% = 1$. It is eaten by Wild dog and Lion. Each gets $1 \div 2 = 0.5$.</li>
+<li><strong>From Zebra (10):</strong> Total transferred is $10 \times 10\% = 1$. It is eaten by Wild dog and Lion. Each gets $1 \div 2 = 0.5$.</li>
+<li><strong>From Mouse (10):</strong> Total transferred is $10 \times 10\% = 1$. It is eaten only by Snake. Snake gets 1.</li>
+</ol>
+<p><em>Note on Wild dog:</em> The Wild dog receives 0.5 from Antelope and 0.5 from Zebra, giving it a total energy of 1.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p>Continuing the calculation for the higher trophic levels based on the diagram above:</p>
+<ol>
+<li><strong>4th Trophic Level:</strong></li>
+<li><strong>From Wild dog (1):</strong> Total transferred is $1 \times 10\% = 0.1$. It is eaten only by Lion. Lion gets 0.1.</li>
+<li>
+<p><strong>From Snake (1):</strong> Total transferred is $1 \times 10\% = 0.1$. It is eaten only by Snake-eating animal. Snake-eating animal gets 0.1.</p>
+</li>
+<li>
+<p><strong>5th Trophic Level:</strong></p>
+</li>
+<li><strong>From Snake-eating animal (0.1):</strong> Total transferred is $0.1 \times 10\% = 0.01$. It is eaten only by Lion. Lion gets 0.01.</li>
+</ol>
+<p><strong>Total Energy for Lion:</strong>
+The lion receives energy from multiple sources across different trophic levels:
+- From Antelope: 0.5
+- From Zebra: 0.5
+- From Wild dog: 0.1
+- From Snake-eating animal: 0.01</p>
+<p>Total = $0.5 + 0.5 + 0.1 + 0.01 = 1.11$.
+Thus, the energy obtained by the lion population is <strong>1.11</strong> (ten-thousand kJ).</p>
+<p><strong>Part (3): Energy Flow After Human Interference</strong>
+Now, the mouse population has massively increased and consumes 2/3 of the energy available to the 2nd trophic level. Let's recalculate the energy flow.</p>
+<ol>
+<li><strong>2nd Trophic Level:</strong> The total energy transferred from Grass is still 30.</li>
+<li>Mouse gets $\frac{2}{3}$ of this energy: $30 \times \frac{2}{3} = 20$.</li>
+<li>The remaining energy (10) is equally divided among the other species in this level (Antelope and Zebra):</li>
+<li>Antelope: $10 \div 2 = 5$</li>
+<li>
+<p>Zebra: $10 \div 2 = 5$</p>
+</li>
+<li>
+<p><strong>3rd Trophic Level:</strong></p>
+</li>
+<li><strong>From Antelope (5):</strong> Transfers $5 \times 10\% = 0.5$. Wild dog and Lion each get 0.25.</li>
+<li><strong>From Zebra (5):</strong> Transfers $5 \times 10\% = 0.5$. Wild dog and Lion each get 0.25.</li>
+<li><strong>From Mouse (20):</strong> Transfers $20 \times 10\% = 2$. Snake gets 2.</li>
+</ol>
+<p><em>Wild dog total:</em> $0.25 + 0.25 = 0.5$.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p>Continuing the calculation for the new scenario:</p>
+<ol>
+<li><strong>4th Trophic Level:</strong></li>
+<li><strong>From Wild dog (0.5):</strong> Transfers $0.5 \times 10\% = 0.05$. Lion gets 0.05.</li>
+<li>
+<p><strong>From Snake (2):</strong> Transfers $2 \times 10\% = 0.2$. Snake-eating animal gets 0.2.</p>
+</li>
+<li>
+<p><strong>5th Trophic Level:</strong></p>
+</li>
+<li><strong>From Snake-eating animal (0.2):</strong> Transfers $0.2 \times 10\% = 0.02$. Lion gets 0.02.</li>
+</ol>
+<p><strong>New Total Energy for Lion:</strong>
+- From Antelope: 0.25
+- From Zebra: 0.25
+- From Wild dog: 0.05
+- From Snake-eating animal: 0.02</p>
+<p>Total = $0.25 + 0.25 + 0.05 + 0.02 = 0.57$.
+The lion population now obtains <strong>0.57</strong> (ten-thousand kJ).</p>
+<p><strong>Area and Density Impact:</strong>
+- To maintain its original population size, the lion population still requires 1.11 units of energy. Since the same area now only provides 0.57 units, the required hunting area must increase by a factor of $\frac{1.11}{0.57} = \frac{111}{57} = \frac{37}{19}$ times.
+- If the savanna area is limited and cannot be expanded, the available energy (0.57) is insufficient to support the original population. Consequently, the carrying capacity drops, and the density of the lion population will <strong>decrease</strong>.</p>
+<p><strong>Final Answers:</strong>
+(1) <strong>equal to</strong> ; <strong>heat energy</strong>
+(2) <strong>1.11</strong>
+(3) <strong>0.57</strong> ; <strong>37/19</strong> ; <strong>decrease</strong></p>
+<p><strong>Recap:</strong>
+By meticulously tracing the energy flow through each path of the food web—applying the 10% transfer efficiency and the equal distribution rules—we can accurately determine the energy available to apex predators. Changes in lower trophic levels, such as a surge in the mouse population, drastically alter energy distribution. This ultimately reduces the energy reaching the top of the food chain, forcing predators to expand their hunting grounds or face a decline in population density.</p>
+</body>
+</html>

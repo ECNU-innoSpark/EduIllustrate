@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_121_physics_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_121_physics_g9</h1>
+<p><strong>Problem Statement:</strong></p>
+<p><em>Translated from Chinese:</em>
+As shown in the figure, six identical blocks are placed flat on a rough horizontal surface. Under the action of a force $F = 6\text{ N}$, they move to the right in a uniform rectilinear motion (constant velocity). What is the compressive force between block 3 and block 4?</p>
+<p>A. 2N
+B. 3N
+C. 4N
+D. 5N</p>
+<p><strong>Solution Approach:</strong>
+To solve this, we will use Newton's First and Second Laws of Motion. 
+1. First, we will analyze the entire system of six blocks to find the total kinetic friction acting on the system. Since the blocks are identical, we can determine the friction acting on each individual block.
+2. Next, we will use the "isolation method" by treating a subset of the blocks (specifically blocks 4, 5, and 6) as a new distinct system. By balancing the forces on this subsystem, we can easily find the internal force exerted by block 3 on block 4.</p>
+<p><img alt="" src="scene1.png" /></p>
+<h3>Step 1: Analyze the Entire System</h3>
+<p>The problem states that all six identical blocks move to the right with <strong>uniform rectilinear motion</strong> (constant velocity). According to Newton's First Law, if an object is moving at a constant velocity, its acceleration is zero ($a = 0$), which means the net force acting on it must be zero ($\Sigma F = 0$).</p>
+<p>Let's look at the horizontal forces acting on the entire 6-block system:
+* <strong>Applied Force ($F$):</strong> Pushing to the right with a magnitude of $6\text{ N}$.
+* <strong>Total Friction ($f_{\text{total}}$):</strong> Pushing to the left opposing the motion.</p>
+<p>Because the net force is zero:
+$$F - f_{\text{total}} = 0$$
+$$f_{\text{total}} = F = 6\text{ N}$$</p>
+<p>Since there are 6 identical blocks, each block contributes equally to the total friction. Let $f$ be the friction force on a single block.
+$$f = \frac{f_{\text{total}}}{6} = \frac{6\text{ N}}{6} = 1\text{ N}$$</p>
+<p>Each block experiences exactly $1\text{ N}$ of kinetic friction opposing its motion.</p>
+<p><img alt="" src="scene2.png" /></p>
+<h3>Step 2: Analyze the Subsystem (Blocks 4, 5, and 6)</h3>
+<p>To find the force between block 3 and block 4, we can isolate blocks 4, 5, and 6 and treat them as a single rigid body. </p>
+<p>Let's identify the horizontal forces acting on this 3-block subsystem:
+1.  <strong>Force from Block 3 ($F_{34}$):</strong> Block 3 pushes block 4 to the right. This is the force we want to find.
+2.  <strong>Friction on Blocks 4, 5, and 6 ($f_{456}$):</strong> The rough surface exerts a friction force to the left on these three blocks. </p>
+<p>Since the entire train of blocks is moving at a constant velocity, this subsystem is also moving at a constant velocity. Therefore, the net force on this subsystem must also be zero.</p>
+<p>First, calculate the total friction on this subsystem. Since there are 3 blocks in this system, and each experiences $1\text{ N}$ of friction:
+$$f_{456} = 3 \times f = 3 \times 1\text{ N} = 3\text{ N}$$</p>
+<p>Now, apply Newton's First Law to the subsystem:
+$$F_{34} - f_{456} = 0$$
+$$F_{34} = f_{456} = 3\text{ N}$$</p>
+<p><img alt="" src="scene3.png" /></p>
+<h3>Conclusion and Verification</h3>
+<p>We found that the force exerted by block 3 on block 4 is $3\text{ N}$. </p>
+<p><em>Alternative Verification:</em> We can verify this by looking at the <em>other</em> subsystem (blocks 1, 2, and 3). 
+* Forces pushing right: The main applied force $F = 6\text{ N}$.
+* Forces pushing left: The friction on the three blocks ($3 \times 1\text{ N} = 3\text{ N}$) PLUS the reaction force from block 4 pushing back on block 3 ($F_{43}$).
+* Net force equation: $6\text{ N} - 3\text{ N} - F_{43} = 0 \implies F_{43} = 3\text{ N}$.
+* According to Newton's Third Law, the force block 3 exerts on 4 is equal and opposite to the force block 4 exerts on 3 ($F_{34} = F_{43}$). The math holds perfectly.</p>
+<p><strong>Final Answer:</strong>
+The compressive force between block 3 and block 4 is <strong>3N</strong>. </p>
+<p>Therefore, the correct option is <strong>B</strong>.</p>
+</body>
+</html>

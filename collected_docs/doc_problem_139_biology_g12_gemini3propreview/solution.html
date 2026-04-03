@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_139_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_139_biology_g12</h1>
+<p><strong>Translated Problem Statement:</strong>
+The flower color of a certain plant is controlled by two pairs of independently inherited alleles, A/a and B/b. A is completely dominant over a, and B is completely dominant over b. The biochemical mechanism by which genes A and B control flower color is shown in the figure. Answer the following questions:
+(1) Processes ① and ② in the figure are collectively called <strong><em>_</em></strong><strong><em>_</em>_. The figure reflects that the relationship between genes and biological traits is </strong><strong><em>_</em></strong><strong><em>.
+(2) Pure-breeding purple-flowered and pure-breeding blue-flowered plants are crossed as parents to obtain $F</em>1$. $F_1$ is self-crossed to obtain $F_2$. After harvesting the white-flowered individuals in $F_2$, all seeds from each plant are planted separately to obtain a line. Among all the lines, the proportion of lines whose offspring show a phenotypic ratio of purple : blue : white = 3 : 3 : 10 is </strong><strong><em>_. If all the purple-flowered plants in the offspring are test-crossed, the phenotypic ratio of their progeny will be </em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>.
+(3) There is a white-flowered plant. During its growth, it is found that due to a gene mutation, a blue spot appears on a white petal. The possible genotype(s) of this plant is/are </strong><strong><em>_</em></strong><strong><em>_</em></strong>__.</p>
+<p><strong>Solution Approach:</strong>
+To tackle this, we first need to establish the mapping between genotypes and phenotypes by analyzing the provided biochemical pathway. Once we know which genotype produces which color, we can apply standard Mendelian dihybrid cross principles (the 9:3:3:1 ratio modifications) to track the inheritance patterns and calculate the requested probabilities and mutation scenarios.</p>
+<p><img alt="" src="scene1.png" /></p>
+<h3>Part 1: Gene Expression and Pathway Analysis</h3>
+<p>First, let's look at processes ① and ②. 
+* Process ① represents DNA being used as a template to create mRNA, which is <strong>transcription</strong>.
+* Process ② represents mRNA being used to synthesize an enzyme (protein), which is <strong>translation</strong>.
+* Collectively, transcription and translation are known as <strong>gene expression</strong>.</p>
+<p>The diagram illustrates a fundamental biological concept: genes do not directly act as pigments. Instead, they carry the code to build enzymes. These enzymes then catalyze metabolic reactions (turning a white precursor into a blue or purple pigment). Therefore, the relationship is: <strong>Genes control traits by controlling the synthesis of enzymes to regulate metabolic processes.</strong></p>
+<p><strong>Genotype-Phenotype Mapping:</strong>
+Based on the "Bind &amp; Inhibit" mechanism shown in the diagram, if <em>both</em> dominant alleles A and B are present, their mRNAs bind together, preventing translation. No enzymes are made, leaving the flower <strong>White</strong>.
+* <strong>$A_B_$</strong> $\rightarrow$ Both mRNAs produced, translation blocked $\rightarrow$ <strong>White</strong>
+* <strong>$A_bb$</strong> $\rightarrow$ Only Enzyme A is produced $\rightarrow$ <strong>Purple</strong>
+* <strong>$aaB_$</strong> $\rightarrow$ Only Enzyme B is produced $\rightarrow$ <strong>Blue</strong>
+* <strong>$aabb$</strong> $\rightarrow$ Neither enzyme is produced $\rightarrow$ <strong>White</strong></p>
+<p><strong>[Scene 2 rendering failed - diagram unavailable]</strong></p>
+<h3>Part 2: Mendelian Crosses and Proportions</h3>
+<p>The parents are pure purple ($AAbb$) and pure blue ($aaBB$).
+* <strong>$F_1$ generation:</strong> All offspring are $AaBb$. Because both A and B are present, the $F_1$ plants are <strong>White</strong>.
+* <strong>$F_2$ generation:</strong> Self-crossing $F_1$ ($AaBb \times AaBb$) yields the standard 9:3:3:1 Mendelian genotype ratio. Applying our mapping:
+* 9 $A_B_$ (White)
+* 3 $A_bb$ (Purple)
+* 3 $aaB_$ (Blue)
+* 1 $aabb$ (White)</p>
+<p>Notice that the total ratio of phenotypes in $F_2$ is 3 Purple : 3 Blue : 10 White (9 + 1). </p>
+<p>The problem states we harvest all <strong>white</strong> individuals from $F_2$. The white pool consists of 10 parts:
+1 $AABB$ : 2 $AABb$ : 2 $AaBB$ : 4 $AaBb$ : 1 $aabb$</p>
+<p>We want to find the proportion of these white plants that, when self-crossed, yield a progeny ratio of 3 Purple : 3 Blue : 10 White. This ratio is specifically the result of a double heterozygote self-cross ($AaBb \times AaBb$). 
+Looking at our pool of white $F_2$ plants, the $AaBb$ genotype makes up 4 out of the 10 parts. 
+Therefore, the proportion is <strong>$4/10$</strong>, which simplifies to <strong>$2/5$</strong>.</p>
+<p><strong>Test-crossing the Purple Progeny:</strong>
+The problem then asks: "If all the purple-flowered plants in the offspring are test-crossed..." 
+The purple plants in the offspring of that specific line ($AaBb$ self-crossed) have genotypes:
+* $1/3$ $AAbb$
+* $2/3$ $Aabb$</p>
+<p>A test-cross means crossing them with the fully recessive genotype ($aabb$). Let's calculate the gametes produced by the purple plant population:
+* The $AAbb$ plants produce only $Ab$ gametes ($1/3$ total).
+* The $Aabb$ plants produce $Ab$ and $ab$ gametes equally (each $1/2 \times 2/3 = 1/3$ total).
+* Total gametes from the purple population: $2/3$ $Ab$ and $1/3$ $ab$.</p>
+<p>When fertilized by $ab$ gametes from the test-cross parent:
+* $2/3$ $Ab \times ab \rightarrow 2/3$ $Aabb$ (<strong>Purple</strong>)
+* $1/3$ $ab \times ab \rightarrow 1/3$ $aabb$ (<strong>White</strong>)</p>
+<p>The resulting phenotypic ratio is <strong>Purple : White = 2 : 1</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<h3>Part 3: Mutation Analysis</h3>
+<p>We have a plant that is originally <strong>White</strong>, meaning its starting genotype must be either $A_B_$ or $aabb$.
+Due to a single-gene mutation in a somatic cell (petal), a spot turns <strong>Blue</strong>. The blue phenotype requires the genotype <strong>$aaB_$</strong> (specifically $aaBB$ or $aaBb$).</p>
+<p>Since point mutations are exceptionally rare, we assume only a <strong>single allele</strong> mutated. Let's test the possibilities:
+1.  <strong>If the original plant was $A_B_$</strong>: To become $aaB_$, an 'A' allele must mutate into an 'a' allele. For a single mutation to result in 'aa', the original plant must have already carried one recessive 'a'. Thus, the original plant must have been heterozygous for gene A: <strong>$AaBB$</strong> or <strong>$AaBb$</strong>. (A single mutation changes $Aa$ to $aa$).
+2.  <strong>If the original plant was $aabb$</strong>: To become $aaB_$, a 'b' allele must mutate into a dominant 'B' allele. A single mutation changes $bb$ to $Bb$, resulting in the genotype $aaBb$, which is blue. Thus, the original plant could have been <strong>$aabb$</strong>.</p>
+<p>Genotypes like $AABB$ are impossible here because turning $AABB$ into $aaB_$ would require <em>two</em> simultaneous mutations ($A \rightarrow a$ and $A \rightarrow a$), which is statistically negligible for a single cell event.</p>
+<p>Therefore, the possible genotypes of the original white plant are <strong>$AaBB$, $AaBb$, or $aabb$</strong>.</p>
+<hr />
+<h3>Final Answers Summary:</h3>
+<p><strong>(1)</strong> Gene expression (or transcription and translation); Genes control traits by controlling the synthesis of enzymes to regulate metabolic processes.
+<strong>(2)</strong> $2/5$ ; Purple : White = 2 : 1
+<strong>(3)</strong> $AaBB$, $AaBb$, $aabb$</p>
+<p>Would you like to explore more examples of epistasis or practice predicting ratios for other types of gene interactions?</p>
+</body>
+</html>

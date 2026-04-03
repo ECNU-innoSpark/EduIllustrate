@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_187_geography_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_187_geography_g12</h1>
+<p><strong>Problem Statement:</strong>
+The figure below shows the inclination angle of solar water heaters at four locations in the Northern Hemisphere on June 22nd when the local sun is due south at different times.</p>
+<p>(1) The order of the noon solar altitude at the four locations on this day from largest to smallest is <strong><em>_</em></strong><em>, and the order of the day length at the four locations on this day from longest to shortest is <strong><em>_</em></strong></em>.
+(2) The geographic coordinates of location ② are <strong><em>_</em></strong><em>, and location ④ is in the <strong><em>_</em></strong></em> direction of location ①.
+(3) If location ① is on a continent, the famous industrial base nearby is the <strong><em>_</em></strong><em> industrial base; if location ④ were land, the famous industrial base nearby would be <strong><em>_</em></strong></em>.
+(4) The famous fishing ground near the country of location ③ is the <strong><em>_</em></strong><em> fishing ground, and the climate of that country is deeply influenced by the <strong><em>_</em></strong></em> ocean current.</p>
+<p><strong>Solution Approach:</strong>
+1.  <strong>Analyze the Geometry:</strong> Understand the relationship between the solar water heater's tilt angle ($\alpha$), the noon solar altitude ($H$), and the location's latitude ($\phi$).
+2.  <strong>Calculate Coordinates:</strong> Use the given dates (June 22nd) and times (World Time/UTC) to determine the latitude and longitude of each location.
+3.  <strong>Sort Values:</strong> Rank solar altitudes and day lengths based on the calculated latitudes.
+4.  <strong>Identify Locations:</strong> Map the coordinates to real-world geography to identify industrial bases, fishing grounds, and ocean currents.</p>
+<p>Let's start by visualizing the relationship between the solar heater angle and the sun's position.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Solar Altitude and Latitude</strong></p>
+<p>For a solar water heater to work most efficiently, the sun's rays must be perpendicular to the collector panel. From the diagram in Scene 1, we can derive the relationship between the noon solar altitude ($H$) and the heater's tilt angle ($\alpha$):
+$$H + \alpha = 90^\circ \implies H = 90^\circ - \alpha$$</p>
+<p>This means a <strong>smaller tilt angle</strong> corresponds to a <strong>larger solar altitude</strong> (sun is higher in the sky).</p>
+<p><strong>Ordering Solar Altitude:</strong>
+Looking at the angles given in the problem:
+- ① (4h): $6^\circ 34'$
+- ② (8h): $26^\circ 34'$
+- ③ (12h): $28^\circ 34'$
+- ④ (24h): $13^\circ 34'$</p>
+<p>Sorting from smallest angle to largest angle (which gives largest $H$ to smallest $H$):
+$6^\circ 34' &lt; 13^\circ 34' &lt; 26^\circ 34' &lt; 28^\circ 34'$</p>
+<p><strong>Result:</strong> ① &gt; ④ &gt; ② &gt; ③</p>
+<p><strong>Calculating Latitude:</strong>
+The formula for noon solar altitude on the Summer Solstice (June 22nd) in the Northern Hemisphere is:
+$$H = 90^\circ - |\phi - \delta|$$
+Where $\phi$ is the local latitude and $\delta$ is the solar declination ($23^\circ 26'$ N).</p>
+<p>Substituting $H = 90^\circ - \alpha$, we get:
+$$\alpha = |\phi - 23^\circ 26'|$$</p>
+<p>Since all locations are in the Northern Hemisphere ($\phi &gt; 0$), we calculate $\phi$ for each:
+- <strong>①:</strong> $|\phi - 23^\circ 26'| = 6^\circ 34' \rightarrow \phi = 30^\circ$ N (Reasonable for industrial base)
+- <strong>②:</strong> $|\phi - 23^\circ 26'| = 26^\circ 34' \rightarrow \phi = 50^\circ$ N
+- <strong>③:</strong> $|\phi - 23^\circ 26'| = 28^\circ 34' \rightarrow \phi = 52^\circ$ N
+- <strong>④:</strong> $|\phi - 23^\circ 26'| = 13^\circ 34' \rightarrow \phi = 37^\circ$ N</p>
+<p><strong>Ordering Day Length:</strong>
+On June 22nd (Summer Solstice), day length in the Northern Hemisphere increases as you move North. Therefore, higher latitude = longer day.</p>
+<p>Latitudes: ③ ($52^\circ$) &gt; ② ($50^\circ$) &gt; ④ ($37^\circ$) &gt; ① ($30^\circ$)</p>
+<p><strong>Result:</strong> ③ &gt; ② &gt; ④ &gt; ①</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Calculating Longitude and Direction</strong></p>
+<p>We are given the "World Time" (UTC) when local noon occurs. Local noon is always 12:00 Local Time.
+Formula: $\text{Longitude} = (12 - \text{UTC Time}) \times 15^\circ/\text{hour}$.
+(Positive = East, Negative = West).</p>
+<ul>
+<li><strong>① (UTC 4h):</strong> $(12 - 4) \times 15^\circ = 120^\circ$ E</li>
+<li><strong>② (UTC 8h):</strong> $(12 - 8) \times 15^\circ = 60^\circ$ E</li>
+<li><strong>③ (UTC 12h):</strong> $(12 - 12) \times 15^\circ = 0^\circ$</li>
+<li><strong>④ (UTC 24h/0h):</strong> $(12 - 24) \times 15^\circ = -180^\circ$ (or $180^\circ$ W/E)</li>
+</ul>
+<p><strong>Coordinates of ②:</strong>
+Latitude $50^\circ$ N, Longitude $60^\circ$ E.
+<strong>Answer:</strong> ($50^\circ$N, $60^\circ$E)</p>
+<p><strong>Direction of ④ relative to ①:</strong>
+- Location ①: ($30^\circ$N, $120^\circ$E)
+- Location ④: ($37^\circ$N, $180^\circ$)</p>
+<p>Latitude comparison: $37^\circ$N is North of $30^\circ$N.
+Longitude comparison: $180^\circ$ is East of $120^\circ$E.</p>
+<p><strong>Answer:</strong> Northeast.</p>
+<p><strong>Step 3: Geographic Identification</strong></p>
+<p><strong>Question (3): Industrial Bases</strong>
+- <strong>Location ① ($30^\circ$N, $120^\circ$E):</strong> This coordinates points exactly to the <strong>Yangtze River Delta</strong> in China (near Shanghai/Hangzhou). This is China's largest comprehensive industrial base.
+- <strong>Location ④ ($37^\circ$N, $180^\circ$):</strong> This point falls in the Pacific Ocean. However, the question asks "If ④ were land...". We look for a famous industrial base at <strong>$37^\circ$N latitude</strong> on the nearest continent or globally famous at that latitude. The most prominent one is <strong>Silicon Valley</strong> (San Francisco Bay Area, USA), located around $37^\circ$N.</p>
+<p><strong>Question (4): Fishing Ground and Current</strong>
+- <strong>Location ③ ($52^\circ$N, $0^\circ$):</strong> These are the coordinates for London, UK.
+- <strong>Fishing Ground:</strong> The famous fishing ground nearby is the <strong>North Sea Fishing Ground</strong>.
+- <strong>Ocean Current:</strong> The climate of Western Europe (UK) is heavily influenced by the <strong>North Atlantic Drift</strong> (or North Atlantic Warm Current), which keeps it warmer than other regions at the same latitude.</p>
+<p><strong>Final Recap &amp; Verification:</strong></p>
+<ol>
+<li><strong>Solar Altitude:</strong> Inversely related to heater angle. Order: ① &gt; ④ &gt; ② &gt; ③.</li>
+<li><strong>Day Length:</strong> Directly related to Latitude in Summer. Order: ③ &gt; ② &gt; ④ &gt; ①.</li>
+<li><strong>Coordinates ②:</strong> ($50^\circ$N, $60^\circ$E).</li>
+<li><strong>Direction:</strong> ④ is Northeast of ①.</li>
+<li><strong>Industrial Bases:</strong> ① is Yangtze River Delta; ④ is Silicon Valley (implied by $37^\circ$N latitude).</li>
+<li><strong>Location ③:</strong> UK. Fishery: North Sea. Current: North Atlantic Warm Current.</li>
+</ol>
+<p>All derived locations and physical geography facts are consistent with standard geographical data.</p>
+</body>
+</html>

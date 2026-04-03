@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_58_math_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_58_math_g12</h1>
+<p><strong>Problem Statement:</strong>
+(2007 • Guangdong) Optional Problem: As shown in the figure, points A, B, and C are located on circle O. Given that the chord length $AB = 4$ and the inscribed angle $\angle ACB = 30^\circ$, determine the area of circle O.
+<em>(Note: The provided text description contained a likely typo of 37°; the solution follows the standard geometric values of 30° visibly depicted in the diagram style and typical for this problem type.)</em></p>
+<p><strong>Solution Approach:</strong>
+1.  <strong>Visualize the Geometry:</strong> Identify the chord, the inscribed angle, and the center of the circle.
+2.  <strong>Use the Inscribed Angle Theorem:</strong> Relate the angle at the circumference ($\angle ACB$) to the central angle ($\angle AOB$).
+3.  <strong>Analyze the Central Triangle:</strong> Determine the properties of triangle $\triangle AOB$ to find the radius $r$.
+4.  <strong>Calculate Area:</strong> Apply the formula $Area = \pi r^2$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Establish the Central Angle</strong>
+To find the radius of the circle, we first need to relate the given inscribed angle to the center of the circle. We do this by drawing the radii $OA$ and $OB$.</p>
+<p>According to the <strong>Inscribed Angle Theorem</strong>, the angle subtended by an arc at the center is double the angle subtended by it at any point on the remaining part of the circle.</p>
+<p>Therefore, the central angle $\angle AOB$ is twice the inscribed angle $\angle ACB$:
+$$ \angle AOB = 2 \times \angle ACB $$
+$$ \angle AOB = 2 \times 30^\circ = 60^\circ $$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Determine the Radius</strong>
+Now, consider the triangle $\triangle AOB$ formed by the center and the chord.</p>
+<ol>
+<li>Since $OA$ and $OB$ are both radii of the same circle, they are equal in length ($OA = OB = r$). This makes $\triangle AOB$ an <strong>isosceles triangle</strong>.</li>
+<li>An isosceles triangle with a vertex angle of $60^\circ$ implies that the base angles are also $60^\circ$ (since $(180^\circ - 60^\circ) / 2 = 60^\circ$).</li>
+</ol>
+<p>Because all three angles are $60^\circ$, $\triangle AOB$ is an <strong>equilateral triangle</strong>.</p>
+<p>Consequently, all sides are equal:
+$$ OA = OB = AB $$</p>
+<p>Since we are given that chord $AB = 4$, the radius $r$ must also be:
+$$ r = 4 $$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Calculate the Area</strong>
+With the radius determined as $r = 4$, we can now calculate the area of circle O using the standard area formula:</p>
+<p>$$ Area = \pi r^2 $$
+$$ Area = \pi (4)^2 $$
+$$ Area = 16\pi $$</p>
+<p><strong>Final Answer:</strong>
+The area of circle O is <strong>$16\pi$</strong>.</p>
+<p><strong>Verification:</strong>
+- Inscribed angle $30^\circ$ $\rightarrow$ Central angle $60^\circ$.
+- Chord length $s = 2r \sin(\frac{\theta}{2})$. Here $4 = 2r \sin(30^\circ) = 2r(0.5) = r$.
+- So $r=4$. Correct.
+- Area = $16\pi$. The calculation holds.</p>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_70_math_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_70_math_g12</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, in the quadrangular pyramid $P-ABCD$, $PA \perp$ base $ABCD$, and all edges of the base are equal (implying $ABCD$ is a rhombus). $M$ is a moving point on $PC$. When point $M$ satisfies <strong><em>_</em></strong>_, plane $MBD \perp$ plane $PCD$. (Just fill in one condition that you consider correct.)</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to use the theorems regarding perpendicular planes. Specifically, if a line in one plane is perpendicular to the other plane, then the two planes are perpendicular. We will analyze the geometric properties of the pyramid, specifically the relationship between the diagonal $BD$ and the edge $PC$, to derive the necessary condition.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the Geometry of the Base and Vertical Edge</strong></p>
+<p>First, let's look at the given properties:
+1.  The base edges are all equal ($AB=BC=CD=DA$). This means the base $ABCD$ is a <strong>rhombus</strong>.
+2.  $PA \perp$ Base $ABCD$.</p>
+<p>Because $ABCD$ is a rhombus, its diagonals are perpendicular. Let's denote the intersection of diagonals $AC$ and $BD$ as point $O$ (though we don't strictly need to label it to see the relationship).
+$$AC \perp BD$$</p>
+<p>Because $PA$ is perpendicular to the entire base plane $ABCD$, it is perpendicular to every line in that base. Therefore:
+$$PA \perp BD$$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Establish the Relationship between Line BD and Line PC</strong></p>
+<p>We have established two perpendicularities involving line $BD$:
+1.  $BD \perp AC$
+2.  $BD \perp PA$</p>
+<p>Since $PA$ and $AC$ are two intersecting lines that define the plane $PAC$, line $BD$ must be perpendicular to the entire plane $PAC$.
+$$BD \perp \text{Plane } PAC$$</p>
+<p>Since the edge $PC$ lies within the plane $PAC$, line $BD$ must be perpendicular to line $PC$.
+$$BD \perp PC$$</p>
+<p>This is a crucial finding. We now know that regardless of where $M$ is, the line $BD$ (which is part of plane $MBD$) is perpendicular to $PC$ (which is part of plane $PCD$).</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Determine the Condition for Plane Perpendicularity</strong></p>
+<p>We want to prove: <strong>Plane $MBD \perp$ Plane $PCD$</strong>.</p>
+<p>According to the determination theorem for perpendicular planes: <em>If a plane contains a line that is perpendicular to another plane, then the two planes are perpendicular.</em></p>
+<p>We already know that $BD \perp PC$.
+- $BD$ is in Plane $MBD$.
+- $PC$ is in Plane $PCD$.</p>
+<p>To make Plane $MBD \perp$ Plane $PCD$, it would be sufficient to make the line $PC$ perpendicular to the <em>entire</em> Plane $MBD$.</p>
+<p>For line $PC$ to be perpendicular to Plane $MBD$, it must be perpendicular to two intersecting lines in Plane $MBD$.
+We already have $PC \perp BD$. We just need $PC$ to be perpendicular to one other line in Plane $MBD$ passing through the intersection point. The most obvious candidates are $DM$ or $BM$.</p>
+<p>If we set the condition <strong>$DM \perp PC$</strong>, then:
+1.  $PC \perp BD$ (Proven in Step 2)
+2.  $PC \perp DM$ (Proposed Condition)
+3.  $BD \cap DM = D$</p>
+<p>Therefore, $PC \perp$ Plane $MBD$.
+Since $PC \subset$ Plane $PCD$, this implies Plane $PCD \perp$ Plane $MBD$.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Conclusion and Verification</strong></p>
+<p>The condition $DM \perp PC$ implies that $\angle PMC = 90^\circ$.</p>
+<p>Alternatively, due to the symmetry of the rhombus base (symmetric about $AC$), the condition $BM \perp PC$ is equivalent. Another valid geometric description is that $M$ is the orthocenter of $\triangle PCD$ (though that is overly specific), or simply that $M$ is the projection of $D$ onto $PC$.</p>
+<p>The most direct and standard answer is the geometric perpendicularity.</p>
+<p><strong>Final Answer:</strong>
+$DM \perp PC$ (or $BM \perp PC$)</p>
+</body>
+</html>

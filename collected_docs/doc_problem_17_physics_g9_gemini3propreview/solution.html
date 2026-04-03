@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_17_physics_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_17_physics_g9</h1>
+<p><strong>Problem Statement:</strong>
+In the circuit shown in the figure, which of the following statements is correct? ( )
+A. The lamps $L_1$ and $L_2$ are in series.
+B. The ammeter measures the current of $L_1$.
+C. The ammeter measures the current of $L_2$.
+D. The switch controls only $L_2$.</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to translate the physical wiring diagram into a circuit schematic. We will trace the path of the current starting from the positive terminal of the power source, identify nodes where the current splits or combines, and determine the placement of the components (switch, bulbs, ammeter) to see if they are in series or parallel.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p>First, let's trace the current flow to determine the connection type (series vs. parallel).</p>
+<p>Starting from the <strong>positive terminal</strong> of the battery pack, the wire connects to the <strong>Switch (S)</strong>. 
+From the other side of the switch, the current reaches a junction point. One wire goes to bulb $L_2$ and another connects to bulb $L_1$. Since the current has two separate paths to flow through—one path through $L_1$ and another through $L_2$—the two bulbs are connected in <strong>parallel</strong>, not series.</p>
+<p>This eliminates Option A.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p>Next, let's analyze what the <strong>Ammeter</strong> is measuring. </p>
+<p>Looking at the physical connections:
+1. The current flows through bulb $L_1$.
+2. It then enters the positive terminal of the Ammeter (the '0.6' post).
+3. It exits the negative terminal of the Ammeter and returns to the battery.</p>
+<p>The current for bulb $L_2$, however, connects directly to the negative terminal of the Ammeter (joining the return line) without passing <em>through</em> the Ammeter's measuring coil.</p>
+<p>Since the Ammeter is placed in the same branch as $L_1$ (in series with $L_1$), it measures the current flowing through <strong>$L_1$ only</strong>.</p>
+<p>This confirms Option B and eliminates Option C.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p>Finally, let's verify the function of the <strong>Switch (S)</strong>.</p>
+<p>The switch is located on the main wire coming from the positive terminal of the battery, <em>before</em> the current splits into the two parallel branches for $L_1$ and $L_2$. This is known as the "dry line" or main trunk.</p>
+<p>Because it is on the main line, opening the switch cuts off current to the entire circuit. Therefore, the switch controls <strong>both</strong> $L_1$ and $L_2$, not just $L_2$.</p>
+<p>This eliminates Option D.</p>
+<p><strong>Conclusion:</strong>
+- A is incorrect (they are in parallel).
+- C is incorrect (it doesn't measure $L_2$).
+- D is incorrect (it controls both).
+- <strong>B is correct</strong>: The ammeter is in series with $L_1$ and measures its current.</p>
+<p><strong>Correct Answer:</strong> B</p>
+</body>
+</html>

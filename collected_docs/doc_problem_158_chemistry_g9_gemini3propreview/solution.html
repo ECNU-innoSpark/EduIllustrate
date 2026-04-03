@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_158_chemistry_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_158_chemistry_g9</h1>
+<p><strong>Problem Statement:</strong>
+In the following groups of transformations, which ones can be realized in a single step under certain conditions for every step of the cycle?</p>
+<p><strong>Options:</strong>
+A. ①②
+B. ①③
+C. ②③
+D. ①②③</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to analyze each reaction cycle (①, ②, and ③) individually. For each arrow in a cycle, we will determine if there exists a standard chemical reaction that converts the starting substance to the product in a single step. We will verify the feasibility based on standard inorganic chemistry principles involving calcium, iron, and magnesium compounds.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Analysis of Cycle ① (Calcium Compounds):</strong></p>
+<p>Let's examine the transitions for the calcium cycle:</p>
+<ol>
+<li><strong>$\text{CaCO}_3 \rightarrow \text{CaO}$</strong>: Calcium carbonate can be decomposed by heating (calcination) to produce calcium oxide and carbon dioxide.</li>
+<li>
+<p>Reaction: $\text{CaCO}_3 \xrightarrow{\text{High Temp}} \text{CaO} + \text{CO}_2\uparrow$ (Feasible)</p>
+</li>
+<li>
+<p><strong>$\text{CaO} \rightarrow \text{Ca(OH)}_2$</strong>: Calcium oxide reacts vigorously with water to form calcium hydroxide (slaked lime).</p>
+</li>
+<li>
+<p>Reaction: $\text{CaO} + \text{H}_2\text{O} \rightarrow \text{Ca(OH)}_2$ (Feasible)</p>
+</li>
+<li>
+<p><strong>$\text{Ca(OH)}_2 \rightarrow \text{CaCO}_3$</strong>: Calcium hydroxide reacts with carbon dioxide or a soluble carbonate (like sodium carbonate) to form a calcium carbonate precipitate.</p>
+</li>
+<li>Reaction: $\text{Ca(OH)}_2 + \text{CO}_2 \rightarrow \text{CaCO}_3\downarrow + \text{H}_2\text{O}$ (Feasible)</li>
+</ol>
+<p>Since all steps are possible in one step, Cycle ① is valid.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Analysis of Cycle ② (Iron Compounds):</strong></p>
+<p>Now let's look at the iron cycle:</p>
+<ol>
+<li>
+<p><strong>$\text{Fe} \rightarrow \text{Fe}_2\text{O}_3$</strong>: Iron reacts with oxygen and water (rusting) or undergoes oxidation to form iron(III) oxide. While direct burning usually forms $\text{Fe}_3\text{O}_4$, specific oxidation conditions or rusting followed by dehydration can yield $\text{Fe}_2\text{O}_3$. This step is generally considered chemically feasible, though often slow or requiring specific conditions.</p>
+</li>
+<li>
+<p><strong>$\text{Fe}_2\text{O}_3 \rightarrow \text{FeSO}_4$</strong>: This step presents a problem.</p>
+</li>
+<li>$\text{Fe}_2\text{O}_3$ is an iron(III) oxide. Reacting it with sulfuric acid ($\text{H}_2\text{SO}_4$) produces iron(III) sulfate, $\text{Fe}_2(\text{SO}_4)_3$, not iron(II) sulfate ($\text{FeSO}_4$).</li>
+<li>Reaction: $\text{Fe}_2\text{O}_3 + 3\text{H}_2\text{SO}_4 \rightarrow \text{Fe}_2(\text{SO}_4)_3 + 3\text{H}_2\text{O}$.</li>
+<li>
+<p>To get iron(II) sulfate ($\text{FeSO}_4$), a reduction step would be required, meaning this cannot be done in a single simple metathesis step.</p>
+</li>
+<li>
+<p><strong>$\text{FeSO}_4 \rightarrow \text{Fe}$</strong>: Iron(II) sulfate can react with a more reactive metal like zinc to displace the iron.</p>
+</li>
+<li>Reaction: $\text{FeSO}_4 + \text{Zn} \rightarrow \text{ZnSO}_4 + \text{Fe}$ (Feasible).</li>
+</ol>
+<p>Because the transformation from $\text{Fe}_2\text{O}_3$ to $\text{FeSO}_4$ cannot be achieved in a simple single step (it involves a change in oxidation state from +3 to +2 which acid alone won't do), Cycle ② is invalid.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Analysis of Cycle ③ (Magnesium and Water):</strong></p>
+<p>Finally, we examine the third cycle:</p>
+<ol>
+<li><strong>$\text{H}_2\text{O} \rightarrow \text{O}_2$</strong>: Water can be split into hydrogen and oxygen via electrolysis.</li>
+<li>
+<p>Reaction: $2\text{H}_2\text{O} \xrightarrow{\text{Electrolysis}} 2\text{H}_2\uparrow + \text{O}_2\uparrow$ (Feasible)</p>
+</li>
+<li>
+<p><strong>$\text{O}_2 \rightarrow \text{MgO}$</strong>: Magnesium burns in oxygen to form magnesium oxide.</p>
+</li>
+<li>
+<p>Reaction: $2\text{Mg} + \text{O}_2 \xrightarrow{\text{Ignition}} 2\text{MgO}$ (Feasible)</p>
+</li>
+<li>
+<p><strong>$\text{MgO} \rightarrow \text{H}_2\text{O}$</strong>: Magnesium oxide is a basic oxide and reacts with acids (like hydrochloric acid or sulfuric acid) to produce a salt and water.</p>
+</li>
+<li>Reaction: $\text{MgO} + \text{H}_2\text{SO}_4 \rightarrow \text{MgSO}_4 + \text{H}_2\text{O}$ (Feasible)</li>
+</ol>
+<p>All steps in this cycle can be realized in a single step. Thus, Cycle ③ is valid.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Conclusion:</strong></p>
+<p>Based on the analysis:
+- Cycle ① is valid.
+- Cycle ② is invalid (conversion of $\text{Fe}_2\text{O}_3$ to $\text{FeSO}_4$ is not a one-step process).
+- Cycle ③ is valid.</p>
+<p>Therefore, the groups of changes that can be realized in one step are ① and ③.</p>
+<p><strong>Final Answer:</strong>
+The correct option is <strong>B. ①③</strong>.</p>
+</body>
+</html>

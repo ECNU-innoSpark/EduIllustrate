@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_103_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_103_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+Given, as shown in the figure, the area of square $ABCD$ is 25, and the area of rhombus $PQCB$ is 20. Find the area of the shaded region.</p>
+<p><strong>Options:</strong>
+A. 11
+B. 6.5
+C. 7
+D. 7.5</p>
+<p><strong>Solution Approach:</strong>
+To find the area of the shaded region, we can use the subtraction method. The shaded region is part of the square $ABCD$. Specifically, it is the area of the square minus the unshaded white region that lies inside the square. By analyzing the properties of the square and the rhombus, we can determine the geometric shape and dimensions of this unshaded region and subtract its area from the total area of the square.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determine the side lengths.</strong></p>
+<p>First, let's look at the square $ABCD$. We are given that its area is 25.
+Since the area of a square is given by $side^2$, we can calculate the side length:
+$$BC = \sqrt{25} = 5$$</p>
+<p>Next, consider the rhombus $PQCB$. By definition, a rhombus has all sides equal in length. Since it shares side $BC$ with the square, the side length of the rhombus is also 5.
+$$PB = PQ = QC = BC = 5$$</p>
+<p><strong>Step 2: Determine the height of the rhombus.</strong></p>
+<p>We are given that the area of the rhombus $PQCB$ is 20. The area of a rhombus (which is a type of parallelogram) is calculated as:
+$$\text{Area} = \text{Base} \times \text{Height}$$</p>
+<p>Using $BC$ as the base:
+$$20 = 5 \times h$$
+$$h = 4$$</p>
+<p>This height $h$ represents the perpendicular distance from line $PQ$ to line $BC$. In our coordinate system, this means the y-coordinate of points $P$ and $Q$ is 4.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Locate Point P horizontally.</strong></p>
+<p>We need to find the exact position of point $P$ to determine the shape of the unshaded region. Consider the right-angled triangle formed by the height dropped from $P$ to the base $BC$. Let's call the foot of this altitude $F$.</p>
+<p>In right triangle $\triangle PFB$:
+- Hypotenuse $PB = 5$ (side of the rhombus).
+- Height $PF = 4$.</p>
+<p>Using the Pythagorean theorem ($a^2 + b^2 = c^2$):
+$$FB^2 + 4^2 = 5^2$$
+$$FB^2 + 16 = 25$$
+$$FB^2 = 9$$
+$$FB = 3$$</p>
+<p>So, point $P$ is located 3 units horizontally from point $B$.</p>
+<p><strong>Step 4: Analyze the unshaded region (Trapezoid $BCEP$).</strong></p>
+<p>The unshaded region inside the square is the polygon $BCEP$. Let's identify its shape:
+- Side $BC$ is horizontal with length 5.
+- Side $PE$ is part of the line $PQ$, which is parallel to $BC$.
+- Therefore, $BCEP$ is a trapezoid.</p>
+<p>We need the length of the top base $PE$.
+The total width of the square is 5 (distance from line $AB$ to line $CD$).
+Point $P$ is 3 units to the right of line $AB$.
+Therefore, the distance from $P$ to the right edge of the square ($CD$) is:
+$$PE = \text{Total Width} - \text{Horizontal Offset of P}$$
+$$PE = 5 - 3 = 2$$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 5: Calculate the area of the unshaded trapezoid.</strong></p>
+<p>Now we calculate the area of trapezoid $BCEP$:
+$$\text{Area}<em>{\text{trapezoid}} = \frac{(\text{Top Base} + \text{Bottom Base}) \times \text{Height}}{2}$$
+$$\text{Area}</em>{\text{trapezoid}} = \frac{(2 + 5) \times 4}{2}$$
+$$\text{Area}<em>{\text{trapezoid}} = \frac{7 \times 4}{2}$$
+$$\text{Area}</em>{\text{trapezoid}} = 14$$</p>
+<p><strong>Step 6: Calculate the shaded area.</strong></p>
+<p>Finally, we subtract the unshaded trapezoid area from the total square area to find the shaded region.</p>
+<p>$$\text{Area}<em>{\text{shaded}} = \text{Area}</em>{\text{square}} - \text{Area}<em>{\text{trapezoid}}$$
+$$\text{Area}</em>{\text{shaded}} = 25 - 14$$
+$$\text{Area}_{\text{shaded}} = 11$$</p>
+<p><strong>Conclusion:</strong>
+The area of the shaded portion is 11.</p>
+<p><strong>Verification:</strong>
+- Square Area = 25.
+- Unshaded region consists of a rectangle (3x4) missing a triangle (3x4/2 = 6)? No, let's view it simply.
+- The unshaded part is composed of a rectangle of $2 \times 4$ (right side) and a triangle of base $3$, height $4$.
+- Rectangle area = $2 \times 4 = 8$.
+- Triangle area = $0.5 \times 3 \times 4 = 6$.
+- Total unshaded = $8 + 6 = 14$.
+- Shaded = $25 - 14 = 11$.
+The calculation holds.</p>
+<p><strong>Final Answer:</strong>
+The correct option is <strong>A</strong>.</p>
+</body>
+</html>

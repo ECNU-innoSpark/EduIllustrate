@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_31_chemistry_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_31_chemistry_g9</h1>
+<p><strong>Problem Statement:</strong>
+The basic structural unit of pure iron crystal below 910°C is shown in Figure 1, and above 910°C, it transforms into the structural unit shown in Figure 2. The distance between the nearest iron atoms is the same in both crystals.</p>
+<p>(1) In the pure iron crystal below 910°C, the number of iron atoms equidistant and closest to a given iron atom is $\underline{\hspace{3em}}$. In the pure iron crystal above 910°C, the number of iron atoms equidistant and closest to a given iron atom is $\underline{\hspace{3em}}$.
+(2) The ratio of the edge lengths of the basic structural units before and after the crystal transformation (ratio of below 910°C to above 910°C) is $\underline{\hspace{3em}}$.
+(3) The ratio of the densities before and after the transformation temperature (ratio of below 910°C to above 910°C) is $\underline{\hspace{3em}}$.</p>
+<p><strong>Solution Approach:</strong>
+This problem requires understanding crystal lattice structures, specifically Body-Centered Cubic (BCC) and Face-Centered Cubic (FCC) lattices. We will:
+1. Identify the coordination numbers (nearest neighbors) for both structures visually.
+2. Use geometry to relate the unit cell edge length ($a$) to the nearest neighbor distance ($d$) for both cases.
+3. Calculate the ratio of edge lengths.
+4. Determine the number of atoms per unit cell ($Z$) and calculate the density ratio using the volume and atomic count.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Part 1: Coordination Numbers</strong></p>
+<p><strong>Below 910°C (Figure 1):</strong>
+The structure shown in Figure 1 is a <strong>Body-Centered Cubic (BCC)</strong> lattice.
+- Looking at the diagram, the iron atom in the center is surrounded by 8 atoms located at the corners of the cube.
+- All these 8 corner atoms are equidistant from the center.
+- Therefore, the coordination number (number of nearest neighbors) is <strong>8</strong>.</p>
+<p><strong>Above 910°C (Figure 2):</strong>
+The structure in Figure 2 is a <strong>Face-Centered Cubic (FCC)</strong> lattice.
+- In this structure, atoms are located at the corners and the centers of the faces.
+- The nearest neighbors to a corner atom are the face-centered atoms.
+- Let's visualize the FCC structure to count these neighbors accurately.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Coordination Number for FCC:</strong>
+In the Face-Centered Cubic structure:
+- Select any atom (for example, a face-centered atom). It touches the 4 corner atoms of its own face.
+- It also touches 8 other face-centered atoms in the adjacent unit cells (or adjacent faces).
+- Total nearest neighbors = 4 + 8 = <strong>12</strong>.</p>
+<p><strong>Part 2: Edge Length Ratio</strong></p>
+<p>We are given that the <strong>nearest neighbor distance ($d$)</strong> is the same in both crystals. We need to express the edge length ($a$) in terms of $d$ for both structures.</p>
+<p><strong>For BCC (Figure 1):</strong>
+- The atoms touch along the <strong>body diagonal</strong> of the cube.
+- The length of the body diagonal is $a_1\sqrt{3}$.
+- This diagonal contains two nearest neighbor distances (center to corner).
+- Equation: $2d = a_1\sqrt{3} \implies a_1 = \frac{2d}{\sqrt{3}}$.</p>
+<p><strong>For FCC (Figure 2):</strong>
+- The atoms touch along the <strong>face diagonal</strong> of the cube.
+- The length of the face diagonal is $a_2\sqrt{2}$.
+- This diagonal contains two nearest neighbor distances (corner to face-center).
+- Equation: $2d = a_2\sqrt{2} \implies a_2 = \frac{2d}{\sqrt{2}} = d\sqrt{2}$.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Calculation of Edge Ratio:</strong>
+We need the ratio $a_1 : a_2$ (Below 910°C : Above 910°C).</p>
+<p>$$ \frac{a_1}{a_2} = \frac{\frac{2d}{\sqrt{3}}}{d\sqrt{2}} $$</p>
+<p>Simplifying:
+$$ \frac{a_1}{a_2} = \frac{2}{\sqrt{3} \cdot \sqrt{2}} = \frac{2}{\sqrt{6}} $$</p>
+<p>To rationalize the denominator or express simply:
+$$ \frac{2}{\sqrt{6}} = \frac{2\sqrt{6}}{6} = \frac{\sqrt{6}}{3} $$</p>
+<p>So, the ratio is <strong>$\sqrt{6} : 3$</strong> (or equivalently $2 : \sqrt{6}$).</p>
+<p><strong>Part 3: Density Ratio</strong></p>
+<p>Density ($\rho$) is defined as Mass ($m$) divided by Volume ($V$).
+$$ \rho = \frac{Z \cdot M}{N_A \cdot V} $$
+Where:
+- $Z$ is the number of atoms per unit cell.
+- $M$ is the molar mass (constant for pure iron).
+- $N_A$ is Avogadro's constant.
+- $V$ is the volume of the unit cell ($a^3$).</p>
+<p>Since $M$ and $N_A$ are constant, the ratio of densities depends only on $Z$ and $V$:
+$$ \frac{\rho_1}{\rho_2} = \frac{Z_1 / V_1}{Z_2 / V_2} = \frac{Z_1}{Z_2} \times \frac{V_2}{V_1} $$</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Final Calculation:</strong></p>
+<ol>
+<li><strong>Determine Z (Atoms per cell):</strong></li>
+<li><strong>BCC ($Z_1$):</strong> $8 \text{ corners} \times \frac{1}{8} + 1 \text{ center} = 2$ atoms.</li>
+<li>
+<p><strong>FCC ($Z_2$):</strong> $8 \text{ corners} \times \frac{1}{8} + 6 \text{ faces} \times \frac{1}{2} = 4$ atoms.</p>
+</li>
+<li>
+<p><strong>Determine Volumes ($V = a^3$):</strong></p>
+</li>
+<li>$V_1 = a_1^3 = \left(\frac{2d}{\sqrt{3}}\right)^3 = \frac{8d^3}{3\sqrt{3}}$</li>
+<li>
+<p>$V_2 = a_2^3 = (d\sqrt{2})^3 = 2\sqrt{2}d^3$</p>
+</li>
+<li>
+<p><strong>Calculate Ratio:</strong>
+$$ \frac{\rho_1}{\rho_2} = \frac{2}{4} \times \frac{2\sqrt{2}d^3}{\frac{8d^3}{3\sqrt{3}}} $$</p>
+</li>
+</ol>
+<p>Simplify the fraction:
+$$ \frac{\rho_1}{\rho_2} = \frac{1}{2} \times \frac{2\sqrt{2} \cdot 3\sqrt{3}}{8} $$
+$$ \frac{\rho_1}{\rho_2} = \frac{1}{2} \times \frac{6\sqrt{6}}{8} $$
+$$ \frac{\rho_1}{\rho_2} = \frac{3\sqrt{6}}{8} $$</p>
+<p><strong>Final Answers:</strong>
+(1) <strong>8</strong>; <strong>12</strong>
+(2) <strong>$\sqrt{6} : 3$</strong> (or $2 : \sqrt{6}$)
+(3) <strong>$3\sqrt{6} : 8$</strong></p>
+</body>
+</html>

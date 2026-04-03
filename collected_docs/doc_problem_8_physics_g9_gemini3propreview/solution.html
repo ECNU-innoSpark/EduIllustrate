@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_8_physics_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_8_physics_g9</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>Student Xiao Ming conducts an experimental investigation using the circuit shown in the diagram. Lamps $L_1$ and $L_2$ have the same specifications. When the switch is closed, one lamp lights up while the other does not, and the voltmeter shows a reading. The possible cause of the fault is:</p>
+<p>A. $L_1$ is short-circuited
+B. $L_1$ is open-circuited
+C. $L_2$ is short-circuited
+D. $L_2$ is open-circuited</p>
+<p><strong>Solution Approach:</strong></p>
+<ol>
+<li><strong>Analyze the Circuit Structure:</strong> Determine if the lamps are in series or parallel and identify which component the voltmeter is measuring.</li>
+<li><strong>Analyze the Symptoms:</strong> Use the conditions "one lamp on, one off" and "voltmeter has a reading" to deduce the nature of the fault (Short Circuit vs. Open Circuit).</li>
+<li><strong>Evaluate Options:</strong> Test each fault scenario to see if it matches the observed symptoms.</li>
+</ol>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Circuit Analysis</strong></p>
+<p>First, let's translate the physical connections into a schematic diagram (as shown above).</p>
+<ul>
+<li><strong>Current Path:</strong> Starting from the positive terminal of the power source, the current flows through the <strong>Switch</strong>, then through <strong>Lamp $L_1$</strong>, then through <strong>Lamp $L_2$</strong>, and finally returns to the negative terminal. Since the current flows through the lamps sequentially, $L_1$ and $L_2$ are connected in <strong>series</strong>.</li>
+<li><strong>Voltmeter Connection:</strong> The voltmeter terminals are connected to the two ends of <strong>Lamp $L_2$</strong>. Therefore, the voltmeter measures the voltage across $L_2$.</li>
+</ul>
+<p><strong>Step 2: Analyzing the Fault Symptoms</strong></p>
+<ul>
+<li>
+<p><strong>Symptom 1: "One lamp lights up, one does not."</strong>
+In a series circuit, if there is an <strong>open circuit</strong> (a break in the wire or filament) anywhere in the main loop, current cannot flow, and <strong>neither</strong> lamp would light up. Since one lamp is on, the circuit must be continuous (conducting current). This eliminates the possibility of an open circuit in the main loop. The fault must be a <strong>short circuit</strong> in one of the lamps.</p>
+</li>
+<li>
+<p><strong>Symptom 2: "Voltmeter has a reading."</strong>
+This means there is a potential difference across the component the voltmeter is measuring ($L_2$).</p>
+</li>
+</ul>
+<p>Let's test the specific options based on this logic.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Evaluating the Options</strong></p>
+<p><strong>Option A: $L_1$ is short-circuited</strong> (Visualized above)
+*   <strong>Analysis:</strong> If $L_1$ is short-circuited, it acts like a plain wire. Current bypasses the filament of $L_1$, so $L_1$ does <strong>not</strong> light up.
+*   <strong>Circuit State:</strong> The circuit effectively becomes a simple circuit with just $L_2$. The resistance of the circuit decreases, and current flows through $L_2$.
+*   <strong>Result:</strong> $L_2$ <strong>lights up</strong>.
+*   <strong>Voltmeter:</strong> Since the voltmeter is connected across $L_2$ (which is lit and has current flowing through it), it measures the voltage across $L_2$ (which is approximately the source voltage). The voltmeter <strong>has a reading</strong>.
+*   <strong>Conclusion:</strong> This matches all conditions: One off ($L_1$), One on ($L_2$), Voltmeter has reading. <strong>(This is the correct answer)</strong></p>
+<p><strong>Option B: $L_1$ is open-circuited</strong>
+*   <strong>Analysis:</strong> If $L_1$ is broken, the series circuit is interrupted.
+*   <strong>Result:</strong> No current flows. Both $L_1$ and $L_2$ are <strong>OFF</strong>.
+*   <strong>Conclusion:</strong> Contradicts "one lamp lights up".</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Option C: $L_2$ is short-circuited</strong> (Visualized above)
+*   <strong>Analysis:</strong> If $L_2$ is short-circuited, current bypasses it. $L_2$ does <strong>not</strong> light up.
+*   <strong>Circuit State:</strong> The circuit effectively acts as if only $L_1$ is present.
+*   <strong>Result:</strong> $L_1$ <strong>lights up</strong>. (This fits the "one on, one off" condition).
+*   <strong>Voltmeter:</strong> The voltmeter is connected in parallel with $L_2$. Since $L_2$ is shorted (resistance $\approx 0$), the potential difference across it is $V = I \times 0 = 0\text{V}$.
+*   <strong>Conclusion:</strong> The voltmeter would show <strong>no reading</strong> (0V). This contradicts the problem statement "voltage meter has a reading". Thus, this option is incorrect.</p>
+<p><strong>Option D: $L_2$ is open-circuited</strong>
+*   <strong>Analysis:</strong> If $L_2$ is broken, the main circuit path is broken.
+*   <strong>Result:</strong> Although the voltmeter bridges the break, voltmeters have extremely high internal resistance. The current in the circuit would be tiny ($I \approx 0$). Neither lamp would light up visibly.
+*   <strong>Conclusion:</strong> Contradicts "one lamp lights up".</p>
+<p><strong>Final Conclusion:</strong>
+The only scenario that satisfies "One lamp on, one lamp off" and "Voltmeter has a reading" (where the voltmeter is across the lit lamp) is when the <strong>other</strong> lamp is short-circuited. Since the voltmeter is across $L_2$, and it has a reading, $L_2$ must be the working (lit) lamp. Therefore, $L_1$ must be the faulty (short-circuited) lamp.</p>
+<p><strong>Answer:</strong> A</p>
+</body>
+</html>

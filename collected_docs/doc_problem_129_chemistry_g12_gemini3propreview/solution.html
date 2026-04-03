@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_129_chemistry_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_129_chemistry_g12</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>The fuel used in the launch of the "Long March" rocket is unsymmetrical dimethylhydrazine (UDMH, $\text{C}_2\text{H}_8\text{N}_2$), and dinitrogen tetroxide ($\text{N}_2\text{O}_4$) is used as the oxidant. The two main advantages of this combination are that it can generate immense energy in a short time to send the rocket into space, and the products do not pollute the air (the products are all components of air). An extracurricular research study group intends to design this principle into a primary battery (fuel cell), as shown in the figure. Analyzing their design scheme combined with the learned electrochemical principles, which of the following statements is correct?</p>
+<p>A. B is the positive electrode.
+B. Dinitrogen tetroxide gas is introduced from port a.
+C. $\text{NO}$ gas is discharged from port d.
+D. The electrode reaction equation occurring at electrode A is: $\text{C}_2\text{H}_8\text{N}_2 - 16\text{e}^- + 8\text{H}_2\text{O} \rightarrow \text{CO}_2 + \text{N}_2 + 16\text{H}^+$</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to analyze the provided electrochemical cell diagram step-by-step:
+1.  <strong>Determine Electrodes:</strong> Use the direction of electron flow in the external circuit to identify the anode (negative electrode) and cathode (positive electrode).
+2.  <strong>Assign Reactants:</strong> Based on the oxidation and reduction processes, determine which port receives the fuel (reducing agent) and which receives the oxidant.
+3.  <strong>Identify Products:</strong> Use the problem's constraint ("products do not pollute the air") to deduce the exhaust gases.
+4.  <strong>Verify Electrode Reactions:</strong> Balance the half-reaction for the oxidation of the fuel to check the validity of the given chemical equation.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Analyzing Statement A: Electrode Polarity</strong></p>
+<p>In any galvanic cell (or fuel cell), electrons flow through the external circuit from the negative electrode (anode), where oxidation occurs, to the positive electrode (cathode), where reduction occurs. </p>
+<p>Looking at the provided diagram, the arrows on the external wire clearly indicate that electrons ($\text{e}^-$) are flowing from electrode <strong>A</strong> to electrode <strong>B</strong>. 
+* Since electrode <strong>A</strong> is losing electrons, it is the anode, which serves as the <strong>negative electrode</strong>.
+* Since electrode <strong>B</strong> is receiving electrons, it is the cathode, which serves as the <strong>positive electrode</strong>.</p>
+<p>Therefore, statement <strong>A</strong> ("B is the positive electrode") is <strong>correct</strong>.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Analyzing Statements B and C: Reactant Inputs and Products</strong></p>
+<p>Now we assign the fuel and oxidant to their respective ports. 
+* <strong>Fuel (UDMH, $\text{C}_2\text{H}_8\text{N}_2$)</strong> is the reducing agent. It undergoes oxidation (loses electrons). Oxidation always happens at the anode. Since electrode A is the anode, the fuel must be introduced at <strong>port a</strong>. 
+* <strong>Oxidant ($\text{N}_2\text{O}_4$)</strong> undergoes reduction (gains electrons). Reduction always happens at the cathode. Since electrode B is the cathode, the oxidant must be introduced at <strong>port b</strong>. 
+Thus, statement <strong>B</strong> ("Dinitrogen tetroxide gas is introduced from port a") is <strong>incorrect</strong>.</p>
+<p>For the exhaust products, the problem explicitly states: <em>"the products do not pollute the air (the products are all components of air)."</em> * Nitric oxide ($\text{NO}$) is a well-known toxic air pollutant. 
+* The reduction of $\text{N}_2\text{O}_4$ at the cathode yields nitrogen gas ($\text{N}_2$), which makes up about 78% of the Earth's atmosphere and is completely harmless. 
+Therefore, harmless $\text{N}_2$ gas is discharged from port d, not polluting $\text{NO}$. Statement <strong>C</strong> is <strong>incorrect</strong>.</p>
+<p><strong>Analyzing Statement D: The Anode Half-Reaction</strong></p>
+<p>Let's derive the correct oxidation half-reaction occurring at electrode A (the anode). The fuel $\text{C}_2\text{H}_8\text{N}_2$ is oxidized to form $\text{CO}_2$ and $\text{N}_2$ (safe air components). The electrolyte is $\text{H}_2\text{SO}_4$, providing an acidic environment.</p>
+<ol>
+<li><strong>Write the skeletal equation:</strong> $\text{C}_2\text{H}_8\text{N}_2 \rightarrow \text{CO}_2 + \text{N}_2$</li>
+<li><strong>Balance Carbon and Nitrogen:</strong> We need 2 carbons on the right: $\text{C}_2\text{H}_8\text{N}_2 \rightarrow 2\text{CO}_2 + \text{N}_2$</li>
+<li><strong>Balance Oxygen:</strong> There are 4 oxygen atoms on the right (in $2\text{CO}_2$). In an acidic solution, we add $\text{H}_2\text{O}$ to balance oxygen. Add 4 $\text{H}_2\text{O}$ to the left side:
+$\text{C}_2\text{H}_8\text{N}_2 + 4\text{H}_2\text{O} \rightarrow 2\text{CO}_2 + \text{N}_2$</li>
+<li><strong>Balance Hydrogen:</strong> The left side has $8 + 4(2) = 16$ hydrogen atoms. We add 16 $\text{H}^+$ to the right side:
+$\text{C}_2\text{H}_8\text{N}_2 + 4\text{H}_2\text{O} \rightarrow 2\text{CO}_2 + \text{N}_2 + 16\text{H}^+$</li>
+<li><strong>Balance Charge:</strong> The right side has a charge of $+16$. To balance the neutral left side, we add 16 electrons to the right side:
+$\text{C}_2\text{H}_8\text{N}_2 + 4\text{H}_2\text{O} \rightarrow 2\text{CO}_2 + \text{N}_2 + 16\text{H}^+ + 16\text{e}^-$</li>
+</ol>
+<p>This can be rearranged to match the format of the options:
+$\text{C}_2\text{H}_8\text{N}_2 - 16\text{e}^- + 4\text{H}_2\text{O} \rightarrow 2\text{CO}_2 + \text{N}_2 + 16\text{H}^+$</p>
+<p>Comparing our derived reaction with Statement D ($\text{C}_2\text{H}_8\text{N}_2 - 16\text{e}^- + 8\text{H}_2\text{O} \rightarrow \text{CO}_2 + \text{N}_2 + 16\text{H}^+$), we can see the stoichiometry in Statement D is unbalanced and incorrect (e.g., it lists $8\text{H}_2\text{O}$ and only one $\text{CO}_2$). Thus, statement <strong>D</strong> is <strong>incorrect</strong>.</p>
+<p><strong>Conclusion:</strong></p>
+<p>Based on the flow of electrons, Electrode A is the anode (negative) and Electrode B is the cathode (positive). 
+* A is true.
+* B is false (oxidant goes to the cathode).
+* C is false (products are non-polluting $\text{N}_2$).
+* D is false (reaction is unbalanced).</p>
+<p><strong>Correct Answer:</strong> <strong>A</strong></p>
+</body>
+</html>

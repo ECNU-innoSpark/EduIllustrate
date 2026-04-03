@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_216_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_216_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, the axis of symmetry of the parabola $y = ax^2 + bx + c$ ($a \neq 0$) is the line $x = 1$. One intersection point with the x-axis is $(-1, 0)$. Part of its graph is shown. Consider the following conclusions:</p>
+<p>① $4ac &lt; b^2$
+② $3a + c &gt; 0$
+③ When $x &gt; 0$, $y$ decreases as $x$ increases.
+④ When $y &gt; 0$, the range of $x$ is $-1 &lt; x &lt; 3$.
+⑤ The two roots of the equation $ax^2 + bx + c = 0$ are $x_1 = -1$ and $x_2 = 3$.</p>
+<p>Determine the number of correct conclusions among these options.</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the properties of the quadratic function based on the graph (opening direction, axis of symmetry, intersection points) to evaluate the coefficients $a, b, c$ and verify each of the five statements step-by-step.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing the Coefficients and Discriminant (Conclusion ①)</strong></p>
+<p>First, let's observe the basic properties of the graph:
+*   The parabola opens downwards, which implies $a &lt; 0$.
+*   The graph intersects the x-axis at two distinct points (one is given at $x = -1$, and by symmetry, there must be another on the positive side).</p>
+<p><strong>Evaluating Conclusion ①:</strong> $4ac &lt; b^2$
+This inequality can be rearranged as $b^2 - 4ac &gt; 0$.
+The expression $b^2 - 4ac$ is the <strong>discriminant ($\Delta$)</strong> of the quadratic equation.
+*   If $\Delta &gt; 0$, the parabola has two distinct x-intercepts.
+*   Since the graph clearly crosses the x-axis at two distinct points, we know that $b^2 - 4ac &gt; 0$, which means $b^2 &gt; 4ac$ or $4ac &lt; b^2$.</p>
+<p>Therefore, <strong>Conclusion ① is Correct.</strong></p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Finding the Roots and Range (Conclusions ④ and ⑤)</strong></p>
+<p><strong>Evaluating Conclusion ⑤:</strong> Roots of $ax^2 + bx + c = 0$
+*   We are given the axis of symmetry is $x = 1$.
+*   One root is $x_1 = -1$.
+*   The distance from the root $x_1 = -1$ to the axis $x = 1$ is $|1 - (-1)| = 2$.
+*   Due to symmetry, the other root $x_2$ must be 2 units to the right of the axis: $x_2 = 1 + 2 = 3$.
+*   So, the roots are indeed $x_1 = -1$ and $x_2 = 3$.
+Therefore, <strong>Conclusion ⑤ is Correct.</strong></p>
+<p><strong>Evaluating Conclusion ④:</strong> Range of $x$ when $y &gt; 0$
+*   We are looking for the part of the graph that is <em>above</em> the x-axis ($y &gt; 0$).
+*   Since the parabola opens downwards ($a &lt; 0$), the function values are positive between the two roots.
+*   The roots are $-1$ and $3$.
+*   Thus, $y &gt; 0$ when $-1 &lt; x &lt; 3$.
+Therefore, <strong>Conclusion ④ is Correct.</strong></p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Analyzing Monotonicity (Conclusion ③)</strong></p>
+<p><strong>Evaluating Conclusion ③:</strong> When $x &gt; 0$, $y$ decreases as $x$ increases.
+*   The axis of symmetry is the line $x = 1$.
+*   For a parabola opening downwards:
+*   To the left of the axis ($x &lt; 1$), $y$ increases as $x$ increases.
+*   To the right of the axis ($x &gt; 1$), $y$ decreases as $x$ increases.
+*   The statement considers the interval $x &gt; 0$.
+*   This interval includes the range $0 &lt; x &lt; 1$, where the function is actually <strong>increasing</strong>.
+*   It only starts decreasing when $x &gt; 1$.</p>
+<p>Because the function is not decreasing for the <em>entire</em> interval $x &gt; 0$, <strong>Conclusion ③ is Incorrect.</strong></p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 4: Algebraic Verification (Conclusion ②)</strong></p>
+<p><strong>Evaluating Conclusion ②:</strong> $3a + c &gt; 0$
+Let's use the relationships we have established.
+1.  <strong>Axis of symmetry formula:</strong> $x = -\frac{b}{2a} = 1 \implies b = -2a$.
+2.  <strong>Point on graph:</strong> The graph passes through $(-1, 0)$. We can substitute $x = -1$ and $y = 0$ into the equation:
+$$a(-1)^2 + b(-1) + c = 0$$
+$$a - b + c = 0$$</p>
+<p>Now, substitute $b = -2a$ into this equation:
+$$a - (-2a) + c = 0$$
+$$a + 2a + c = 0$$
+$$3a + c = 0$$</p>
+<p>The conclusion states $3a + c &gt; 0$. However, we proved that $3a + c$ is exactly equal to 0.
+Therefore, <strong>Conclusion ② is Incorrect.</strong></p>
+<p><strong>Final Count:</strong>
+*   ① Correct ($4ac &lt; b^2$)
+*   ② Incorrect ($3a + c = 0$)
+*   ③ Incorrect (Increases on $0 &lt; x &lt; 1$)
+*   ④ Correct ($-1 &lt; x &lt; 3$)
+*   ⑤ Correct (Roots are -1, 3)</p>
+<p>There are <strong>3</strong> correct conclusions (①, ④, ⑤).</p>
+<p><strong>Final Answer:</strong>
+The correct choice is <strong>B (3个)</strong>.</p>
+</body>
+</html>

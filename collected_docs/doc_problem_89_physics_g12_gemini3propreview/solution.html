@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_89_physics_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_89_physics_g12</h1>
+<h3>Problem Statement</h3>
+<p>As shown in the figure, in the Cartesian coordinate system $xOy$, the dashed line $ab$ divides the first quadrant into two regions. The region to the left ($0 &lt; x &lt; L$) contains a uniform electric field with intensity $E_1$ directed along the positive x-axis. The region to the right ($x &gt; L$) contains a uniform electric field with intensity $E_2$ directed along the negative y-axis.</p>
+<p>A positive particle with mass $m$ and charge $q$ (gravity is ignored) is placed at rest at point $P(0, h)$ on the y-axis. Under the action of the electric forces, the particle moves and finally leaves the electric field region from point $Q$ on the x-axis. The distance from the dashed line $ab$ to the y-axis is known to be $L$.</p>
+<p><strong>Calculate:</strong>
+1. The velocity of the particle when it passes through the $E_1$ electric field region (crossing line $ab$).
+2. The magnitude of the velocity of the particle when it passes through point $Q$.
+3. The coordinates of point $Q$.</p>
+<h3>Solution Approach</h3>
+<p>This problem can be solved by splitting the motion into two stages:
+1.  <strong>Stage 1 (Left Region):</strong> Uniform acceleration in a straight line along the x-axis due to $E_1$. There is no force in the y-direction, so the y-coordinate remains constant.
+2.  <strong>Stage 2 (Right Region):</strong> The particle enters this region with a horizontal velocity. It experiences a constant downward force due to $E_2$. This results in motion similar to a horizontal projectile (parabolic trajectory).</p>
+<p>We will use Newton's laws of motion and kinematic equations (or the Work-Energy Theorem) to solve for the velocities and coordinates.</p>
+<p><img alt="" src="scene1.png" /></p>
+<h3>Part 1: Velocity Crossing the $E_1$ Region</h3>
+<p>Let's analyze the motion in the left region (from $x=0$ to $x=L$).</p>
+<p><strong>Forces Analysis:</strong>
+*   The electric field $E_1$ is horizontal (positive x-direction).
+*   The electric force is $F_1 = qE_1$.
+*   Since gravity is ignored and there is no electric field in the y-direction here, the net force in the y-direction is zero.</p>
+<p><strong>Motion Analysis:</strong>
+*   <strong>y-direction:</strong> The particle starts at rest. Since there is no vertical force, the vertical velocity remains 0. The particle moves horizontally at height $y = h$.
+*   <strong>x-direction:</strong> The particle undergoes uniform acceleration starting from rest ($v_0 = 0$).</p>
+<p>Using Newton's Second Law:
+$$a_1 = \frac{F_1}{m} = \frac{qE_1}{m}$$</p>
+<p>We need the velocity $v_1$ after the particle travels a horizontal distance $L$. Using the kinematic equation $v^2 - v_0^2 = 2ax$:
+$$v_1^2 - 0 = 2 a_1 L$$
+$$v_1^2 = 2 \left( \frac{qE_1}{m} \right) L$$</p>
+<p>Taking the square root:
+$$v_1 = \sqrt{\frac{2qE_1L}{m}}$$</p>
+<p><strong>Conclusion for Part 1:</strong>
+The velocity of the particle as it crosses the dashed line $ab$ is $\sqrt{\frac{2qE_1L}{m}}$, directed horizontally to the right.</p>
+<p><img alt="" src="scene2.png" /></p>
+<h3>Part 2: Velocity at Point Q</h3>
+<p>Now the particle enters the right region ($x &gt; L$) at point $M(L, h)$ with an initial horizontal velocity $v_x = v_1$.</p>
+<p><strong>Forces Analysis:</strong>
+*   The electric field $E_2$ is vertical (negative y-direction).
+*   The electric force is $F_2 = qE_2$ downwards.
+*   There is no force in the x-direction ($E_1$ does not exist here).</p>
+<p><strong>Motion Analysis (Projectile-like Motion):</strong>
+*   <strong>x-direction:</strong> No force means constant velocity. $v_{Qx} = v_1$.
+*   <strong>y-direction:</strong> Uniform acceleration downwards.
+$$a_2 = \frac{F_2}{m} = \frac{qE_2}{m}$$</p>
+<p>The particle travels from height $y=h$ to $y=0$ (Point Q). We can find the vertical velocity component $v_{Qy}$ using kinematics ($v_y^2 - v_{y0}^2 = 2a_y \Delta y$):
+$$v_{Qy}^2 - 0 = 2 a_2 h$$
+$$v_{Qy}^2 = 2 \left( \frac{qE_2}{m} \right) h = \frac{2qE_2h}{m}$$</p>
+<p><strong>Total Velocity at Q:</strong>
+The total speed $v_Q$ is the vector sum of the components:
+$$v_Q = \sqrt{v_{Qx}^2 + v_{Qy}^2}$$</p>
+<p>Substitute $v_{Qx}^2 = v_1^2 = \frac{2qE_1L}{m}$ and $v_{Qy}^2 = \frac{2qE_2h}{m}$:
+$$v_Q = \sqrt{\frac{2qE_1L}{m} + \frac{2qE_2h}{m}}$$
+$$v_Q = \sqrt{\frac{2q}{m}(E_1L + E_2h)}$$</p>
+<p><em>Alternative Method (Work-Energy Theorem):</em>
+Total work done by electric fields = Change in Kinetic Energy.
+$$W_{total} = W_{E1} + W_{E2} = qE_1L + qE_2h$$
+$$\frac{1}{2}mv_Q^2 - 0 = qE_1L + qE_2h$$
+$$v_Q = \sqrt{\frac{2(qE_1L + qE_2h)}{m}}$$
+(This confirms our previous result).</p>
+<p><img alt="" src="scene3.png" /></p>
+<h3>Part 3: Coordinates of Point Q</h3>
+<p>Point Q lies on the x-axis, so its y-coordinate is $0$. We need to find its x-coordinate, $x_Q$.
+$$x_Q = L + \Delta x$$
+where $\Delta x$ is the horizontal distance traveled in the second region.</p>
+<p><strong>Time of Flight ($t$):</strong>
+Consider the vertical motion in the second region. The particle drops a height $h$ with acceleration $a_2 = \frac{qE_2}{m}$ starting with zero vertical velocity.
+$$h = \frac{1}{2} a_2 t^2$$
+$$t = \sqrt{\frac{2h}{a_2}} = \sqrt{\frac{2hm}{qE_2}}$$</p>
+<p><strong>Horizontal Displacement ($\Delta x$):</strong>
+The horizontal velocity is constant ($v_1$) in this region.
+$$\Delta x = v_1 \cdot t$$</p>
+<p>Substitute the expressions for $v_1$ and $t$:
+$$\Delta x = \left( \sqrt{\frac{2qE_1L}{m}} \right) \cdot \left( \sqrt{\frac{2hm}{qE_2}} \right)$$</p>
+<p>Combine the terms inside the square root:
+$$\Delta x = \sqrt{\frac{2qE_1L}{m} \cdot \frac{2hm}{qE_2}}$$
+$$\Delta x = \sqrt{\frac{4 q E_1 L h m}{m q E_2}}$$</p>
+<p>Cancel $m$ and $q$, and pull out the 4:
+$$\Delta x = 2\sqrt{\frac{E_1 L h}{E_2}}$$</p>
+<p><strong>Final Coordinate:</strong>
+The x-coordinate is the sum of the first region's width and this new displacement:
+$$x_Q = L + 2\sqrt{\frac{E_1 L h}{E_2}}$$</p>
+<p>Therefore, the coordinates of Q are:
+$$Q \left( L + 2\sqrt{\frac{E_1 L h}{E_2}}, \quad 0 \right)$$</p>
+<h3>Summary of Answers</h3>
+<p><strong>(1)</strong> Velocity passing through $E_1$ region:
+$$v_1 = \sqrt{\frac{2qE_1L}{m}}$$</p>
+<p><strong>(2)</strong> Velocity magnitude at point Q:
+$$v_Q = \sqrt{\frac{2q}{m}(E_1L + E_2h)}$$</p>
+<p><strong>(3)</strong> Coordinates of point Q:
+$$\left( L + 2\sqrt{\frac{E_1 L h}{E_2}}, \quad 0 \right)$$</p>
+</body>
+</html>

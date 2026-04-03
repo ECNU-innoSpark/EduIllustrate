@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_132_chemistry_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_132_chemistry_g12</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>Opium has a complex composition, and the molecular structure of papaverine, one of its components, is shown below. Opium was originally used as a medication (having analgesic, anti-diarrheal, and cough-suppressant effects). Long-term use can lead to addiction, physical deterioration, and mental apathy. It is known that the combustion products of this substance are CO$_2$, H$_2$O, and N$_2$. What are the amount of substance (in moles) of O$_2$ consumed by the complete combustion of 1 mol of this compound, and the number of monobromo-substituted isomers formed by a substitution reaction on its benzene rings with Br$_2$ under certain conditions, respectively?</p>
+<p>A. 23.25 mol; 5
+B. 24.5 mol; 7
+C. 24.5 mol; 8
+D. 26.5 mol; 6</p>
+<p><strong>Solution Approach:</strong>
+To solve this problem, we need to break it down into two main chemical analyses:
+1.  <strong>Determine the Molecular Formula and Combustion Stoichiometry:</strong> We will carefully count the atoms in the given skeletal structure to find the empirical formula. Then, we will balance the combustion reaction equation to find the moles of oxygen consumed.
+2.  <strong>Analyze the Molecular Structure for Isomers:</strong> We will identify the specific "benzene rings" in the molecule and analyze their symmetry to determine the number of distinct hydrogen positions available for electrophilic aromatic substitution by bromine.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determining the Molecular Formula and Oxygen Consumption</strong></p>
+<p>Let's deduce the molecular formula of papaverine by counting the atoms in its structure:
+* <strong>Carbon (C) atoms:</strong> * Isoquinoline core: 9 carbons
+* Linkage (-CH$_2$-): 1 carbon
+* Isolated benzene ring: 6 carbons
+* Methoxy groups (-OCH$_3$): 4 groups $\times$ 1 carbon = 4 carbons
+* Total C = 9 + 1 + 6 + 4 = <strong>20</strong>
+* <strong>Hydrogen (H) atoms:</strong> * Isoquinoline core: 2 hydrogens on the fused benzene ring + 2 hydrogens on the pyridine ring = 4 hydrogens
+* Linkage (-CH$_2$-): 2 hydrogens
+* Isolated benzene ring: 3 hydrogens (it has 3 substituents)
+* Methoxy groups (-OCH$_3$): 4 groups $\times$ 3 hydrogens = 12 hydrogens
+* Total H = 4 + 2 + 3 + 12 = <strong>21</strong>
+* <strong>Nitrogen (N) atoms:</strong> There is <strong>1</strong> nitrogen atom in the pyridine ring.
+* <strong>Oxygen (O) atoms:</strong> There are <strong>4</strong> oxygen atoms from the four methoxy groups.</p>
+<p>The molecular formula of papaverine is <strong>C$<em>{20}$H$</em>{21}$NO$_4$</strong>.</p>
+<p>Now, let's write the balanced chemical equation for the complete combustion of 1 mole of this compound. The products are given as CO$_2$, H$_2$O, and N$_2$:</p>
+<p>$$C_{20}H_{21}NO_4 + x O_2 \rightarrow 20 CO_2 + \frac{21}{2} H_2O + \frac{1}{2} N_2$$</p>
+<p>To find $x$ (the moles of O$_2$), we balance the oxygen atoms on both sides:
+$$4 + 2x = (20 \times 2) + \left(\frac{21}{2} \times 1\right)$$
+$$4 + 2x = 40 + 10.5$$
+$$4 + 2x = 50.5$$
+$$2x = 46.5$$
+$$x = 23.25$$</p>
+<p>Therefore, 1 mol of papaverine consumes <strong>23.25 mol</strong> of O$_2$ during complete combustion. This immediately points us to Option A, but let's verify the number of isomers to be absolutely sure.</p>
+<p><strong>[Missing diagram for Scene 2]</strong></p>
+<p><strong>Step 2: Counting the Monobromo-substituted Isomers</strong></p>
+<p>The problem specifically asks for the number of monobromo-substituted isomers formed by substitution on the <strong>benzene rings</strong> (苯环). The molecule contains two distinct regions with benzene-like rings:</p>
+<ol>
+<li><strong>The isolated benzene ring (top right):</strong>
+This is a 1,3,4-trisubstituted benzene ring. The three substituents attached to it are all different from the ring's perspective (-CH$_2$R, -OCH$_3$, -OCH$_3$). Because the molecule lacks a plane of symmetry through this ring, the three remaining hydrogen atoms (labeled $p_1$, $p_2$, and $p_3$ in our diagram) are in chemically non-equivalent environments. 
+Substituting any of these three positions with a bromine atom will yield a different isomer. </li>
+<li>
+<p>Number of isomers from this ring = <strong>3</strong></p>
+</li>
+<li>
+<p><strong>The fused benzene ring (bottom left, part of isoquinoline):</strong>
+The isoquinoline core consists of a benzene ring fused to a pyridine ring. The question specifies substitution on the <em>benzene rings</em>, so we only look at the fused benzene portion. 
+This ring has two methoxy groups, leaving two open hydrogen positions (labeled $p_4$ and $p_5$). We must check if these two positions are equivalent. Because the fused pyridine ring is asymmetric (it has a nitrogen atom on one side and a bulky benzyl substituent on the other), the top half and bottom half of the entire isoquinoline structure are different. Therefore, positions $p_4$ and $p_5$ are chemically non-equivalent.</p>
+</li>
+<li>Number of isomers from this ring = <strong>2</strong></li>
+</ol>
+<p>Adding these together, the total number of possible monobromo-substituted isomers on the benzene rings is $3 + 2 =$ <strong>5</strong>.</p>
+<p><strong>Conclusion:</strong>
+- Moles of O$_2$ consumed: 23.25 mol
+- Number of isomers: 5</p>
+<p>These results perfectly match Option A.</p>
+<p><strong>Correct Answer: A</strong></p>
+</body>
+</html>

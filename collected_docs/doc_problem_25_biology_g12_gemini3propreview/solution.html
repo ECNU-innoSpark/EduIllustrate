@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_25_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_25_biology_g12</h1>
+<p><strong>Problem Statement:</strong>
+The hard and long hairs on the body surface of fruit flies are called bristles. In a naturally reproducing population of straight-bristle fruit flies, a single curled-bristle male fruit fly appeared accidentally. Please answer the following questions (alleles are represented by A and a):</p>
+<ol>
+<li>It is known that the gene controlling bristle traits is not located on the homologous region of the sex chromosomes. How is the curled-bristle trait produced and inherited? One hypothesis suggests that a dominant mutation occurred in the gene on the X chromosome in the germ cells of the parent generation (recessive gene mutated into a dominant gene). Please attempt to propose another hypothesis: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+<li>If it is known that this curled-bristle male fruit fly was crossed with a straight-bristle female fruit fly, the F₁ generation consisted entirely of straight-bristle fruit flies. When the F₁ female and male fruit flies mated randomly, the phenotypes and ratio of the F₂ generation were: Straight-bristle Female : Straight-bristle Male : Curled-bristle Male = 2:1:1. At this point, the most reasonable hypothesis is <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+<li>To verify the hypothesis in question 2, a student designed a test cross experiment as shown in the diagram. Does this experiment and its phenomenon verify the hypothesis proposed in question 2? Please explain the reason: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+<li>If you are provided with the following homozygous fruit flies as materials: Straight-bristle Female, Straight-bristle Male, Curled-bristle Female, Curled-bristle Male. Please design a test cross experiment to verify the hypothesis proposed in question 2 (no need to write the results). Experimental Plan: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>______.</li>
+</ol>
+<p><strong>Solution Approach:</strong>
+We will analyze the inheritance pattern of the curled-bristle trait using Mendelian genetics. First, we will determine dominance based on the F₁ phenotype. Then, we will analyze the F₂ phenotypic ratio and sex distribution to determine chromosomal location (autosomal vs. X-linked). Finally, we will evaluate the validity of a proposed verification experiment and design a correct one to distinguish between inheritance modes.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing the Origin (Question 1)</strong></p>
+<p>The problem asks for an alternative hypothesis to "Dominant mutation on the X chromosome." </p>
+<p>In genetics, if a trait appears suddenly in a single individual, it is typically due to a mutation. The alternative to a dominant mutation ($a \rightarrow A$) is a <strong>recessive mutation</strong> ($A \rightarrow a$).</p>
+<p>Since the individual is male, the gene could be on the X chromosome or an autosome. If it were a recessive mutation on the X chromosome, the mother would have produced an egg with the mutated $X^a$ gene (or was a carrier), which the son inherited. This is a biologically plausible alternative.</p>
+<p><strong>Answer for ①:</strong> A recessive mutation occurred in the gene on the X chromosome in the germ cells of the parent generation (specifically the female parent).</p>
+<p><strong>Step 2: Deduce Inheritance Pattern (Question 2)</strong></p>
+<p>Now we look at the data from the cross:
+1.  <strong>Dominance:</strong> Curled Male $\times$ Straight Female $\rightarrow$ F₁ All Straight.
+*   This indicates that <strong>Straight is Dominant (A)</strong> and <strong>Curled is Recessive (a)</strong>.</p>
+<ol>
+<li><strong>Chromosomal Location:</strong> F₁ $\times$ F₁ $\rightarrow$ F₂.</li>
+<li>F₂ Females: All Straight.</li>
+<li>F₂ Males: 1 Straight : 1 Curled.</li>
+<li>The trait segregation differs by sex. Only males show the recessive (curled) phenotype in the F₂ generation. This "criss-cross" inheritance pattern strongly suggests <strong>X-linked inheritance</strong>.</li>
+</ol>
+<p>Let's verify with the hypothesis: <strong>The gene is recessive and located on the X chromosome.</strong>
+*   <strong>P:</strong> $X^aY$ (Curled Male) $\times$ $X^AX^A$ (Straight Female)
+*   <strong>F₁:</strong> $X^AX^a$ (Straight Female) and $X^AY$ (Straight Male) $\rightarrow$ Matches "All Straight".
+*   <strong>F₁ mating:</strong> $X^AX^a \times X^AY$</p>
+<p>We can visualize this specific F₁ cross to confirm the F₂ ratios.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Conclusion for Question 2:</strong>
+The Punnett square confirms the theoretical ratio:
+*   Females: $1/2 X^AX^A + 1/2 X^AX^a$ = All Straight (Ratio 2 in total population).
+*   Males: $1/2 X^AY$ (Straight) : $1/2 X^aY$ (Curled) (Ratio 1:1).
+*   Total Ratio: 2 Straight Females : 1 Straight Male : 1 Curled Male.</p>
+<p><strong>Answer for ②:</strong> The gene controlling the curled bristle trait is a recessive gene located on the X chromosome.</p>
+<p><strong>Step 3: Evaluating the Student's Experiment (Question 3)</strong></p>
+<p>The student performed a test cross: F₁ Female ($X^AX^a$) $\times$ Curled Male ($X^aY$).
+The results shown in the diagram are:
+*   Straight Female ($X^AX^a$) : 1
+*   Straight Male ($X^AY$) : 1
+*   Curled Female ($X^aX^a$) : 1
+*   Curled Male ($X^aY$) : 1</p>
+<p>We must check if this result is <em>unique</em> to X-linked inheritance. Could Autosomal Recessive inheritance produce the same result?</p>
+<p>Let's compare the two scenarios side-by-side.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Analysis of Question 3:</strong>
+As shown in the comparison, both the X-linked recessive hypothesis ($X^AX^a \times X^aY$) and the Autosomal recessive hypothesis ($Aa \times aa$) result in a 1:1 ratio of straight to curled offspring in both males and females.</p>
+<p>Because the phenotypic ratios and sex distributions are identical for this specific cross, the experiment <strong>cannot</strong> distinguish between the gene being on an autosome or the X chromosome.</p>
+<p><strong>Answer for ③:</strong> No. Because if the gene were located on an autosome (autosomal recessive inheritance), the test cross offspring would also show a ratio of straight bristles : curled bristles = 1 : 1, and there would be no difference between females and males. Thus, it cannot rule out the possibility of the gene being on an autosome.</p>
+<p><strong>Step 4: Designing a Valid Experiment (Question 4)</strong></p>
+<p>To distinguish X-linked inheritance from autosomal inheritance, we need a cross where the results depend on the sex of the offspring. The most effective method is a <strong>Reciprocal Cross</strong> or specifically crossing a <strong>Recessive Female with a Dominant Male</strong>.</p>
+<p><strong>Available Materials:</strong>
+*   Homozygous Straight Female ($X^AX^A$)
+*   Straight Male ($X^AY$)
+*   Curled Female ($X^aX^a$)
+*   Curled Male ($X^aY$)</p>
+<p><strong>Proposed Plan:</strong> Cross the <strong>Curled-bristle Female</strong> with the <strong>Straight-bristle Male</strong>.</p>
+<ul>
+<li><strong>If X-linked:</strong></li>
+<li>P: $X^aX^a$ (Curled Female) $\times$ X^AY (Straight Male)</li>
+<li>F₁ Females ($X^AX^a$): All Straight (inherit $X^A$ from father).</li>
+<li>F₁ Males ($X^aY$): All Curled (inherit $X^a$ from mother).</li>
+<li>
+<p><strong>Result:</strong> Phenotypes differ by sex.</p>
+</li>
+<li>
+<p><strong>If Autosomal:</strong></p>
+</li>
+<li>P: $aa$ (Curled Female) $\times$ $AA$ (Straight Male)</li>
+<li>F₁: All $Aa$ (Straight).</li>
+<li><strong>Result:</strong> No difference between sexes; all are straight.</li>
+</ul>
+<p>This experiment clearly differentiates the two hypotheses.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Answer for ④:</strong> Select <strong>Curled-bristle Female</strong> and <strong>Straight-bristle Male</strong> for hybridization (test cross).</p>
+<p><strong>Summary:</strong>
+1.  <strong>Hypothesis:</strong> Recessive mutation on X chromosome.
+2.  <strong>Inheritance:</strong> X-linked Recessive (deduced from F₂ sex bias).
+3.  <strong>Verification:</strong> The student's cross was invalid because it yields ambiguous results.
+4.  <strong>Design:</strong> A cross between a recessive female and a dominant male reveals X-linked inheritance through "criss-cross" transmission (mother to son).</p>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_214_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_214_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, in $\triangle ABC$, the perpendicular bisectors of sides $AB$ and $AC$ intersect side $BC$ at points $F$ and $E$ respectively (Note: Based on the diagram structure, the perpendicular from $AC$ connects to $E$ and the perpendicular from $AB$ connects to $F$). If $\angle BAC = 110^\circ$, what is the measure of $\angle EAF$?</p>
+<p>A. 35°<br />
+B. 40°<br />
+C. 45°<br />
+D. 50°</p>
+<p><strong>Solution Approach:</strong>
+1.  Identify the geometric properties of points on perpendicular bisectors.
+2.  Establish the relationship between the angles in the isosceles triangles formed.
+3.  Use the sum of angles in $\triangle ABC$ to find the sum of base angles $\angle B$ and $\angle C$.
+4.  Subtract the side angles from the total vertex angle $\angle BAC$ to find $\angle EAF$.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze the Perpendicular Bisectors</strong></p>
+<p>Recall the <strong>Perpendicular Bisector Theorem</strong>: Any point on the perpendicular bisector of a segment is equidistant from the endpoints of that segment.</p>
+<ul>
+<li>
+<p><strong>For side $AC$:</strong> The line $GE$ is the perpendicular bisector of $AC$. This means point $E$ is equidistant from $A$ and $C$.
+$$EA = EC$$
+Consequently, $\triangle ACE$ is an isosceles triangle, and its base angles are equal:
+$$\angle EAC = \angle C$$</p>
+</li>
+<li>
+<p><strong>For side $AB$:</strong> The line $HF$ is the perpendicular bisector of $AB$. This means point $F$ is equidistant from $A$ and $B$.
+$$FA = FB$$
+Consequently, $\triangle ABF$ is an isosceles triangle, and its base angles are equal:
+$$\angle FAB = \angle B$$</p>
+</li>
+</ul>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Calculate the Sum of Base Angles</strong></p>
+<p>We are given that $\angle BAC = 110^\circ$. In any triangle, the sum of internal angles is $180^\circ$. We can calculate the sum of the remaining two angles, $\angle B$ and $\angle C$:</p>
+<p>$$\angle B + \angle C = 180^\circ - \angle BAC$$
+$$\angle B + \angle C = 180^\circ - 110^\circ = 70^\circ$$</p>
+<p><strong>Step 3: Solve for $\angle EAF$</strong></p>
+<p>From the diagram, the angle $\angle BAC$ is composed of three parts: $\angle FAB$, $\angle EAF$, and $\angle EAC$.</p>
+<p>We can express $\angle EAF$ by subtracting the outer angles from the total angle:
+$$\angle EAF = \angle BAC - (\angle FAB + \angle EAC)$$</p>
+<p>Substituting the equalities we found in Step 1 ($\angle FAB = \angle B$ and $\angle EAC = \angle C$):
+$$\angle EAF = \angle BAC - (\angle B + \angle C)$$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Final Calculation:</strong></p>
+<p>Now, substitute the values we know:
+*   $\angle BAC = 110^\circ$
+*   $\angle B + \angle C = 70^\circ$</p>
+<p>$$\angle EAF = 110^\circ - 70^\circ$$
+$$\angle EAF = 40^\circ$$</p>
+<p><strong>Conclusion:</strong>
+The measure of $\angle EAF$ is $40^\circ$. This corresponds to option B.</p>
+<p><strong>Answer Verification:</strong>
+If $\angle B = 30^\circ$ and $\angle C = 40^\circ$ (sum is 70°), then $\angle FAB = 30^\circ$ and $\angle EAC = 40^\circ$.
+$\angle EAF = 110^\circ - 30^\circ - 40^\circ = 40^\circ$. The calculation holds true regardless of the individual values of B and C, as long as their sum is 70°.</p>
+<p><strong>Final Answer:</strong> B</p>
+</body>
+</html>

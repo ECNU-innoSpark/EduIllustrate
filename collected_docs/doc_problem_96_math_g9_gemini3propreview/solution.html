@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_96_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_96_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+Mingming folded a piece of paper (as shown in the diagram) into a cubic box, put a bottle of ink inside, and mixed it with other empty boxes. Based on observation alone, select which box contains the ink. (Which of the options A, B, C, or D corresponds to the unfolded net?)</p>
+<p><strong>Solution Approach:</strong>
+To solve this spatial reasoning problem, we will analyze the "net" (the unfolded 2D pattern) and determine the relative positions of the faces when folded into a 3D cube.</p>
+<ol>
+<li><strong>Analyze the Net:</strong> Identify the features of each face on the flat paper.</li>
+<li><strong>Identify Opposite Faces:</strong> Use the layout of the net to determine which faces will be on opposite sides of the cube. Opposite faces can never be seen adjacent to each other in a standard 3D view.</li>
+<li><strong>Eliminate Options:</strong> Discard the choices that show impossible arrangements (e.g., opposite faces touching).</li>
+<li><strong>Verify the Correct Option:</strong> Confirm that the remaining option matches the connectivity and orientation of the net.</li>
+</ol>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing the Net and Adjacency</strong></p>
+<p>Let's examine the structure of the net shown in the diagram above:
+*   <strong>Face 2</strong> (the central blank square) acts as the central "anchor".
+*   <strong>Face 4</strong> (shaded) and <strong>Face 5</strong> (shaded) are attached to opposite sides of Face 2.
+*   <strong>Face 1</strong> (circle) is attached to the top of Face 2.
+*   <strong>Face 3</strong> (blank) is attached to the bottom of Face 2.</p>
+<p><strong>Step 2: The "Opposite Faces" Rule</strong></p>
+<p>In any cube net, if three squares are arranged in a straight line (row or column), the two squares at the ends of the line will become <strong>opposite faces</strong> in the folded cube. </p>
+<p>Looking at the horizontal row formed by <strong>Face 4</strong>, <strong>Face 2</strong>, and <strong>Face 5</strong>:
+*   Face 4 is on the left of Face 2.
+*   Face 5 is on the right of Face 2.
+*   Therefore, when folded, <strong>Face 4 and Face 5 will be opposite each other</strong> (e.g., if Face 4 is the Left face, Face 5 is the Right face).</p>
+<p><strong>Crucial Deduction:</strong>
+Opposite faces can never share an edge, and you can never see both of them at the same time in a standard perspective view of a cube (which shows at most 3 faces).</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Eliminating Impossible Options</strong></p>
+<p>Now we apply the rule we just established: <strong>The two shaded faces cannot be seen together.</strong></p>
+<p>Let's check the options provided in the problem:</p>
+<ul>
+<li><strong>Option A:</strong> Shows two shaded faces adjacent to each other. <strong>Incorrect.</strong></li>
+<li><strong>Option B:</strong> Shows two shaded faces adjacent to each other. <strong>Incorrect.</strong></li>
+<li><strong>Option D:</strong> Shows two shaded faces adjacent to each other. <strong>Incorrect.</strong></li>
+</ul>
+<p>All three of these options violate the spatial rule derived from the net. The two shaded faces must be on opposite sides of the cube.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 4: Verifying Option C</strong></p>
+<p>Let's verify if Option C is physically possible.</p>
+<ol>
+<li>Imagine <strong>Face 2</strong> (the central blank square) is the <strong>Top</strong> of the box.</li>
+<li><strong>Face 1</strong> (Circle) is attached to Face 2. We fold it down to become the <strong>Front</strong>.</li>
+<li><strong>Face 5</strong> (Right Shaded Wing) is attached to the right side of Face 2. We fold it down to become the <strong>Right</strong> face.</li>
+</ol>
+<p>This arrangement results in:
+*   Top: Blank
+*   Front: Circle
+*   Right: Shaded</p>
+<p>This matches Option C exactly. Note that Option C shows a shaded face on the right. In our specific fold (Face 2 as Top), the Right Wing (Face 5) becomes the Right face. Since only one shaded face is visible, this configuration is valid.</p>
+<p><strong>Conclusion:</strong>
+Options A, B, and D are impossible because they show opposite faces (the two shaded ones) touching each other. Option C is the only one that respects the geometry of the net.</p>
+<p><strong>Final Answer:</strong> C</p>
+</body>
+</html>

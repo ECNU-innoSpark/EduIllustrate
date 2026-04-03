@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_178_biology_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_178_biology_g9</h1>
+<p><strong>Problem Statement:</strong>
+Pumpkin flower color is controlled by a pair of alleles. The relevant hybridization experiment and results are shown in the figure. Which of the following statements is <strong>incorrect</strong>?</p>
+<p>A. The phenotype and ratio of $F_1$ can verify the law of gene segregation.
+B. From process ③, it is known that white is the dominant trait.
+C. The ratio of yellow flowers to white flowers in $F_2$ is $5:3$.
+D. The genotypes of white flower individuals in $F_1$ and $F_2$ are the same.</p>
+<p><strong>Solution Approach:</strong>
+We will analyze the genetic diagram to determine the dominant trait and the genotypes of the parents and offspring. Then, we will calculate the phenotypic ratios in the $F_1$ and $F_2$ generations to evaluate each option.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determine Dominance (Evaluating Option B)</strong></p>
+<p>Let's look at process ③. In this step, the $F_1$ White Flower produces offspring that are both Yellow and White.</p>
+<ul>
+<li>When an individual with a specific phenotype produces offspring with a <em>different</em> phenotype (segregation of traits), the parent must be heterozygous, and the parent's trait must be <strong>dominant</strong>.</li>
+<li>Here, White $\rightarrow$ Yellow + White. This implies that <strong>White is dominant</strong> (let's denote it as $A$) and <strong>Yellow is recessive</strong> ($a$).</li>
+<li>Therefore, the $F_1$ White Flower has the genotype $Aa$, and the newly appearing Yellow offspring are $aa$.</li>
+</ul>
+<p>Statement <strong>B</strong> is correct.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Determine Parental and $F_1$ Genotypes (Evaluating Option A)</strong></p>
+<p>Since Yellow is recessive ($aa$), the P generation Yellow Flower must be $aa$.
+The $F_1$ generation contains Yellow flowers ($aa$). For an offspring to be $aa$, it must receive one $a$ allele from each parent.
+- P Yellow parent ($aa$) provides one $a$.
+- P White parent must therefore provide the other $a$. Thus, the P White parent is heterozygous ($Aa$).</p>
+<p><strong>The Cross:</strong> P ($aa \times Aa$) $\rightarrow$ $F_1$ ($1 aa : 1 Aa$).</p>
+<p>This is a <strong>Test Cross</strong>. The results show a $1:1$ ratio of phenotypes (Yellow : White). This $1:1$ ratio directly reflects the $1:1$ ratio of gametes ($a$ and $A$) produced by the heterozygous parent, thereby verifying the <strong>Law of Segregation</strong>.</p>
+<p>Statement <strong>A</strong> is correct.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Calculate $F_2$ Ratios (Evaluating Option C)</strong></p>
+<p>The diagram implies self-pollination (or mating within the same phenotype) for the $F_1$ generation:</p>
+<ol>
+<li><strong>$F_1$ Yellow ($aa$)</strong>: Being recessive, it breeds true.</li>
+<li>Proportion in $F_1$: $1/2$</li>
+<li>Offspring: $100\%$ Yellow ($aa$).</li>
+<li>
+<p>Contribution to $F_2$ Yellow: $1/2 \times 1 = 1/2$.</p>
+</li>
+<li>
+<p><strong>$F_1$ White ($Aa$)</strong>: Heterozygous self-crossing ($Aa \times Aa$).</p>
+</li>
+<li>Proportion in $F_1$: $1/2$</li>
+<li>Offspring ratio: $1/4$ Yellow ($aa$) : $3/4$ White ($A_$).</li>
+<li>Contribution to $F_2$ Yellow: $1/2 \times 1/4 = 1/8$.</li>
+<li>Contribution to $F_2$ White: $1/2 \times 3/4 = 3/8$.</li>
+</ol>
+<p><strong>Total $F_2$ Ratios:</strong>
+- Total Yellow = $1/2$ (from yellow parent) + $1/8$ (from white parent) = $4/8 + 1/8 = 5/8$.
+- Total White = $3/8$ (from white parent).
+- Ratio Yellow : White = $5/8 : 3/8$ = <strong>$5 : 3$</strong>.</p>
+<p>Statement <strong>C</strong> is correct.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 4: Compare Genotypes (Evaluating Option D)</strong></p>
+<ul>
+<li>
+<p><strong>$F_1$ White individuals:</strong> We established these come from the cross $aa \times Aa$. Therefore, all $F_1$ White individuals are heterozygous (<strong>$Aa$</strong>).</p>
+</li>
+<li>
+<p><strong>$F_2$ White individuals:</strong> These are produced by the selfing of $F_1$ White ($Aa \times Aa$). According to Mendelian ratios, the White offspring consists of:</p>
+</li>
+<li>$1/3$ Homozygous Dominant (<strong>$AA$</strong>)</li>
+<li>$2/3$ Heterozygous (<strong>$Aa$</strong>)</li>
+</ul>
+<p>The $F_1$ White flowers are exclusively $Aa$, while the $F_2$ White flowers are a mixture of $AA$ and $Aa$. Their genotypes are <strong>not</strong> the same.</p>
+<p>Statement <strong>D</strong> is <strong>incorrect</strong>.</p>
+<p><strong>Conclusion:</strong>
+The incorrect statement is D.</p>
+</body>
+</html>

@@ -819,7 +819,7 @@
                 const imgs = item.images.map(img =>
                     `<img src="collected_docs/${item.folder}/${img}" alt="" loading="lazy" style="width:${IMG_W}px;height:${IMG_H}px;object-fit:cover;flex-shrink:0;" onerror="this.style.display='none'">`
                 ).join('');
-                return `<div class="g-card" style="width:${imgW}px;">
+                return `<div class="g-card" style="width:${imgW}px;" onclick="window.open('collected_docs/${item.folder}/solution.html','_blank')">
                     <div style="height:3px;background:${item.color};width:100%;"></div>
                     <div style="display:flex;gap:2px;background:#f0f0f0;height:${IMG_H}px;overflow:hidden;">${imgs}</div>
                     <div class="g-label">

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_180_geography_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_180_geography_g12</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>Read the illumination map of the Western Hemisphere at a certain time and answer the following questions.</p>
+<p>(1) At this time, the solar altitude at point A is <strong><em>_</em></strong><em>, and at point C is <strong><em>_</em></strong></em>.
+(2) The length of daytime at point B is <strong><em>_</em></strong><em> hours, and the length of night at point A is <strong><em>_</em></strong></em> hours.
+(3) The status of day and night length in the Southern Hemisphere is <strong><em>_</em></strong><em>.
+(4) At this moment, the time in Beijing is <strong><em>_</em></strong></em> hours <strong><em>_</em></strong>_ minutes on that day.</p>
+<p><strong>Solution Approach:</strong></p>
+<p>To solve this problem, we will:
+1.  <strong>Analyze the Diagram:</strong> Determine the sun's position, the terminator line (sunrise or sunset), and the coordinate system (latitude and longitude) based on the "Western Hemisphere" label.
+2.  <strong>Determine Solar Declination:</strong> Use the latitude label ($73^\circ 41'$) to find the declination of the sun ($\delta$).
+3.  <strong>Calculate Solar Altitude:</strong> Use the position of points A and C relative to the terminator and subsolar point.
+4.  <strong>Calculate Day Length:</strong> Analyze the longitude difference between point B and the central meridian to determine sunrise time and day duration.
+5.  <strong>Calculate Time:</strong> Use the longitude difference between the central meridian and Beijing to find the local time.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Diagram Analysis</strong></p>
+<ul>
+<li><strong>Hemisphere:</strong> The problem states this is the <strong>Western Hemisphere</strong>. The Western Hemisphere spans from $160^\circ$E (left edge) to $20^\circ$W (right edge). The central meridian is <strong>$110^\circ$W</strong>.</li>
+<li><strong>Sun Position:</strong> The sun rays come from the right, illuminating the right side of the Earth.</li>
+<li><strong>Terminator:</strong> The line separating day and night passes through points A and B. Since the Earth rotates from West (left) to East (right), points move from the shaded area (night) into the lit area (day). Therefore, the terminator represents the <strong>Sunrise</strong> line.</li>
+<li><strong>Latitude info:</strong> The label <strong>N $73^\circ 41'$</strong> indicates the latitude where the polar day begins (the terminator is tangent to this latitude). This allows us to calculate the Solar Declination ($\delta$):
+$$ \delta = 90^\circ - 73^\circ 41' = 16^\circ 19' \text{ N} $$
+The sun is vertically overhead at $16^\circ 19'$ N.</li>
+</ul>
+<p><strong>Step 2: Solving Question (1) - Solar Altitude</strong></p>
+<ul>
+<li><strong>Point A:</strong> Point A is located on the terminator. By definition, any point on the terminator is experiencing sunrise or sunset, so the sun is on the horizon.</li>
+<li>
+<p><strong>Solar Altitude at A = $0^\circ$</strong>.</p>
+</li>
+<li>
+<p><strong>Point C:</strong> Point C is on the Equator at the rightmost edge of the map.</p>
+</li>
+<li>Since A is the central meridian ($110^\circ$W) and is at sunrise (06:00 solar time on the Equator), and C is $90^\circ$ to the East (at $20^\circ$W), the time difference is 6 hours ($90^\circ / 15^\circ/\text{hr}$).</li>
+<li>Time at C = 06:00 + 6 hours = <strong>12:00 (Noon)</strong>.</li>
+<li>At noon, Solar Altitude ($H$) is calculated by: $H = 90^\circ - |\phi - \delta|$.</li>
+<li>For C: Latitude $\phi = 0^\circ$, Declination $\delta = 16^\circ 19'$.</li>
+<li>$H_C = 90^\circ - |0^\circ - 16^\circ 19'| = 73^\circ 41'$.</li>
+<li><strong>Solar Altitude at C = $73^\circ 41'$</strong>.</li>
+</ul>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 3: Solving Question (2) - Day and Night Length</strong></p>
+<ul>
+<li><strong>Point B (Day Length):</strong></li>
+<li>We need to determine the longitude of B relative to the sunrise line (Central Meridian A).</li>
+<li>The map shows the hemisphere ($180^\circ$ wide) divided into 4 sections by the visible meridians (Left Edge, Middle-Left, Center, Middle-Right, Right Edge). Each section represents $45^\circ$ of longitude ($180^\circ / 4$).</li>
+<li>Point B is located on the meridian one section to the left (West) of the center.</li>
+<li>Longitude difference = $45^\circ$ West.</li>
+<li>Time difference = $45^\circ / 15^\circ/\text{hr} = 3$ hours.</li>
+<li>Since A is at 06:00 (Sunrise), and B is $45^\circ$ West, B's local time is $06:00 - 3\text{h} = 03:00$.</li>
+<li>Because B is on the terminator, <strong>Sunrise at B occurs at 03:00 local time</strong>.</li>
+<li>Day Length formula: $\text{Day Length} = (12 - \text{Sunrise Time}) \times 2$.</li>
+<li>
+<p>$\text{Day Length} = (12 - 3) \times 2 = 18$ hours.</p>
+</li>
+<li>
+<p><strong>Point A (Night Length):</strong></p>
+</li>
+<li>Point A is on the <strong>Equator</strong>.</li>
+<li>On the Equator, day and night are always equal throughout the year.</li>
+<li><strong>Night Length at A = 12 hours</strong>.</li>
+</ul>
+<p><strong>Step 4: Solving Question (3) - Southern Hemisphere Conditions</strong></p>
+<ul>
+<li>The North Pole region is illuminated (Polar Day), indicating it is summer in the Northern Hemisphere.</li>
+<li>Consequently, it is winter in the Southern Hemisphere.</li>
+<li><strong>Condition:</strong> The Southern Hemisphere experiences <strong>short days and long nights</strong>. The area south of $73^\circ 41'$ S experiences Polar Night.</li>
+</ul>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 5: Solving Question (4) - Beijing Time</strong></p>
+<ul>
+<li><strong>Reference Point:</strong> The central meridian (Point A) is at <strong>$110^\circ$W</strong>. We established that the local time at A is <strong>06:00</strong> (Sunrise on the Equator).</li>
+<li><strong>Target Point:</strong> Beijing is located at <strong>$120^\circ$E</strong>.</li>
+<li><strong>Longitude Difference:</strong></li>
+<li>From $110^\circ$W eastward to $0^\circ$ (Prime Meridian) is $110^\circ$.</li>
+<li>From $0^\circ$ eastward to $120^\circ$E is $120^\circ$.</li>
+<li>Total difference = $110^\circ + 120^\circ = 230^\circ$.</li>
+<li><strong>Time Difference:</strong></li>
+<li>$230^\circ \div 15^\circ/\text{hour} = 15 \text{ hours and } 20 \text{ minutes}$.</li>
+<li>Since Beijing is East of $110^\circ$W, its time is ahead.</li>
+<li><strong>Calculation:</strong></li>
+<li>Beijing Time = 06:00 + 15 hours 20 minutes = <strong>21:20</strong>.</li>
+<li>The problem asks for the time on "that day" (gai ri), and 21:20 is still within the same calendar day.</li>
+</ul>
+<p><strong>Final Answer Summary:</strong></p>
+<p>(1) <strong>0°</strong>; <strong>73° 41'</strong>
+(2) <strong>18</strong>; <strong>12</strong>
+(3) <strong>Short days and long nights</strong> (or "Days are short, nights are long")
+(4) <strong>21</strong>; <strong>20</strong></p>
+</body>
+</html>

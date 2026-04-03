@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_46_biology_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_46_biology_g9</h1>
+<p><strong>Problem Statement:</strong></p>
+<p>As shown in the figure, a schematic represents the structure of a certain gene (labeled with $^{15}$N) in a eukaryotic cell. In this gene, Cytosine (C) accounts for 30% of all bases. Which of the following statements is correct?</p>
+<p>A. Helicase acts on both sites ① and ②.
+B. In one nucleotide strand of this gene, the ratio (C+G)/(A+T) is 3:2.
+C. If the Thymine (T) after site ① changes to Adenine (A), after $n$ replications, the altered gene accounts for 1/4 of the total.
+D. After this gene replicates 3 times in a culture medium containing $^{14}$N, the DNA molecules containing $^{14}$N account for 3/4 of the total.</p>
+<p><strong>Solution Approach:</strong></p>
+<p>We will analyze the DNA structure shown in the diagram to identify the chemical bonds at sites ① and ②. Then, we will apply Chargaff's rules to calculate base ratios for statement B. Finally, we will use the principles of semi-conservative replication to evaluate the outcomes of mutation (statement C) and isotope labeling (statement D).</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Enzyme Action Sites (Option A)</strong></p>
+<p>Let's identify the structures labeled in the diagram:
+- <strong>Site ①:</strong> The arrow points to the connection between the phosphate group of one nucleotide and the sugar of the next. This is a <strong>phosphodiester bond</strong>, which forms the stable backbone of the DNA strand.
+- <strong>Site ②:</strong> The arrow points to the connection between complementary bases (e.g., between C and G). These are <strong>hydrogen bonds</strong>, which hold the two strands together.</p>
+<p><strong>Function of Helicase:</strong>
+Helicase is an enzyme involved in DNA replication that "unzips" the double helix. It does this by breaking the <strong>hydrogen bonds</strong> between base pairs to separate the strands. Therefore, helicase acts on <strong>site ②</strong>.</p>
+<p>Enzymes that act on site ① (phosphodiester bonds) include restriction enzymes (which cut DNA) and DNA ligase (which joins DNA).</p>
+<p><em>Conclusion:</em> Statement A claims helicase acts on both ① and ②, which is <strong>incorrect</strong>.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Calculating Base Ratios (Option B)</strong></p>
+<p>We are given that Cytosine (C) accounts for 30% of the total bases in the gene.</p>
+<p>According to base-pairing rules (Chargaff's rules):
+- The amount of C equals the amount of G ($C = G$).
+- The amount of A equals the amount of T ($A = T$).</p>
+<p><strong>Calculations:</strong>
+1. Since $C = 30\%$, then $G = 30\%$.
+2. The sum of C and G is $30\% + 30\% = 60\%$.
+3. The remaining bases are A and T. Total bases = 100%.
+$A + T = 100\% - (C + G) = 100\% - 60\% = 40\%$.
+4. Since $A = T$, then $A = 20\%$ and $T = 20\%$.</p>
+<p><strong>Ratio Calculation:</strong>
+The ratio of (C + G) to (A + T) for the entire DNA molecule is:
+$$ \frac{C+G}{A+T} = \frac{60\%}{40\%} = \frac{3}{2} $$</p>
+<p><strong>Single Strand Property:</strong>
+Because of complementary base pairing, the number of $(C+G)$ on one strand corresponds to the number of $(G+C)$ on the complementary strand. Similarly, $(A+T)$ on one strand corresponds to $(T+A)$ on the other. Therefore, the ratio $\frac{C+G}{A+T}$ is constant for both the double strand and each individual single strand.</p>
+<p><em>Conclusion:</em> Statement B states the ratio is 3:2, which is <strong>correct</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Analyzing Replication with Isotopes (Option D)</strong></p>
+<p>The gene is initially labeled with $^{15}$N (both strands). It replicates 3 times in a medium containing $^{14}$N.</p>
+<p><strong>Replication Tracking:</strong>
+- <strong>Start (Gen 0):</strong> 1 molecule, both strands $^{15}$N.
+- <strong>Round 1:</strong> 2 molecules. Each has one original $^{15}$N strand and one new $^{14}$N strand. (All contain $^{14}$N).
+- <strong>Round 2:</strong> 4 molecules. The 2 $^{15}$N strands are conserved in 2 hybrid molecules. The other 2 molecules are purely $^{14}$N.
+- <strong>Round 3:</strong> 8 molecules ($2^3$). The 2 original $^{15}$N strands still exist, forming 2 hybrid molecules ($^{15}$N/$^{14}$N). The remaining $8 - 2 = 6$ molecules consist entirely of new strands ($^{14}$N/$^{14}$N).</p>
+<p><strong>Evaluating the Statement:</strong>
+The question asks for the proportion of DNA molecules <strong>containing</strong> $^{14}$N.
+- Hybrid molecules ($^{15}$N/$^{14}$N) contain $^{14}$N.
+- Pure molecules ($^{14}$N/$^{14}$N) contain $^{14}$N.
+- Since every newly synthesized strand is $^{14}$N, <strong>every single resulting DNA molecule</strong> (8 out of 8) contains at least one $^{14}$N strand.
+- Proportion = $8/8 = 100\%$.</p>
+<p>Statement D claims this proportion is 3/4 (which would be the proportion of molecules containing <em>only</em> $^{14}$N). Therefore, Statement D is <strong>incorrect</strong>.</p>
+<p><strong>Step 4: Analyzing Mutation (Option C)</strong></p>
+<p>If the base T at site ① changes to A, we have a point mutation on one strand.
+- <strong>Before Replication:</strong> One strand has the mutation (A), the other has the original sequence (complementary to T, which is A). <em>Note: This creates a mismatch or represents a change in the template.</em>
+- <strong>Replication:</strong> The DNA strands separate.
+1. The mutated strand (A) serves as a template and pairs with T, creating a mutant gene (A-T pair).
+2. The original complementary strand serves as a template and creates the original gene sequence.
+- <strong>Result:</strong> 50% of the daughter molecules will carry the mutation, and 50% will be normal. This 1/2 ratio persists through subsequent generations ($n$ replications) because the mutant line breeds true and the normal line breeds true.</p>
+<p>Statement C claims the altered gene accounts for 1/4. This is <strong>incorrect</strong>; it should be 1/2.</p>
+<p><strong>Final Conclusion</strong></p>
+<ul>
+<li><strong>A is False:</strong> Helicase only acts on hydrogen bonds (②), not phosphodiester bonds (①).</li>
+<li><strong>B is True:</strong> The base ratio (C+G)/(A+T) is 3:2 for the gene and its individual strands.</li>
+<li><strong>C is False:</strong> A mutation on one strand results in 50% (1/2) of the progeny carrying the mutation, not 1/4.</li>
+<li><strong>D is False:</strong> All resulting DNA molecules (100%) contain the new isotope $^{14}$N, not 3/4.</li>
+</ul>
+<p><strong>Correct Answer:</strong> B</p>
+</body>
+</html>

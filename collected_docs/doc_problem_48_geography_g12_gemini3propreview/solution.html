@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_48_geography_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_48_geography_g12</h1>
+<p><strong>Problem Statement:</strong>
+Read the "Schematic Diagram of the Latitude and Longitude Grid of a Certain Area on the Earth's Surface" and answer the questions.</p>
+<ol>
+<li>
+<p>If a plane takes off from point M and flies along the shortest route to point N, the direction of flight is:
+A. Always East
+B. Southeast then Northeast
+C. Always West
+D. Northeast then Southeast</p>
+</li>
+<li>
+<p>The coordinates of the point symmetric to point M with respect to the center of the Earth (the antipodal point) are:
+A. (60°N, 80°E)
+B. (60°S, 100°W)
+C. (30°S, 100°E)
+D. (60°S, 80°W)</p>
+</li>
+</ol>
+<p><strong>Solution Approach:</strong>
+To solve this, we must first determine the specific geographic coordinates of points M and N based on the grid trends. Then, we will apply the principles of "Great Circle" routes for the shortest flight path and the mathematical definition of antipodal points (symmetry regarding the Earth's center).</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Determine the Coordinates</strong></p>
+<p>First, we interpret the grid to find the coordinates of M and N.</p>
+<ul>
+<li><strong>Latitude:</strong> The latitude numbers increase from bottom to top ($40^\circ \rightarrow 60^\circ$). Increasing northward indicates the <strong>Northern Hemisphere (N)</strong>.</li>
+<li><strong>Longitude:</strong> The longitude numbers increase from left to right ($80^\circ \rightarrow 120^\circ$). Increasing eastward indicates <strong>East Longitude (E)</strong>.</li>
+</ul>
+<p>Therefore:
+*   Point M is at <strong>($60^\circ\text{N}$, $80^\circ\text{E}$)</strong>.
+*   Point N is at <strong>($60^\circ\text{N}$, $120^\circ\text{E}$)</strong>.</p>
+<p><strong>Step 2: Analyze the Flight Path (Question 1)</strong></p>
+<p>The problem asks for the <em>shortest</em> route. On a sphere, the shortest distance between two points is the arc of the <strong>Great Circle</strong> passing through them. </p>
+<p>While M and N are on the same latitude ($60^\circ\text{N}$), the parallel of latitude is <em>not</em> a Great Circle (except for the Equator). The Great Circle arc between two points in the Northern Hemisphere bulges toward the North Pole.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Reasoning for Flight Direction:</strong></p>
+<p>As shown in the diagram above, the Great Circle route (the shortest path) curves toward the higher latitudes (the North Pole) compared to the straight east-west line of the latitude parallel.</p>
+<ol>
+<li><strong>Start:</strong> To curve northward from M towards N, the plane must initially fly <strong>North-East</strong>.</li>
+<li><strong>Apex:</strong> It reaches the highest latitude somewhere between M and N.</li>
+<li><strong>End:</strong> As it descends back to N, it flies <strong>South-East</strong>.</li>
+</ol>
+<p>Therefore, the flight direction is <strong>Northeast then Southeast</strong>. This corresponds to Option D.</p>
+<p><strong>Step 3: Determine the Antipodal Point (Question 2)</strong></p>
+<p>An antipodal point is the point directly opposite M through the center of the Earth.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Calculating the Antipode:</strong></p>
+<p>To find the point symmetric to M ($60^\circ\text{N}$, $80^\circ\text{E}$) with respect to the Earth's center:</p>
+<ol>
+<li><strong>Latitude:</strong> The numerical value remains the same, but the hemisphere flips from North to South.</li>
+<li>
+<p>$60^\circ\text{N} \rightarrow \mathbf{60^\circ\text{S}}$</p>
+</li>
+<li>
+<p><strong>Longitude:</strong> The point must be on the opposite side of the Earth. The longitude value is supplementary to $180^\circ$ ($180 - \text{longitude}$), and the hemisphere flips from East to West.</p>
+</li>
+<li>Calculation: $180^\circ - 80^\circ = 100^\circ$</li>
+<li>Direction: $\text{E} \rightarrow \mathbf{\text{W}}$</li>
+<li>Result: $\mathbf{100^\circ\text{W}}$</li>
+</ol>
+<p>Combining these, the coordinates of the antipodal point are <strong>($60^\circ\text{S}$, $100^\circ\text{W}$)</strong>.</p>
+<p><strong>Conclusion:</strong></p>
+<ul>
+<li><strong>Question 1:</strong> The flight path is Northeast then Southeast. (Matches Option D)</li>
+<li><strong>Question 2:</strong> The antipodal coordinates are ($60^\circ\text{S}$, $100^\circ\text{W}$). (Matches Option F/B in the reconstructed list)</li>
+</ul>
+<p><strong>Final Answer:</strong>
+1. <strong>D</strong>
+2. <strong>($60^\circ\text{S}$, $100^\circ\text{W}$)</strong></p>
+</body>
+</html>

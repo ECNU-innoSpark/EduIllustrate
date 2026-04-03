@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_98_math_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_98_math_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, $\triangle ABC$ is inscribed in circle $O$. Given that $AB = BC$, $\angle ABC = 120^\circ$, and $AD$ is the diameter of circle $O$ with length $AD = 6$, what is the length of $AB$?</p>
+<p><strong>Options:</strong>
+A. 3
+B. $2\sqrt{3}$
+C. $3\sqrt{3}$
+D. 2</p>
+<p><strong>Solution Approach:</strong>
+To find the length of chord $AB$, we will use the properties of inscribed angles and right triangles formed by the diameter. Specifically:
+1.  Analyze the isosceles triangle $\triangle ABC$ to find the measure of $\angle ACB$.
+2.  Use the property that inscribed angles subtending the same arc are equal to find $\angle ADB$.
+3.  Use the property that the diameter subtends a right angle to form a right triangle $\triangle ABD$.
+4.  Calculate $AB$ using trigonometry in the right triangle.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyze Triangle ABC</strong></p>
+<p>First, let's look at $\triangle ABC$. We are given that $AB = BC$, which means $\triangle ABC$ is an isosceles triangle.
+We are also given that the vertex angle $\angle ABC = 120^\circ$.</p>
+<p>Since the sum of angles in a triangle is $180^\circ$, the two base angles ($\angle BAC$ and $\angle BCA$) must be equal and sum to $180^\circ - 120^\circ = 60^\circ$.</p>
+<p>Therefore:
+$$ \angle BCA = \frac{180^\circ - 120^\circ}{2} = 30^\circ $$</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Use Inscribed Angle Properties</strong></p>
+<p>Now, consider the arc $AB$. Both $\angle ADB$ and $\angle ACB$ are inscribed angles that subtend (open up to) the same arc $AB$.</p>
+<p>According to the Inscribed Angle Theorem, angles subtending the same arc are equal.
+Since we calculated that $\angle ACB = 30^\circ$, it follows that:
+$$ \angle ADB = 30^\circ $$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Identify the Right Triangle</strong></p>
+<p>We are given that $AD$ is the diameter of circle $O$. A fundamental property of circles is that an angle inscribed in a semicircle is a right angle ($90^\circ$).</p>
+<p>Therefore, $\angle ABD$, which subtends the diameter $AD$, must be $90^\circ$.</p>
+<p>This makes $\triangle ABD$ a right-angled triangle with the hypotenuse being the diameter $AD$.</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 4: Calculate Length AB</strong></p>
+<p>Now we solve for $AB$ in the right-angled $\triangle ABD$:
+*   Hypotenuse $AD = 6$
+*   Angle $\angle ADB = 30^\circ$
+*   We want to find the side opposite to the $30^\circ$ angle, which is $AB$.</p>
+<p>Using the sine function:
+$$ \sin(\angle ADB) = \frac{\text{Opposite}}{\text{Hypotenuse}} $$
+$$ \sin(30^\circ) = \frac{AB}{AD} $$</p>
+<p>We know that $\sin(30^\circ) = \frac{1}{2}$. Substituting the values:
+$$ \frac{1}{2} = \frac{AB}{6} $$</p>
+<p>Solving for $AB$:
+$$ AB = 6 \times \frac{1}{2} $$
+$$ AB = 3 $$</p>
+<p><strong>Conclusion:</strong>
+The length of $AB$ is 3. This corresponds to Option A.</p>
+<p><strong>Final Answer:</strong> A</p>
+</body>
+</html>

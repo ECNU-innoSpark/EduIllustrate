@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_123_physics_g9_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_123_physics_g9</h1>
+<p><strong>Problem Statement:</strong>
+As shown in the figure, three identical containers, A (top), B (middle), and C (bottom), partially filled with water, are placed vertically one above the other. The water in container A and container C is connected by a thin glass tube. Another thin glass tube, open at both ends, passes through the bottom of container A and is inserted into the water in container B. There is a rotary switch M near the water surface in container A, and the tube below the switch is filled with water. The gas above the water surface in containers B and C is connected by a thin glass tube. The top of container A is open to the atmosphere. If the rotary switch M is opened, after re-establishing equilibrium, compare the gas volumes in containers B and C to the initial state (  )</p>
+<p>A. $V_B$ increases, $V_C$ decreases, and $\Delta V_B &gt; \Delta V_C$
+B. $V_B$ decreases, $V_C$ increases, and $\Delta V_B &gt; \Delta V_C$
+C. $V_B$ increases, $V_C$ decreases, and $\Delta V_B = \Delta V_C$
+D. $V_B$ decreases, $V_C$ increases, and $\Delta V_B &lt; \Delta V_C$</p>
+<p><em>(Note: In the translation, "甲" is A, "乙" is B, and "丙" is C.)</em></p>
+<p><strong>Solution Approach:</strong>
+We will analyze the hydrostatic pressure at the connections to determine the direction of water flow when the valve opens. Based on the flow, we will determine the change in water levels and consequent gas volume changes, applying the principle of conservation of total water volume.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Analyzing Initial Pressures</strong></p>
+<p>Before the valve M is opened, the system is in equilibrium.</p>
+<ol>
+<li>
+<p><strong>A-C Connection:</strong> The water in container A is connected to the water in container C. Since A is open to the atmosphere ($P_{atm}$), the pressure in the gas trapped in B and C ($P_{gas}$) is determined by the hydrostatic balance between A and C.
+$$P_{gas} = P_{atm} + \rho g (h_{A} - h_{C})$$
+Where $h_A$ and $h_C$ are the heights of the water surfaces in A and C.</p>
+</li>
+<li>
+<p><strong>B-C Connection:</strong> The gas in B is connected to the gas in C, so they share the same pressure $P_{gas}$.</p>
+</li>
+</ol>
+<p>Now, consider the pressure at the tip of the vertical tube submerged in container B (let's call the tip's depth $d$ below B's surface).
+*   <strong>Pressure from the tube side (A):</strong> The tube is filled with water from A. The pressure it exerts at the tip is $P_{tube} = P_{atm} + \rho g (\text{Height of A surface} - \text{Height of tip})$.
+*   <strong>Pressure from the container side (B):</strong> The pressure in the water at the tip is $P_{B,internal} = P_{gas} + \rho g (\text{Height of B surface} - \text{Height of tip})$.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Determining Flow Direction</strong></p>
+<p>Substituting the expression for $P_{gas}$ into the pressure equation for B:
+$$P_{B,internal} = [P_{atm} + \rho g (h_A - h_C)] + \rho g (h_B - \text{tip height})$$</p>
+<p>Comparing this to the pressure from the tube ($P_{tube} \approx P_{atm} + \rho g (h_A - \text{tip height})$):
+The difference is roughly proportional to $\rho g (h_B - h_C)$.</p>
+<p>Since container B is physically located <strong>above</strong> container C, the water level in B is higher than in C ($h_B &gt; h_C$). This hydrostatic head means the internal pressure $P_{B,internal}$ pushing up is <strong>greater</strong> than the pressure $P_{tube}$ pushing down.</p>
+<p><strong>Result:</strong> When valve M opens, water flows from <strong>Container B into Container A</strong>.</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Analyzing Volume Changes</strong></p>
+<p>As water flows from B to A:
+1.  <strong>Container B:</strong> Water leaves. The water level drops. Consequently, the volume available for gas ($V_B$) <strong>increases</strong>.
+2.  <strong>Container A &amp; C:</strong> Water enters A. Since A and C are connected communicating vessels, as the level in A rises, it pushes water into C. Thus, the water level in C also rises.
+3.  <strong>Container C:</strong> Water level rises. Consequently, the volume available for gas ($V_C$) <strong>decreases</strong>.</p>
+<p><strong>Comparison of Magnitudes ($|\Delta V|$):</strong>
+Water is incompressible. The total volume of water lost by B must equal the total volume gained by A and C.
+$$|\Delta V_{water, B}| = |\Delta V_{water, A}| + |\Delta V_{water, C}|$$</p>
+<p>Since the containers are identical, the change in gas volume is equal to the change in water volume:
+*   Change in B's gas: $\Delta V_B = |\Delta V_{water, B}|$ (Increase)
+*   Change in C's gas: $\Delta V_C = -|\Delta V_{water, C}|$ (Decrease)</p>
+<p>From the conservation equation:
+$$\Delta V_B = |\Delta V_{water, A}| + |\Delta V_C|$$</p>
+<p>Since $|\Delta V_{water, A}| &gt; 0$ (water definitely enters A to establish the new equilibrium height), it follows that:
+$$\Delta V_B &gt; |\Delta V_C|$$</p>
+<p>Therefore, the increase in volume of B is strictly greater than the decrease in volume of C.</p>
+<p><strong>Conclusion:</strong>
+*   $V_B$ increases.
+*   $V_C$ decreases.
+*   $\Delta V_B &gt; \Delta V_C$ (Change in B is larger than change in C).</p>
+<p>This corresponds to <strong>Option A</strong>.</p>
+</body>
+</html>

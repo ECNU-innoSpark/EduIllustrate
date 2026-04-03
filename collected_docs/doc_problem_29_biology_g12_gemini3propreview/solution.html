@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc_problem_29_biology_g12_gemini3propreview</title>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+  h2, h3 { margin-top: 1.2em; }
+  img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+  p { margin: 0.6em 0; }
+  code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 5px; overflow-x: auto; }
+  blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+</style>
+</head>
+<body>
+<h1>problem_29_biology_g12</h1>
+<p><strong>Problem Statement</strong></p>
+<p>In genetic disease analysis and criminal investigations, it is often necessary to analyze sample DNA. PCR (Polymerase Chain Reaction) technology can rapidly amplify DNA fragments, replicating millions of DNA copies within a few hours. This effectively solves the problem of analyzing samples with very low DNA content. Based on the diagram provided, answer the following questions.</p>
+<p><strong>(1)</strong> Write the sequence for <strong>Primer II</strong> (引物 II) on the corresponding line and place Primer II in the appropriate position during the annealing (renaturation) step ($55^\circ$C).
+<strong>(2)</strong> Write the sequences of the DNA molecules generated after one cycle on the corresponding lines.
+<strong>(3)</strong> If the four types of deoxyribonucleotides used as raw materials are labeled with $^{32}$P, analyze the characteristics of the DNA molecules generated after one cycle: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_. After $n$ cycles, the proportion of single strands containing <strong>no</strong> radioactivity to the total number of single strands is </em></strong><strong><em>_</em>.
+<strong>(4)</strong> The prerequisite for the PCR reaction process is </strong><strong><em>_</em>_. PCR technology utilizes the principle of DNA's </strong><strong><em>_</em>_ to solve this problem.
+<strong>(5)</strong> During the analysis of sample DNA, it was found that the DNA is mixed with some histones. The substance that can be added to remove these histones is </strong>______.</p>
+<hr />
+<p><strong>Solution Approach</strong></p>
+<p>To solve this, we need to understand the basic mechanism of PCR:
+1.  <strong>Denaturation ($95^\circ$C):</strong> DNA strands separate.
+2.  <strong>Annealing ($55^\circ$C):</strong> Primers bind to complementary sequences. Crucially, DNA polymerase works in the 5' to 3' direction, so primers must bind to the 3' end of the template strand.
+3.  <strong>Extension ($72^\circ$C):</strong> New strands are synthesized.</p>
+<p>We will analyze the sequence complementarity to determine the primer, visualize the replication process to determine the products, and use the semi-conservative replication model to calculate the radioactive ratios.</p>
+<p><img alt="" src="scene1.png" /></p>
+<p><strong>Step 1: Identifying Primer II (Question 1)</strong></p>
+<p>PCR requires two primers. A primer must bind to the <strong>3' end</strong> of the template strand to allow DNA polymerase to synthesize the new strand in the 5' $\to$ 3' direction.</p>
+<ul>
+<li><strong>Primer I Analysis:</strong> The diagram shows Primer I (5'-G-G-OH) binding to Strand 'b'. Strand 'b' runs 3' $\to$ 5', starting with 3'-C-C... This matches because G pairs with C.</li>
+<li><strong>Primer II Analysis:</strong> Primer II must bind to the 3' end of <strong>Strand 'a'</strong>.</li>
+<li>Strand 'a' sequence at the 3' end: <strong>...T-C-3'</strong></li>
+<li>The primer must be complementary and antiparallel.</li>
+<li>Complementary bases: A pairs with T, G pairs with C.</li>
+<li>Alignment:</li>
+<li>Template: $5' - \dots - T - C - 3'$</li>
+<li>Primer:   $3' - \dots - A - G - 5'$</li>
+</ul>
+<p>Reading the primer in the standard 5' $\to$ 3' direction, the sequence is <strong>5'-G-A-OH</strong>.</p>
+<p><img alt="" src="scene2.png" /></p>
+<p><strong>Step 2: Extension and Cycle 1 Products (Question 2)</strong></p>
+<p>During the extension phase ($72^\circ$C), Taq polymerase extends the primers by adding free nucleotides complementary to the template.</p>
+<ul>
+<li><strong>Top Molecule:</strong> The template is Strand 'a' (5'-G-G...T-C-3'). The new strand is synthesized complementary to it. The result is a double-stranded DNA identical to the original parent molecule.</li>
+<li><strong>Bottom Molecule:</strong> The template is Strand 'b' (3'-C-C...A-G-5'). The new strand is synthesized complementary to it. The result is also a double-stranded DNA identical to the original parent molecule.</li>
+</ul>
+<p>Therefore, the products written on the lines for Question 2 are simply the full double-stranded sequences:
+1.  $5'-G-G......T-C-3'$
+2.  $3'-C-C......A-G-5'$</p>
+<p><img alt="" src="scene3.png" /></p>
+<p><strong>Step 3: Radioactive Labeling Analysis (Question 3)</strong></p>
+<p>If the raw materials (dNTPs) are labeled with $^{32}$P, every newly synthesized strand will be radioactive. The original template strands remain non-radioactive.</p>
+<p><strong>After Cycle 1:</strong>
+As shown in the diagram above, DNA replication is <strong>semi-conservative</strong>. Each of the 2 resulting DNA molecules consists of:
+1.  One original non-radioactive strand (Parent).
+2.  One newly synthesized radioactive strand (Daughter).
+<em>Answer:</em> Each DNA molecule contains one radioactive chain and one non-radioactive chain.</p>
+<p><strong>After $n$ Cycles:</strong>
+*   Total DNA molecules = $2^n$
+*   Total single strands = $2 \times 2^n = 2^{n+1}$
+*   Original non-radioactive strands = 2 (The two strands we started with never disappear, they just act as templates).
+*   All other strands are newly synthesized and therefore radioactive.</p>
+<p>Calculation for the proportion of non-radioactive strands:
+$$ \frac{\text{Non-radioactive strands}}{\text{Total strands}} = \frac{2}{2^{n+1}} = \frac{1}{2^n} $$</p>
+<p><img alt="" src="scene4.png" /></p>
+<p><strong>Step 4: Principles and Purification (Questions 4 &amp; 5)</strong></p>
+<p><strong>(4) Prerequisites &amp; Principle:</strong>
+*   <strong>Prerequisite:</strong> To perform PCR, you must know the nucleotide sequence of at least the ends of the target DNA segment. This is necessary to synthesize the specific <strong>primers</strong>.
+*   <strong>Principle:</strong> PCR is essentially in vitro DNA replication. It relies on the principle of <strong>DNA semi-conservative replication</strong> (specifically utilizing thermal denaturation and thermostable polymerase).</p>
+<p><strong>(5) Removing Histones:</strong>
+*   Chromosomal DNA in cells is wrapped around proteins called histones.
+*   To purify the DNA, we need to degrade these proteins.
+*   <strong>Protease</strong> (specifically Protease K) is the enzyme used to break down proteins/histones without damaging the DNA.</p>
+<hr />
+<p><strong>Final Answer Summary</strong></p>
+<p><strong>(1)</strong> Primer II: <strong>$5'-G-A-OH$</strong> (or $5'-HO-A-G-3'$).
+<em>Placement:</em> It binds to the 3' end of the top strand (Strand a).</p>
+<p><strong>(2)</strong> Generated DNA:
+$5'-G-G......T-C-3'$
+$3'-C-C......A-G-5'$</p>
+<p><strong>(3)</strong>
+<em>Characteristics:</em> <strong>Each DNA molecule consists of one labeled (radioactive) strand and one unlabeled (non-radioactive) strand.</strong>
+<em>Proportion:</em> <strong>$1/2^n$</strong></p>
+<p><strong>(4)</strong>
+<em>Prerequisite:</em> <strong>The nucleotide sequence of the target gene (to synthesize primers).</strong>
+<em>Principle:</em> <strong>DNA Replication (Semi-conservative replication).</strong></p>
+<p><strong>(5)</strong> <strong>Protease</strong> (or Protease K).</p>
+</body>
+</html>

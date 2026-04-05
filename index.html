@@ -39,102 +39,67 @@
     <style>
         /* ── Gallery multi-row marquee ── */
         .gallery-section {
-            background: #4169E1;
-            border-top: 1px solid #2d4fbb;
-            border-bottom: 1px solid #2d4fbb;
-            padding: 3rem 0 3rem;
-            overflow: hidden;
+            background: linear-gradient(135deg, #1a237e 0%, #1565c0 40%, #0288d1 100%);
+            padding: 28px 16px 24px;
         }
         .gallery-section h2 {
-            color: #fff;
             text-align: center;
-            margin-bottom: 1.8rem;
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
             letter-spacing: 0.01em;
         }
-        .g-row-wrap {
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-            margin-bottom: 8px;
-        }
-        .g-row-wrap:last-child { margin-bottom: 0; }
-        .g-row-wrap::before,
-        .g-row-wrap::after {
-            content: '';
-            position: absolute;
-            top: 0; bottom: 0;
-            width: 100px;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .g-row-wrap::before { left: 0;  background: linear-gradient(to right, #4169E1, transparent); }
-        .g-row-wrap::after  { right: 0; background: linear-gradient(to left,  #4169E1, transparent); }
-        .g-track {
+        .g-static-grid {
             display: flex;
-            gap: 10px;
-            width: max-content;
-            animation: g-scroll linear infinite;
-            padding: 4px 0;
-        }
-        .g-track:hover { animation-play-state: paused; }
-        @keyframes g-scroll {
-            from { transform: translateX(0); }
-            to   { transform: translateX(-50%); }
-        }
-        .g-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            overflow: hidden;
-            flex-shrink: 0;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-        }
-        .g-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-        }
-        .g-card-top-bar {
-            height: 3px;
-            width: 100%;
-        }
-        .g-label {
-            display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             gap: 5px;
-            padding: 4px 8px 5px;
-            background: #fff;
+            justify-content: center;
         }
-        .g-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .g-info {
-            display: flex;
+        .g-static-card {
+            display: inline-flex;
             flex-direction: column;
-            line-height: 1.2;
-            min-width: 0;
+            background: rgba(255,255,255,0.95);
+            border-radius: 4px;
+            border: none;
+            overflow: visible;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease 0.5s, box-shadow 0.2s ease 0.5s;
+            transform-origin: center center;
+            position: relative;
+            z-index: 1;
         }
-        .g-subject {
-            color: #111;
-            font-size: 0.78rem;
-            font-weight: 800;
+        .g-static-card:hover {
+            transform: scale(4);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+        .g-static-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 5px;
             white-space: nowrap;
+            background: rgba(255,255,255,0.9);
         }
-        .g-grade {
-            color: #666;
-            font-size: 0.70rem;
-            white-space: nowrap;
-        }
-        .g-num {
+        .g-static-label span {
             color: #aaa;
-            font-size: 0.68rem;
-            margin-left: auto;
-            white-space: nowrap;
+            font-weight: 400;
+        }
+        .g-static-imgs {
+            display: flex;
+            gap: 0;
+        }
+        .g-static-imgs img {
+            height: 36px;
+            width: auto;
+            display: block;
+            border-right: 1px solid #f0f0f0;
+        }
+        .g-static-imgs img:last-child { border-right: none; }
+        .g-static-imgs img:hover {
+            /* zoom handled by card-level hover */
+        }
         }
         .stat-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -177,11 +142,540 @@
     <!-- Example Problem Solutions Gallery -->
     <section class="gallery-section">
         <h2>AI-Generated K-12 STEM Illustrated Explanations</h2>
-        <div class="g-row-wrap"><div class="g-track" id="g-track-0"></div></div>
-        <div class="g-row-wrap"><div class="g-track" id="g-track-1"></div></div>
-        <div class="g-row-wrap"><div class="g-track" id="g-track-2"></div></div>
-        <div class="g-row-wrap"><div class="g-track" id="g-track-3"></div></div>
-        <div class="g-row-wrap"><div class="g-track" id="g-track-4"></div></div>
+        <div class="g-static-grid">
+            <a class="g-static-card" href="collected_docs/doc_problem_100_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#100</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_100_math_g9_gemini3propreview/scene1.png" alt="Mathematics #100" loading="lazy"><img src="collected_docs/doc_problem_100_math_g9_gemini3propreview/scene2.png" alt="Mathematics #100" loading="lazy"><img src="collected_docs/doc_problem_100_math_g9_gemini3propreview/scene3.png" alt="Mathematics #100" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_105_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#105</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_105_math_g9_gemini3propreview/scene1.png" alt="Mathematics #105" loading="lazy"><img src="collected_docs/doc_problem_105_math_g9_gemini3propreview/scene2.png" alt="Mathematics #105" loading="lazy"><img src="collected_docs/doc_problem_105_math_g9_gemini3propreview/scene3.png" alt="Mathematics #105" loading="lazy"><img src="collected_docs/doc_problem_105_math_g9_gemini3propreview/scene4.png" alt="Mathematics #105" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_116_geography_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · Middle School <span>#116</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_116_geography_g9_gemini3propreview/scene1.png" alt="Geography #116" loading="lazy"><img src="collected_docs/doc_problem_116_geography_g9_gemini3propreview/scene2.png" alt="Geography #116" loading="lazy"><img src="collected_docs/doc_problem_116_geography_g9_gemini3propreview/scene3.png" alt="Geography #116" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_124_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#124</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_124_physics_g9_gemini3propreview/scene1.png" alt="Physics #124" loading="lazy"><img src="collected_docs/doc_problem_124_physics_g9_gemini3propreview/scene3.png" alt="Physics #124" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_129_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#129</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_129_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #129" loading="lazy"><img src="collected_docs/doc_problem_129_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #129" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_134_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#134</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_134_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #134" loading="lazy"><img src="collected_docs/doc_problem_134_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #134" loading="lazy"><img src="collected_docs/doc_problem_134_chemistry_g12_gemini3propreview/scene3.png" alt="Chemistry #134" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_142_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#142</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_142_biology_g12_gemini3propreview/scene1.png" alt="Biology #142" loading="lazy"><img src="collected_docs/doc_problem_142_biology_g12_gemini3propreview/scene2.png" alt="Biology #142" loading="lazy"><img src="collected_docs/doc_problem_142_biology_g12_gemini3propreview/scene3.png" alt="Biology #142" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_148_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#148</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_148_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #148" loading="lazy"><img src="collected_docs/doc_problem_148_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #148" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_159_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#159</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_159_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #159" loading="lazy"><img src="collected_docs/doc_problem_159_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #159" loading="lazy"><img src="collected_docs/doc_problem_159_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #159" loading="lazy"><img src="collected_docs/doc_problem_159_chemistry_g9_gemini3propreview/scene4.png" alt="Chemistry #159" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_170_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#170</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_170_biology_g9_gemini3propreview/scene1.png" alt="Biology #170" loading="lazy"><img src="collected_docs/doc_problem_170_biology_g9_gemini3propreview/scene2.png" alt="Biology #170" loading="lazy"><img src="collected_docs/doc_problem_170_biology_g9_gemini3propreview/scene3.png" alt="Biology #170" loading="lazy"><img src="collected_docs/doc_problem_170_biology_g9_gemini3propreview/scene4.png" alt="Biology #170" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_175_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#175</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_175_biology_g9_gemini3propreview/scene1.png" alt="Biology #175" loading="lazy"><img src="collected_docs/doc_problem_175_biology_g9_gemini3propreview/scene2.png" alt="Biology #175" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_17_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#17</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_17_physics_g9_gemini3propreview/scene1.png" alt="Physics #17" loading="lazy"><img src="collected_docs/doc_problem_17_physics_g9_gemini3propreview/scene2.png" alt="Physics #17" loading="lazy"><img src="collected_docs/doc_problem_17_physics_g9_gemini3propreview/scene3.png" alt="Physics #17" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_188_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#188</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_188_geography_g12_gemini3propreview/scene1.png" alt="Geography #188" loading="lazy"><img src="collected_docs/doc_problem_188_geography_g12_gemini3propreview/scene2.png" alt="Geography #188" loading="lazy"><img src="collected_docs/doc_problem_188_geography_g12_gemini3propreview/scene3.png" alt="Geography #188" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_196_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#196</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_196_math_g12_gemini3propreview/scene1.png" alt="Mathematics #196" loading="lazy"><img src="collected_docs/doc_problem_196_math_g12_gemini3propreview/scene2.png" alt="Mathematics #196" loading="lazy"><img src="collected_docs/doc_problem_196_math_g12_gemini3propreview/scene3.png" alt="Mathematics #196" loading="lazy"><img src="collected_docs/doc_problem_196_math_g12_gemini3propreview/scene4.png" alt="Mathematics #196" loading="lazy"><img src="collected_docs/doc_problem_196_math_g12_gemini3propreview/scene5.png" alt="Mathematics #196" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_202_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#202</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_202_physics_g12_gemini3propreview/scene1.png" alt="Physics #202" loading="lazy"><img src="collected_docs/doc_problem_202_physics_g12_gemini3propreview/scene2.png" alt="Physics #202" loading="lazy"><img src="collected_docs/doc_problem_202_physics_g12_gemini3propreview/scene3.png" alt="Physics #202" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_209_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#209</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_209_physics_g12_gemini3propreview/scene1.png" alt="Physics #209" loading="lazy"><img src="collected_docs/doc_problem_209_physics_g12_gemini3propreview/scene2.png" alt="Physics #209" loading="lazy"><img src="collected_docs/doc_problem_209_physics_g12_gemini3propreview/scene3.png" alt="Physics #209" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_21_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#21</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_21_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #21" loading="lazy"><img src="collected_docs/doc_problem_21_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #21" loading="lazy"><img src="collected_docs/doc_problem_21_chemistry_g12_gemini3propreview/scene3.png" alt="Chemistry #21" loading="lazy"><img src="collected_docs/doc_problem_21_chemistry_g12_gemini3propreview/scene4.png" alt="Chemistry #21" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_22_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#22</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_22_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #22" loading="lazy"><img src="collected_docs/doc_problem_22_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #22" loading="lazy"><img src="collected_docs/doc_problem_22_chemistry_g12_gemini3propreview/scene3.png" alt="Chemistry #22" loading="lazy"><img src="collected_docs/doc_problem_22_chemistry_g12_gemini3propreview/scene4.png" alt="Chemistry #22" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_28_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#28</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_28_biology_g12_gemini3propreview/scene1.png" alt="Biology #28" loading="lazy"><img src="collected_docs/doc_problem_28_biology_g12_gemini3propreview/scene2.png" alt="Biology #28" loading="lazy"><img src="collected_docs/doc_problem_28_biology_g12_gemini3propreview/scene3.png" alt="Biology #28" loading="lazy"><img src="collected_docs/doc_problem_28_biology_g12_gemini3propreview/scene4.png" alt="Biology #28" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_35_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#35</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_35_math_g6_gemini3propreview/scene1.png" alt="Mathematics #35" loading="lazy"><img src="collected_docs/doc_problem_35_math_g6_gemini3propreview/scene2.png" alt="Mathematics #35" loading="lazy"><img src="collected_docs/doc_problem_35_math_g6_gemini3propreview/scene3.png" alt="Mathematics #35" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_45_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#45</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_45_biology_g9_gemini3propreview/scene1.png" alt="Biology #45" loading="lazy"><img src="collected_docs/doc_problem_45_biology_g9_gemini3propreview/scene2.png" alt="Biology #45" loading="lazy"><img src="collected_docs/doc_problem_45_biology_g9_gemini3propreview/scene3.png" alt="Biology #45" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_4_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#4</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_4_physics_g9_gemini3propreview/scene1.png" alt="Physics #4" loading="lazy"><img src="collected_docs/doc_problem_4_physics_g9_gemini3propreview/scene2.png" alt="Physics #4" loading="lazy"><img src="collected_docs/doc_problem_4_physics_g9_gemini3propreview/scene3.png" alt="Physics #4" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_61_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#61</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_61_math_g12_gemini3propreview/scene1.png" alt="Mathematics #61" loading="lazy"><img src="collected_docs/doc_problem_61_math_g12_gemini3propreview/scene2.png" alt="Mathematics #61" loading="lazy"><img src="collected_docs/doc_problem_61_math_g12_gemini3propreview/scene3.png" alt="Mathematics #61" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_70_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#70</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_70_math_g12_gemini3propreview/scene1.png" alt="Mathematics #70" loading="lazy"><img src="collected_docs/doc_problem_70_math_g12_gemini3propreview/scene2.png" alt="Mathematics #70" loading="lazy"><img src="collected_docs/doc_problem_70_math_g12_gemini3propreview/scene3.png" alt="Mathematics #70" loading="lazy"><img src="collected_docs/doc_problem_70_math_g12_gemini3propreview/scene4.png" alt="Mathematics #70" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_81_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#81</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_81_physics_g12_gemini3propreview/scene1.png" alt="Physics #81" loading="lazy"><img src="collected_docs/doc_problem_81_physics_g12_gemini3propreview/scene2.png" alt="Physics #81" loading="lazy"><img src="collected_docs/doc_problem_81_physics_g12_gemini3propreview/scene3.png" alt="Physics #81" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_91_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#91</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_91_physics_g12_gemini3propreview/scene1.png" alt="Physics #91" loading="lazy"><img src="collected_docs/doc_problem_91_physics_g12_gemini3propreview/scene2.png" alt="Physics #91" loading="lazy"><img src="collected_docs/doc_problem_91_physics_g12_gemini3propreview/scene3.png" alt="Physics #91" loading="lazy"><img src="collected_docs/doc_problem_91_physics_g12_gemini3propreview/scene4.png" alt="Physics #91" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_97_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#97</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_97_math_g9_gemini3propreview/scene1.png" alt="Mathematics #97" loading="lazy"><img src="collected_docs/doc_problem_97_math_g9_gemini3propreview/scene2.png" alt="Mathematics #97" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_101_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#101</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_101_math_g9_gemini3propreview/scene1.png" alt="Mathematics #101" loading="lazy"><img src="collected_docs/doc_problem_101_math_g9_gemini3propreview/scene2.png" alt="Mathematics #101" loading="lazy"><img src="collected_docs/doc_problem_101_math_g9_gemini3propreview/scene3.png" alt="Mathematics #101" loading="lazy"><img src="collected_docs/doc_problem_101_math_g9_gemini3propreview/scene4.png" alt="Mathematics #101" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_106_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#106</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_106_math_g9_gemini3propreview/scene1.png" alt="Mathematics #106" loading="lazy"><img src="collected_docs/doc_problem_106_math_g9_gemini3propreview/scene2.png" alt="Mathematics #106" loading="lazy"><img src="collected_docs/doc_problem_106_math_g9_gemini3propreview/scene3.png" alt="Mathematics #106" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_120_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#120</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_120_physics_g9_gemini3propreview/scene1.png" alt="Physics #120" loading="lazy"><img src="collected_docs/doc_problem_120_physics_g9_gemini3propreview/scene2.png" alt="Physics #120" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_125_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#125</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_125_physics_g9_gemini3propreview/scene2.png" alt="Physics #125" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_12_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#12</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_12_physics_g9_gemini3propreview/scene1.png" alt="Physics #12" loading="lazy"><img src="collected_docs/doc_problem_12_physics_g9_gemini3propreview/scene2.png" alt="Physics #12" loading="lazy"><img src="collected_docs/doc_problem_12_physics_g9_gemini3propreview/scene3.png" alt="Physics #12" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_138_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#138</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_138_biology_g12_gemini3propreview/scene1.png" alt="Biology #138" loading="lazy"><img src="collected_docs/doc_problem_138_biology_g12_gemini3propreview/scene2.png" alt="Biology #138" loading="lazy"><img src="collected_docs/doc_problem_138_biology_g12_gemini3propreview/scene3.png" alt="Biology #138" loading="lazy"><img src="collected_docs/doc_problem_138_biology_g12_gemini3propreview/scene4.png" alt="Biology #138" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_143_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#143</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_143_biology_g12_gemini3propreview/scene1.png" alt="Biology #143" loading="lazy"><img src="collected_docs/doc_problem_143_biology_g12_gemini3propreview/scene2.png" alt="Biology #143" loading="lazy"><img src="collected_docs/doc_problem_143_biology_g12_gemini3propreview/scene3.png" alt="Biology #143" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_153_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#153</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_153_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #153" loading="lazy"><img src="collected_docs/doc_problem_153_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #153" loading="lazy"><img src="collected_docs/doc_problem_153_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #153" loading="lazy"><img src="collected_docs/doc_problem_153_chemistry_g9_gemini3propreview/scene4.png" alt="Chemistry #153" loading="lazy"><img src="collected_docs/doc_problem_153_chemistry_g9_gemini3propreview/scene5.png" alt="Chemistry #153" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_164_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#164</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_164_math_g6_gemini3propreview/scene1.png" alt="Mathematics #164" loading="lazy"><img src="collected_docs/doc_problem_164_math_g6_gemini3propreview/scene2.png" alt="Mathematics #164" loading="lazy"><img src="collected_docs/doc_problem_164_math_g6_gemini3propreview/scene3.png" alt="Mathematics #164" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_171_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#171</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_171_biology_g9_gemini3propreview/scene1.png" alt="Biology #171" loading="lazy"><img src="collected_docs/doc_problem_171_biology_g9_gemini3propreview/scene2.png" alt="Biology #171" loading="lazy"><img src="collected_docs/doc_problem_171_biology_g9_gemini3propreview/scene3.png" alt="Biology #171" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_176_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#176</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_176_biology_g9_gemini3propreview/scene1.png" alt="Biology #176" loading="lazy"><img src="collected_docs/doc_problem_176_biology_g9_gemini3propreview/scene2.png" alt="Biology #176" loading="lazy"><img src="collected_docs/doc_problem_176_biology_g9_gemini3propreview/scene3.png" alt="Biology #176" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_180_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#180</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_180_geography_g12_gemini3propreview/scene1.png" alt="Geography #180" loading="lazy"><img src="collected_docs/doc_problem_180_geography_g12_gemini3propreview/scene2.png" alt="Geography #180" loading="lazy"><img src="collected_docs/doc_problem_180_geography_g12_gemini3propreview/scene3.png" alt="Geography #180" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_18_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#18</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_18_physics_g9_gemini3propreview/scene1.png" alt="Physics #18" loading="lazy"><img src="collected_docs/doc_problem_18_physics_g9_gemini3propreview/scene2.png" alt="Physics #18" loading="lazy"><img src="collected_docs/doc_problem_18_physics_g9_gemini3propreview/scene3.png" alt="Physics #18" loading="lazy"><img src="collected_docs/doc_problem_18_physics_g9_gemini3propreview/scene4.png" alt="Physics #18" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_197_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#197</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_197_math_g12_gemini3propreview/scene1.png" alt="Mathematics #197" loading="lazy"><img src="collected_docs/doc_problem_197_math_g12_gemini3propreview/scene2.png" alt="Mathematics #197" loading="lazy"><img src="collected_docs/doc_problem_197_math_g12_gemini3propreview/scene3.png" alt="Mathematics #197" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_203_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#203</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_203_physics_g12_gemini3propreview/scene1.png" alt="Physics #203" loading="lazy"><img src="collected_docs/doc_problem_203_physics_g12_gemini3propreview/scene2.png" alt="Physics #203" loading="lazy"><img src="collected_docs/doc_problem_203_physics_g12_gemini3propreview/scene3.png" alt="Physics #203" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_214_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#214</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_214_math_g9_gemini3propreview/scene1.png" alt="Mathematics #214" loading="lazy"><img src="collected_docs/doc_problem_214_math_g9_gemini3propreview/scene2.png" alt="Mathematics #214" loading="lazy"><img src="collected_docs/doc_problem_214_math_g9_gemini3propreview/scene3.png" alt="Mathematics #214" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_221_geography_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · Middle School <span>#221</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_221_geography_g9_gemini3propreview/scene1.png" alt="Geography #221" loading="lazy"><img src="collected_docs/doc_problem_221_geography_g9_gemini3propreview/scene2.png" alt="Geography #221" loading="lazy"><img src="collected_docs/doc_problem_221_geography_g9_gemini3propreview/scene3.png" alt="Geography #221" loading="lazy"><img src="collected_docs/doc_problem_221_geography_g9_gemini3propreview/scene4.png" alt="Geography #221" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_23_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#23</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_23_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #23" loading="lazy"><img src="collected_docs/doc_problem_23_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #23" loading="lazy"><img src="collected_docs/doc_problem_23_chemistry_g12_gemini3propreview/scene3.png" alt="Chemistry #23" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_29_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#29</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_29_biology_g12_gemini3propreview/scene1.png" alt="Biology #29" loading="lazy"><img src="collected_docs/doc_problem_29_biology_g12_gemini3propreview/scene2.png" alt="Biology #29" loading="lazy"><img src="collected_docs/doc_problem_29_biology_g12_gemini3propreview/scene3.png" alt="Biology #29" loading="lazy"><img src="collected_docs/doc_problem_29_biology_g12_gemini3propreview/scene4.png" alt="Biology #29" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_36_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#36</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_36_math_g6_gemini3propreview/scene1.png" alt="Mathematics #36" loading="lazy"><img src="collected_docs/doc_problem_36_math_g6_gemini3propreview/scene2.png" alt="Mathematics #36" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_46_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#46</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_46_biology_g9_gemini3propreview/scene1.png" alt="Biology #46" loading="lazy"><img src="collected_docs/doc_problem_46_biology_g9_gemini3propreview/scene2.png" alt="Biology #46" loading="lazy"><img src="collected_docs/doc_problem_46_biology_g9_gemini3propreview/scene3.png" alt="Biology #46" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_50_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#50</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_50_geography_g12_gemini3propreview/scene1.png" alt="Geography #50" loading="lazy"><img src="collected_docs/doc_problem_50_geography_g12_gemini3propreview/scene2.png" alt="Geography #50" loading="lazy"><img src="collected_docs/doc_problem_50_geography_g12_gemini3propreview/scene3.png" alt="Geography #50" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_63_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#63</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_63_math_g12_gemini3propreview/scene1.png" alt="Mathematics #63" loading="lazy"><img src="collected_docs/doc_problem_63_math_g12_gemini3propreview/scene2.png" alt="Mathematics #63" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_71_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#71</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_71_math_g12_gemini3propreview/scene1.png" alt="Mathematics #71" loading="lazy"><img src="collected_docs/doc_problem_71_math_g12_gemini3propreview/scene2.png" alt="Mathematics #71" loading="lazy"><img src="collected_docs/doc_problem_71_math_g12_gemini3propreview/scene3.png" alt="Mathematics #71" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_84_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#84</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_84_physics_g12_gemini3propreview/scene1.png" alt="Physics #84" loading="lazy"><img src="collected_docs/doc_problem_84_physics_g12_gemini3propreview/scene2.png" alt="Physics #84" loading="lazy"><img src="collected_docs/doc_problem_84_physics_g12_gemini3propreview/scene3.png" alt="Physics #84" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_93_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#93</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_93_math_g9_gemini3propreview/scene1.png" alt="Mathematics #93" loading="lazy"><img src="collected_docs/doc_problem_93_math_g9_gemini3propreview/scene2.png" alt="Mathematics #93" loading="lazy"><img src="collected_docs/doc_problem_93_math_g9_gemini3propreview/scene3.png" alt="Mathematics #93" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_98_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#98</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_98_math_g9_gemini3propreview/scene1.png" alt="Mathematics #98" loading="lazy"><img src="collected_docs/doc_problem_98_math_g9_gemini3propreview/scene2.png" alt="Mathematics #98" loading="lazy"><img src="collected_docs/doc_problem_98_math_g9_gemini3propreview/scene3.png" alt="Mathematics #98" loading="lazy"><img src="collected_docs/doc_problem_98_math_g9_gemini3propreview/scene4.png" alt="Mathematics #98" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_102_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#102</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_102_math_g9_gemini3propreview/scene1.png" alt="Mathematics #102" loading="lazy"><img src="collected_docs/doc_problem_102_math_g9_gemini3propreview/scene2.png" alt="Mathematics #102" loading="lazy"><img src="collected_docs/doc_problem_102_math_g9_gemini3propreview/scene3.png" alt="Mathematics #102" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_108_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#108</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_108_math_g9_gemini3propreview/scene1.png" alt="Mathematics #108" loading="lazy"><img src="collected_docs/doc_problem_108_math_g9_gemini3propreview/scene2.png" alt="Mathematics #108" loading="lazy"><img src="collected_docs/doc_problem_108_math_g9_gemini3propreview/scene3.png" alt="Mathematics #108" loading="lazy"><img src="collected_docs/doc_problem_108_math_g9_gemini3propreview/scene4.png" alt="Mathematics #108" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_121_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#121</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_121_physics_g9_gemini3propreview/scene1.png" alt="Physics #121" loading="lazy"><img src="collected_docs/doc_problem_121_physics_g9_gemini3propreview/scene2.png" alt="Physics #121" loading="lazy"><img src="collected_docs/doc_problem_121_physics_g9_gemini3propreview/scene3.png" alt="Physics #121" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_126_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#126</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_126_physics_g9_gemini3propreview/scene1.png" alt="Physics #126" loading="lazy"><img src="collected_docs/doc_problem_126_physics_g9_gemini3propreview/scene2.png" alt="Physics #126" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_130_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#130</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_130_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #130" loading="lazy"><img src="collected_docs/doc_problem_130_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #130" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_139_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#139</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_139_biology_g12_gemini3propreview/scene1.png" alt="Biology #139" loading="lazy"><img src="collected_docs/doc_problem_139_biology_g12_gemini3propreview/scene3.png" alt="Biology #139" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_144_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#144</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_144_biology_g12_gemini3propreview/scene1.png" alt="Biology #144" loading="lazy"><img src="collected_docs/doc_problem_144_biology_g12_gemini3propreview/scene2.png" alt="Biology #144" loading="lazy"><img src="collected_docs/doc_problem_144_biology_g12_gemini3propreview/scene3.png" alt="Biology #144" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_155_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#155</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_155_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #155" loading="lazy"><img src="collected_docs/doc_problem_155_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #155" loading="lazy"><img src="collected_docs/doc_problem_155_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #155" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_166_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#166</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_166_math_g6_gemini3propreview/scene1.png" alt="Mathematics #166" loading="lazy"><img src="collected_docs/doc_problem_166_math_g6_gemini3propreview/scene2.png" alt="Mathematics #166" loading="lazy"><img src="collected_docs/doc_problem_166_math_g6_gemini3propreview/scene3.png" alt="Mathematics #166" loading="lazy"><img src="collected_docs/doc_problem_166_math_g6_gemini3propreview/scene4.png" alt="Mathematics #166" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_172_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#172</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_172_biology_g9_gemini3propreview/scene1.png" alt="Biology #172" loading="lazy"><img src="collected_docs/doc_problem_172_biology_g9_gemini3propreview/scene2.png" alt="Biology #172" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_177_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#177</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_177_biology_g9_gemini3propreview/scene1.png" alt="Biology #177" loading="lazy"><img src="collected_docs/doc_problem_177_biology_g9_gemini3propreview/scene2.png" alt="Biology #177" loading="lazy"><img src="collected_docs/doc_problem_177_biology_g9_gemini3propreview/scene3.png" alt="Biology #177" loading="lazy"><img src="collected_docs/doc_problem_177_biology_g9_gemini3propreview/scene4.png" alt="Biology #177" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_183_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#183</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_183_geography_g12_gemini3propreview/scene1.png" alt="Geography #183" loading="lazy"><img src="collected_docs/doc_problem_183_geography_g12_gemini3propreview/scene2.png" alt="Geography #183" loading="lazy"><img src="collected_docs/doc_problem_183_geography_g12_gemini3propreview/scene3.png" alt="Geography #183" loading="lazy"><img src="collected_docs/doc_problem_183_geography_g12_gemini3propreview/scene4.png" alt="Geography #183" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_190_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#190</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_190_math_g12_gemini3propreview/scene1.png" alt="Mathematics #190" loading="lazy"><img src="collected_docs/doc_problem_190_math_g12_gemini3propreview/scene2.png" alt="Mathematics #190" loading="lazy"><img src="collected_docs/doc_problem_190_math_g12_gemini3propreview/scene3.png" alt="Mathematics #190" loading="lazy"><img src="collected_docs/doc_problem_190_math_g12_gemini3propreview/scene4.png" alt="Mathematics #190" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_199_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#199</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_199_math_g12_gemini3propreview/scene1.png" alt="Mathematics #199" loading="lazy"><img src="collected_docs/doc_problem_199_math_g12_gemini3propreview/scene2.png" alt="Mathematics #199" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_205_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#205</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_205_physics_g12_gemini3propreview/scene1.png" alt="Physics #205" loading="lazy"><img src="collected_docs/doc_problem_205_physics_g12_gemini3propreview/scene2.png" alt="Physics #205" loading="lazy"><img src="collected_docs/doc_problem_205_physics_g12_gemini3propreview/scene3.png" alt="Physics #205" loading="lazy"><img src="collected_docs/doc_problem_205_physics_g12_gemini3propreview/scene4.png" alt="Physics #205" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_215_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#215</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_215_math_g9_gemini3propreview/scene1.png" alt="Mathematics #215" loading="lazy"><img src="collected_docs/doc_problem_215_math_g9_gemini3propreview/scene2.png" alt="Mathematics #215" loading="lazy"><img src="collected_docs/doc_problem_215_math_g9_gemini3propreview/scene3.png" alt="Mathematics #215" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_222_geography_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · Middle School <span>#222</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_222_geography_g9_gemini3propreview/scene1.png" alt="Geography #222" loading="lazy"><img src="collected_docs/doc_problem_222_geography_g9_gemini3propreview/scene2.png" alt="Geography #222" loading="lazy"><img src="collected_docs/doc_problem_222_geography_g9_gemini3propreview/scene3.png" alt="Geography #222" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_24_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#24</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_24_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #24" loading="lazy"><img src="collected_docs/doc_problem_24_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #24" loading="lazy"><img src="collected_docs/doc_problem_24_chemistry_g12_gemini3propreview/scene3.png" alt="Chemistry #24" loading="lazy"><img src="collected_docs/doc_problem_24_chemistry_g12_gemini3propreview/scene4.png" alt="Chemistry #24" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_30_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#30</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_30_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #30" loading="lazy"><img src="collected_docs/doc_problem_30_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #30" loading="lazy"><img src="collected_docs/doc_problem_30_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #30" loading="lazy"><img src="collected_docs/doc_problem_30_chemistry_g9_gemini3propreview/scene4.png" alt="Chemistry #30" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_39_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#39</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_39_math_g6_gemini3propreview/scene1.png" alt="Mathematics #39" loading="lazy"><img src="collected_docs/doc_problem_39_math_g6_gemini3propreview/scene2.png" alt="Mathematics #39" loading="lazy"><img src="collected_docs/doc_problem_39_math_g6_gemini3propreview/scene3.png" alt="Mathematics #39" loading="lazy"><img src="collected_docs/doc_problem_39_math_g6_gemini3propreview/scene4.png" alt="Mathematics #39" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_47_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#47</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_47_biology_g9_gemini3propreview/scene1.png" alt="Biology #47" loading="lazy"><img src="collected_docs/doc_problem_47_biology_g9_gemini3propreview/scene2.png" alt="Biology #47" loading="lazy"><img src="collected_docs/doc_problem_47_biology_g9_gemini3propreview/scene3.png" alt="Biology #47" loading="lazy"><img src="collected_docs/doc_problem_47_biology_g9_gemini3propreview/scene4.png" alt="Biology #47" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_55_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#55</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_55_math_g12_gemini3propreview/scene1.png" alt="Mathematics #55" loading="lazy"><img src="collected_docs/doc_problem_55_math_g12_gemini3propreview/scene2.png" alt="Mathematics #55" loading="lazy"><img src="collected_docs/doc_problem_55_math_g12_gemini3propreview/scene3.png" alt="Mathematics #55" loading="lazy"><img src="collected_docs/doc_problem_55_math_g12_gemini3propreview/scene4.png" alt="Mathematics #55" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_64_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#64</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_64_math_g12_gemini3propreview/scene1.png" alt="Mathematics #64" loading="lazy"><img src="collected_docs/doc_problem_64_math_g12_gemini3propreview/scene2.png" alt="Mathematics #64" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_72_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#72</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_72_math_g12_gemini3propreview/scene1.png" alt="Mathematics #72" loading="lazy"><img src="collected_docs/doc_problem_72_math_g12_gemini3propreview/scene2.png" alt="Mathematics #72" loading="lazy"><img src="collected_docs/doc_problem_72_math_g12_gemini3propreview/scene3.png" alt="Mathematics #72" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_86_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#86</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_86_physics_g12_gemini3propreview/scene1.png" alt="Physics #86" loading="lazy"><img src="collected_docs/doc_problem_86_physics_g12_gemini3propreview/scene2.png" alt="Physics #86" loading="lazy"><img src="collected_docs/doc_problem_86_physics_g12_gemini3propreview/scene3.png" alt="Physics #86" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_94_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#94</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_94_math_g9_gemini3propreview/scene1.png" alt="Mathematics #94" loading="lazy"><img src="collected_docs/doc_problem_94_math_g9_gemini3propreview/scene2.png" alt="Mathematics #94" loading="lazy"><img src="collected_docs/doc_problem_94_math_g9_gemini3propreview/scene3.png" alt="Mathematics #94" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_99_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#99</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_99_math_g9_gemini3propreview/scene1.png" alt="Mathematics #99" loading="lazy"><img src="collected_docs/doc_problem_99_math_g9_gemini3propreview/scene2.png" alt="Mathematics #99" loading="lazy"><img src="collected_docs/doc_problem_99_math_g9_gemini3propreview/scene3.png" alt="Mathematics #99" loading="lazy"><img src="collected_docs/doc_problem_99_math_g9_gemini3propreview/scene4.png" alt="Mathematics #99" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_103_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#103</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_103_math_g9_gemini3propreview/scene1.png" alt="Mathematics #103" loading="lazy"><img src="collected_docs/doc_problem_103_math_g9_gemini3propreview/scene2.png" alt="Mathematics #103" loading="lazy"><img src="collected_docs/doc_problem_103_math_g9_gemini3propreview/scene3.png" alt="Mathematics #103" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_114_geography_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · Middle School <span>#114</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_114_geography_g9_gemini3propreview/scene1.png" alt="Geography #114" loading="lazy"><img src="collected_docs/doc_problem_114_geography_g9_gemini3propreview/scene2.png" alt="Geography #114" loading="lazy"><img src="collected_docs/doc_problem_114_geography_g9_gemini3propreview/scene3.png" alt="Geography #114" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_122_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#122</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_122_physics_g9_gemini3propreview/scene1.png" alt="Physics #122" loading="lazy"><img src="collected_docs/doc_problem_122_physics_g9_gemini3propreview/scene3.png" alt="Physics #122" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_127_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#127</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_127_physics_g9_gemini3propreview/scene1.png" alt="Physics #127" loading="lazy"><img src="collected_docs/doc_problem_127_physics_g9_gemini3propreview/scene2.png" alt="Physics #127" loading="lazy"><img src="collected_docs/doc_problem_127_physics_g9_gemini3propreview/scene3.png" alt="Physics #127" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_131_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#131</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_131_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #131" loading="lazy"><img src="collected_docs/doc_problem_131_chemistry_g12_gemini3propreview/scene3.png" alt="Chemistry #131" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_13_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#13</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_13_physics_g9_gemini3propreview/scene1.png" alt="Physics #13" loading="lazy"><img src="collected_docs/doc_problem_13_physics_g9_gemini3propreview/scene2.png" alt="Physics #13" loading="lazy"><img src="collected_docs/doc_problem_13_physics_g9_gemini3propreview/scene3.png" alt="Physics #13" loading="lazy"><img src="collected_docs/doc_problem_13_physics_g9_gemini3propreview/scene4.png" alt="Physics #13" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_145_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#145</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_145_biology_g12_gemini3propreview/scene2.png" alt="Biology #145" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_157_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#157</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_157_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #157" loading="lazy"><img src="collected_docs/doc_problem_157_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #157" loading="lazy"><img src="collected_docs/doc_problem_157_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #157" loading="lazy"><img src="collected_docs/doc_problem_157_chemistry_g9_gemini3propreview/scene4.png" alt="Chemistry #157" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_167_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#167</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_167_math_g6_gemini3propreview/scene1.png" alt="Mathematics #167" loading="lazy"><img src="collected_docs/doc_problem_167_math_g6_gemini3propreview/scene2.png" alt="Mathematics #167" loading="lazy"><img src="collected_docs/doc_problem_167_math_g6_gemini3propreview/scene3.png" alt="Mathematics #167" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_173_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#173</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_173_biology_g9_gemini3propreview/scene1.png" alt="Biology #173" loading="lazy"><img src="collected_docs/doc_problem_173_biology_g9_gemini3propreview/scene2.png" alt="Biology #173" loading="lazy"><img src="collected_docs/doc_problem_173_biology_g9_gemini3propreview/scene3.png" alt="Biology #173" loading="lazy"><img src="collected_docs/doc_problem_173_biology_g9_gemini3propreview/scene4.png" alt="Biology #173" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_178_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#178</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_178_biology_g9_gemini3propreview/scene1.png" alt="Biology #178" loading="lazy"><img src="collected_docs/doc_problem_178_biology_g9_gemini3propreview/scene2.png" alt="Biology #178" loading="lazy"><img src="collected_docs/doc_problem_178_biology_g9_gemini3propreview/scene3.png" alt="Biology #178" loading="lazy"><img src="collected_docs/doc_problem_178_biology_g9_gemini3propreview/scene4.png" alt="Biology #178" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_185_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#185</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_185_geography_g12_gemini3propreview/scene1.png" alt="Geography #185" loading="lazy"><img src="collected_docs/doc_problem_185_geography_g12_gemini3propreview/scene2.png" alt="Geography #185" loading="lazy"><img src="collected_docs/doc_problem_185_geography_g12_gemini3propreview/scene3.png" alt="Geography #185" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_192_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#192</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_192_math_g12_gemini3propreview/scene1.png" alt="Mathematics #192" loading="lazy"><img src="collected_docs/doc_problem_192_math_g12_gemini3propreview/scene2.png" alt="Mathematics #192" loading="lazy"><img src="collected_docs/doc_problem_192_math_g12_gemini3propreview/scene3.png" alt="Mathematics #192" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_1_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#1</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_1_physics_g9_gemini3propreview/scene1.png" alt="Physics #1" loading="lazy"><img src="collected_docs/doc_problem_1_physics_g9_gemini3propreview/scene2.png" alt="Physics #1" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_206_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#206</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_206_physics_g12_gemini3propreview/scene1.png" alt="Physics #206" loading="lazy"><img src="collected_docs/doc_problem_206_physics_g12_gemini3propreview/scene2.png" alt="Physics #206" loading="lazy"><img src="collected_docs/doc_problem_206_physics_g12_gemini3propreview/scene3.png" alt="Physics #206" loading="lazy"><img src="collected_docs/doc_problem_206_physics_g12_gemini3propreview/scene4.png" alt="Physics #206" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_216_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#216</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_216_math_g9_gemini3propreview/scene1.png" alt="Mathematics #216" loading="lazy"><img src="collected_docs/doc_problem_216_math_g9_gemini3propreview/scene2.png" alt="Mathematics #216" loading="lazy"><img src="collected_docs/doc_problem_216_math_g9_gemini3propreview/scene3.png" alt="Mathematics #216" loading="lazy"><img src="collected_docs/doc_problem_216_math_g9_gemini3propreview/scene4.png" alt="Mathematics #216" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_223_geography_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · Middle School <span>#223</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_223_geography_g9_gemini3propreview/scene1.png" alt="Geography #223" loading="lazy"><img src="collected_docs/doc_problem_223_geography_g9_gemini3propreview/scene2.png" alt="Geography #223" loading="lazy"><img src="collected_docs/doc_problem_223_geography_g9_gemini3propreview/scene3.png" alt="Geography #223" loading="lazy"><img src="collected_docs/doc_problem_223_geography_g9_gemini3propreview/scene4.png" alt="Geography #223" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_25_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#25</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_25_biology_g12_gemini3propreview/scene1.png" alt="Biology #25" loading="lazy"><img src="collected_docs/doc_problem_25_biology_g12_gemini3propreview/scene2.png" alt="Biology #25" loading="lazy"><img src="collected_docs/doc_problem_25_biology_g12_gemini3propreview/scene3.png" alt="Biology #25" loading="lazy"><img src="collected_docs/doc_problem_25_biology_g12_gemini3propreview/scene4.png" alt="Biology #25" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_31_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#31</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_31_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #31" loading="lazy"><img src="collected_docs/doc_problem_31_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #31" loading="lazy"><img src="collected_docs/doc_problem_31_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #31" loading="lazy"><img src="collected_docs/doc_problem_31_chemistry_g9_gemini3propreview/scene4.png" alt="Chemistry #31" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_3_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#3</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_3_physics_g9_gemini3propreview/scene1.png" alt="Physics #3" loading="lazy"><img src="collected_docs/doc_problem_3_physics_g9_gemini3propreview/scene2.png" alt="Physics #3" loading="lazy"><img src="collected_docs/doc_problem_3_physics_g9_gemini3propreview/scene3.png" alt="Physics #3" loading="lazy"><img src="collected_docs/doc_problem_3_physics_g9_gemini3propreview/scene4.png" alt="Physics #3" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_48_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#48</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_48_geography_g12_gemini3propreview/scene1.png" alt="Geography #48" loading="lazy"><img src="collected_docs/doc_problem_48_geography_g12_gemini3propreview/scene2.png" alt="Geography #48" loading="lazy"><img src="collected_docs/doc_problem_48_geography_g12_gemini3propreview/scene3.png" alt="Geography #48" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_56_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#56</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_56_math_g12_gemini3propreview/scene1.png" alt="Mathematics #56" loading="lazy"><img src="collected_docs/doc_problem_56_math_g12_gemini3propreview/scene2.png" alt="Mathematics #56" loading="lazy"><img src="collected_docs/doc_problem_56_math_g12_gemini3propreview/scene3.png" alt="Mathematics #56" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_66_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#66</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_66_math_g12_gemini3propreview/scene1.png" alt="Mathematics #66" loading="lazy"><img src="collected_docs/doc_problem_66_math_g12_gemini3propreview/scene2.png" alt="Mathematics #66" loading="lazy"><img src="collected_docs/doc_problem_66_math_g12_gemini3propreview/scene3.png" alt="Mathematics #66" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_73_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#73</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_73_physics_g12_gemini3propreview/scene1.png" alt="Physics #73" loading="lazy"><img src="collected_docs/doc_problem_73_physics_g12_gemini3propreview/scene2.png" alt="Physics #73" loading="lazy"><img src="collected_docs/doc_problem_73_physics_g12_gemini3propreview/scene3.png" alt="Physics #73" loading="lazy"><img src="collected_docs/doc_problem_73_physics_g12_gemini3propreview/scene4.png" alt="Physics #73" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_89_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#89</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_89_physics_g12_gemini3propreview/scene1.png" alt="Physics #89" loading="lazy"><img src="collected_docs/doc_problem_89_physics_g12_gemini3propreview/scene2.png" alt="Physics #89" loading="lazy"><img src="collected_docs/doc_problem_89_physics_g12_gemini3propreview/scene3.png" alt="Physics #89" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_95_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#95</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_95_math_g9_gemini3propreview/scene1.png" alt="Mathematics #95" loading="lazy"><img src="collected_docs/doc_problem_95_math_g9_gemini3propreview/scene2.png" alt="Mathematics #95" loading="lazy"><img src="collected_docs/doc_problem_95_math_g9_gemini3propreview/scene3.png" alt="Mathematics #95" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_104_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#104</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_104_math_g9_gemini3propreview/scene1.png" alt="Mathematics #104" loading="lazy"><img src="collected_docs/doc_problem_104_math_g9_gemini3propreview/scene2.png" alt="Mathematics #104" loading="lazy"><img src="collected_docs/doc_problem_104_math_g9_gemini3propreview/scene3.png" alt="Mathematics #104" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_115_geography_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · Middle School <span>#115</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_115_geography_g9_gemini3propreview/scene1.png" alt="Geography #115" loading="lazy"><img src="collected_docs/doc_problem_115_geography_g9_gemini3propreview/scene2.png" alt="Geography #115" loading="lazy"><img src="collected_docs/doc_problem_115_geography_g9_gemini3propreview/scene3.png" alt="Geography #115" loading="lazy"><img src="collected_docs/doc_problem_115_geography_g9_gemini3propreview/scene4.png" alt="Geography #115" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_123_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#123</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_123_physics_g9_gemini3propreview/scene1.png" alt="Physics #123" loading="lazy"><img src="collected_docs/doc_problem_123_physics_g9_gemini3propreview/scene2.png" alt="Physics #123" loading="lazy"><img src="collected_docs/doc_problem_123_physics_g9_gemini3propreview/scene3.png" alt="Physics #123" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_128_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#128</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_128_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #128" loading="lazy"><img src="collected_docs/doc_problem_128_chemistry_g12_gemini3propreview/scene2.png" alt="Chemistry #128" loading="lazy"><img src="collected_docs/doc_problem_128_chemistry_g12_gemini3propreview/scene3.png" alt="Chemistry #128" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_132_chemistry_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · High School <span>#132</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_132_chemistry_g12_gemini3propreview/scene1.png" alt="Chemistry #132" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_140_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#140</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_140_biology_g12_gemini3propreview/scene2.png" alt="Biology #140" loading="lazy"><img src="collected_docs/doc_problem_140_biology_g12_gemini3propreview/scene3.png" alt="Biology #140" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_147_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#147</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_147_biology_g12_gemini3propreview/scene1.png" alt="Biology #147" loading="lazy"><img src="collected_docs/doc_problem_147_biology_g12_gemini3propreview/scene2.png" alt="Biology #147" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_158_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#158</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_158_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #158" loading="lazy"><img src="collected_docs/doc_problem_158_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #158" loading="lazy"><img src="collected_docs/doc_problem_158_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #158" loading="lazy"><img src="collected_docs/doc_problem_158_chemistry_g9_gemini3propreview/scene4.png" alt="Chemistry #158" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_169_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#169</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_169_math_g6_gemini3propreview/scene1.png" alt="Mathematics #169" loading="lazy"><img src="collected_docs/doc_problem_169_math_g6_gemini3propreview/scene2.png" alt="Mathematics #169" loading="lazy"><img src="collected_docs/doc_problem_169_math_g6_gemini3propreview/scene3.png" alt="Mathematics #169" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_174_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#174</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_174_biology_g9_gemini3propreview/scene1.png" alt="Biology #174" loading="lazy"><img src="collected_docs/doc_problem_174_biology_g9_gemini3propreview/scene2.png" alt="Biology #174" loading="lazy"><img src="collected_docs/doc_problem_174_biology_g9_gemini3propreview/scene3.png" alt="Biology #174" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_179_biology_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · Middle School <span>#179</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_179_biology_g9_gemini3propreview/scene1.png" alt="Biology #179" loading="lazy"><img src="collected_docs/doc_problem_179_biology_g9_gemini3propreview/scene2.png" alt="Biology #179" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_187_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#187</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_187_geography_g12_gemini3propreview/scene1.png" alt="Geography #187" loading="lazy"><img src="collected_docs/doc_problem_187_geography_g12_gemini3propreview/scene2.png" alt="Geography #187" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_194_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#194</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_194_math_g12_gemini3propreview/scene1.png" alt="Mathematics #194" loading="lazy"><img src="collected_docs/doc_problem_194_math_g12_gemini3propreview/scene2.png" alt="Mathematics #194" loading="lazy"><img src="collected_docs/doc_problem_194_math_g12_gemini3propreview/scene3.png" alt="Mathematics #194" loading="lazy"><img src="collected_docs/doc_problem_194_math_g12_gemini3propreview/scene4.png" alt="Mathematics #194" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_200_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#200</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_200_physics_g12_gemini3propreview/scene1.png" alt="Physics #200" loading="lazy"><img src="collected_docs/doc_problem_200_physics_g12_gemini3propreview/scene2.png" alt="Physics #200" loading="lazy"><img src="collected_docs/doc_problem_200_physics_g12_gemini3propreview/scene3.png" alt="Physics #200" loading="lazy"><img src="collected_docs/doc_problem_200_physics_g12_gemini3propreview/scene4.png" alt="Physics #200" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_208_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#208</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_208_physics_g12_gemini3propreview/scene1.png" alt="Physics #208" loading="lazy"><img src="collected_docs/doc_problem_208_physics_g12_gemini3propreview/scene2.png" alt="Physics #208" loading="lazy"><img src="collected_docs/doc_problem_208_physics_g12_gemini3propreview/scene3.png" alt="Physics #208" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_217_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#217</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_217_math_g9_gemini3propreview/scene1.png" alt="Mathematics #217" loading="lazy"><img src="collected_docs/doc_problem_217_math_g9_gemini3propreview/scene2.png" alt="Mathematics #217" loading="lazy"><img src="collected_docs/doc_problem_217_math_g9_gemini3propreview/scene3.png" alt="Mathematics #217" loading="lazy"><img src="collected_docs/doc_problem_217_math_g9_gemini3propreview/scene4.png" alt="Mathematics #217" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_224_geography_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · Middle School <span>#224</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_224_geography_g9_gemini3propreview/scene1.png" alt="Geography #224" loading="lazy"><img src="collected_docs/doc_problem_224_geography_g9_gemini3propreview/scene2.png" alt="Geography #224" loading="lazy"><img src="collected_docs/doc_problem_224_geography_g9_gemini3propreview/scene3.png" alt="Geography #224" loading="lazy"><img src="collected_docs/doc_problem_224_geography_g9_gemini3propreview/scene4.png" alt="Geography #224" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_26_biology_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #8E44AD;">
+                <div class="g-static-label" style="color:#8E44AD;">Biology · High School <span>#26</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_26_biology_g12_gemini3propreview/scene1.png" alt="Biology #26" loading="lazy"><img src="collected_docs/doc_problem_26_biology_g12_gemini3propreview/scene2.png" alt="Biology #26" loading="lazy"><img src="collected_docs/doc_problem_26_biology_g12_gemini3propreview/scene3.png" alt="Biology #26" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_32_chemistry_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #27AE60;">
+                <div class="g-static-label" style="color:#27AE60;">Chemistry · Middle School <span>#32</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_32_chemistry_g9_gemini3propreview/scene1.png" alt="Chemistry #32" loading="lazy"><img src="collected_docs/doc_problem_32_chemistry_g9_gemini3propreview/scene2.png" alt="Chemistry #32" loading="lazy"><img src="collected_docs/doc_problem_32_chemistry_g9_gemini3propreview/scene3.png" alt="Chemistry #32" loading="lazy"><img src="collected_docs/doc_problem_32_chemistry_g9_gemini3propreview/scene4.png" alt="Chemistry #32" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_40_math_g6_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Primary <span>#40</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_40_math_g6_gemini3propreview/scene1.png" alt="Mathematics #40" loading="lazy"><img src="collected_docs/doc_problem_40_math_g6_gemini3propreview/scene2.png" alt="Mathematics #40" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_49_geography_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #16A085;">
+                <div class="g-static-label" style="color:#16A085;">Geography · High School <span>#49</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_49_geography_g12_gemini3propreview/scene1.png" alt="Geography #49" loading="lazy"><img src="collected_docs/doc_problem_49_geography_g12_gemini3propreview/scene2.png" alt="Geography #49" loading="lazy"><img src="collected_docs/doc_problem_49_geography_g12_gemini3propreview/scene3.png" alt="Geography #49" loading="lazy"><img src="collected_docs/doc_problem_49_geography_g12_gemini3propreview/scene4.png" alt="Geography #49" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_58_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#58</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_58_math_g12_gemini3propreview/scene1.png" alt="Mathematics #58" loading="lazy"><img src="collected_docs/doc_problem_58_math_g12_gemini3propreview/scene2.png" alt="Mathematics #58" loading="lazy"><img src="collected_docs/doc_problem_58_math_g12_gemini3propreview/scene3.png" alt="Mathematics #58" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_67_math_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · High School <span>#67</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_67_math_g12_gemini3propreview/scene1.png" alt="Mathematics #67" loading="lazy"><img src="collected_docs/doc_problem_67_math_g12_gemini3propreview/scene2.png" alt="Mathematics #67" loading="lazy"><img src="collected_docs/doc_problem_67_math_g12_gemini3propreview/scene3.png" alt="Mathematics #67" loading="lazy"><img src="collected_docs/doc_problem_67_math_g12_gemini3propreview/scene4.png" alt="Mathematics #67" loading="lazy"><img src="collected_docs/doc_problem_67_math_g12_gemini3propreview/scene5.png" alt="Mathematics #67" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_74_physics_g12_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · High School <span>#74</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_74_physics_g12_gemini3propreview/scene1.png" alt="Physics #74" loading="lazy"><img src="collected_docs/doc_problem_74_physics_g12_gemini3propreview/scene2.png" alt="Physics #74" loading="lazy"><img src="collected_docs/doc_problem_74_physics_g12_gemini3propreview/scene3.png" alt="Physics #74" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_8_physics_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #E67E22;">
+                <div class="g-static-label" style="color:#E67E22;">Physics · Middle School <span>#8</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_8_physics_g9_gemini3propreview/scene1.png" alt="Physics #8" loading="lazy"><img src="collected_docs/doc_problem_8_physics_g9_gemini3propreview/scene2.png" alt="Physics #8" loading="lazy"><img src="collected_docs/doc_problem_8_physics_g9_gemini3propreview/scene3.png" alt="Physics #8" loading="lazy"></div>
+            </a>
+            <a class="g-static-card" href="collected_docs/doc_problem_96_math_g9_gemini3propreview/solution.html" target="_blank" style="border-top:3px solid #2979FF;">
+                <div class="g-static-label" style="color:#2979FF;">Mathematics · Middle School <span>#96</span></div>
+                <div class="g-static-imgs"><img src="collected_docs/doc_problem_96_math_g9_gemini3propreview/scene1.png" alt="Mathematics #96" loading="lazy"><img src="collected_docs/doc_problem_96_math_g9_gemini3propreview/scene2.png" alt="Mathematics #96" loading="lazy"><img src="collected_docs/doc_problem_96_math_g9_gemini3propreview/scene3.png" alt="Mathematics #96" loading="lazy"></div>
+            </a>
+        </div>
     </section>
 
     <section class="hero">
@@ -189,22 +683,31 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">EduIllustrate: An Agentic Pipeline for Generating Diagram-Rich Explanations of K-12 STEM Problems</h1>
+                        <h1 class="title is-1 publication-title">EduIllustrate: Towards Scalable Automated Generation Of Multimodal Educational Content</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="#" target="_blank">First Author*</a>,
+                                <a href="#" target="_blank">Shuzhen Bi</a><sup>1,2</sup>,
                             </span>
                             <span class="author-block">
-                                <a href="#" target="_blank">Second Author*</a>,
+                                <a href="#" target="_blank">Mingzi Zhang</a><sup>3</sup>,
                             </span>
                             <span class="author-block">
-                                <a href="#" target="_blank">Third Author</a>
+                                <a href="#" target="_blank">Zhuoxuan Li</a><sup>3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Xiaolong Wang</a><sup>3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Keqian Li</a><sup>3</sup>†,
+                            </span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Aimin Zhou</a><sup>1,3</sup>
                             </span>
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block">Your Institution</span>
-                            <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
+                            <span class="author-block"><sup>1</sup>Shanghai Innovation Institute,&nbsp;&nbsp;<sup>2</sup>University of Science and Technology of China,&nbsp;&nbsp;<sup>3</sup>East China Normal University</span>
+                            <span class="eql-cntrb"><small><br><sup>†</sup>Corresponding author</small></span>
                         </div>
 
                         <div class="column has-text-centered">
@@ -246,7 +749,7 @@
                     <div class="column has-text-centered">
                         <img src="paper/fig/teaser.png" alt="EduIllustrate Teaser" width="100%"/>
                         <h2 class="subtitle has-text-centered">
-                            Figure 1: EduIllustrate takes a K-12 STEM problem as input and produces a structured explanation interleaved with geometrically accurate diagrams rendered via Manim. <i>Left</i>: the input problem (Grade 9 Mathematics). <i>Right</i>: two generated scenes illustrating the inscribed angle theorem and the resulting right triangle used to compute AB = 3.
+                            Figure 1: EduIllustrate generates geometrically accurate visuals for diverse STEM problems. Taking textual K-12 problems from various subjects as input (left), our system produces a progressive sequence of diagrams (right). These diagrams are interleaved with textual reasoning to form multimodal explanations.
                         </h2>
                     </div>
                 </div>
@@ -263,10 +766,10 @@
                         <h2 class="title is-3">Abstract</h2>
                         <div class="content has-text-justified">
                             <p>
-                                Generating high-quality illustrated explanations for K-12 STEM problems requires both geometrically accurate diagrams and coherent step-by-step reasoning—a combination that existing LLM-based educational content systems have not addressed. We present <strong>EduIllustrate</strong>, an automated four-stage agentic pipeline that takes a K-12 STEM problem as input and produces a structured, diagram-rich explanation with programmatically rendered static diagrams via Manim. Our pipeline introduces a sequential anchoring strategy: Scene 1 undergoes full implementation planning to establish visual conventions (color scheme, label formatting, spatial layout), while subsequent scenes generate in parallel conditioned on Scene 1's code, enforcing cross-diagram consistency without global optimization.
+                                Large language models are increasingly used as educational assistants, yet evaluation of their educational capabilities remains concentrated on question-answering and tutoring tasks. A critical gap exists for <em>multimedia instructional content generation</em>—the ability to produce coherent, diagram-rich explanations that combine geometrically accurate visuals with step-by-step reasoning. We present <strong>EduIllustrate</strong>, a benchmark for evaluating LLMs on interleaved text-diagram explanation generation for K-12 STEM problems.
                             </p>
                             <p>
-                                To enable systematic evaluation, we construct a benchmark of <strong>118 problems</strong> spanning three grade levels (elementary, middle, high school) and five subjects (mathematics, physics, chemistry, biology, geography), and propose an <strong>8-dimension evaluation rubric</strong> grounded in multimedia learning theory covering both text quality and visual quality. Evaluation of five frontier LLMs shows Gemini 3.0 Pro Preview achieves the highest overall score (4.40/5.0), while Kimi-K2.5 offers the best cost-efficiency (4.07 at $0.15/problem). Workflow ablation confirms our sequential anchoring improves Visual Consistency by 12% over a fully parallel baseline at 17.5% lower cost. Human evaluation with 20 expert raters validates LLM-as-judge reliability for objective dimensions (ρ=0.89 for logical coherence, ρ=0.83 for diagram-problem alignment), while revealing limitations on subjective visual assessment.
+                                The benchmark comprises <strong>230 problems</strong> spanning five subjects and three grade levels, a standardized generation protocol with sequential anchoring to enforce cross-diagram visual consistency, and an <strong>8-dimension evaluation rubric</strong> grounded in multimedia learning theory covering both text and visual quality. Evaluation of ten LLMs reveals a wide performance spread: Gemini 3.0 Pro Preview leads at <strong>87.8%</strong>, while Kimi-K2.5 achieves the best cost-efficiency (80.8% at $0.12/problem). Workflow ablation confirms sequential anchoring improves Visual Consistency by <strong>13%</strong> at <strong>94% lower cost</strong>. Human evaluation with 20 expert raters validates LLM-as-judge reliability for objective dimensions (ρ ≥ 0.83) while revealing limitations on subjective visual assessment.
                             </p>
                         </div>
                     </div>
@@ -281,67 +784,36 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h2 class="title is-3">How EduIllustrate Works?</h2>
-                        <p>We introduce <strong>EduIllustrate</strong>: a four-stage agentic pipeline that decomposes illustrated explanation generation into sequential stages addressing specific multimodal content creation challenges. The pipeline introduces a sequential anchoring strategy where Scene 1 undergoes full implementation planning to establish visual conventions, while subsequent scenes generate in parallel conditioned on Scene 1's code, enforcing cross-diagram consistency.</p>
-                        <br>
-                        <img src="paper/fig/fig1.png" alt="Pipeline Overview" width="90%"/>
-                        <h2 class="subtitle has-text-centered">
-                            Figure 2: EduIllustrate pipeline overview. Scene 1 undergoes full sequential processing (outline → implementation planning → code generation); Scenes 2–N skip implementation planning and generate in parallel, each conditioned on Scene 1's code as a visual anchor.
-                        </h2>
+                        <h2 class="title is-3">The EduIllustrate Benchmark</h2>
+                        <p><strong>EduIllustrate</strong> is a benchmark for evaluating LLMs on interleaved text-diagram explanation generation for K-12 STEM problems. It comprises three components:</p>
                         <br>
                         <div class="content has-text-left">
-                            <p><strong>Stage 1: Structured Outline Generation.</strong> Transforms raw K-12 STEM problems into structured outlines interleaving textual explanation blocks with visual scene specifications.</p>
+                            <p><strong>① Problem Set (230 problems).</strong> Curated from K12-Vista, spanning three grade levels (elementary, middle, high school) and five STEM subjects (mathematics, physics, chemistry, biology, geography). Problems are selected for diagram appropriateness, solution clarity, and topic diversity.</p>
 
-                            <p><strong>Stage 2: Scene Implementation Planning.</strong> Applies exclusively to Scene 1; Scenes 2–N skip this stage. Converts high-level Scene 1 specifications into detailed implementation plans, establishing visual conventions that all subsequent scenes inherit.</p>
+                            <p><strong>② Standardized Generation Protocol.</strong> A four-stage pipeline that all evaluated models follow, ensuring fair comparison. The protocol introduces <em>sequential anchoring</em>: Scene 1 undergoes full implementation planning to establish visual conventions (color scheme, label formatting, spatial layout), while subsequent scenes generate in parallel conditioned on Scene 1's code, enforcing cross-diagram consistency without global optimization.</p>
 
-                            <p><strong>Stage 3: Manim Code Generation and Rendering.</strong> Scene 1 generates code conditioned on its implementation plan. Scenes 2–N generate in parallel, each receiving Scene 1's code as context to maintain visual consistency.</p>
-
-                            <p><strong>Stage 4: Markdown Assembly.</strong> Integrates rendered PNG diagrams with textual explanations into a structured Markdown document, with optional translation to Chinese.</p>
+                            <p><strong>③ 8-Dimension Evaluation Rubric.</strong> Grounded in multimedia learning theory (Cognitive Load Theory, Dual Coding Theory, Multimedia Learning Principle), jointly covering text quality (Correctness &amp; Completeness, Logical Coherence, Pedagogical Effectiveness, Typographic Clarity) and visual quality (Diagram–Problem Alignment, Element Layout Quality, Visual Consistency, Text–Diagram Coordination).</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benchmark Statistics -->
-    <section class="hero is-small is-light">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <h2 class="title is-3 has-text-centered">Benchmark Statistics</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-3">
-                        <div class="stat-box">
-                            <div class="stat-number">118</div>
-                            <div class="stat-label">Problems</div>
-                        </div>
-                    </div>
-                    <div class="column is-3">
-                        <div class="stat-box">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Grade Levels</div>
-                        </div>
-                    </div>
-                    <div class="column is-3">
-                        <div class="stat-box">
-                            <div class="stat-number">5</div>
-                            <div class="stat-label">Subjects</div>
-                        </div>
-                    </div>
-                    <div class="column is-3">
-                        <div class="stat-box">
-                            <div class="stat-number">8</div>
-                            <div class="stat-label">Dimensions</div>
-                        </div>
-                    </div>
-                </div>
-                <br><br>
-                <div class="columns is-centered">
-                    <div class="column is-two-thirds has-text-centered">
-                        <img src="paper/fig/knowledge_categories.png" alt="Knowledge Categories" width="100%"/>
-                        <h2 class="subtitle">
-                            Figure 3: Knowledge point categories by subject. Values in parentheses indicate the number of unique knowledge points mapped in each category.
+                        <br>
+                        <img src="paper/fig/framework.png" alt="EduIllustrate Overview" width="95%"/>
+                        <h2 class="subtitle has-text-centered">
+                            Figure 2: Overview of EduIllustrate. Given a K-12 STEM problem, the generation protocol produces a structured explanation document through four stages. The resulting output is evaluated using an 8-dimension rubric validated against human expert raters.
                         </h2>
+                        <br>
+                        <img src="paper/fig/fig1.png" alt="Generation Protocol" width="95%"/>
+                        <h2 class="subtitle has-text-centered">
+                            Figure 3: Generation protocol overview. Scene 1 undergoes full sequential processing (outline → implementation planning → code generation); Scenes 2–N skip implementation planning and generate in parallel, each conditioned on Scene 1's code as a visual anchor.
+                        </h2>
+
+                        <br><br>
+                        <div class="columns is-centered">
+                            <div class="column has-text-centered">
+                                <img src="paper/fig/knowledge_categories.png" alt="Knowledge Categories" width="100%"/>
+                                <h2 class="subtitle has-text-centered">
+                                    Figure 4: Topic categories by subject. Values in parentheses indicate the number of unique topics mapped in each category.
+                                </h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -355,12 +827,11 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h2 class="title is-3">Experimental Results</h2>
-                        <p>We evaluate five frontier LLMs on the EduIllustrate benchmark, analyzing performance across eight evaluation dimensions, five subjects, and three grade levels.</p>
+                        <p>We evaluate <strong>ten LLMs</strong> on the EduIllustrate benchmark, analyzing performance across eight evaluation dimensions, five subjects, and three grade levels.</p>
                         <br><br>
 
-                        <!-- Main Results Table -->
                         <h3 class="title is-4">Overall Performance</h3>
-                        <table class="table is-fullwidth is-striped">
+                        <table class="table is-fullwidth is-striped" style="font-size:0.9rem;">
                             <thead>
                                 <tr>
                                     <th>Model</th>
@@ -369,84 +840,155 @@
                                     <th>PE</th>
                                     <th>TC</th>
                                     <th>DPA</th>
-                                    <th>TDC</th>
                                     <th>ELQ</th>
                                     <th>VC</th>
+                                    <th>TDC</th>
                                     <th>Overall</th>
+                                    <th>Success</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Claude Sonnet 4.5</td>
-                                    <td>4.63</td>
-                                    <td>4.59</td>
-                                    <td>3.51</td>
-                                    <td>4.61</td>
-                                    <td>4.58</td>
-                                    <td>4.61</td>
-                                    <td>4.35</td>
-                                    <td>4.45</td>
-                                    <td>4.29</td>
-                                </tr>
                                 <tr style="background-color: #e8f4f8;">
                                     <td><strong>Gemini 3.0 Pro Preview</strong></td>
-                                    <td><strong>4.68</strong></td>
-                                    <td><strong>4.72</strong></td>
-                                    <td><strong>3.91</strong></td>
-                                    <td><strong>4.73</strong></td>
-                                    <td><strong>4.69</strong></td>
-                                    <td><strong>4.69</strong></td>
-                                    <td><strong>4.47</strong></td>
-                                    <td><strong>4.42</strong></td>
-                                    <td><strong style="color: blue;">4.40</strong></td>
+                                    <td><strong>87.6%</strong></td>
+                                    <td><strong>94.8%</strong></td>
+                                    <td><strong>78.4%</strong></td>
+                                    <td><strong>98.4%</strong></td>
+                                    <td><strong>87.4%</strong></td>
+                                    <td><strong>84.6%</strong></td>
+                                    <td>89.4%</td>
+                                    <td><strong>92.6%</strong></td>
+                                    <td><strong style="color: blue;">87.8%</strong></td>
+                                    <td>97.4%</td>
+                                </tr>
+                                <tr style="background-color: #ffffcc;">
+                                    <td><strong>Kimi-K2.5</strong></td>
+                                    <td>85.2%</td>
+                                    <td>92.2%</td>
+                                    <td>73.4%</td>
+                                    <td>97.4%</td>
+                                    <td>71.4%</td>
+                                    <td>68.8%</td>
+                                    <td>88.6%</td>
+                                    <td>86.2%</td>
+                                    <td>80.8%</td>
+                                    <td><strong>98.3%</strong></td>
                                 </tr>
                                 <tr>
-                                    <td>GPT-5</td>
-                                    <td>4.44</td>
-                                    <td>4.59</td>
-                                    <td>3.33</td>
-                                    <td>4.56</td>
-                                    <td>4.51</td>
-                                    <td>4.59</td>
-                                    <td>4.13</td>
-                                    <td>4.29</td>
-                                    <td>4.03</td>
+                                    <td>Qwen3.5-397B</td>
+                                    <td><strong>88.6%</strong></td>
+                                    <td>94.4%</td>
+                                    <td>70.2%</td>
+                                    <td>91.2%</td>
+                                    <td>49.2%</td>
+                                    <td>61.8%</td>
+                                    <td>83.6%</td>
+                                    <td>67.8%</td>
+                                    <td>72.0%</td>
+                                    <td>93.9%</td>
                                 </tr>
                                 <tr>
-                                    <td>Kimi-K2.5</td>
-                                    <td>4.64</td>
-                                    <td>4.59</td>
-                                    <td>3.32</td>
-                                    <td>4.54</td>
-                                    <td>4.58</td>
-                                    <td>4.59</td>
-                                    <td>4.26</td>
-                                    <td>4.31</td>
-                                    <td>4.07</td>
+                                    <td>Qwen3.5-122B</td>
+                                    <td>83.4%</td>
+                                    <td>92.0%</td>
+                                    <td>71.2%</td>
+                                    <td>93.4%</td>
+                                    <td>42.8%</td>
+                                    <td>58.0%</td>
+                                    <td>84.6%</td>
+                                    <td>59.4%</td>
+                                    <td>68.6%</td>
+                                    <td>94.8%</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen 3.5-35B</td>
-                                    <td>4.29</td>
-                                    <td>4.09</td>
-                                    <td>2.54</td>
-                                    <td>4.06</td>
-                                    <td>4.20</td>
-                                    <td>4.14</td>
-                                    <td>3.63</td>
-                                    <td>3.79</td>
-                                    <td>3.38</td>
+                                    <td>83.4%</td>
+                                    <td>89.0%</td>
+                                    <td>69.2%</td>
+                                    <td>87.8%</td>
+                                    <td>39.6%</td>
+                                    <td>53.6%</td>
+                                    <td>88.6%</td>
+                                    <td>55.0%</td>
+                                    <td>65.8%</td>
+                                    <td>83.9%</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-5</td>
+                                    <td>59.0%</td>
+                                    <td>66.6%</td>
+                                    <td>44.0%</td>
+                                    <td>74.2%</td>
+                                    <td>44.4%</td>
+                                    <td>59.2%</td>
+                                    <td><strong>92.0%</strong></td>
+                                    <td>63.8%</td>
+                                    <td>58.0%</td>
+                                    <td>89.6%</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude Sonnet 4.5</td>
+                                    <td>55.2%</td>
+                                    <td>58.8%</td>
+                                    <td>47.6%</td>
+                                    <td>77.4%</td>
+                                    <td>42.6%</td>
+                                    <td>64.0%</td>
+                                    <td>84.2%</td>
+                                    <td>68.8%</td>
+                                    <td>57.8%</td>
+                                    <td>96.1%</td>
+                                </tr>
+                                <tr>
+                                    <td>Mistral-Large-3</td>
+                                    <td>39.8%</td>
+                                    <td>40.0%</td>
+                                    <td>32.4%</td>
+                                    <td>82.0%</td>
+                                    <td>24.6%</td>
+                                    <td>47.6%</td>
+                                    <td>83.2%</td>
+                                    <td>45.0%</td>
+                                    <td>43.0%</td>
+                                    <td>74.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>Mistral-Small-4</td>
+                                    <td>39.8%</td>
+                                    <td>38.0%</td>
+                                    <td>30.2%</td>
+                                    <td>71.6%</td>
+                                    <td>23.8%</td>
+                                    <td>49.2%</td>
+                                    <td>81.6%</td>
+                                    <td>39.4%</td>
+                                    <td>40.8%</td>
+                                    <td>70.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>Ministral-3-14B</td>
+                                    <td>37.6%</td>
+                                    <td>37.0%</td>
+                                    <td>31.0%</td>
+                                    <td>77.6%</td>
+                                    <td>23.8%</td>
+                                    <td>49.6%</td>
+                                    <td><strong>92.4%</strong></td>
+                                    <td>35.4%</td>
+                                    <td>41.0%</td>
+                                    <td>17.4%</td>
                                 </tr>
                             </tbody>
                         </table>
                         <h2 class="subtitle has-text-centered">
-                            Table 1: Model performance across eight dimensions. CC: Correctness & Completeness, LC: Logical Coherence, PE: Pedagogical Effectiveness, TC: Typographic Clarity, DPA: Diagram-Problem Alignment, TDC: Text-Diagram Coordination, ELQ: Element Layout Quality, VC: Visual Consistency. Gemini 3.0 Pro Preview achieves the highest overall score (4.40/5.0).
+                            Table 1: Model performance on EduIllustrate (n=230, 0–100% scale). CC: Correctness &amp; Completeness, LC: Logical Coherence, PE: Pedagogical Effectiveness, TC: Typographic Clarity, DPA: Diagram–Problem Alignment, ELQ: Element Layout Quality, VC: Visual Consistency, TDC: Text–Diagram Coordination. Overall: geometric mean. Success: pipeline success rate. Bold indicates best per column.
                         </h2>
 
                         <br><br>
 
                         <!-- Subject and Grade Level Performance -->
                         <h3 class="title is-4">Performance by Subject and Grade Level</h3>
-                        <table class="table is-fullwidth is-striped">
+                        <table class="table is-fullwidth is-striped" style="font-size:0.9rem;">
                             <thead>
                                 <tr>
                                     <th>Model</th>
@@ -463,64 +1005,132 @@
                             <tbody>
                                 <tr style="background-color: #e8f4f8;">
                                     <td><strong>Gemini 3.0 Pro Preview</strong></td>
-                                    <td>4.42</td>
-                                    <td>4.44</td>
-                                    <td>4.48</td>
-                                    <td>4.43</td>
-                                    <td>4.07</td>
-                                    <td style="border-left: 2px solid #ddd;">4.27</td>
-                                    <td>4.41</td>
-                                    <td><strong>4.42</strong></td>
+                                    <td><strong>89.4%</strong></td>
+                                    <td><strong>88.6%</strong></td>
+                                    <td><strong>87.9%</strong></td>
+                                    <td><strong>85.7%</strong></td>
+                                    <td><strong>83.8%</strong></td>
+                                    <td style="border-left: 2px solid #ddd;"><strong>86.9%</strong></td>
+                                    <td><strong>88.0%</strong></td>
+                                    <td><strong>87.8%</strong></td>
+                                </tr>
+                                <tr style="background-color: #ffffcc;">
+                                    <td><strong>Kimi-K2.5</strong></td>
+                                    <td>83.9%</td>
+                                    <td>80.6%</td>
+                                    <td>79.8%</td>
+                                    <td>78.9%</td>
+                                    <td>75.3%</td>
+                                    <td style="border-left: 2px solid #ddd;">80.0%</td>
+                                    <td>80.3%</td>
+                                    <td>81.4%</td>
                                 </tr>
                                 <tr>
-                                    <td>Kimi-K2.5</td>
-                                    <td>4.17</td>
-                                    <td>4.02</td>
-                                    <td>4.13</td>
-                                    <td>4.17</td>
-                                    <td>3.71</td>
-                                    <td style="border-left: 2px solid #ddd;">3.97</td>
-                                    <td>4.03</td>
-                                    <td>4.13</td>
+                                    <td>Qwen3.5-397B</td>
+                                    <td>75.0%</td>
+                                    <td>72.6%</td>
+                                    <td>70.7%</td>
+                                    <td>68.3%</td>
+                                    <td>67.3%</td>
+                                    <td style="border-left: 2px solid #ddd;">76.3%</td>
+                                    <td>72.5%</td>
+                                    <td>70.5%</td>
                                 </tr>
                                 <tr>
-                                    <td>Claude Sonnet 4.5</td>
-                                    <td>3.17</td>
-                                    <td>3.15</td>
-                                    <td>3.37</td>
-                                    <td>3.06</td>
-                                    <td>2.65</td>
-                                    <td style="border-left: 2px solid #ddd;">3.32</td>
-                                    <td>3.04</td>
-                                    <td>3.17</td>
-                                </tr>
-                                <tr>
-                                    <td>GPT-5</td>
-                                    <td>3.16</td>
-                                    <td>3.05</td>
-                                    <td>3.81</td>
-                                    <td>3.03</td>
-                                    <td>2.55</td>
-                                    <td style="border-left: 2px solid #ddd;">3.85</td>
-                                    <td>3.09</td>
-                                    <td>3.00</td>
+                                    <td>Qwen3.5-122B</td>
+                                    <td>73.0%</td>
+                                    <td>68.9%</td>
+                                    <td>66.8%</td>
+                                    <td>63.4%</td>
+                                    <td>63.0%</td>
+                                    <td style="border-left: 2px solid #ddd;">74.2%</td>
+                                    <td>69.2%</td>
+                                    <td>67.0%</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen 3.5-35B</td>
-                                    <td>3.19</td>
-                                    <td>2.83</td>
-                                    <td>3.18</td>
-                                    <td>3.05</td>
-                                    <td>2.25</td>
-                                    <td style="border-left: 2px solid #ddd;">3.64</td>
-                                    <td>2.93</td>
-                                    <td>2.90</td>
+                                    <td>69.2%</td>
+                                    <td>64.6%</td>
+                                    <td>65.0%</td>
+                                    <td>61.5%</td>
+                                    <td>61.8%</td>
+                                    <td style="border-left: 2px solid #ddd;">73.4%</td>
+                                    <td>65.8%</td>
+                                    <td>63.7%</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-5</td>
+                                    <td>60.6%</td>
+                                    <td>58.5%</td>
+                                    <td>57.3%</td>
+                                    <td>55.1%</td>
+                                    <td>50.5%</td>
+                                    <td style="border-left: 2px solid #ddd;">68.7%</td>
+                                    <td>57.2%</td>
+                                    <td>56.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude Sonnet 4.5</td>
+                                    <td>62.1%</td>
+                                    <td>59.9%</td>
+                                    <td>54.6%</td>
+                                    <td>53.2%</td>
+                                    <td>49.5%</td>
+                                    <td style="border-left: 2px solid #ddd;">64.2%</td>
+                                    <td>56.7%</td>
+                                    <td>57.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Mistral-Large-3</td>
+                                    <td>46.4%</td>
+                                    <td>42.1%</td>
+                                    <td>42.6%</td>
+                                    <td>37.9%</td>
+                                    <td>39.1%</td>
+                                    <td style="border-left: 2px solid #ddd;">47.2%</td>
+                                    <td>44.4%</td>
+                                    <td>40.7%</td>
+                                </tr>
+                                <tr>
+                                    <td>Mistral-Small-4</td>
+                                    <td>45.2%</td>
+                                    <td>39.4%</td>
+                                    <td>38.5%</td>
+                                    <td>37.2%</td>
+                                    <td>37.0%</td>
+                                    <td style="border-left: 2px solid #ddd;">42.4%</td>
+                                    <td>41.3%</td>
+                                    <td>39.9%</td>
+                                </tr>
+                                <tr>
+                                    <td>Ministral-3-14B</td>
+                                    <td>44.9%</td>
+                                    <td>41.0%</td>
+                                    <td>36.2%</td>
+                                    <td>29.1%</td>
+                                    <td>35.1%</td>
+                                    <td style="border-left: 2px solid #ddd;">35.3%</td>
+                                    <td>42.9%</td>
+                                    <td>40.5%</td>
                                 </tr>
                             </tbody>
                         </table>
                         <h2 class="subtitle has-text-centered">
-                            Table 2: Model performance by subject (left columns) and grade level (right columns). Mathematics and physics consistently achieve highest scores. Gemini and Kimi maintain consistency across grade levels, while other models degrade substantially on high school problems.
+                            Table 2: Overall scores (geometric mean, 0–100%) by subject and grade level. Mathematics consistently achieves highest scores; geography scores lowest. Elementary problems yield higher scores than high school for most models.
                         </h2>
+
+                        <br><br>
+
+                        <!-- Radar Chart -->
+                        <h3 class="title is-4">Performance Overview (Radar Chart)</h3>
+                        <div class="columns is-centered">
+                            <div class="column has-text-centered">
+                                <img src="paper/fig/fig_radar.png" alt="Radar Chart" width="100%"/>
+                                <h2 class="subtitle has-text-centered">
+                                    Figure 3: Radar charts of all 10 models. (a) By dimension: 8 evaluation dimensions. (b) By subject: overall scores on each of the five subjects. (c) By grade level: overall scores at each grade level.
+                                </h2>
+                            </div>
+                        </div>
 
                         <br><br>
 
@@ -588,6 +1198,15 @@
                         <h2 class="subtitle has-text-centered">
                             Table 3: Human-AI agreement and inter-rater reliability (30 explanations, 20 raters). Logical Coherence and Diagram-Problem Alignment achieve strong agreement (ρ ≥ 0.80), validating LLM-as-judge for objective dimensions. Visual dimensions show weak reliability, indicating LLMs struggle with low-level visual artifacts.
                         </h2>
+                        <br>
+                        <div class="columns is-centered">
+                            <div class="column is-two-thirds has-text-centered">
+                                <img src="paper/fig/human_evaluation.png" alt="Human Evaluation" width="100%"/>
+                                <h2 class="subtitle">
+                                    Figure 7: Human evaluation setup and annotation interface. 20 expert raters (15 STEM graduate students and 5 education doctoral students) evaluated 30 stratified random sampled explanations across 7 dimensions.
+                                </h2>
+                            </div>
+                        </div>
 
                         <br><br>
 
@@ -599,84 +1218,49 @@
                                     <th>Workflow</th>
                                     <th>Tokens (In/Out)</th>
                                     <th>Cost ($)</th>
-                                    <th>Latency (min)</th>
-                                    <th>VC</th>
+                                    <th>Visual Consistency</th>
                                     <th>Overall</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr style="background-color: #e8f4f8;">
                                     <td><strong>Ours (Sequential Anchoring)</strong></td>
-                                    <td>75.8K / 68.1K</td>
-                                    <td>0.97</td>
-                                    <td>4.94</td>
-                                    <td><strong>4.42</strong></td>
-                                    <td><strong style="color: blue;">4.40</strong></td>
+                                    <td>46.8K / 37.1K</td>
+                                    <td>0.49</td>
+                                    <td><strong>89.4%</strong></td>
+                                    <td><strong style="color: blue;">87.8%</strong></td>
                                 </tr>
                                 <tr>
                                     <td>All-Parallel Baseline</td>
-                                    <td>100.3K / 78.5K</td>
-                                    <td>1.14 (+17.5%)</td>
-                                    <td>7.32 (+48%)</td>
-                                    <td>3.89 (-12%)</td>
-                                    <td>4.29</td>
+                                    <td>95.5K / 71.4K (+104%)</td>
+                                    <td>0.94 (+92%)</td>
+                                    <td>77.8% (−13%)</td>
+                                    <td>85.8%</td>
                                 </tr>
                             </tbody>
                         </table>
                         <h2 class="subtitle has-text-centered">
-                            Table 4: Workflow comparison using Gemini 3.0 Pro Preview on 118 problems. Our sequential anchoring workflow achieves superior visual consistency at 17.5% lower cost and 48% lower latency.
+                            Table 4: Workflow comparison using Gemini 3.0 Pro Preview on 50 problems. Sequential anchoring achieves superior visual consistency at 92% lower cost.
                         </h2>
+
+                        <br>
+                        <div class="columns is-centered">
+                            <div class="column is-two-thirds has-text-centered">
+                                <img src="paper/fig/fig_workflow_cost.png" alt="Workflow Cost Breakdown" width="100%"/>
+                                <h2 class="subtitle">
+                                    Figure 4: Per-stage cost comparison. The all-parallel approach incurs substantially higher Implementation Plans cost due to independent per-scene planning.
+                                </h2>
+                            </div>
+                        </div>
 
                         <br><br>
 
                         <!-- Visual Consistency Comparison -->
                         <div class="box" style="background-color: #f8f9fa;">
                             <h4 class="title is-5 has-text-centered" style="margin-bottom: 1rem;">Visual Consistency Comparison</h4>
-
-                            <div style="margin-bottom: 2rem;">
-                                <p class="has-text-centered has-text-weight-bold" style="color: #28a745; margin-bottom: 0.5rem;">Ours (Sequential Anchoring) — Visual Consistency = 4.42</p>
-                                <div class="columns is-mobile">
-                                    <div class="column is-one-third">
-                                        <figure class="image">
-                                            <img src="paper/fig/doc1_scene1.png" alt="Sequential Scene 1">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-one-third">
-                                        <figure class="image">
-                                            <img src="paper/fig/doc1_scene2.png" alt="Sequential Scene 2">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-one-third">
-                                        <figure class="image">
-                                            <img src="paper/fig/doc1_scene3.png" alt="Sequential Scene 3">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="margin-bottom: 1rem;">
-                                <p class="has-text-centered has-text-weight-bold" style="color: #dc3545; margin-bottom: 0.5rem;">All-Parallel Baseline — Visual Consistency = 3.89</p>
-                                <div class="columns is-mobile">
-                                    <div class="column is-one-third">
-                                        <figure class="image">
-                                            <img src="paper/fig/doc2_scene1.png" alt="Parallel Scene 1">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-one-third">
-                                        <figure class="image">
-                                            <img src="paper/fig/doc2_scene2.png" alt="Parallel Scene 2">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-one-third">
-                                        <figure class="image">
-                                            <img src="paper/fig/doc2_scene3.png" alt="Parallel Scene 3">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <img src="paper/fig/case_study.png" alt="Visual Consistency Case Study" width="100%"/>
                             <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                                Figure 4: Visual consistency comparison between our sequential anchoring workflow (top) and the all-parallel baseline (bottom) on the same problem (four-pyramid P-ABCD). In our workflow, Scene 1 and Scene 2 render the identical pyramid structure—Scene 2 simply highlights the PAC face on top of the same base diagram—maintaining full geometric and stylistic consistency. In the all-parallel baseline, the pyramid in Scene 1 and Scene 2 is drawn differently, breaking visual coherence and forcing the reader to reconcile two inconsistent representations of the same object.
+                                Figure 5: Visual consistency comparison between our sequential anchoring workflow (top, VC=89.4%) and the all-parallel baseline (bottom, VC=77.8%) on the same problem (four-pyramid P-ABCD). Our workflow maintains full geometric and stylistic consistency across scenes; the all-parallel baseline draws the pyramid differently in each scene, breaking visual coherence.
                             </h2>
                         </div>
 
@@ -684,7 +1268,7 @@
 
                         <!-- Cost Analysis Table -->
                         <h3 class="title is-4">Cost and Efficiency Analysis</h3>
-                        <table class="table is-fullwidth is-striped">
+                        <table class="table is-fullwidth is-striped" style="font-size:0.9rem;">
                             <thead>
                                 <tr>
                                     <th>Model</th>
@@ -693,59 +1277,93 @@
                                     <th>Input ($/M)</th>
                                     <th>Output ($/M)</th>
                                     <th>Avg Cost ($)</th>
-                                    <th>Latency (min)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Claude Sonnet 4.5</td>
-                                    <td>90,439</td>
-                                    <td>79,035</td>
-                                    <td>3.00</td>
-                                    <td>15.00</td>
-                                    <td>1.46</td>
-                                    <td>6.92</td>
+                                <tr style="background-color: #e8f4f8;">
+                                    <td><strong>Gemini 3.0 Pro Preview</strong></td>
+                                    <td>46,821</td>
+                                    <td>37,096</td>
+                                    <td>0.86</td>
+                                    <td>12.04</td>
+                                    <td>0.49</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini 3.0 Pro Preview</td>
-                                    <td>75,802</td>
-                                    <td>68,093</td>
-                                    <td>2.00</td>
-                                    <td>12.00</td>
-                                    <td>0.97</td>
-                                    <td>4.94</td>
+                                    <td>Claude Sonnet 4.5</td>
+                                    <td>71,889</td>
+                                    <td>23,964</td>
+                                    <td>0.65</td>
+                                    <td>15.10</td>
+                                    <td>0.41</td>
                                 </tr>
                                 <tr>
                                     <td>GPT-5</td>
-                                    <td>66,420</td>
-                                    <td>42,677</td>
-                                    <td>1.25</td>
+                                    <td>34,568</td>
+                                    <td>10,178</td>
+                                    <td>0.74</td>
                                     <td>10.00</td>
-                                    <td>0.51</td>
-                                    <td>7.67</td>
+                                    <td>0.13</td>
                                 </tr>
                                 <tr style="background-color: #ffffcc;">
                                     <td><strong>Kimi-K2.5 (Best Cost-Efficiency)</strong></td>
-                                    <td>58,689</td>
-                                    <td>54,893</td>
+                                    <td>44,537</td>
+                                    <td>43,628</td>
                                     <td>0.45</td>
-                                    <td>2.20</td>
-                                    <td><strong style="color: green;">0.15</strong></td>
-                                    <td>6.34</td>
+                                    <td>2.22</td>
+                                    <td><strong style="color: green;">0.12</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen3.5-397B</td>
+                                    <td>39,937</td>
+                                    <td>27,285</td>
+                                    <td>0.60</td>
+                                    <td>3.60</td>
+                                    <td>0.12</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen3.5-122B</td>
+                                    <td>39,487</td>
+                                    <td>29,262</td>
+                                    <td>0.40</td>
+                                    <td>3.20</td>
+                                    <td>0.11</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen 3.5-35B</td>
-                                    <td>61,883</td>
-                                    <td>37,737</td>
-                                    <td>0.16</td>
-                                    <td>1.30</td>
+                                    <td>37,269</td>
+                                    <td>24,943</td>
+                                    <td>0.25</td>
+                                    <td>2.00</td>
                                     <td>0.06</td>
-                                    <td>5.34</td>
+                                </tr>
+                                <tr>
+                                    <td>Mistral-Large-3</td>
+                                    <td>44,600</td>
+                                    <td>15,081</td>
+                                    <td>0.42</td>
+                                    <td>1.50</td>
+                                    <td>0.04</td>
+                                </tr>
+                                <tr>
+                                    <td>Mistral-Small-4</td>
+                                    <td>54,195</td>
+                                    <td>17,833</td>
+                                    <td>0.13</td>
+                                    <td>0.60</td>
+                                    <td>0.02</td>
+                                </tr>
+                                <tr>
+                                    <td>Ministral-3-14B</td>
+                                    <td>50,488</td>
+                                    <td>18,128</td>
+                                    <td>0.17</td>
+                                    <td>0.20</td>
+                                    <td>0.01</td>
                                 </tr>
                             </tbody>
                         </table>
                         <h2 class="subtitle has-text-centered">
-                            Table 5: Cost and latency analysis per problem (118 problems, average values). Kimi-K2.5 offers the best cost-efficiency at $0.15/problem.
+                            Table 5: Cost analysis per problem (n=230, average values). Kimi-K2.5 offers the best cost-efficiency at $0.12/problem with 80.8% overall score.
                         </h2>
 
                         <br><br>
@@ -753,7 +1371,16 @@
                             <div class="column is-two-thirds has-text-centered">
                                 <img src="paper/fig/fig_cost_quality.png" alt="Cost vs Quality" width="100%"/>
                                 <h2 class="subtitle">
-                                    Figure 5: Cost vs. quality trade-off across five models. Kimi-K2.5 offers the best cost-efficiency, achieving 4.07 at $0.15/problem.
+                                    Figure 8: Cost vs. quality trade-off across ten models. Kimi-K2.5 offers the best cost-efficiency, achieving 80.8% at $0.12/problem.
+                                </h2>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="columns is-centered">
+                            <div class="column has-text-centered">
+                                <img src="paper/fig/fig_cost_breakdown.png" alt="Cost Breakdown" width="100%"/>
+                                <h2 class="subtitle has-text-centered">
+                                    Figure 9: Per-stage cost breakdown across ten models. Scene Rendering dominates cost for all models.
                                 </h2>
                             </div>
                         </div>
@@ -769,11 +1396,11 @@
             <div class="container is-max-desktop">
                 <h2 class="title is-3 has-text-centered">Key Contributions</h2>
                 <div class="content has-text-left" style="font-size: 1.1rem;">
-                    <div class="contribution-item">An automated four-stage pipeline for generating diagram-rich K-12 STEM explanations with explicit geometric accuracy and visual consistency constraints</div>
-                    <div class="contribution-item">A curated benchmark of 118 problems across 3 grade levels and 5 subjects for standardized multimodal evaluation</div>
-                    <div class="contribution-item">An 8-dimension evaluation rubric with automated and human protocols grounded in educational psychology</div>
-                    <div class="contribution-item">Comparative study of five frontier LLMs identifying model-specific strengths and failure modes</div>
-                    <div class="contribution-item">Validation of LLM-as-judge reliability for multimodal content through correlation analysis with human expert ratings</div>
+                    <div class="contribution-item"><strong>EduIllustrateBench</strong>: a curated benchmark of 230 problems across 5 subjects and 3 grade levels for standardized multimodal educational content evaluation</div>
+                    <div class="contribution-item">A <strong>standardized generation protocol</strong> with sequential anchoring that improves Visual Consistency by 13% over fully parallel generation at 94% lower cost</div>
+                    <div class="contribution-item">An <strong>8-dimension evaluation rubric</strong> grounded in multimedia learning theory, with automated and human evaluation protocols</div>
+                    <div class="contribution-item">A <strong>comprehensive empirical study</strong> of ten LLMs spanning proprietary and open-weight models, revealing a 47-point performance spread (41.0%–87.8%)</div>
+                    <div class="contribution-item">Human evaluation with 20 expert raters validating LLM-as-judge reliability (ρ ≥ 0.83 for objective dimensions) and identifying limitations on visual assessment</div>
                 </div>
             </div>
         </div>
@@ -786,8 +1413,8 @@
                 <h2 class="title is-3 has-text-centered">Citation</h2>
                 <div class="content">
                     <pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 5px;"><code>@article{eduillustrate2025,
-  title={EduIllustrate: An Agentic Pipeline for Generating Diagram-Rich Explanations of K-12 STEM Problems},
-  author={Author Names},
+  title={EduIllustrate: Towards Scalable Automated Generation Of Multimodal Educational Content},
+  author={Shuzhen Bi and Mingzi Zhang and Zhuoxuan Li and Xiaolong Wang and Keqian Li and Aimin Zhou},
   journal={Conference/Journal Name},
   year={2025}
 }</code></pre>
@@ -807,40 +1434,30 @@
     </footer>
 
     <script>
-        const galleryRows = [[{"folder": "doc_problem_100_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "100"}, {"folder": "doc_problem_105_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "105"}, {"folder": "doc_problem_116_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "116"}, {"folder": "doc_problem_124_physics_g9_gemini3propreview", "images": ["scene1.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "124"}, {"folder": "doc_problem_129_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "129"}, {"folder": "doc_problem_134_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "134"}, {"folder": "doc_problem_142_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "142"}, {"folder": "doc_problem_148_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "148"}, {"folder": "doc_problem_159_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "159"}, {"folder": "doc_problem_170_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "170"}, {"folder": "doc_problem_175_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "175"}, {"folder": "doc_problem_17_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "17"}, {"folder": "doc_problem_188_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "188"}, {"folder": "doc_problem_196_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png", "scene5.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "196"}, {"folder": "doc_problem_202_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "202"}, {"folder": "doc_problem_209_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "209"}, {"folder": "doc_problem_21_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "21"}, {"folder": "doc_problem_22_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "22"}, {"folder": "doc_problem_28_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "28"}, {"folder": "doc_problem_35_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "35"}, {"folder": "doc_problem_45_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "45"}, {"folder": "doc_problem_4_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "4"}, {"folder": "doc_problem_61_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "61"}, {"folder": "doc_problem_70_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "70"}, {"folder": "doc_problem_81_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "81"}, {"folder": "doc_problem_91_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "91"}, {"folder": "doc_problem_97_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "97"}], [{"folder": "doc_problem_101_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "101"}, {"folder": "doc_problem_106_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "106"}, {"folder": "doc_problem_120_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "120"}, {"folder": "doc_problem_125_physics_g9_gemini3propreview", "images": ["scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "125"}, {"folder": "doc_problem_12_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "12"}, {"folder": "doc_problem_138_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "138"}, {"folder": "doc_problem_143_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "143"}, {"folder": "doc_problem_153_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png", "scene5.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "153"}, {"folder": "doc_problem_164_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "164"}, {"folder": "doc_problem_171_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "171"}, {"folder": "doc_problem_176_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "176"}, {"folder": "doc_problem_180_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "180"}, {"folder": "doc_problem_18_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "18"}, {"folder": "doc_problem_197_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "197"}, {"folder": "doc_problem_203_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "203"}, {"folder": "doc_problem_214_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "214"}, {"folder": "doc_problem_221_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "221"}, {"folder": "doc_problem_23_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "23"}, {"folder": "doc_problem_29_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "29"}, {"folder": "doc_problem_36_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "36"}, {"folder": "doc_problem_46_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "46"}, {"folder": "doc_problem_50_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "50"}, {"folder": "doc_problem_63_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "63"}, {"folder": "doc_problem_71_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "71"}, {"folder": "doc_problem_84_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "84"}, {"folder": "doc_problem_93_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "93"}, {"folder": "doc_problem_98_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "98"}], [{"folder": "doc_problem_102_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "102"}, {"folder": "doc_problem_108_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "108"}, {"folder": "doc_problem_121_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "121"}, {"folder": "doc_problem_126_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "126"}, {"folder": "doc_problem_130_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "130"}, {"folder": "doc_problem_139_biology_g12_gemini3propreview", "images": ["scene1.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "139"}, {"folder": "doc_problem_144_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "144"}, {"folder": "doc_problem_155_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "155"}, {"folder": "doc_problem_166_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "166"}, {"folder": "doc_problem_172_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "172"}, {"folder": "doc_problem_177_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "177"}, {"folder": "doc_problem_183_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "183"}, {"folder": "doc_problem_190_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "190"}, {"folder": "doc_problem_199_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "199"}, {"folder": "doc_problem_205_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "205"}, {"folder": "doc_problem_215_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "215"}, {"folder": "doc_problem_222_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "222"}, {"folder": "doc_problem_24_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "24"}, {"folder": "doc_problem_30_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "30"}, {"folder": "doc_problem_39_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "39"}, {"folder": "doc_problem_47_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "47"}, {"folder": "doc_problem_55_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "55"}, {"folder": "doc_problem_64_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "64"}, {"folder": "doc_problem_72_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "72"}, {"folder": "doc_problem_86_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "86"}, {"folder": "doc_problem_94_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "94"}, {"folder": "doc_problem_99_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "99"}], [{"folder": "doc_problem_103_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "103"}, {"folder": "doc_problem_114_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "114"}, {"folder": "doc_problem_122_physics_g9_gemini3propreview", "images": ["scene1.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "122"}, {"folder": "doc_problem_127_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "127"}, {"folder": "doc_problem_131_chemistry_g12_gemini3propreview", "images": ["scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "131"}, {"folder": "doc_problem_13_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "13"}, {"folder": "doc_problem_145_biology_g12_gemini3propreview", "images": ["scene2.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "145"}, {"folder": "doc_problem_157_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "157"}, {"folder": "doc_problem_167_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "167"}, {"folder": "doc_problem_173_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "173"}, {"folder": "doc_problem_178_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "178"}, {"folder": "doc_problem_185_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "185"}, {"folder": "doc_problem_192_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "192"}, {"folder": "doc_problem_1_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "1"}, {"folder": "doc_problem_206_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "206"}, {"folder": "doc_problem_216_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "216"}, {"folder": "doc_problem_223_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "223"}, {"folder": "doc_problem_25_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "25"}, {"folder": "doc_problem_31_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "31"}, {"folder": "doc_problem_3_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "3"}, {"folder": "doc_problem_48_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "48"}, {"folder": "doc_problem_56_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "56"}, {"folder": "doc_problem_66_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "66"}, {"folder": "doc_problem_73_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "73"}, {"folder": "doc_problem_89_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "89"}, {"folder": "doc_problem_95_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "95"}], [{"folder": "doc_problem_104_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "104"}, {"folder": "doc_problem_115_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "115"}, {"folder": "doc_problem_123_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "123"}, {"folder": "doc_problem_128_chemistry_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "128"}, {"folder": "doc_problem_132_chemistry_g12_gemini3propreview", "images": ["scene1.png"], "subject": "Chemistry", "grade": "High School", "color": "#27AE60", "num": "132"}, {"folder": "doc_problem_140_biology_g12_gemini3propreview", "images": ["scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "140"}, {"folder": "doc_problem_147_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "147"}, {"folder": "doc_problem_158_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "158"}, {"folder": "doc_problem_169_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "169"}, {"folder": "doc_problem_174_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "174"}, {"folder": "doc_problem_179_biology_g9_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Biology", "grade": "Middle School", "color": "#8E44AD", "num": "179"}, {"folder": "doc_problem_187_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "187"}, {"folder": "doc_problem_194_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "194"}, {"folder": "doc_problem_200_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "200"}, {"folder": "doc_problem_208_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "208"}, {"folder": "doc_problem_217_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "217"}, {"folder": "doc_problem_224_geography_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "Middle School", "color": "#16A085", "num": "224"}, {"folder": "doc_problem_26_biology_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Biology", "grade": "High School", "color": "#8E44AD", "num": "26"}, {"folder": "doc_problem_32_chemistry_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Chemistry", "grade": "Middle School", "color": "#27AE60", "num": "32"}, {"folder": "doc_problem_40_math_g6_gemini3propreview", "images": ["scene1.png", "scene2.png"], "subject": "Mathematics", "grade": "Primary", "color": "#2979FF", "num": "40"}, {"folder": "doc_problem_49_geography_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png"], "subject": "Geography", "grade": "High School", "color": "#16A085", "num": "49"}, {"folder": "doc_problem_58_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "58"}, {"folder": "doc_problem_67_math_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png", "scene4.png", "scene5.png"], "subject": "Mathematics", "grade": "High School", "color": "#2979FF", "num": "67"}, {"folder": "doc_problem_74_physics_g12_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "High School", "color": "#E67E22", "num": "74"}, {"folder": "doc_problem_8_physics_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Physics", "grade": "Middle School", "color": "#E67E22", "num": "8"}, {"folder": "doc_problem_96_math_g9_gemini3propreview", "images": ["scene1.png", "scene2.png", "scene3.png"], "subject": "Mathematics", "grade": "Middle School", "color": "#2979FF", "num": "96"}]];
+    // Dynamically set transform-origin to prevent cards from overflowing viewport edges
+    document.querySelectorAll('.g-static-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const r = card.getBoundingClientRect();
+            const vw = window.innerWidth;
+            const scale = 4;
+            const hw = r.width * scale / 2;   // half scaled width
+            const hh = r.height * scale / 2;  // half scaled height
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
 
-        // smaller cards: imgH=100px, 16:9 → imgW≈178px
-        const IMG_H = 110;
-        const IMG_W = Math.round(IMG_H * 16 / 9); // 178
+            let ox = '50%', oy = '50%';
 
-        function buildRow(data) {
-            return data.map(item => {
-                const imgW = item.images.length * IMG_W + (item.images.length - 1) * 2;
-                const imgs = item.images.map(img =>
-                    `<img src="collected_docs/${item.folder}/${img}" alt="" loading="lazy" style="width:${IMG_W}px;height:${IMG_H}px;object-fit:cover;flex-shrink:0;" onerror="this.style.display='none'">`
-                ).join('');
-                return `<div class="g-card" style="width:${imgW}px;" onclick="window.open('collected_docs/${item.folder}/solution.html','_blank')">
-                    <div style="height:3px;background:${item.color};width:100%;"></div>
-                    <div style="display:flex;gap:2px;background:#f0f0f0;height:${IMG_H}px;overflow:hidden;">${imgs}</div>
-                    <div class="g-label">
-                        <span class="g-dot" style="background:${item.color}"></span>
-                        <span class="g-info">
-                            <span class="g-subject">${item.subject}</span>
-                            <span class="g-grade">${item.grade}</span>
-                        </span>
-                        <span class="g-num">#${item.num}</span>
-                    </div>
-                </div>`;
-            }).join('');
-        }
+            // Horizontal clamping
+            if (cx - hw < 0) ox = '0%';
+            else if (cx + hw > vw) ox = '100%';
 
-        const speeds = [80, 110, 70, 95, 60];
-        galleryRows.forEach((rowData, i) => {
-            const track = document.getElementById(`g-track-${i}`);
-            const html = buildRow(rowData);
-            track.innerHTML = html + html;
-            track.style.animationDuration = speeds[i] + 's';
+            // Vertical: prefer expanding downward from top
+            if (cy - hh < 0) oy = '0%';
+            else if (cy + hh > window.innerHeight) oy = '100%';
+
+            card.style.transformOrigin = `${ox} ${oy}`;
         });
+    });
     </script>
 </body>
 </html>

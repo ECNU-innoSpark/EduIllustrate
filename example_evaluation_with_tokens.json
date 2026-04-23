@@ -1,0 +1,35 @@
+{
+  "evaluation": {
+    "overall_score": 8.47,
+    "correctness": {
+      "score": 9,
+      "reasoning": "The solution correctly identifies and applies the necessary formulas..."
+    },
+    "clarity": {
+      "score": 8,
+      "reasoning": "The explanation is clear and well-structured..."
+    },
+    "completeness": {
+      "score": 8,
+      "reasoning": "The solution covers all major steps..."
+    }
+  },
+  "document": "output/problem_0_geometry/doc/solution.md",
+  "problem_data": {
+    "problem": "Find the area of a triangle...",
+    "subject": "geometry"
+  },
+  "token_usage": {
+    "total_tokens": 3250,
+    "input_tokens": 2800,
+    "output_tokens": 450,
+    "by_type": {
+      "doc": {
+        "input_tokens": 2800,
+        "output_tokens": 450,
+        "total_tokens": 3250
+      }
+    }
+  },
+  "timestamp": "2026-03-14T12:00:00"
+}

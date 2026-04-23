@@ -1,0 +1,12 @@
+**/__pycache__/
+
+.env
+.venv
+baseline_videos
+models
+output
+test*
+*proxy.py
+logs
+anthropic_proxy.py
+.log

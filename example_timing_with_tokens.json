@@ -1,0 +1,50 @@
+{
+  "problem_index": 0,
+  "topic": "problem_0_geometry",
+  "total_time_seconds": 887.64,
+  "total_time_minutes": 14.79,
+  "timestamp": "2026-03-14 12:00:00",
+  "token_usage": {
+    "total_tokens": 45230,
+    "input_tokens": 38150,
+    "output_tokens": 7080,
+    "planner_model": {
+      "input_tokens": 15000,
+      "output_tokens": 2500,
+      "total_tokens": 17500
+    },
+    "scene_model": {
+      "input_tokens": 20000,
+      "output_tokens": 4000,
+      "total_tokens": 24000
+    },
+    "helper_model": {
+      "input_tokens": 3150,
+      "output_tokens": 580,
+      "total_tokens": 3730
+    }
+  },
+  "scene_timings": {
+    "scene_1": {
+      "scene_number": 1,
+      "time_seconds": 184.13,
+      "time_minutes": 3.07,
+      "final_version": 0,
+      "timestamp": "2026-03-14 11:57:23"
+    },
+    "scene_2": {
+      "scene_number": 2,
+      "time_seconds": 62.08,
+      "time_minutes": 1.03,
+      "final_version": 0,
+      "timestamp": "2026-03-14 11:58:19"
+    },
+    "scene_3": {
+      "scene_number": 3,
+      "time_seconds": 115.63,
+      "time_minutes": 1.93,
+      "final_version": 0,
+      "timestamp": "2026-03-14 11:59:12"
+    }
+  }
+}

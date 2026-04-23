@@ -1,0 +1,9 @@
+# Temporarily exclude large files
+data/rag/manim_docs/manim_docs/plugin_docs/manim-ml/examples/variational_autoencoder/autoencoder_models/saved_models/*.pth
+data/rag/manim_docs/__MACOSX/manim_docs/plugin_docs/manim-ml/examples/variational_autoencoder/autoencoder_models/saved_models/.*pth
+
+# Also exclude other potentially large or unnecessary files
+data/math_problem/
+data/rag/chroma_db/
+data/rag/manim_docs/__MACOSX/
+*.parquet

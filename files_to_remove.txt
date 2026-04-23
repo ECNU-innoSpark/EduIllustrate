@@ -1,0 +1,4 @@
+data/rag/manim_docs/manim_docs/plugin_docs/manim-ml/examples/variational_autoencoder/autoencoder_models/saved_models/model_dim2.pth
+data/rag/manim_docs/manim_docs/plugin_docs/manim-ml/examples/variational_autoencoder/autoencoder_models/saved_models/model_dim2_cnn.pth
+data/rag/manim_docs/__MACOSX/manim_docs/plugin_docs/manim-ml/examples/variational_autoencoder/autoencoder_models/saved_models/._model_dim2.pth
+data/rag/manim_docs/__MACOSX/manim_docs/plugin_docs/manim-ml/examples/variational_autoencoder/autoencoder_models/saved_models/._model_dim2_cnn.pth

@@ -415,12 +415,14 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If this project helps your research, please cite:
 
 ```bibtex
-@software{eduillustrate2026,
-  title={EduIllustrate: An Agentic Pipeline for Generating Diagram-Rich Explanations of K-12 STEM Problems},
-  author={Shuzhen Bi},
-  year={2026},
-  url={https://github.com/bisz9918-maker/EduIllustrate}
+@article{bi2026eduillustrate,
+  title={EduIllustrate: Towards Scalable Automated Generation Of Multimodal Educational Content},
+  author={Bi, Shuzhen and Zhang, Mingzi and Li, Zhuoxuan and Wang, Xiaolong and Li, Keqian and Zhou, Aimin and others},
+  journal={arXiv e-prints},
+  pages={arXiv--2604},
+  year={2026}
 }
+
 ```
 
 ## 🙏 Acknowledgments
